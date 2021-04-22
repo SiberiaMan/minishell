@@ -7,58 +7,70 @@ int main(/*char *line*/)
 	pipe(fd);
 	int ret = fork();
 	if (ret == 0) {
-		//int fd1 = open("/dev/random", O_RDONLY);
-		//dup2(fd1, 0);
-		//close(fd1);
+		int fd3 = open("/dev/random", O_RDONLY);
+		dup2(fd3, 0);
+		close(fd3);
 		dup2(fd[1], 1);
-		close(fd[1]);
-		//close(fd[0]);
-		printf("child here\n");
-		char *args[3] = {"/bin/cat", "-e", 0};
+		printf("child here1\n");
+		char *args[2] = {"/usr/bin/cat", 0};
 		execve(args[0], args, 0);
 		printf("child exit\n");
 		perror("Error");
-		exit(0);
+		exit(127);
 	}
+	int fd1[2]; // new pipe
+	pipe(fd1);
 	processes[0] = ret;
 	int pret = fork();
 	if (pret == 0) {
-		//int fd1 = open("/dev/random", O_RDONLY);
-		//dup2(fd1, 0);
-		//close(fd1);
-		dup2(fd[1], 1);
+		int fd4 = open("/home/phili/Desktop/project/Misha/main.c", O_RDONLY);
+		dup2(fd4, 0);
+		close(fd[0]);
 		close(fd[1]);
-		//close(fd[0]);
-		printf("child here\n");
-		char *args[3] = {"/bin/cat", "-e", 0};
+		dup2(fd1[1], 1);
+		close(fd1[1]);
+		close(fd1[0]);
+		printf("child here2\n");
+		char *args[2] = {"/usr/bin/cat", 0};
 		execve(args[0], args, 0);
 		printf("child exit\n");
 		perror("Error");
-		exit(0);
+		exit(127);
 	}
 	processes[1] = pret;
 	//printf("parent here\n");
 	//wait(0);
 	int kek = fork();
 	if (kek == 0) {
-		int fd1 = open("/Users/dchani/Desktop/shell/main.c", O_RDONLY);
+		//int fd1 = open("/Users/dchani/Desktop/shell/main.c", O_RDONLY);
 		//dup2(fd1, 0); // priority redirect vs pipe
-		dup2(fd[0], 0);
-		close(fd[1]);
+		dup2(fd1[0], 0);
+		close(fd1[0]);
 		close(fd[0]);
-		char *args[4] = {"/bin/ls", "-la", 0};
+		close(fd1[1]);
+		close(fd[1]);
+		char *args[3] = {"/bin/cat", "-e", 0};
 		execve(args[0], args, 0);
 		perror("Error");
 		exit(0);
 	}
 	close(fd[0]);
 	close(fd[1]);
+	close(fd1[0]);
+	close(fd1[1]);
 	processes[2] = kek;
+	//close(fd[0]);
+	//close(fd[1]); */
 	int status;
 	int i = 0;
 	while (i < 3 && waitpid(processes[i], &status, 0))
 		i++;
-	//printf("kek\n");
+	status = 1;
+	while (status)
+	{
+		scanf("%d", &status);
+	}
+	//printf("%d\n", status);
 	// dup2(fd[1], 1);
 	// close(fd[1]);
 	// write(1, "kek\n", strlen("kek\n"));

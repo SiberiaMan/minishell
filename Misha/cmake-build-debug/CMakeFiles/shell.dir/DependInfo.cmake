@@ -4,11 +4,14 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "/Users/dchani/Desktop/shell/executing.c" "/Users/dchani/Desktop/shell/cmake-build-debug/CMakeFiles/shell.dir/executing.c.o"
-  "/Users/dchani/Desktop/shell/main.c" "/Users/dchani/Desktop/shell/cmake-build-debug/CMakeFiles/shell.dir/main.c.o"
-  "/Users/dchani/Desktop/shell/parser.c" "/Users/dchani/Desktop/shell/cmake-build-debug/CMakeFiles/shell.dir/parser.c.o"
+  "/home/phili/Desktop/project/Misha/executing.c" "/home/phili/Desktop/project/Misha/cmake-build-debug/CMakeFiles/shell.dir/executing.c.o"
+  "/home/phili/Desktop/project/Misha/get_normal_form.c" "/home/phili/Desktop/project/Misha/cmake-build-debug/CMakeFiles/shell.dir/get_normal_form.c.o"
+  "/home/phili/Desktop/project/Misha/main.c" "/home/phili/Desktop/project/Misha/cmake-build-debug/CMakeFiles/shell.dir/main.c.o"
+  "/home/phili/Desktop/project/Misha/parser.c" "/home/phili/Desktop/project/Misha/cmake-build-debug/CMakeFiles/shell.dir/parser.c.o"
+  "/home/phili/Desktop/project/Misha/syntax_err.c" "/home/phili/Desktop/project/Misha/cmake-build-debug/CMakeFiles/shell.dir/syntax_err.c.o"
+  "/home/phili/Desktop/project/Misha/tokens_handler.c" "/home/phili/Desktop/project/Misha/cmake-build-debug/CMakeFiles/shell.dir/tokens_handler.c.o"
   )
-set(CMAKE_C_COMPILER_ID "AppleClang")
+set(CMAKE_C_COMPILER_ID "GNU")
 
 # The include file search paths:
 set(CMAKE_C_TARGET_INCLUDE_PATH
