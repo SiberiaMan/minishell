@@ -71,7 +71,6 @@ int main(int argc, char const **argv)
             //сtrl+d это пустой символ, т.e. '\0'
             if(!strcmp(str, "\e[D"))
             {
-                printf("\n symbols = %d", symbols);
                 //стрелка влевo
             }
             if(!strcmp(str, "\n"))
