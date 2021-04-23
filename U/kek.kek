@@ -1,0 +1,10 @@
+total 64
+drwxr-xr-x   9 bmysaria  student    306 Apr 23 13:45 .
+drwxr-xr-x  15 bmysaria  student    510 Apr 23 13:38 ..
+drwxr-xr-x  13 bmysaria  student    442 Apr 23 12:59 .git
+drwxr-xr-x   3 bmysaria  student    102 Apr 23 11:42 .vscode
+-rwxr-xr-x   1 bmysaria  student  13792 Apr 23 13:03 a.out
+-rw-r--r--   1 bmysaria  student    734 Apr 23 12:45 history.h
+-rw-r--r--   1 bmysaria  student      0 Apr 23 13:45 kek.kek
+-rw-r--r--   1 bmysaria  student   2188 Apr 23 11:42 libft_utills.c
+-rw-r--r--   1 bmysaria  student   5777 Apr 23 13:40 main.c
