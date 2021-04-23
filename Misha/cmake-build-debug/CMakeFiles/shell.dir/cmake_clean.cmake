@@ -1,8 +1,10 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/shell.dir/backslash.c.o"
   "CMakeFiles/shell.dir/executing.c.o"
   "CMakeFiles/shell.dir/get_normal_form.c.o"
   "CMakeFiles/shell.dir/main.c.o"
   "CMakeFiles/shell.dir/parser.c.o"
+  "CMakeFiles/shell.dir/pretokenizer_handler.c.o"
   "CMakeFiles/shell.dir/syntax_err.c.o"
   "CMakeFiles/shell.dir/tokens_handler.c.o"
   "shell"

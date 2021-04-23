@@ -13,9 +13,9 @@ static size_t	cnt_quotes(char *line)
 	cnt_double_quotes = 0;
 	i = 0;
 	while (i < len)
-		if (line[i] == 44) // single_quotes
+		if (line[i] == 34) // double quotes
 			cnt_single_quotes++;
-		else if (line[i++] == 39) // double quotes
+		else if (line[i++] == 39) // single quotes
 			cnt_double_quotes++;
 	if (cnt_double_quotes % 2 || cnt_single_quotes % 2)
 		return (0);
@@ -89,7 +89,7 @@ static size_t	semicolon_syntax(char *line)
 	return (1);
 }
 
-int	parser(char *line)
+int	parser(char *line) // get normal form
 {
 	if (!cnt_quotes(line))
 	{

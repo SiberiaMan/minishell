@@ -19,7 +19,7 @@ int	lst_create_add(t_list **lst, char *line);
 void	*ft_memcpy(void *dst, const void *src, size_t n);
 void	*ft_calloc(size_t count, size_t size);
 size_t		ft_strlen(const char *s);
-char		*ft_strchr(char *s);
+char		*ft_strchr(const char *s, int c);
 char	*ft_strdup(const char *s1);
 int ft_putint(int c);
 void ft_putstr(char *str);

@@ -12,6 +12,19 @@ size_t		ft_strlen(const char *s)
 	return (i);
 }
 
+char		*ft_strchr(const char *s, int c)
+{
+	while (*s)
+	{
+		if (*s == c)
+			return ((char*)s);
+		s++;
+	}
+	if (*s == c)
+		return ((char*)s);
+	return (0);
+}
+
 void	ft_bzero(void *s, size_t n)
 {
 	unsigned char *str;

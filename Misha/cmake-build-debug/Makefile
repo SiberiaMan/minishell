@@ -58,19 +58,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /snap/clion/149/bin/cmake/linux/bin/cmake
+CMAKE_COMMAND = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake
 
 # The command to remove a file.
-RM = /snap/clion/149/bin/cmake/linux/bin/cmake -E rm -f
+RM = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/phili/Desktop/project/Misha
+CMAKE_SOURCE_DIR = /Users/dchani/Desktop/project/Misha
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/phili/Desktop/project/Misha/cmake-build-debug
+CMAKE_BINARY_DIR = /Users/dchani/Desktop/project/Misha/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -78,7 +78,7 @@ CMAKE_BINARY_DIR = /home/phili/Desktop/project/Misha/cmake-build-debug
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/snap/clion/149/bin/cmake/linux/bin/cmake --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -89,7 +89,7 @@ rebuild_cache/fast: rebuild_cache
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/snap/clion/149/bin/cmake/linux/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+	/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -99,9 +99,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/phili/Desktop/project/Misha/cmake-build-debug/CMakeFiles /home/phili/Desktop/project/Misha/cmake-build-debug//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/dchani/Desktop/project/Misha/cmake-build-debug/CMakeFiles /Users/dchani/Desktop/project/Misha/cmake-build-debug//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/phili/Desktop/project/Misha/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/dchani/Desktop/project/Misha/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -141,6 +141,33 @@ shell: cmake_check_build_system
 shell/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/build
 .PHONY : shell/fast
+
+backslash.o: backslash.c.o
+
+.PHONY : backslash.o
+
+# target to build an object file
+backslash.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/backslash.c.o
+.PHONY : backslash.c.o
+
+backslash.i: backslash.c.i
+
+.PHONY : backslash.i
+
+# target to preprocess a source file
+backslash.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/backslash.c.i
+.PHONY : backslash.c.i
+
+backslash.s: backslash.c.s
+
+.PHONY : backslash.s
+
+# target to generate assembly for a file
+backslash.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/backslash.c.s
+.PHONY : backslash.c.s
 
 executing.o: executing.c.o
 
@@ -250,6 +277,33 @@ parser.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/parser.c.s
 .PHONY : parser.c.s
 
+pretokenizer_handler.o: pretokenizer_handler.c.o
+
+.PHONY : pretokenizer_handler.o
+
+# target to build an object file
+pretokenizer_handler.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/pretokenizer_handler.c.o
+.PHONY : pretokenizer_handler.c.o
+
+pretokenizer_handler.i: pretokenizer_handler.c.i
+
+.PHONY : pretokenizer_handler.i
+
+# target to preprocess a source file
+pretokenizer_handler.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/pretokenizer_handler.c.i
+.PHONY : pretokenizer_handler.c.i
+
+pretokenizer_handler.s: pretokenizer_handler.c.s
+
+.PHONY : pretokenizer_handler.s
+
+# target to generate assembly for a file
+pretokenizer_handler.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/pretokenizer_handler.c.s
+.PHONY : pretokenizer_handler.c.s
+
 syntax_err.o: syntax_err.c.o
 
 .PHONY : syntax_err.o
@@ -313,6 +367,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... shell"
+	@echo "... backslash.o"
+	@echo "... backslash.i"
+	@echo "... backslash.s"
 	@echo "... executing.o"
 	@echo "... executing.i"
 	@echo "... executing.s"
@@ -325,6 +382,9 @@ help:
 	@echo "... parser.o"
 	@echo "... parser.i"
 	@echo "... parser.s"
+	@echo "... pretokenizer_handler.o"
+	@echo "... pretokenizer_handler.i"
+	@echo "... pretokenizer_handler.s"
 	@echo "... syntax_err.o"
 	@echo "... syntax_err.i"
 	@echo "... syntax_err.s"
