@@ -58,19 +58,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /snap/clion/151/bin/cmake/linux/bin/cmake
+CMAKE_COMMAND = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake
 
 # The command to remove a file.
-RM = /snap/clion/151/bin/cmake/linux/bin/cmake -E rm -f
+RM = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/phili/Desktop/project/Misha
+CMAKE_SOURCE_DIR = /Users/dchani/Desktop/project/Misha
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/phili/Desktop/project/Misha/cmake-build-debug
+CMAKE_BINARY_DIR = /Users/dchani/Desktop/project/Misha/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -78,7 +78,7 @@ CMAKE_BINARY_DIR = /home/phili/Desktop/project/Misha/cmake-build-debug
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/snap/clion/151/bin/cmake/linux/bin/cmake --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -89,7 +89,7 @@ rebuild_cache/fast: rebuild_cache
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/snap/clion/151/bin/cmake/linux/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+	/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -99,9 +99,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/phili/Desktop/project/Misha/cmake-build-debug/CMakeFiles /home/phili/Desktop/project/Misha/cmake-build-debug//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/dchani/Desktop/project/Misha/cmake-build-debug/CMakeFiles /Users/dchani/Desktop/project/Misha/cmake-build-debug//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/phili/Desktop/project/Misha/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/dchani/Desktop/project/Misha/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -169,33 +169,6 @@ backslash.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/backslash.c.s
 .PHONY : backslash.c.s
 
-executing.o: executing.c.o
-
-.PHONY : executing.o
-
-# target to build an object file
-executing.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/executing.c.o
-.PHONY : executing.c.o
-
-executing.i: executing.c.i
-
-.PHONY : executing.i
-
-# target to preprocess a source file
-executing.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/executing.c.i
-.PHONY : executing.c.i
-
-executing.s: executing.c.s
-
-.PHONY : executing.s
-
-# target to generate assembly for a file
-executing.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/executing.c.s
-.PHONY : executing.c.s
-
 get_normal_form.o: get_normal_form.c.o
 
 .PHONY : get_normal_form.o
@@ -223,59 +196,32 @@ get_normal_form.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/get_normal_form.c.s
 .PHONY : get_normal_form.c.s
 
-main.o: main.c.o
+libft_utills.o: libft_utills.c.o
 
-.PHONY : main.o
-
-# target to build an object file
-main.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/main.c.o
-.PHONY : main.c.o
-
-main.i: main.c.i
-
-.PHONY : main.i
-
-# target to preprocess a source file
-main.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/main.c.i
-.PHONY : main.c.i
-
-main.s: main.c.s
-
-.PHONY : main.s
-
-# target to generate assembly for a file
-main.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/main.c.s
-.PHONY : main.c.s
-
-parser.o: parser.c.o
-
-.PHONY : parser.o
+.PHONY : libft_utills.o
 
 # target to build an object file
-parser.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/parser.c.o
-.PHONY : parser.c.o
+libft_utills.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/libft_utills.c.o
+.PHONY : libft_utills.c.o
 
-parser.i: parser.c.i
+libft_utills.i: libft_utills.c.i
 
-.PHONY : parser.i
+.PHONY : libft_utills.i
 
 # target to preprocess a source file
-parser.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/parser.c.i
-.PHONY : parser.c.i
+libft_utills.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/libft_utills.c.i
+.PHONY : libft_utills.c.i
 
-parser.s: parser.c.s
+libft_utills.s: libft_utills.c.s
 
-.PHONY : parser.s
+.PHONY : libft_utills.s
 
 # target to generate assembly for a file
-parser.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/parser.c.s
-.PHONY : parser.c.s
+libft_utills.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/libft_utills.c.s
+.PHONY : libft_utills.c.s
 
 pretokenizer_handler.o: pretokenizer_handler.c.o
 
@@ -304,59 +250,32 @@ pretokenizer_handler.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/pretokenizer_handler.c.s
 .PHONY : pretokenizer_handler.c.s
 
-syntax_err.o: syntax_err.c.o
+quotes_handler.o: quotes_handler.c.o
 
-.PHONY : syntax_err.o
-
-# target to build an object file
-syntax_err.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/syntax_err.c.o
-.PHONY : syntax_err.c.o
-
-syntax_err.i: syntax_err.c.i
-
-.PHONY : syntax_err.i
-
-# target to preprocess a source file
-syntax_err.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/syntax_err.c.i
-.PHONY : syntax_err.c.i
-
-syntax_err.s: syntax_err.c.s
-
-.PHONY : syntax_err.s
-
-# target to generate assembly for a file
-syntax_err.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/syntax_err.c.s
-.PHONY : syntax_err.c.s
-
-tokens_handler.o: tokens_handler.c.o
-
-.PHONY : tokens_handler.o
+.PHONY : quotes_handler.o
 
 # target to build an object file
-tokens_handler.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/tokens_handler.c.o
-.PHONY : tokens_handler.c.o
+quotes_handler.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/quotes_handler.c.o
+.PHONY : quotes_handler.c.o
 
-tokens_handler.i: tokens_handler.c.i
+quotes_handler.i: quotes_handler.c.i
 
-.PHONY : tokens_handler.i
+.PHONY : quotes_handler.i
 
 # target to preprocess a source file
-tokens_handler.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/tokens_handler.c.i
-.PHONY : tokens_handler.c.i
+quotes_handler.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/quotes_handler.c.i
+.PHONY : quotes_handler.c.i
 
-tokens_handler.s: tokens_handler.c.s
+quotes_handler.s: quotes_handler.c.s
 
-.PHONY : tokens_handler.s
+.PHONY : quotes_handler.s
 
 # target to generate assembly for a file
-tokens_handler.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/tokens_handler.c.s
-.PHONY : tokens_handler.c.s
+quotes_handler.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/quotes_handler.c.s
+.PHONY : quotes_handler.c.s
 
 # Help Target
 help:
@@ -370,27 +289,18 @@ help:
 	@echo "... backslash.o"
 	@echo "... backslash.i"
 	@echo "... backslash.s"
-	@echo "... executing.o"
-	@echo "... executing.i"
-	@echo "... executing.s"
 	@echo "... get_normal_form.o"
 	@echo "... get_normal_form.i"
 	@echo "... get_normal_form.s"
-	@echo "... main.o"
-	@echo "... main.i"
-	@echo "... main.s"
-	@echo "... parser.o"
-	@echo "... parser.i"
-	@echo "... parser.s"
+	@echo "... libft_utills.o"
+	@echo "... libft_utills.i"
+	@echo "... libft_utills.s"
 	@echo "... pretokenizer_handler.o"
 	@echo "... pretokenizer_handler.i"
 	@echo "... pretokenizer_handler.s"
-	@echo "... syntax_err.o"
-	@echo "... syntax_err.i"
-	@echo "... syntax_err.s"
-	@echo "... tokens_handler.o"
-	@echo "... tokens_handler.i"
-	@echo "... tokens_handler.s"
+	@echo "... quotes_handler.o"
+	@echo "... quotes_handler.i"
+	@echo "... quotes_handler.s"
 .PHONY : help
 
 

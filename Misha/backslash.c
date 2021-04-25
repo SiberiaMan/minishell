@@ -7,26 +7,29 @@ static void	mask_handler_normal(char *line, char *mask)
 	i = 0;
 	while (i < ft_strlen(line))
 	{
-		if (line[i] == 92 && line[i + 1] && (ft_strchr("<>|;$", line[i + 1])
-		|| line[i + 1] == 34))
+		if (mask[i] == OPEN_QUOTE)
+		{
+			while (mask[++i] != CLOSE_QUOTE);
+			i++;
+		}
+		if (line[i] && line[i] == 92 && line[i + 1]
+		&& (ft_strchr("<>|;$'\"",line[i + 1])))
 		{
 
 			mask[i] = UNUSED_BACKSLASH;
 			mask[i + 1] = FAKE_SPEC_SYMBOL; // "\$..."
 			i++;
 		}
-		else if ((line[i] == 92 && line[i + 1] && line[i + 1] == 92)
-		|| (line[i] == 92 && !line[i + 1]))
+		else if (line[i] && ((line[i] == 92 && line[i + 1] && line[i + 1] == 92)
+		|| (line[i] == 92 && !line[i + 1])))
 		{
 			mask[i] = UNUSED_BACKSLASH; // "\\"
-			mask[i + 1] = '1';
 			i += 2;
 		}
-		else if (line[i] == 92 && mask[i] == 1 && line[i + 1] && line[i + 1]
-		!= 39)
+		else if (line[i] && line[i] == 92 && line[i + 1]
+		&& (!ft_strchr("<>|;$'\"",line[i + 1])))
 			mask[i++] = UNUSED_BACKSLASH;
-		else if ((ft_strchr("<>|;$", line[i]) || line[i] == 39) && mask[i] ==
-		'1')
+		else if (line[i] && (ft_strchr("<>|;$", line[i])) && mask[i] == '1')
 			mask[i++] = SPEC_SYMBOL;
 		else
 			i++;
@@ -42,8 +45,12 @@ static void mask_handler_real(char *line, char *mask)
 	len = ft_strlen(line);
 	while (i < len)
 	{
-		if (ft_strchr("<>|;$", line[i]) || line[i] == 39 || line[i] == 34
-		|| line[i] == 92)
+		if (mask[i] == OPEN_QUOTE)
+		{
+			while (mask[++i] != CLOSE_QUOTE);
+			i++;
+		}
+		if (ft_strchr("<>|;$", line[i])) // экранирование либо 5 либо 1
 			mask[i] = SPEC_SYMBOL;
 		i++;
 	}
@@ -57,7 +64,7 @@ char 		*get_mask_real(char *line) // get real form
 
 	i = 0;
 	len = ft_strlen(line);
-	if (!(mask = ft_calloc(ft_strlen(line), sizeof(char))))
+	if (!(mask = ft_calloc(ft_strlen(line) + 1, sizeof(char))))
 		return (0);
 	while (i < len)
 		mask[i++] = '1';
@@ -73,10 +80,16 @@ char 		*get_mask_normal(char *line)	 // get normal form !!!
 
 	i = 0;
 	len = ft_strlen(line);
-	if (!(mask = ft_calloc(ft_strlen(line), sizeof(char))))
+	if (!(mask = ft_calloc(ft_strlen(line) + 1, sizeof(char))))
 		return (0);
 	while (i < len)
 		mask[i++] = '1';
+	if (!quotes_handler(line, mask))
+	{
+		write(2, "syntax error with quotes\n",ft_strlen("syntax error with quotes\n"));
+		free(mask);
+		return (0);
+	}
 	mask_handler_real(line, mask);
 	mask_handler_normal(line, mask);
 	return (mask);

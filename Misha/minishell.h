@@ -13,9 +13,13 @@
 # define SYNTAX_ERR "syntax error near token "
 # define CMD_NF		"command not found"
 # define BACKSLASH  '5' // можно ли заменить на 5 // попробую заменить 2 -> 5
-# define FAKE_SPEC_SYMBOL '3' // можно ли заменить на 1
+# define FAKE_SPEC_SYMBOL '3' // можно ли заменить на 1 // пока не буду
+// менять, чтобы было удобнее смотреть результат // на продакт надо будет
+// заменить
 # define SPEC_SYMBOL '4'
 # define UNUSED_BACKSLASH '5'
+# define OPEN_QUOTE '6'
+# define CLOSE_QUOTE '7'
 
 typedef	struct 		s_token
 {
@@ -39,5 +43,6 @@ int		parser(char *line);
 void	print_syntax_err(char *err);
 char 	*get_mask_normal(char *line);
 char 	*get_mask_real(char *line);
+size_t	quotes_handler(char *line, char *mask);
 
 #endif //SHELL_MINISHELL_H

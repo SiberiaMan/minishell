@@ -16,13 +16,6 @@ char *mask_normal, char *mask_real)
 	}
 }
 
-/*for (int i = 0; i < ft_strlen(line_normal); i++)
-		printf("%d ", mask_normal[i]);
-	printf("\n");
-	for (int i = 0; i < ft_strlen(line_with_spaces); i++)
-		printf("%d ", mask_real[i]);
-	printf("\n"); */
-
 int	preparser(char *line, char *mask)
 {
 	size_t	i;
@@ -39,45 +32,30 @@ int	preparser(char *line, char *mask)
 		}
 		i++;
 	}
-	if (!(line_normal = normal_form(line)))
+	/*if (!(line_normal = normal_form(line)))
 		return (0);
 	if (!(mask_normal = normal_form(mask)))
 		return (0);
-	for (int j = 0; j < ft_strlen(mask_normal); j++)
-		printf("%c ", mask_normal[j]);
-	printf("\n");
-	for (int j = 0; j < ft_strlen(line_normal); j++)
-		printf("%c ", line_normal[j]);
-	printf("\n");
+	printf("%s\n", line_normal);
+	printf("%s\n", mask_normal); */
 }
 
 int	preparation_preparser(char *line) // входит изначальная "грязная "команда
 {
-	char 	*line_normal;
-	char 	*line_with_spaces;
 	char 	*mask_normal;
-	char 	*mask_real;
 
-	if (!(line_normal = normal_form(line))) // normal_form течет
+	if (!(mask_normal = get_mask_normal(line)))
 		return (0);
-	if (!(line_with_spaces = normal_space_form(line)))
-		return (0);
-	if (!(mask_normal = get_mask_normal(line_normal)))
-		return (0);
-	if (!(mask_real = get_mask_real(line_with_spaces)))
-		return (0);
-	masks_injection(line_normal, line_with_spaces, mask_normal, mask_real);
-	printf("%s\n", line_normal);
-	printf("%s\n", line_with_spaces);
+	printf("%s\n", line);
 	printf("%s\n", mask_normal);
-	printf("%s\n", mask_real);
-	printf("\n");
 	//preparser(line_normal, mask_normal);
 	return (1);
 }
 
 int main() {
-	char *line = "\\";
+	//char *line = "kek\\''";
+	//char *line = "kek'okj\\hf''\\$kekehf\\'lol";
+	char *line = "ls -la \"$\" kek.txt; cat -e kek.txt";
 	if (!preparation_preparser(line))
 		return (0);
 }
