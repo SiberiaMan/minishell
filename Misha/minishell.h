@@ -13,7 +13,7 @@
 # define SYNTAX_ERR "syntax error near token "
 # define CMD_NF		"command not found"
 # define BACKSLASH  '5' // можно ли заменить на 5 // попробую заменить 2 -> 5
-# define FAKE_SPEC_SYMBOL '3'
+# define FAKE_SPEC_SYMBOL '3' // можно ли заменить на 1
 # define SPEC_SYMBOL '4'
 # define UNUSED_BACKSLASH '5'
 

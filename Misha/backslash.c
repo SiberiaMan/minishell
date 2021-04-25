@@ -19,6 +19,7 @@ static void	mask_handler_normal(char *line, char *mask)
 		|| (line[i] == 92 && !line[i + 1]))
 		{
 			mask[i] = UNUSED_BACKSLASH; // "\\"
+			mask[i + 1] = '1';
 			i += 2;
 		}
 		else if (line[i] == 92 && mask[i] == 1 && line[i + 1] && line[i + 1]
@@ -43,10 +44,7 @@ static void mask_handler_real(char *line, char *mask)
 	{
 		if (ft_strchr("<>|;$", line[i]) || line[i] == 39 || line[i] == 34
 		|| line[i] == 92)
-		{
 			mask[i] = SPEC_SYMBOL;
-			printf("kek\n");
-		}
 		i++;
 	}
 }
@@ -79,6 +77,7 @@ char 		*get_mask_normal(char *line)	 // get normal form !!!
 		return (0);
 	while (i < len)
 		mask[i++] = '1';
+	mask_handler_real(line, mask);
 	mask_handler_normal(line, mask);
 	return (mask);
 }

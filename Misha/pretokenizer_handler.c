@@ -23,11 +23,32 @@ char *mask_normal, char *mask_real)
 		printf("%d ", mask_real[i]);
 	printf("\n"); */
 
-int	preparser(char *to_normal_line, int *to_normal_mask)
+int	preparser(char *line, char *mask)
 {
 	size_t	i;
+	char 	*line_normal;
+	char 	*mask_normal;
     // обработать 5 в маске и линии
 	i = 0;
+	while (i < ft_strlen(line))
+	{
+		if (mask[i] == '5')
+		{
+			mask[i] = ' ';
+			line[i] = ' ';
+		}
+		i++;
+	}
+	if (!(line_normal = normal_form(line)))
+		return (0);
+	if (!(mask_normal = normal_form(mask)))
+		return (0);
+	for (int j = 0; j < ft_strlen(mask_normal); j++)
+		printf("%c ", mask_normal[j]);
+	printf("\n");
+	for (int j = 0; j < ft_strlen(line_normal); j++)
+		printf("%c ", line_normal[j]);
+	printf("\n");
 }
 
 int	preparation_preparser(char *line) // входит изначальная "грязная "команда
@@ -37,7 +58,7 @@ int	preparation_preparser(char *line) // входит изначальная "г
 	char 	*mask_normal;
 	char 	*mask_real;
 
-	if (!(line_normal = normal_form(line)))
+	if (!(line_normal = normal_form(line))) // normal_form течет
 		return (0);
 	if (!(line_with_spaces = normal_space_form(line)))
 		return (0);
@@ -46,18 +67,17 @@ int	preparation_preparser(char *line) // входит изначальная "г
 	if (!(mask_real = get_mask_real(line_with_spaces)))
 		return (0);
 	masks_injection(line_normal, line_with_spaces, mask_normal, mask_real);
-	for (int i = 0; i < ft_strlen(line_normal); i++)
-		printf("%c ", mask_normal[i]);
+	printf("%s\n", line_normal);
+	printf("%s\n", line_with_spaces);
+	printf("%s\n", mask_normal);
+	printf("%s\n", mask_real);
 	printf("\n");
-	for (int i = 0; i < ft_strlen(line_with_spaces); i++)
-		printf("%c ", mask_real[i]);
-	printf("\n");
-	//if (!preparser())
+	//preparser(line_normal, mask_normal);
 	return (1);
 }
 
 int main() {
-	char *line = "cat -e lol \\\\";
+	char *line = "\\";
 	if (!preparation_preparser(line))
 		return (0);
 }

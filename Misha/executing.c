@@ -7,10 +7,12 @@ int main(/*char *line*/)
 	pipe(fd);
 	int ret = fork();
 	if (ret == 0) {
-		int fd3 = open("/dev/random", O_RDONLY);
-		dup2(fd3, 0);
-		close(fd3);
+		//int fd3 = open("/Desktop/project/Misha/exec/a.out", O_RDONLY);
+		//dup2(fd3, 0);
+		//close(fd3);
 		dup2(fd[1], 1);
+		close(fd[1]);
+		close(fd[0]);
 		printf("child here1\n");
 		char *args[2] = {"/usr/bin/cat", 0};
 		execve(args[0], args, 0);
@@ -23,15 +25,18 @@ int main(/*char *line*/)
 	processes[0] = ret;
 	int pret = fork();
 	if (pret == 0) {
-		int fd4 = open("/home/phili/Desktop/project/Misha/main.c", O_RDONLY);
-		dup2(fd4, 0);
+		//int fd4 = open("/home/phili/Desktop/project/Misha/main.c", O_RDONLY);
+		//dup2(fd4, 0);
+		//close(fd[0]);
+		//close(fd[1]);
+		dup2(fd[0], 0);
+		dup2(fd1[1], 1);
 		close(fd[0]);
 		close(fd[1]);
-		dup2(fd1[1], 1);
 		close(fd1[1]);
 		close(fd1[0]);
 		printf("child here2\n");
-		char *args[2] = {"/usr/bin/cat", 0};
+		char *args[3] = {"/usr/bin/grp", "kek", 0};
 		execve(args[0], args, 0);
 		printf("child exit\n");
 		perror("Error");
@@ -49,7 +54,7 @@ int main(/*char *line*/)
 		close(fd[0]);
 		close(fd1[1]);
 		close(fd[1]);
-		char *args[3] = {"/bin/cat", "-e", 0};
+		char *args[3] = {"/bin/ls", "-la", 0};
 		execve(args[0], args, 0);
 		perror("Error");
 		exit(0);
@@ -66,10 +71,10 @@ int main(/*char *line*/)
 	while (i < 3 && waitpid(processes[i], &status, 0))
 		i++;
 	status = 1;
-	while (status)
+	/*while (status)
 	{
 		scanf("%d", &status);
-	}
+	} */
 	//printf("%d\n", status);
 	// dup2(fd[1], 1);
 	// close(fd[1]);
