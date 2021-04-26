@@ -169,33 +169,6 @@ backslash.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/backslash.c.s
 .PHONY : backslash.c.s
 
-get_normal_form.o: get_normal_form.c.o
-
-.PHONY : get_normal_form.o
-
-# target to build an object file
-get_normal_form.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/get_normal_form.c.o
-.PHONY : get_normal_form.c.o
-
-get_normal_form.i: get_normal_form.c.i
-
-.PHONY : get_normal_form.i
-
-# target to preprocess a source file
-get_normal_form.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/get_normal_form.c.i
-.PHONY : get_normal_form.c.i
-
-get_normal_form.s: get_normal_form.c.s
-
-.PHONY : get_normal_form.s
-
-# target to generate assembly for a file
-get_normal_form.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/get_normal_form.c.s
-.PHONY : get_normal_form.c.s
-
 libft_utills.o: libft_utills.c.o
 
 .PHONY : libft_utills.o
@@ -222,6 +195,33 @@ libft_utills.s: libft_utills.c.s
 libft_utills.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/libft_utills.c.s
 .PHONY : libft_utills.c.s
+
+parser.o: parser.c.o
+
+.PHONY : parser.o
+
+# target to build an object file
+parser.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/parser.c.o
+.PHONY : parser.c.o
+
+parser.i: parser.c.i
+
+.PHONY : parser.i
+
+# target to preprocess a source file
+parser.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/parser.c.i
+.PHONY : parser.c.i
+
+parser.s: parser.c.s
+
+.PHONY : parser.s
+
+# target to generate assembly for a file
+parser.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/parser.c.s
+.PHONY : parser.c.s
 
 pretokenizer_handler.o: pretokenizer_handler.c.o
 
@@ -277,6 +277,60 @@ quotes_handler.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/quotes_handler.c.s
 .PHONY : quotes_handler.c.s
 
+syntax_err.o: syntax_err.c.o
+
+.PHONY : syntax_err.o
+
+# target to build an object file
+syntax_err.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/syntax_err.c.o
+.PHONY : syntax_err.c.o
+
+syntax_err.i: syntax_err.c.i
+
+.PHONY : syntax_err.i
+
+# target to preprocess a source file
+syntax_err.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/syntax_err.c.i
+.PHONY : syntax_err.c.i
+
+syntax_err.s: syntax_err.c.s
+
+.PHONY : syntax_err.s
+
+# target to generate assembly for a file
+syntax_err.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/syntax_err.c.s
+.PHONY : syntax_err.c.s
+
+tokenizer_functions.o: tokenizer_functions.c.o
+
+.PHONY : tokenizer_functions.o
+
+# target to build an object file
+tokenizer_functions.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/tokenizer_functions.c.o
+.PHONY : tokenizer_functions.c.o
+
+tokenizer_functions.i: tokenizer_functions.c.i
+
+.PHONY : tokenizer_functions.i
+
+# target to preprocess a source file
+tokenizer_functions.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/tokenizer_functions.c.i
+.PHONY : tokenizer_functions.c.i
+
+tokenizer_functions.s: tokenizer_functions.c.s
+
+.PHONY : tokenizer_functions.s
+
+# target to generate assembly for a file
+tokenizer_functions.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/tokenizer_functions.c.s
+.PHONY : tokenizer_functions.c.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -289,18 +343,24 @@ help:
 	@echo "... backslash.o"
 	@echo "... backslash.i"
 	@echo "... backslash.s"
-	@echo "... get_normal_form.o"
-	@echo "... get_normal_form.i"
-	@echo "... get_normal_form.s"
 	@echo "... libft_utills.o"
 	@echo "... libft_utills.i"
 	@echo "... libft_utills.s"
+	@echo "... parser.o"
+	@echo "... parser.i"
+	@echo "... parser.s"
 	@echo "... pretokenizer_handler.o"
 	@echo "... pretokenizer_handler.i"
 	@echo "... pretokenizer_handler.s"
 	@echo "... quotes_handler.o"
 	@echo "... quotes_handler.i"
 	@echo "... quotes_handler.s"
+	@echo "... syntax_err.o"
+	@echo "... syntax_err.i"
+	@echo "... syntax_err.s"
+	@echo "... tokenizer_functions.o"
+	@echo "... tokenizer_functions.i"
+	@echo "... tokenizer_functions.s"
 .PHONY : help
 
 

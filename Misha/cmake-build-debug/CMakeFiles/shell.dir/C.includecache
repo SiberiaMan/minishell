@@ -31,6 +31,16 @@ stdlib.h
 -
 history.h
 /Users/dchani/Desktop/project/Misha/history.h
+parser.h
+/Users/dchani/Desktop/project/Misha/parser.h
+
+/Users/dchani/Desktop/project/Misha/parser.h
+stdlib.h
+-
+stdio.h
+-
+history.h
+/Users/dchani/Desktop/project/Misha/history.h
 
 /Users/dchani/Desktop/project/Misha/pretokenizer_handler.c
 minishell.h

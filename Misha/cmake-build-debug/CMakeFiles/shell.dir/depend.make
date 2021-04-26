@@ -4,19 +4,33 @@
 CMakeFiles/shell.dir/backslash.c.o: ../backslash.c
 CMakeFiles/shell.dir/backslash.c.o: ../history.h
 CMakeFiles/shell.dir/backslash.c.o: ../minishell.h
-
-CMakeFiles/shell.dir/get_normal_form.c.o: ../get_normal_form.c
-CMakeFiles/shell.dir/get_normal_form.c.o: ../history.h
-CMakeFiles/shell.dir/get_normal_form.c.o: ../minishell.h
+CMakeFiles/shell.dir/backslash.c.o: ../parser.h
 
 CMakeFiles/shell.dir/libft_utills.c.o: ../history.h
 CMakeFiles/shell.dir/libft_utills.c.o: ../libft_utills.c
 
+CMakeFiles/shell.dir/parser.c.o: ../history.h
+CMakeFiles/shell.dir/parser.c.o: ../minishell.h
+CMakeFiles/shell.dir/parser.c.o: ../parser.c
+CMakeFiles/shell.dir/parser.c.o: ../parser.h
+
 CMakeFiles/shell.dir/pretokenizer_handler.c.o: ../history.h
 CMakeFiles/shell.dir/pretokenizer_handler.c.o: ../minishell.h
+CMakeFiles/shell.dir/pretokenizer_handler.c.o: ../parser.h
 CMakeFiles/shell.dir/pretokenizer_handler.c.o: ../pretokenizer_handler.c
 
 CMakeFiles/shell.dir/quotes_handler.c.o: ../history.h
 CMakeFiles/shell.dir/quotes_handler.c.o: ../minishell.h
+CMakeFiles/shell.dir/quotes_handler.c.o: ../parser.h
 CMakeFiles/shell.dir/quotes_handler.c.o: ../quotes_handler.c
+
+CMakeFiles/shell.dir/syntax_err.c.o: ../history.h
+CMakeFiles/shell.dir/syntax_err.c.o: ../minishell.h
+CMakeFiles/shell.dir/syntax_err.c.o: ../parser.h
+CMakeFiles/shell.dir/syntax_err.c.o: ../syntax_err.c
+
+CMakeFiles/shell.dir/tokenizer_functions.c.o: ../history.h
+CMakeFiles/shell.dir/tokenizer_functions.c.o: ../minishell.h
+CMakeFiles/shell.dir/tokenizer_functions.c.o: ../parser.h
+CMakeFiles/shell.dir/tokenizer_functions.c.o: ../tokenizer_functions.c
 

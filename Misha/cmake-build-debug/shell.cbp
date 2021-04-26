@@ -81,19 +81,28 @@
 		<Unit filename="/Users/dchani/Desktop/project/Misha/backslash.c">
 			<Option target="shell"/>
 		</Unit>
-		<Unit filename="/Users/dchani/Desktop/project/Misha/get_normal_form.c">
-			<Option target="shell"/>
-		</Unit>
 		<Unit filename="/Users/dchani/Desktop/project/Misha/libft_utills.c">
 			<Option target="shell"/>
 		</Unit>
 		<Unit filename="/Users/dchani/Desktop/project/Misha/minishell.h">
 			<Option target="shell"/>
 		</Unit>
+		<Unit filename="/Users/dchani/Desktop/project/Misha/parser.c">
+			<Option target="shell"/>
+		</Unit>
+		<Unit filename="/Users/dchani/Desktop/project/Misha/parser.h">
+			<Option target="shell"/>
+		</Unit>
 		<Unit filename="/Users/dchani/Desktop/project/Misha/pretokenizer_handler.c">
 			<Option target="shell"/>
 		</Unit>
 		<Unit filename="/Users/dchani/Desktop/project/Misha/quotes_handler.c">
+			<Option target="shell"/>
+		</Unit>
+		<Unit filename="/Users/dchani/Desktop/project/Misha/syntax_err.c">
+			<Option target="shell"/>
+		</Unit>
+		<Unit filename="/Users/dchani/Desktop/project/Misha/tokenizer_functions.c">
 			<Option target="shell"/>
 		</Unit>
 		<Unit filename="/Users/dchani/Desktop/project/Misha/CMakeLists.txt">

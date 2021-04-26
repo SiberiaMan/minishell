@@ -5,10 +5,12 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
   "/Users/dchani/Desktop/project/Misha/backslash.c" "/Users/dchani/Desktop/project/Misha/cmake-build-debug/CMakeFiles/shell.dir/backslash.c.o"
-  "/Users/dchani/Desktop/project/Misha/get_normal_form.c" "/Users/dchani/Desktop/project/Misha/cmake-build-debug/CMakeFiles/shell.dir/get_normal_form.c.o"
   "/Users/dchani/Desktop/project/Misha/libft_utills.c" "/Users/dchani/Desktop/project/Misha/cmake-build-debug/CMakeFiles/shell.dir/libft_utills.c.o"
+  "/Users/dchani/Desktop/project/Misha/parser.c" "/Users/dchani/Desktop/project/Misha/cmake-build-debug/CMakeFiles/shell.dir/parser.c.o"
   "/Users/dchani/Desktop/project/Misha/pretokenizer_handler.c" "/Users/dchani/Desktop/project/Misha/cmake-build-debug/CMakeFiles/shell.dir/pretokenizer_handler.c.o"
   "/Users/dchani/Desktop/project/Misha/quotes_handler.c" "/Users/dchani/Desktop/project/Misha/cmake-build-debug/CMakeFiles/shell.dir/quotes_handler.c.o"
+  "/Users/dchani/Desktop/project/Misha/syntax_err.c" "/Users/dchani/Desktop/project/Misha/cmake-build-debug/CMakeFiles/shell.dir/syntax_err.c.o"
+  "/Users/dchani/Desktop/project/Misha/tokenizer_functions.c" "/Users/dchani/Desktop/project/Misha/cmake-build-debug/CMakeFiles/shell.dir/tokenizer_functions.c.o"
   )
 set(CMAKE_C_COMPILER_ID "AppleClang")
 

@@ -9,6 +9,7 @@
 #include <sys/wait.h>
 #include <stdlib.h>
 #include "history.h"
+#include "parser.h"
 
 # define SYNTAX_ERR "syntax error near token "
 # define CMD_NF		"command not found"
@@ -20,6 +21,7 @@
 # define UNUSED_BACKSLASH '5'
 # define OPEN_QUOTE '6'
 # define CLOSE_QUOTE '7'
+# define SPACE_VISIBLE '8'
 
 typedef	struct 		s_token
 {
@@ -39,7 +41,6 @@ typedef struct 		s_subtoken
 	int 	infile;
 }					t_subtoken;
 
-int		parser(char *line);
 void	print_syntax_err(char *err);
 char 	*get_mask_normal(char *line);
 char 	*get_mask_real(char *line);

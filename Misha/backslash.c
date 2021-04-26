@@ -1,33 +1,42 @@
 #include "minishell.h"
 
+static void	fake_and_space(char *line, char *mask, size_t *i)
+{
+	mask[*i] = UNUSED_BACKSLASH;
+	if (ft_strchr("<>|;$'", line[*i + 1]))
+		mask[*i + 1] = FAKE_SPEC_SYMBOL;
+	else if (line[*i + 1] == ' ')
+		mask[*i + 1] = SPACE_VISIBLE;
+	(*i)++;
+}
+
+static void	loop_quotes(char *mask, size_t *i)
+{
+	while (mask[++(*i)] != CLOSE_QUOTE)
+		;
+	(*i)++;
+}
+
 static void	mask_handler_normal(char *line, char *mask)
 {
-	size_t 	i;
+	size_t	i;
 
 	i = 0;
 	while (i < ft_strlen(line))
 	{
 		if (mask[i] == OPEN_QUOTE)
-		{
-			while (mask[++i] != CLOSE_QUOTE);
-			i++;
-		}
+			loop_quotes(mask, &i);
 		if (line[i] && line[i] == 92 && line[i + 1]
-		&& (ft_strchr("<>|;$'\"",line[i + 1])))
-		{
-
-			mask[i] = UNUSED_BACKSLASH;
-			mask[i + 1] = FAKE_SPEC_SYMBOL; // "\$..."
-			i++;
-		}
+			&& (ft_strchr("<>|;$'\" ", line[i + 1])))
+			fake_and_space(line, mask, &i);
 		else if (line[i] && ((line[i] == 92 && line[i + 1] && line[i + 1] == 92)
-		|| (line[i] == 92 && !line[i + 1])))
+				|| (line[i] == 92 && !line[i + 1])))
 		{
 			mask[i] = UNUSED_BACKSLASH; // "\\"
 			i += 2;
 		}
 		else if (line[i] && line[i] == 92 && line[i + 1]
-		&& (!ft_strchr("<>|;$'\"",line[i + 1])))
+			&& (!ft_strchr("<>|;$'\"", line[i + 1])))
 			mask[i++] = UNUSED_BACKSLASH;
 		else if (line[i] && (ft_strchr("<>|;$", line[i])) && mask[i] == '1')
 			mask[i++] = SPEC_SYMBOL;
@@ -36,10 +45,10 @@ static void	mask_handler_normal(char *line, char *mask)
 	}
 }
 
-static void mask_handler_real(char *line, char *mask)
+static void	mask_handler_real(char *line, char *mask)
 {
-	size_t i;
-	size_t len;
+	size_t	i;
+	size_t	len;
 
 	i = 0;
 	len = ft_strlen(line);
@@ -47,7 +56,8 @@ static void mask_handler_real(char *line, char *mask)
 	{
 		if (mask[i] == OPEN_QUOTE)
 		{
-			while (mask[++i] != CLOSE_QUOTE);
+			while (mask[++i] != CLOSE_QUOTE)
+				;
 			i++;
 		}
 		if (ft_strchr("<>|;$", line[i])) // экранирование либо 5 либо 1
@@ -56,37 +66,23 @@ static void mask_handler_real(char *line, char *mask)
 	}
 }
 
-char 		*get_mask_real(char *line) // get real form
+char	*get_mask_normal(char *line)	 // get normal form !!!
 {
 	size_t	len;
 	size_t	i;
-	char 	*mask;
-
-	i = 0;
-	len = ft_strlen(line);
-	if (!(mask = ft_calloc(ft_strlen(line) + 1, sizeof(char))))
-		return (0);
-	while (i < len)
-		mask[i++] = '1';
-	mask_handler_real(line, mask);
-	return (mask);
-}
-
-char 		*get_mask_normal(char *line)	 // get normal form !!!
-{
-	size_t 	len;
-	size_t 	i;
 	char	*mask;
 
 	i = 0;
 	len = ft_strlen(line);
-	if (!(mask = ft_calloc(ft_strlen(line) + 1, sizeof(char))))
+	mask = ft_calloc(ft_strlen(line) + 1, sizeof(char));
+	if (!mask)
 		return (0);
 	while (i < len)
 		mask[i++] = '1';
 	if (!quotes_handler(line, mask))
 	{
-		write(2, "syntax error with quotes\n",ft_strlen("syntax error with quotes\n"));
+		write(2, "syntax error with quotes\n",
+			ft_strlen("syntax error with quotes\n"));
 		free(mask);
 		return (0);
 	}
@@ -94,11 +90,3 @@ char 		*get_mask_normal(char *line)	 // get normal form !!!
 	mask_handler_normal(line, mask);
 	return (mask);
 }
-
-/*int main() {
-	char *str = "'\\'";
-	int *mask = get_mask_normal(str);
-	for (int i = 0; i < ft_strlen(str); i++)
-		printf("%d ", mask[i]);
-} */
-
