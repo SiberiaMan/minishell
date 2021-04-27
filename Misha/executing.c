@@ -3,8 +3,11 @@
 int main(/*char *line*/)
 {
 	int processes[3];
-	int fd[2];
-	pipe(fd);
+	int tmpin = dup(0);
+	int tmpout = dup(1);
+	int fdin = dup(tmpin);
+	int
+	int fdout;
 	int ret = fork();
 	if (ret == 0) {
 		//int fd3 = open("/Desktop/project/Misha/exec/a.out", O_RDONLY);
@@ -20,8 +23,9 @@ int main(/*char *line*/)
 		perror("Error");
 		exit(127);
 	}
-	int fd1[2]; // new pipe
-	pipe(fd1);
+	//int fd1[2]; // new pipe
+	dup2(fd[0], 0);
+	pipe(fd);
 	processes[0] = ret;
 	int pret = fork();
 	if (pret == 0) {
@@ -29,12 +33,12 @@ int main(/*char *line*/)
 		//dup2(fd4, 0);
 		//close(fd[0]);
 		//close(fd[1]);
-		dup2(fd[0], 0);
-		dup2(fd1[1], 1);
+		//dup2(fd[0], 0);
+		dup2(fd[1], 1);
 		close(fd[0]);
 		close(fd[1]);
-		close(fd1[1]);
-		close(fd1[0]);
+		//close(fd1[1]);
+		//close(fd1[0]);
 		printf("child here2\n");
 		char *args[3] = {"/usr/bin/grp", "kek", 0};
 		execve(args[0], args, 0);

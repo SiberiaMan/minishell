@@ -1,5 +1,4 @@
-#include "minishell.h"
-#include "history.h"
+#include "parser.h"
 
 static size_t	redirect_syntax_2(const char *line, const char *mask, size_t i)
 {

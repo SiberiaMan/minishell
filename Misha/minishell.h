@@ -9,28 +9,31 @@
 #include <sys/wait.h>
 #include <stdlib.h>
 #include "history.h"
-#include "parser.h"
+#include "parser/parser.h"
 
-# define SYNTAX_ERR "syntax error near token "
-# define CMD_NF		"command not found"
-# define BACKSLASH  '5' // можно ли заменить на 5 // попробую заменить 2 -> 5
-# define FAKE_SPEC_SYMBOL '3' // можно ли заменить на 1 // пока не буду
-// менять, чтобы было удобнее смотреть результат // на продакт надо будет
-// заменить
-# define SPEC_SYMBOL '4'
-# define UNUSED_BACKSLASH '5'
-# define OPEN_QUOTE '6'
-# define CLOSE_QUOTE '7'
-# define SPACE_VISIBLE '8'
+typedef struct	s_line_n_mask
+{
+	const char	*line;
+	char		**env;
+	char		*mask;
+}				t_line_n_mask;
+
+typedef struct	s_pipes_n_pids
+{
+	int		**pipes;
+	int 	*pids;
+	size_t	cnt_pipes;
+}				t_pipes_n_pids;
 
 typedef	struct 		s_token
 {
-	char	*cmd;
 	char	**args;
 	int		pipe_from;
 	int 	pipe_to;
 	int 	fd_from;
 	int 	fd_to;
+	int 	is_from;
+	int 	is_to;
 }					t_token;
 
 typedef struct 		s_subtoken

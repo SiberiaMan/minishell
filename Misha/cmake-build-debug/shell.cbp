@@ -78,28 +78,28 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/Users/dchani/Desktop/project/Misha/backslash.c">
-			<Option target="shell"/>
-		</Unit>
 		<Unit filename="/Users/dchani/Desktop/project/Misha/libft_utills.c">
 			<Option target="shell"/>
 		</Unit>
 		<Unit filename="/Users/dchani/Desktop/project/Misha/minishell.h">
 			<Option target="shell"/>
 		</Unit>
-		<Unit filename="/Users/dchani/Desktop/project/Misha/parser.c">
+		<Unit filename="/Users/dchani/Desktop/project/Misha/parser/backslash.c">
 			<Option target="shell"/>
 		</Unit>
-		<Unit filename="/Users/dchani/Desktop/project/Misha/parser.h">
+		<Unit filename="/Users/dchani/Desktop/project/Misha/parser/parser.c">
+			<Option target="shell"/>
+		</Unit>
+		<Unit filename="/Users/dchani/Desktop/project/Misha/parser/parser.h">
+			<Option target="shell"/>
+		</Unit>
+		<Unit filename="/Users/dchani/Desktop/project/Misha/parser/quotes_handler.c">
+			<Option target="shell"/>
+		</Unit>
+		<Unit filename="/Users/dchani/Desktop/project/Misha/parser/syntax_err.c">
 			<Option target="shell"/>
 		</Unit>
 		<Unit filename="/Users/dchani/Desktop/project/Misha/pretokenizer_handler.c">
-			<Option target="shell"/>
-		</Unit>
-		<Unit filename="/Users/dchani/Desktop/project/Misha/quotes_handler.c">
-			<Option target="shell"/>
-		</Unit>
-		<Unit filename="/Users/dchani/Desktop/project/Misha/syntax_err.c">
 			<Option target="shell"/>
 		</Unit>
 		<Unit filename="/Users/dchani/Desktop/project/Misha/tokenizer_functions.c">

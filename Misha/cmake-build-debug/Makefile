@@ -142,33 +142,6 @@ shell/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/build
 .PHONY : shell/fast
 
-backslash.o: backslash.c.o
-
-.PHONY : backslash.o
-
-# target to build an object file
-backslash.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/backslash.c.o
-.PHONY : backslash.c.o
-
-backslash.i: backslash.c.i
-
-.PHONY : backslash.i
-
-# target to preprocess a source file
-backslash.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/backslash.c.i
-.PHONY : backslash.c.i
-
-backslash.s: backslash.c.s
-
-.PHONY : backslash.s
-
-# target to generate assembly for a file
-backslash.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/backslash.c.s
-.PHONY : backslash.c.s
-
 libft_utills.o: libft_utills.c.o
 
 .PHONY : libft_utills.o
@@ -196,32 +169,113 @@ libft_utills.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/libft_utills.c.s
 .PHONY : libft_utills.c.s
 
-parser.o: parser.c.o
+parser/backslash.o: parser/backslash.c.o
 
-.PHONY : parser.o
+.PHONY : parser/backslash.o
 
 # target to build an object file
-parser.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/parser.c.o
-.PHONY : parser.c.o
+parser/backslash.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/parser/backslash.c.o
+.PHONY : parser/backslash.c.o
 
-parser.i: parser.c.i
+parser/backslash.i: parser/backslash.c.i
 
-.PHONY : parser.i
+.PHONY : parser/backslash.i
 
 # target to preprocess a source file
-parser.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/parser.c.i
-.PHONY : parser.c.i
+parser/backslash.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/parser/backslash.c.i
+.PHONY : parser/backslash.c.i
 
-parser.s: parser.c.s
+parser/backslash.s: parser/backslash.c.s
 
-.PHONY : parser.s
+.PHONY : parser/backslash.s
 
 # target to generate assembly for a file
-parser.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/parser.c.s
-.PHONY : parser.c.s
+parser/backslash.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/parser/backslash.c.s
+.PHONY : parser/backslash.c.s
+
+parser/parser.o: parser/parser.c.o
+
+.PHONY : parser/parser.o
+
+# target to build an object file
+parser/parser.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/parser/parser.c.o
+.PHONY : parser/parser.c.o
+
+parser/parser.i: parser/parser.c.i
+
+.PHONY : parser/parser.i
+
+# target to preprocess a source file
+parser/parser.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/parser/parser.c.i
+.PHONY : parser/parser.c.i
+
+parser/parser.s: parser/parser.c.s
+
+.PHONY : parser/parser.s
+
+# target to generate assembly for a file
+parser/parser.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/parser/parser.c.s
+.PHONY : parser/parser.c.s
+
+parser/quotes_handler.o: parser/quotes_handler.c.o
+
+.PHONY : parser/quotes_handler.o
+
+# target to build an object file
+parser/quotes_handler.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/parser/quotes_handler.c.o
+.PHONY : parser/quotes_handler.c.o
+
+parser/quotes_handler.i: parser/quotes_handler.c.i
+
+.PHONY : parser/quotes_handler.i
+
+# target to preprocess a source file
+parser/quotes_handler.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/parser/quotes_handler.c.i
+.PHONY : parser/quotes_handler.c.i
+
+parser/quotes_handler.s: parser/quotes_handler.c.s
+
+.PHONY : parser/quotes_handler.s
+
+# target to generate assembly for a file
+parser/quotes_handler.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/parser/quotes_handler.c.s
+.PHONY : parser/quotes_handler.c.s
+
+parser/syntax_err.o: parser/syntax_err.c.o
+
+.PHONY : parser/syntax_err.o
+
+# target to build an object file
+parser/syntax_err.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/parser/syntax_err.c.o
+.PHONY : parser/syntax_err.c.o
+
+parser/syntax_err.i: parser/syntax_err.c.i
+
+.PHONY : parser/syntax_err.i
+
+# target to preprocess a source file
+parser/syntax_err.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/parser/syntax_err.c.i
+.PHONY : parser/syntax_err.c.i
+
+parser/syntax_err.s: parser/syntax_err.c.s
+
+.PHONY : parser/syntax_err.s
+
+# target to generate assembly for a file
+parser/syntax_err.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/parser/syntax_err.c.s
+.PHONY : parser/syntax_err.c.s
 
 pretokenizer_handler.o: pretokenizer_handler.c.o
 
@@ -249,60 +303,6 @@ pretokenizer_handler.s: pretokenizer_handler.c.s
 pretokenizer_handler.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/pretokenizer_handler.c.s
 .PHONY : pretokenizer_handler.c.s
-
-quotes_handler.o: quotes_handler.c.o
-
-.PHONY : quotes_handler.o
-
-# target to build an object file
-quotes_handler.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/quotes_handler.c.o
-.PHONY : quotes_handler.c.o
-
-quotes_handler.i: quotes_handler.c.i
-
-.PHONY : quotes_handler.i
-
-# target to preprocess a source file
-quotes_handler.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/quotes_handler.c.i
-.PHONY : quotes_handler.c.i
-
-quotes_handler.s: quotes_handler.c.s
-
-.PHONY : quotes_handler.s
-
-# target to generate assembly for a file
-quotes_handler.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/quotes_handler.c.s
-.PHONY : quotes_handler.c.s
-
-syntax_err.o: syntax_err.c.o
-
-.PHONY : syntax_err.o
-
-# target to build an object file
-syntax_err.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/syntax_err.c.o
-.PHONY : syntax_err.c.o
-
-syntax_err.i: syntax_err.c.i
-
-.PHONY : syntax_err.i
-
-# target to preprocess a source file
-syntax_err.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/syntax_err.c.i
-.PHONY : syntax_err.c.i
-
-syntax_err.s: syntax_err.c.s
-
-.PHONY : syntax_err.s
-
-# target to generate assembly for a file
-syntax_err.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/syntax_err.c.s
-.PHONY : syntax_err.c.s
 
 tokenizer_functions.o: tokenizer_functions.c.o
 
@@ -340,24 +340,24 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... shell"
-	@echo "... backslash.o"
-	@echo "... backslash.i"
-	@echo "... backslash.s"
 	@echo "... libft_utills.o"
 	@echo "... libft_utills.i"
 	@echo "... libft_utills.s"
-	@echo "... parser.o"
-	@echo "... parser.i"
-	@echo "... parser.s"
+	@echo "... parser/backslash.o"
+	@echo "... parser/backslash.i"
+	@echo "... parser/backslash.s"
+	@echo "... parser/parser.o"
+	@echo "... parser/parser.i"
+	@echo "... parser/parser.s"
+	@echo "... parser/quotes_handler.o"
+	@echo "... parser/quotes_handler.i"
+	@echo "... parser/quotes_handler.s"
+	@echo "... parser/syntax_err.o"
+	@echo "... parser/syntax_err.i"
+	@echo "... parser/syntax_err.s"
 	@echo "... pretokenizer_handler.o"
 	@echo "... pretokenizer_handler.i"
 	@echo "... pretokenizer_handler.s"
-	@echo "... quotes_handler.o"
-	@echo "... quotes_handler.i"
-	@echo "... quotes_handler.s"
-	@echo "... syntax_err.o"
-	@echo "... syntax_err.i"
-	@echo "... syntax_err.s"
 	@echo "... tokenizer_functions.o"
 	@echo "... tokenizer_functions.i"
 	@echo "... tokenizer_functions.s"
