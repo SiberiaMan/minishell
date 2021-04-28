@@ -27,5 +27,6 @@ void ft_putstr(char *str);
 char	**ft_split(char const *s, char c);
 char	*normal_form(char *line);
 char 	*normal_space_form(char *line);
+int		ft_isalpha(int c);
 
 #endif

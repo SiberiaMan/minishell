@@ -14,6 +14,8 @@ static size_t	get_cnt_after_equal(char *line)
 	return (cnt);
 }
 
+
+
 static size_t get_cnt_env(t_line_n_mask l_n_m, size_t *start, size_t j)
 {
 	size_t	cnt;
@@ -26,12 +28,12 @@ static size_t get_cnt_env(t_line_n_mask l_n_m, size_t *start, size_t j)
 	///if (!env)
 		/// exit
 	while (*start < j)
-		env[i++] = l_n_m.line[*start++];
+		env[i++] = l_n_m.line[(*start)++];
 	env[i] = '\0';
 	j = 0;
 	while (l_n_m.env[j])
 	{
-		if (ft_strncmp(env, l_n_m.env[j], ft_strlen(env)))
+		if (!(ft_strncmp(env, l_n_m.env[j], ft_strlen(env))))
 		{
 			free(env);
 			return (get_cnt_after_equal(l_n_m.env[j]));
@@ -59,10 +61,7 @@ static size_t get_cnt_dollar(t_line_n_mask l_n_m, size_t *start)
 		*start += 2;
 		return (2); // cnt for dollar and space
 	}
-	while (l_n_m.line[j] && !(l_n_m.line[j] == '\"' && l_n_m.mask[j] == '7')
-	&& !(l_n_m.line[j] == ' ' && l_n_m.mask[j] == '1')
-	&& !(l_n_m.line[j] == '$' && l_n_m.mask[j] == SPEC_SYMBOL)
-	&& !(l_n_m.line[j] == '\\' && l_n_m.mask[j] == UNUSED_BACKSLASH))
+	while (l_n_m.line[j] && (ft_isalpha(l_n_m.line[j]) || l_n_m.line[j] == '_'))
 		j++;
 	return (get_cnt_env(l_n_m, start, j)); // cnt for env var
 }
@@ -77,7 +76,7 @@ static size_t get_cnt_redirect(t_line_n_mask l_n_m, size_t start)
 		start++;
 	while (l_n_m.line[start] && ((l_n_m.mask[start] == '1'
 	&& !(l_n_m.mask[start] == '1' && l_n_m.line[start] == ' '))
-	|| (l_n_m.mask[start] == '$' && l_n_m.mask[start] == UNUSED_BACKSLASH)))
+	|| (l_n_m.line[start] == '$') || (l_n_m.mask[start] == UNUSED_BACKSLASH)))
 	{
 		if (l_n_m.line[start] == '\\' && l_n_m.mask[start] == '5')
 			start++;
@@ -125,12 +124,12 @@ static char	*get_env_string(t_line_n_mask l_n_m, size_t *start, size_t j)
 	///if (!env_lvalue)
 		/// exit
 	while (*start < j)
-		env_lvalue[i++] = l_n_m.line[*start++];
+		env_lvalue[i++] = l_n_m.line[(*start)++];
 	env_lvalue[i] = '\0';
 	j = 0;
 	while (l_n_m.env[j])
 	{
-		if (ft_strncmp(l_n_m.env[j], env_lvalue, ft_strlen(env_lvalue)))
+		if (!(ft_strncmp(l_n_m.env[j], env_lvalue, ft_strlen(env_lvalue))))
 		{
 			free(env_lvalue);
 			return (get_env_rvalue(l_n_m.env[j]));
@@ -149,7 +148,7 @@ static void	append_line(char *line, char *env, size_t *i)
 	while (env[j])
 		line[(*i)++] = env[j++];
 }
-
+// TODO start++ > limits
 static void	handle_string_dollar(t_line_n_mask l_n_m, char *line,
 size_t *start, size_t *i)
 {
@@ -172,10 +171,7 @@ size_t *start, size_t *i)
 		(*start) += 2;
 		return ; // cnt for dollar and space
 	}
-	while (l_n_m.line[j] && !(l_n_m.line[j] == '\"' && l_n_m.mask[j] == '7')
-	&& !(l_n_m.line[j] == ' ' && l_n_m.mask[j] == '1') && !(l_n_m.line[j] == '$'
-	&& l_n_m.mask[j] == SPEC_SYMBOL) && !(l_n_m.line[j] == '\\'
-	&& l_n_m.mask[j] == UNUSED_BACKSLASH))
+	while (l_n_m.line[j] && (ft_isalpha(l_n_m.line[j]) || l_n_m.line[j] == '_'))
 		j++;
 	env = get_env_string(l_n_m, start, j);
 	append_line(line, env, i);
@@ -188,7 +184,7 @@ char	*get_redirect(t_line_n_mask l_n_m, size_t start, char **line) // not 25
 
 	i = 0;
 	if (*line)
-		free(line);
+		free(*line);
 	cnt = get_cnt_redirect(l_n_m, start); // big function
 	*line = (char*)malloc(sizeof(char) * cnt + 1);
 	////if (!line)
@@ -198,7 +194,7 @@ char	*get_redirect(t_line_n_mask l_n_m, size_t start, char **line) // not 25
 		start++;
 	while (l_n_m.line[start] && ((l_n_m.mask[start] == '1'
 	&& !(l_n_m.mask[start] == '1' && l_n_m.line[start] == ' '))
-	|| (l_n_m.mask[start] == '$') || (l_n_m.mask[start] == UNUSED_BACKSLASH)))
+	|| (l_n_m.line[start] == '$') || (l_n_m.mask[start] == UNUSED_BACKSLASH)))
 	{
 		if ((l_n_m.line[start] == '\\' && l_n_m.mask[start] == UNUSED_BACKSLASH)
 		|| (l_n_m.mask[start] == OPEN_QUOTE) || (l_n_m.mask[start] ==
@@ -214,22 +210,46 @@ char	*get_redirect(t_line_n_mask l_n_m, size_t start, char **line) // not 25
 	return (*line);
 }
 
-int	redirect_error(char *line)
+int	redirect_error(int *fd_to, int *fd_from, char **line)
 {
-	char *error;
+	DIR	*dir;
+	char *not_file_error;
+	char *is_a_directory;
 
-	error = ": No such file or directory\n";
-	write(2, line, ft_strlen(line));
-	write(2, error, ft_strlen(error)); ///status?
-	return (0);
+	is_a_directory = ": is a directory\n";
+	not_file_error = ": No such file or directory\n";
+	if (*line)
+	{
+		dir = opendir(*line);
+		if (dir)
+		{
+			write(2, *line, ft_strlen(*line));
+			write(2, is_a_directory, ft_strlen(is_a_directory));
+			free(*line);
+			*line = 0;
+			return (0);
+		}
+	}
+	if (*line && (*fd_from < 0 || *fd_to < 0))
+	{
+		if (*fd_from < 0)
+			*fd_from = 0;
+		if (*fd_to < 0)
+			*fd_to = 0;
+		write(2, *line, ft_strlen(*line));
+		write(2, not_file_error, ft_strlen(not_file_error)); ///status?
+		free(*line);
+		*line = 0;
+		return (0);
+	}
+	return (1);
 }
+
+// TODO i + 2, i + 1
 
 static int 	handle_redirects(t_line_n_mask l_n_m, t_pipes_n_pids p_n_pds,
 t_token *token, size_t i)
 {
-	int		fdin;
-	int		fdout;
-
 	while (l_n_m.line[i] && !(l_n_m.line[i] == '|' && l_n_m.mask[i] ==
 	SPEC_SYMBOL) && (l_n_m.mask[i] != CURRENT_SPLIT))
 	{
@@ -239,18 +259,21 @@ t_token *token, size_t i)
 					O_RDONLY);
 		else if (l_n_m.line[i] == '<' && l_n_m.mask[i] == SPEC_SYMBOL
 		&& l_n_m.line[i + 1] == '<')
-			token->fd_from = open(get_redirect(l_n_m, i + 2, token->line),
+			token->fd_from = open(get_redirect(l_n_m, i + 2, &(token->line)),
 					  O_RDONLY);
 		else if (l_n_m.line[i] == '>' && l_n_m.mask[i] == SPEC_SYMBOL
 		&& l_n_m.line[i + 1] != '>')
-			token->fd_to = open(get_redirect(l_n_m, i + 1, 0), O_WRONLY |
-			O_TRUNC | O_CREAT);
+			token->fd_to = open(get_redirect(l_n_m, i + 1, &(token->line)),O_RDWR |
+			O_CREAT | O_TRUNC);
 		else if (l_n_m.line[i] == '>' && l_n_m.mask[i] == SPEC_SYMBOL
 		&& l_n_m.line[i + 1] == '>')
-			token->fd_to = open(get_redirect(l_n_m, i + 2, 0), O_WRONLY |
+			token->fd_to = open(get_redirect(l_n_m, i + 2, &(token->line)), O_WRONLY |
 			O_APPEND | O_CREAT);
-		if (token->fd_from < 0)
-			return (redirect_error(token->line));
+		redirect_error(&(token->fd_to), &(token->fd_from), &(token->line)); //
+		// Просто
+		// выдаем
+		// ошибку,
+		// продолжаем идти дальше
 		i++;
 	}
 	return (1);
@@ -383,7 +406,7 @@ int main(int argc, char **argv, char **env) {
 
 	(void)argc;
 	(void)argv;
-	char line[] = "cat < kek";
+	char line[] = "cat < $PATH";
 	if (!parse_n_execute(line, env, &status))
 		return (0);
 }

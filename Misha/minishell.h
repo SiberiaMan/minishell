@@ -10,6 +10,7 @@
 #include <stdlib.h>
 #include "history.h"
 #include "parser/parser.h"
+#include <dirent.h>
 
 typedef struct	s_line_n_mask
 {

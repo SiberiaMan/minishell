@@ -32,6 +32,14 @@ void	ft_bzero(void *s, size_t n)
 		str[n] = '\0';
 }
 
+int			ft_isalpha(int c)
+{
+	if ((('a' <= c) && (c <= 'z'))
+		|| (('A' <= c) && (c <= 'Z')))
+		return (1);
+	return (0);
+}
+
 void	*ft_calloc(size_t count, size_t size)
 {
 	char *str;

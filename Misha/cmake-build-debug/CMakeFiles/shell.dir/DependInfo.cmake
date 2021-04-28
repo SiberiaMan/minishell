@@ -4,15 +4,15 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "/Users/dchani/Desktop/project/Misha/libft_utills.c" "/Users/dchani/Desktop/project/Misha/cmake-build-debug/CMakeFiles/shell.dir/libft_utills.c.o"
-  "/Users/dchani/Desktop/project/Misha/parser/backslash.c" "/Users/dchani/Desktop/project/Misha/cmake-build-debug/CMakeFiles/shell.dir/parser/backslash.c.o"
-  "/Users/dchani/Desktop/project/Misha/parser/parser.c" "/Users/dchani/Desktop/project/Misha/cmake-build-debug/CMakeFiles/shell.dir/parser/parser.c.o"
-  "/Users/dchani/Desktop/project/Misha/parser/quotes_handler.c" "/Users/dchani/Desktop/project/Misha/cmake-build-debug/CMakeFiles/shell.dir/parser/quotes_handler.c.o"
-  "/Users/dchani/Desktop/project/Misha/parser/syntax_err.c" "/Users/dchani/Desktop/project/Misha/cmake-build-debug/CMakeFiles/shell.dir/parser/syntax_err.c.o"
-  "/Users/dchani/Desktop/project/Misha/pretokenizer_handler.c" "/Users/dchani/Desktop/project/Misha/cmake-build-debug/CMakeFiles/shell.dir/pretokenizer_handler.c.o"
-  "/Users/dchani/Desktop/project/Misha/tokenizer_functions.c" "/Users/dchani/Desktop/project/Misha/cmake-build-debug/CMakeFiles/shell.dir/tokenizer_functions.c.o"
+  "/home/phili/Desktop/project/Misha/libft_utills.c" "/home/phili/Desktop/project/Misha/cmake-build-debug/CMakeFiles/shell.dir/libft_utills.c.o"
+  "/home/phili/Desktop/project/Misha/parser/backslash.c" "/home/phili/Desktop/project/Misha/cmake-build-debug/CMakeFiles/shell.dir/parser/backslash.c.o"
+  "/home/phili/Desktop/project/Misha/parser/parser.c" "/home/phili/Desktop/project/Misha/cmake-build-debug/CMakeFiles/shell.dir/parser/parser.c.o"
+  "/home/phili/Desktop/project/Misha/parser/quotes_handler.c" "/home/phili/Desktop/project/Misha/cmake-build-debug/CMakeFiles/shell.dir/parser/quotes_handler.c.o"
+  "/home/phili/Desktop/project/Misha/parser/syntax_err.c" "/home/phili/Desktop/project/Misha/cmake-build-debug/CMakeFiles/shell.dir/parser/syntax_err.c.o"
+  "/home/phili/Desktop/project/Misha/pretokenizer_handler.c" "/home/phili/Desktop/project/Misha/cmake-build-debug/CMakeFiles/shell.dir/pretokenizer_handler.c.o"
+  "/home/phili/Desktop/project/Misha/tokenizer_functions.c" "/home/phili/Desktop/project/Misha/cmake-build-debug/CMakeFiles/shell.dir/tokenizer_functions.c.o"
   )
-set(CMAKE_C_COMPILER_ID "AppleClang")
+set(CMAKE_C_COMPILER_ID "GNU")
 
 # The include file search paths:
 set(CMAKE_C_TARGET_INCLUDE_PATH
