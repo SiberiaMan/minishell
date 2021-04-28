@@ -16,6 +16,7 @@ typedef struct	s_line_n_mask
 	const char	*line;
 	char		**env;
 	char		*mask;
+	char		*history;
 }				t_line_n_mask;
 
 typedef struct	s_pipes_n_pids
@@ -28,6 +29,7 @@ typedef struct	s_pipes_n_pids
 typedef	struct 		s_token
 {
 	char	**args;
+	char	*line;
 	int		pipe_from;
 	int 	pipe_to;
 	int 	fd_from;
@@ -44,7 +46,6 @@ typedef struct 		s_subtoken
 	int 	infile;
 }					t_subtoken;
 
-void	print_syntax_err(char *err);
 char 	*get_mask_normal(char *line);
 char 	*get_mask_real(char *line);
 size_t	quotes_handler(char *line, char *mask);

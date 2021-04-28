@@ -12,6 +12,16 @@ static size_t	redirect_syntax_2(const char *line, const char *mask, size_t i)
 			&& line[i + 1] == '>' && mask[i + 1] == SPEC_SYMBOL
 			&& line[i + 2] && line[i + 2] == '>' && mask[i + 2] == SPEC_SYMBOL))
 		return (0);
+	if ((line[i] == '<' && mask[i] == SPEC_SYMBOL) || (line[i] == '>'
+	&& mask[i] == SPEC_SYMBOL))
+	{
+		i++;
+		while (line[i] && ((line[i] == ' ' && mask[i] == '1')
+		|| (mask[i] == UNUSED_BACKSLASH)))
+			i++;
+		if (!line[i])
+			return (0);
+	}
 	return (1);
 }
 
@@ -35,7 +45,7 @@ static size_t	redirect_syntax_1(const char *line, const char *mask, size_t i)
 	return (1);
 }
 
-static size_t	redirect_syntax(const char *line, const char *mask)
+static size_t	redirect_syntax(const char *line, const char *mask, char *c)
 {
 	size_t	i;
 
@@ -44,7 +54,10 @@ static size_t	redirect_syntax(const char *line, const char *mask)
 	{
 		if (!redirect_syntax_1(line, mask, i)
 			|| !redirect_syntax_2(line, mask, i))
+		{
+			*c = line[i];
 			return (0);
+		}
 		i++;
 	}
 	return (1);
@@ -59,12 +72,13 @@ int *j, int *k)
 		(*k)--;
 }
 
-static size_t	pipe_syntax(const char *line, const char *mask)
+static size_t	pipe_syntax(const char *line, const char *mask, char *c)
 {
 	int	i;
 	int	j;
 	int	k;
 
+	*c = '|';
 	i = 0;
 	while (i < ft_strlen(line))
 	{
@@ -85,12 +99,13 @@ static size_t	pipe_syntax(const char *line, const char *mask)
 	return (1);
 }
 
-static size_t	semicolon_syntax(const char *line, const char *mask)
+static size_t	semicolon_syntax(const char *line, const char *mask, char *c)
 {
 	int	i;
 	int	j;
 	int	k;
 
+	*c = ';';
 	i = 0;
 	while (i < ft_strlen(line))
 	{
@@ -112,19 +127,21 @@ static size_t	semicolon_syntax(const char *line, const char *mask)
 
 int	parser(const char *line, const char *mask) // get normal form
 {
-	if (!redirect_syntax(line, mask))
+	char	c;
+
+	if (!redirect_syntax(line, mask, &c))
 	{
-		print_syntax_err("'<'\n");
+		print_syntax_err(c);
 		return (0);
 	}
-	if (!pipe_syntax(line, mask))
+	if (!pipe_syntax(line, mask, &c))
 	{
-		print_syntax_err("|\n");
+		print_syntax_err(c);
 		return (0);
 	}
-	if (!semicolon_syntax(line, mask))
+	if (!semicolon_syntax(line, mask, &c))
 	{
-		print_syntax_err(";\n");
+		print_syntax_err(c);
 		return (0);
 	}
 	return (1);

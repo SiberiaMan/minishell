@@ -13,6 +13,7 @@ typedef struct s_list
 } t_list;
 
 char	*ft_strjoin(char const *s1, char const *s2);
+int		ft_strncmp(const char *s1, const char *s2, size_t n);
 char 	*ft_strjoin_space(char const *s1, char const *s2);
 char	*ft_strdup(const char *s1);
 int	lst_create_add(t_list **lst, char *line);
