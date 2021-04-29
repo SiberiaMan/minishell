@@ -1,5 +1,19 @@
 #include "minishell.h"
 
+t_token token_init(void)
+{
+	return ((t_token) {
+			.args = 0,
+			.line = 0,
+			.fd_from = 0,
+			.fd_to = 0,
+			.pipe_to = 0,
+			.pipe_from = 0,
+			.is_from = 0,
+			.is_to = 0
+	});
+}
+
 static size_t	get_cnt_after_equal(char *line)
 {
 	size_t	cnt;
@@ -33,7 +47,7 @@ static size_t get_cnt_env(t_line_n_mask l_n_m, size_t *start, size_t j)
 	j = 0;
 	while (l_n_m.env[j])
 	{
-		if (!(ft_strncmp(env, l_n_m.env[j], ft_strlen(env))))
+		if (!(ft_strncmp(env, l_n_m.env[j], ft_strlen(l_n_m.env[j]))))
 		{
 			free(env);
 			return (get_cnt_after_equal(l_n_m.env[j]));
@@ -44,26 +58,47 @@ static size_t get_cnt_env(t_line_n_mask l_n_m, size_t *start, size_t j)
 	return (0);
 }
 
+static size_t get_cnt_status(int status)
+{
+	char	*line;
+	size_t 	cnt;
+
+	line = ft_itoa(status);
+	///if (!line)
+		///exit
+	cnt = ft_strlen(line);
+	free(line);
+	return (cnt);
+}
+
 static size_t get_cnt_dollar(t_line_n_mask l_n_m, size_t *start)
 {
 	size_t 	j;
 
 	(*start)++;
 	j = *start;
-	if (!l_n_m.line[*start] || l_n_m.line[*start] == ' ')
+	if (!l_n_m.mask[j] || (!ft_isalpha(l_n_m.line[j])
+	&& l_n_m.line[j] != '_' && l_n_m.line[j] != '?'))
 	{
 		(*start)++;
-		return (1); // cnt for dollar
+		return (1);
 	}
-	if ((l_n_m.mask[*start] == UNUSED_BACKSLASH && l_n_m.line[*start + 1]
-	&& l_n_m.mask[*start + 1] == SPACE_VISIBLE))
-	{
-		*start += 2;
-		return (2); // cnt for dollar and space
-	}
+	if (l_n_m.line[j] == '?')
+		return (get_cnt_status(l_n_m.status));
 	while (l_n_m.line[j] && (ft_isalpha(l_n_m.line[j]) || l_n_m.line[j] == '_'))
 		j++;
 	return (get_cnt_env(l_n_m, start, j)); // cnt for env var
+}
+
+static size_t condition(t_line_n_mask l_n_m, size_t start)
+{
+	if (l_n_m.line[start] && ((l_n_m.mask[start] == '1'
+	&& !(l_n_m.mask[start] == '1' && l_n_m.line[start] == ' '))
+	|| (l_n_m.line[start] == '$') || (l_n_m.mask[start] == UNUSED_BACKSLASH)
+	|| (l_n_m.mask[start] == OPEN_QUOTE) || (l_n_m.mask[start] == CLOSE_QUOTE)
+	|| (l_n_m.mask[start] == SPACE_VISIBLE)))
+		return (1);
+	return (0);
 }
 
 static size_t get_cnt_redirect(t_line_n_mask l_n_m, size_t start)
@@ -74,13 +109,13 @@ static size_t get_cnt_redirect(t_line_n_mask l_n_m, size_t start)
 	while ((l_n_m.line[start] == ' ' && l_n_m.mask[start] == '1')
 	|| (l_n_m.mask[start] == UNUSED_BACKSLASH))
 		start++;
-	while (l_n_m.line[start] && ((l_n_m.mask[start] == '1'
-	&& !(l_n_m.mask[start] == '1' && l_n_m.line[start] == ' '))
-	|| (l_n_m.line[start] == '$') || (l_n_m.mask[start] == UNUSED_BACKSLASH)))
+	while (condition(l_n_m, start))
 	{
-		if (l_n_m.line[start] == '\\' && l_n_m.mask[start] == '5')
+		if ((l_n_m.line[start] == '\\' && l_n_m.mask[start] == UNUSED_BACKSLASH)
+		|| (l_n_m.mask[start] == OPEN_QUOTE)
+		|| (l_n_m.mask[start] == CLOSE_QUOTE))
 			start++;
-		else if (l_n_m.mask[start] == '1')
+		else if (l_n_m.mask[start] == '1' || l_n_m.mask[start] == SPACE_VISIBLE)
 		{
 			cnt++;
 			start++;
@@ -120,7 +155,7 @@ static char	*get_env_string(t_line_n_mask l_n_m, size_t *start, size_t j)
 
 	i = 0;
 	cnt = j - *start;
-	env_lvalue = (char*)malloc(sizeof(cnt) + 1);
+	env_lvalue = (char*)malloc(sizeof(char) * cnt + 1);
 	///if (!env_lvalue)
 		/// exit
 	while (*start < j)
@@ -129,7 +164,7 @@ static char	*get_env_string(t_line_n_mask l_n_m, size_t *start, size_t j)
 	j = 0;
 	while (l_n_m.env[j])
 	{
-		if (!(ft_strncmp(l_n_m.env[j], env_lvalue, ft_strlen(env_lvalue))))
+		if (!(ft_strncmp(l_n_m.env[j], env_lvalue, ft_strlen(l_n_m.env[j]))))
 		{
 			free(env_lvalue);
 			return (get_env_rvalue(l_n_m.env[j]));
@@ -137,7 +172,7 @@ static char	*get_env_string(t_line_n_mask l_n_m, size_t *start, size_t j)
 		j++;
 	}
 	free(env_lvalue);
-	return ("");
+	return (ft_strdup("")); ///TODO
 }
 
 static void	append_line(char *line, char *env, size_t *i)
@@ -147,8 +182,26 @@ static void	append_line(char *line, char *env, size_t *i)
 	j = 0;
 	while (env[j])
 		line[(*i)++] = env[j++];
+	free(env);
 }
 // TODO start++ > limits
+
+static void	handle_string_question(t_line_n_mask l_n_m, char *line, size_t *i)
+{
+	char	*str;
+	size_t	len;
+	size_t	j;
+
+	str = ft_itoa(l_n_m.status);
+	j = 0;
+	len = ft_strlen(str);
+	///if (!str)
+		///exit
+	while (j < len)
+		line[(*i)++] = str[j++];
+	free(str);
+}
+
 static void	handle_string_dollar(t_line_n_mask l_n_m, char *line,
 size_t *start, size_t *i)
 {
@@ -157,19 +210,18 @@ size_t *start, size_t *i)
 
 	(*start)++;
 	j = *start;
-	if (!l_n_m.line[*start] || l_n_m.line[*start] == ' ')
+	if (!l_n_m.mask[*start] || (!ft_isalpha(l_n_m.line[j])
+	&& l_n_m.line[j] != '_' && l_n_m.line[j] != '?'))
 	{
 		line[(*i)++] = '$';
 		(*start)++;
 		return ;
 	}
-	if ((l_n_m.mask[*start] == '5' && l_n_m.line[*start + 1]
-	&& l_n_m.mask[*start + 1] == SPACE_VISIBLE))
+	if (l_n_m.line[j] == '?')
 	{
-		line[(*i)++] = '$';
-		line[(*i)++] = ' ';
-		(*start) += 2;
-		return ; // cnt for dollar and space
+		handle_string_question(l_n_m, line, i);
+		(*start)++;
+		return ;
 	}
 	while (l_n_m.line[j] && (ft_isalpha(l_n_m.line[j]) || l_n_m.line[j] == '_'))
 		j++;
@@ -177,12 +229,20 @@ size_t *start, size_t *i)
 	append_line(line, env, i);
 }
 
-char	*get_redirect(t_line_n_mask l_n_m, size_t start, char **line) // not 25
+static void	change_mask(t_line_n_mask l_n_m, size_t j, size_t start)
+{
+	while (j < start)
+		l_n_m.mask[j++] = UNUSED_SYMBOL;
+}
+
+char	*get_redir(t_line_n_mask l_n_m, size_t start, char **line) // not 25
 {
 	size_t	cnt;
 	size_t 	i;
+	size_t	j;
 
 	i = 0;
+	j = start;
 	if (*line)
 		free(*line);
 	cnt = get_cnt_redirect(l_n_m, start); // big function
@@ -192,25 +252,22 @@ char	*get_redirect(t_line_n_mask l_n_m, size_t start, char **line) // not 25
 	while ((l_n_m.line[start] == ' ' && l_n_m.mask[start] == '1')
 	|| (l_n_m.mask[start] == UNUSED_BACKSLASH))
 		start++;
-	while (l_n_m.line[start] && ((l_n_m.mask[start] == '1'
-	&& !(l_n_m.mask[start] == '1' && l_n_m.line[start] == ' '))
-	|| (l_n_m.line[start] == '$') || (l_n_m.mask[start] == UNUSED_BACKSLASH)))
-	{
+	while (condition(l_n_m, start))
 		if ((l_n_m.line[start] == '\\' && l_n_m.mask[start] == UNUSED_BACKSLASH)
 		|| (l_n_m.mask[start] == OPEN_QUOTE) || (l_n_m.mask[start] ==
 		CLOSE_QUOTE))
 			start++;
-		else if (l_n_m.mask[start] == '1')
+		else if (l_n_m.mask[start] == '1' || l_n_m.mask[start] == SPACE_VISIBLE)
 			(*line)[i++] = l_n_m.line[start++];
 		else if (l_n_m.line[start] == '$' && l_n_m.mask[start] == SPEC_SYMBOL)
 			handle_string_dollar(l_n_m, *line, &start, &i);
-	}
+	change_mask(l_n_m, j, start);
 	(*line)[i] = '\0';
 	printf("%s\n", *line);
 	return (*line);
 }
 
-int	redirect_error(int *fd_to, int *fd_from, char **line)
+int	redirect_error(t_token *token, t_line_n_mask *l_n_m)
 {
 	DIR	*dir;
 	char *not_file_error;
@@ -218,95 +275,189 @@ int	redirect_error(int *fd_to, int *fd_from, char **line)
 
 	is_a_directory = ": is a directory\n";
 	not_file_error = ": No such file or directory\n";
-	if (*line)
+	if (token->line)
 	{
-		dir = opendir(*line);
+		dir = opendir(token->line);
 		if (dir)
 		{
-			write(2, *line, ft_strlen(*line));
+			token->status = 1;
+			write(2, token->line, ft_strlen(token->line));
 			write(2, is_a_directory, ft_strlen(is_a_directory));
-			free(*line);
-			*line = 0;
+			free(token->line);
+			token->line = 0;
 			return (0);
 		}
 	}
-	if (*line && (*fd_from < 0 || *fd_to < 0))
+	if (token->line && (token->fd_from < 0 || token->fd_to < 0))
 	{
-		if (*fd_from < 0)
-			*fd_from = 0;
-		if (*fd_to < 0)
-			*fd_to = 0;
-		write(2, *line, ft_strlen(*line));
+		if (token->fd_from < 0)
+			token->fd_from = 0;
+		if (token->fd_to < 0)
+			token->fd_to = 0;
+		l_n_m->status = 1;
+		write(2, token->line, ft_strlen(token->line));
 		write(2, not_file_error, ft_strlen(not_file_error)); ///status?
-		free(*line);
-		*line = 0;
+		free(token->line);
+		token->line = 0;
 		return (0);
 	}
 	return (1);
 }
 
-// TODO i + 2, i + 1
+static size_t	condition_redirects_1(t_line_n_mask l_n_m, size_t i, char c)
+{
+	if (l_n_m.line[i] == c && l_n_m.mask[i] == SPEC_SYMBOL
+	&& l_n_m.line[i + 1] != c)
+		return (1);
+	return (0);
+}
 
-static int 	handle_redirects(t_line_n_mask l_n_m, t_pipes_n_pids p_n_pds,
+static size_t	condition_redirects_2(t_line_n_mask l_n_m, size_t i, char c)
+{
+	if (l_n_m.line[i] == c && l_n_m.mask[i] == SPEC_SYMBOL
+	&& l_n_m.line[i + 1] == c && l_n_m.mask[i + 1] == SPEC_SYMBOL)
+		return (1);
+	return (0);
+}
+
+static void	handle_redirects(t_line_n_mask l_n_m, t_pipes_n_pids p_n_pds,
 t_token *token, size_t i)
 {
 	while (l_n_m.line[i] && !(l_n_m.line[i] == '|' && l_n_m.mask[i] ==
 	SPEC_SYMBOL) && (l_n_m.mask[i] != CURRENT_SPLIT))
 	{
-		if (l_n_m.line[i] == '<' && l_n_m.mask[i] == SPEC_SYMBOL
-		&& l_n_m.line[i + 1] != '<')
-			token->fd_from = open(get_redirect(l_n_m, i + 1, &(token->line)),
-					O_RDONLY);
-		else if (l_n_m.line[i] == '<' && l_n_m.mask[i] == SPEC_SYMBOL
-		&& l_n_m.line[i + 1] == '<')
-			token->fd_from = open(get_redirect(l_n_m, i + 2, &(token->line)),
-					  O_RDONLY);
-		else if (l_n_m.line[i] == '>' && l_n_m.mask[i] == SPEC_SYMBOL
-		&& l_n_m.line[i + 1] != '>')
-			token->fd_to = open(get_redirect(l_n_m, i + 1, &(token->line)),O_RDWR |
-			O_CREAT | O_TRUNC);
-		else if (l_n_m.line[i] == '>' && l_n_m.mask[i] == SPEC_SYMBOL
-		&& l_n_m.line[i + 1] == '>')
-			token->fd_to = open(get_redirect(l_n_m, i + 2, &(token->line)), O_WRONLY |
-			O_APPEND | O_CREAT);
-		redirect_error(&(token->fd_to), &(token->fd_from), &(token->line)); //
-		// Просто
-		// выдаем
-		// ошибку,
-		// продолжаем идти дальше
+		if (condition_redirects_1(l_n_m, i, '<'))
+			token->fd_from = open(get_redir(l_n_m, i + 1, &(token->line)),
+			O_RDONLY);
+		else if (condition_redirects_2(l_n_m, i, '<'))
+		{
+			token->fd_from = open(get_redir(l_n_m, i + 2, &(token->line)),
+			O_RDONLY);
+			i++;
+		}
+		else if (condition_redirects_1(l_n_m, i, '>'))
+			token->fd_to = open(get_redir(l_n_m, i + 1, &(token->line)), O_RDWR
+			| O_CREAT | O_TRUNC, S_IREAD | S_IWRITE | S_IRGRP | S_IROTH);
+		else if (condition_redirects_2(l_n_m, i, '>'))
+		{
+			token->fd_to = open(get_redir(l_n_m, i + 2, &(token->line)),
+			O_RDWR | O_APPEND | O_CREAT, S_IREAD | S_IWRITE | S_IRGRP |
+			S_IROTH);
+			i++;
+		}
+		redirect_error(token, &l_n_m);
 		i++;
 	}
-	return (1);
 }
 
-t_token tokenizer(t_line_n_mask l_n_m, t_pipes_n_pids p_n_pds, size_t *i,
-int j)
+static size_t	condition_cmd_limits(t_line_n_mask l_n_m, size_t i)
 {
-	t_token temp;
-
-	if (j == 0)
-		temp.pipe_from = 0;
-	if (j == p_n_pds.cnt_pipes)
-		temp.pipe_to = 0;
-
+	if (l_n_m.line[i] && !(l_n_m.line[i] == '|'
+	&& l_n_m.mask[i] == SPEC_SYMBOL) && (l_n_m.mask[i] != CURRENT_SPLIT))
+		return (1);
+	return (0);
 }
 
-t_token token_init(void)
+static void	get_cnt_to_next_arg(t_line_n_mask l_n_m, size_t *i)
 {
-	return ((t_token) {
-		.args = 0,
-		.line = 0,
-		.fd_from = 0,
-		.fd_to = 0,
-		.pipe_to = 0,
-		.pipe_from = 0,
-		.is_from = 0,
-		.is_to = 0
-	});
+	while (condition_cmd_limits(l_n_m, *i)
+	&& !(l_n_m.line[*i] == ' ' && l_n_m.mask[*i] == '1')
+	&& !(l_n_m.mask[*i] == SPEC_SYMBOL && l_n_m.line[*i] != '$')
+	&& l_n_m.mask[*i] != CLOSE_QUOTE && l_n_m.mask[*i] != OPEN_QUOTE)
+		(*i)++;
+}
+
+static size_t	get_cnt_cmds(t_line_n_mask l_n_m, t_token *token, size_t i)
+{
+	size_t cnt;
+
+	cnt = 0;
+	while (condition_cmd_limits(l_n_m, i))
+	{
+		if (l_n_m.mask[i] == UNUSED_BACKSLASH || l_n_m.mask[i] == OPEN_QUOTE
+		|| l_n_m.mask[i] == CLOSE_QUOTE || l_n_m.mask[i] == UNUSED_SYMBOL
+		|| (l_n_m.mask[i] == '1' && l_n_m.line[i] == ' ')
+		|| (l_n_m.mask[i] == SPEC_SYMBOL && l_n_m.line[i] != '$'))
+			i++;
+		else if (!(l_n_m.line[i] == ' ' && l_n_m.mask[i] == '1')
+		&& !(l_n_m.mask[i] == SPEC_SYMBOL && l_n_m.line[i] != '$'))
+		{
+			get_cnt_to_next_arg(l_n_m, &i);
+			cnt++;
+		}
+	}
+	return (cnt);
+}
+
+static void	assign_cmd(t_line_n_mask l_n_m, char **line, size_t *i, size_t j)
+{
+	size_t	k;
+
+	k = 0;
+	while (*i < j)
+		if (l_n_m.mask[*i] == SPEC_SYMBOL && l_n_m.line[*i] == '$')
+			handle_string_dollar(l_n_m, *line, i, &k);
+		else if (l_n_m.mask[(*i)] != UNUSED_BACKSLASH
+		&& l_n_m.mask[(*i)] != OPEN_QUOTE && l_n_m.mask[(*i)] != CLOSE_QUOTE)
+			(*line)[k++] = l_n_m.line[(*i)++];
+		else
+			(*i)++;
+	(*line)[k] = '\0';
+}
+
+static void get_size_to_next_arg(t_line_n_mask l_n_m, size_t *i,
+size_t *cnt_symbols)
+{
+	*cnt_symbols = 0;
+	while (condition_cmd_limits(l_n_m, *i)
+	&& !(l_n_m.line[*i] == ' ' && l_n_m.mask[*i] == '1')
+	&& !(l_n_m.mask[*i] == SPEC_SYMBOL && l_n_m.line[*i] != '$'))
+		if (l_n_m.line[*i] == '$')
+			(*cnt_symbols) += get_cnt_dollar(l_n_m, i);
+		else if (l_n_m.mask[*i] != UNUSED_BACKSLASH
+		&& l_n_m.mask[*i] != OPEN_QUOTE && l_n_m.mask[*i] != CLOSE_QUOTE)
+		{
+			(*cnt_symbols)++;
+			(*i)++;
+		}
+		else
+			(*i)++;
+}
+
+static void	handle_cmd(t_line_n_mask l_n_m, t_token *token, size_t i)
+{
+	size_t	cnt;
+	size_t	j_end;
+	size_t 	k;
+	size_t	cnt_symbols;
+
+	k = 0;
+	j_end = 0;
+	cnt = get_cnt_cmds(l_n_m, token, i);
+	token->args = (char**)malloc(sizeof(char*) * cnt + 1);
+	///if (!token->args)
+		///exit
+	while (k < cnt && condition_cmd_limits(l_n_m, i))
+		if (l_n_m.mask[i] == UNUSED_BACKSLASH || l_n_m.mask[i] == OPEN_QUOTE
+		|| l_n_m.mask[i] == CLOSE_QUOTE || l_n_m.mask[i] == UNUSED_SYMBOL
+		|| (l_n_m.mask[i] == '1' && l_n_m.line[i] == ' ')
+		|| (l_n_m.mask[i] == SPEC_SYMBOL && l_n_m.line[i] != '$'))
+			i++;
+		else if (!(l_n_m.line[i] == ' ' && l_n_m.mask[i] == '1')
+		&& !(l_n_m.mask[i] == SPEC_SYMBOL && l_n_m.line[i] != '$'))
+		{
+			j_end = i;
+			get_size_to_next_arg(l_n_m, &j_end, &cnt_symbols);
+			(token->args)[k] = (char*)malloc(sizeof(char) * cnt_symbols + 1);
+			///if (!(token->args)[k])
+				///exit
+			assign_cmd(l_n_m, &((token->args)[k++]), &i, j_end);
+		}
+	token->args[k] = 0;
 }
 
 static size_t	kernel(t_line_n_mask l_n_m, t_pipes_n_pids p_n_pds, size_t i,
-int *status)
+int *status) /// status handle
 {
 	int 	fdin;
 	int 	fdout;
@@ -315,8 +466,15 @@ int *status)
 
 	j = 0;
 	fdin = dup(0);
+	l_n_m.status = 8475; /// status init
 	temp_cmd = token_init();
-	handle_redirects(l_n_m, p_n_pds, &temp_cmd, 0);
+	handle_redirects(l_n_m, p_n_pds, &temp_cmd, i);
+	if (temp_cmd.line)
+		free(temp_cmd.line);
+	handle_cmd(l_n_m, &temp_cmd, i);
+	while (temp_cmd.args[j])
+		printf("%s\n",temp_cmd.args[j++]);
+//	printf("kek\n");
 	/*while (j < p_n_pds.cnt_pipes + 1)
 	{
 		temp_cmd = tokenizer(l_n_m, p_n_pds, &i, j);
@@ -330,8 +488,10 @@ int *status)
 static size_t handle_pipes(t_line_n_mask l_n_m, size_t i, int *status)
 {
 	int				cnt_pipes;
+	size_t 			start;
 	t_pipes_n_pids	p_n_pds;
 
+	start = i;
 	cnt_pipes = 0;
 	while (l_n_m.line[i] && l_n_m.mask[i] != CURRENT_SPLIT)
 	{
@@ -349,6 +509,7 @@ static size_t handle_pipes(t_line_n_mask l_n_m, size_t i, int *status)
 		return (0);
 	}
 	p_n_pds.cnt_pipes = cnt_pipes;
+	i = start;
 	kernel(l_n_m, p_n_pds, i, status);
 	return (0);
 }
@@ -406,7 +567,7 @@ int main(int argc, char **argv, char **env) {
 
 	(void)argc;
 	(void)argv;
-	char line[] = "cat < $PATH";
+	char line[] = "echo $?kek";
 	if (!parse_n_execute(line, env, &status))
 		return (0);
 }

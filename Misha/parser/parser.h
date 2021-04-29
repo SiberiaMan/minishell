@@ -17,6 +17,7 @@
 # define OPEN_QUOTE '6'
 # define CLOSE_QUOTE '7'
 # define SPACE_VISIBLE '8'
+# define UNUSED_SYMBOL '0'
 
 int		parser(const char *line, const char *mask);
 void	print_syntax_err(char err);

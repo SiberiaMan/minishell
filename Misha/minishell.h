@@ -18,6 +18,7 @@ typedef struct	s_line_n_mask
 	char		**env;
 	char		*mask;
 	char		*history;
+	int			status;
 }				t_line_n_mask;
 
 typedef struct	s_pipes_n_pids
@@ -37,6 +38,7 @@ typedef	struct 		s_token
 	int 	fd_to;
 	int 	is_from;
 	int 	is_to;
+	int 	status;
 }					t_token;
 
 typedef struct 		s_subtoken

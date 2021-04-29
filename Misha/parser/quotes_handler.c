@@ -11,7 +11,12 @@ static size_t	single_quotes_handler(char *line, char *mask, size_t *i)
 	if (j == ft_strlen(line))
 		return (0);
 	while (*i < j)
-		mask[(*i)++] = '1';
+	{
+		if (line[*i] == ' ')
+			mask[(*i)++] = SPACE_VISIBLE;
+		else
+			mask[(*i)++] = '1';
+	}
 	mask[*i] = CLOSE_QUOTE;
 	return (1);
 }
@@ -37,6 +42,8 @@ static size_t	double_quotes_handler(char *line, char *mask, size_t *i)
 		}
 		else if (line[*i] == '$')
 			mask[(*i)++] = SPEC_SYMBOL;
+		else if (line[*i] == ' ')
+			mask[(*i)++] = SPACE_VISIBLE;
 		else
 			mask[(*i)++] = '1';
 	}

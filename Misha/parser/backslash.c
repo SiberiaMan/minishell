@@ -7,7 +7,7 @@ static void	fake_and_space(char *line, char *mask, size_t *i)
 		mask[*i + 1] = FAKE_SPEC_SYMBOL;
 	else if (line[*i + 1] == ' ')
 		mask[*i + 1] = SPACE_VISIBLE;
-	(*i)++;
+	(*i) += 2;
 }
 
 static void	loop_quotes(char *mask, size_t *i)
@@ -26,7 +26,7 @@ static void	mask_handler_normal(char *line, char *mask)
 	{
 		if (mask[i] == OPEN_QUOTE)
 			loop_quotes(mask, &i);
-		if (line[i] && line[i] == 92 && line[i + 1]
+		else if (line[i] && line[i] == 92 && line[i + 1]
 			&& (ft_strchr("<>|;$'\" ", line[i + 1])))
 			fake_and_space(line, mask, &i);
 		else if (line[i] && ((line[i] == 92 && line[i + 1] && line[i + 1] == 92)
@@ -60,9 +60,10 @@ static void	mask_handler_real(char *line, char *mask)
 				;
 			i++;
 		}
-		if (ft_strchr("<>|;$", line[i])) // экранирование либо 5 либо 1
-			mask[i] = SPEC_SYMBOL;
-		i++;
+		else if (ft_strchr("<>|;$", line[i])) // экранирование либо 5 либо 1
+			mask[i++] = SPEC_SYMBOL;
+		else
+			i++;
 	}
 }
 
