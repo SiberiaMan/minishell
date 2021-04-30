@@ -23,6 +23,54 @@ char		*ft_strchr(const char *s, int c)
 	return (0);
 }
 
+void	*ft_memcpy(void *dst, const void *src, size_t n)
+{
+	size_t			i;
+	unsigned char	*str1;
+	unsigned char	*str2;
+
+	i = 0;
+	str1 = (unsigned char*)src;
+	str2 = (unsigned char*)dst;
+	if (!src && !dst)
+		return (dst);
+	while (i < n)
+	{
+		str2[i] = str1[i];
+		i++;
+	}
+	return (str2);
+}
+
+char	*ft_strjoin(char *s1, char *s2)
+{
+	char	*str;
+	size_t	i;
+	size_t	j;
+
+	i = 0;
+	j = 0;
+	if (!s1 || !s2)
+	{
+		return (0);
+	}
+	if (!(str = ft_calloc(ft_strlen(s1) + ft_strlen(s2) + 1, sizeof(char))))
+		return (0);
+	while (s1[i] != '\0')
+	{
+		str[i] = s1[i];
+		i++;
+	}
+	while (s2[j] != '\0')
+	{
+		str[i] = s2[j];
+		i++;
+		j++;
+	}
+	str[i] = '\0';
+	return (str);
+}
+
 void	ft_bzero(void *s, size_t n)
 {
 	unsigned char *str;
@@ -53,75 +101,21 @@ void	*ft_calloc(size_t count, size_t size)
 	}
 }
 
-char		*ft_strjoin(char const *s1, char const *s2)
-{
-	char	*ptr;
-	char	*bptr;
-
-	ptr = (char*)malloc(ft_strlen(s1) + ft_strlen(s2) + 1);
-	if (!ptr)
-		return (0);
-	bptr = ptr;
-	while (*s1)
-	{
-		*ptr = *s1;
-		ptr++;
-		s1++;
-	}
-	while (*s2)
-	{
-		*ptr = *s2;
-		ptr++;
-		s2++;
-	}
-	*ptr = '\0';
-	return (bptr);
-}
-
-char		*ft_strjoin_space(char const *s1, char const *s2)
-{
-	char	*ptr;
-	char	*bptr;
-
-	ptr = (char*)malloc(ft_strlen(s1) + ft_strlen(s2) + 2);
-	if (!ptr)
-		return (0);
-	bptr = ptr;
-	while (*s1)
-	{
-		*ptr = *s1;
-		ptr++;
-		s1++;
-	}
-	*ptr = ' ';
-	ptr++;
-	while (*s2)
-	{
-		*ptr = *s2;
-		ptr++;
-		s2++;
-	}
-	*ptr = '\0';
-	return (bptr);
-}
-
-void	*ft_memcpy(void *dst, const void *src, size_t n)
+void	*ft_memset(void *b, int c, size_t len)
 {
 	size_t			i;
-	unsigned char	*str1;
-	unsigned char	*str2;
+	unsigned char	*str;
+	unsigned char	sim;
 
 	i = 0;
-	str1 = (unsigned char*)src;
-	str2 = (unsigned char*)dst;
-	if (!src && !dst)
-		return (dst);
-	while (i < n)
+	str = (unsigned char*)b;
+	sim = (unsigned char)c;
+	while (i < len)
 	{
-		str2[i] = str1[i];
+		str[i] = sim;
 		i++;
 	}
-	return (str2);
+	return (str);
 }
 
 char	*ft_strdup(const char *s1)
@@ -151,15 +145,6 @@ int ft_putint(int c)
     return(write(STDOUT_FILENO, &c, 1));
 }
 
-void ft_putstr(char *str)
-{
-    while(*str)
-    {
-        write(1, str, 1);
-        str++;
-    }
-}
-
 int			ft_strncmp(const char *s1, const char *s2, size_t n)
 {
 	if (!(*s1) || !(*s2))
@@ -172,30 +157,6 @@ int			ft_strncmp(const char *s1, const char *s2, size_t n)
 		s2++;
 	}
 	return (0);
-}
-
-int	lst_create_add(t_list **lst, char *line)
-{
-	t_list	*ptr;
-    t_list *new;
-
-    if(!(new = malloc(sizeof(t_list))))
-        return(-1);
-    new->line = line;
-    new->next = NULL;
-    new->prev = NULL;
-	ptr = *lst;
-	if (ptr)
-	{
-		while (ptr->next)
-			ptr = ptr->next;
-		ptr->next = new;
-        new->prev = ptr;
-		*lst = new;
-	}
-	else
-		*lst = new;
-    return (0);
 }
 
 static	size_t		ft_count(char const *s, char c)

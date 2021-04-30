@@ -78,6 +78,21 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/Users/dchani/Desktop/project/Misha/U/check_for_exit.c">
+			<Option target="shell"/>
+		</Unit>
+		<Unit filename="/Users/dchani/Desktop/project/Misha/U/history1.h">
+			<Option target="shell"/>
+		</Unit>
+		<Unit filename="/Users/dchani/Desktop/project/Misha/U/keys.c">
+			<Option target="shell"/>
+		</Unit>
+		<Unit filename="/Users/dchani/Desktop/project/Misha/U/keys2.c">
+			<Option target="shell"/>
+		</Unit>
+		<Unit filename="/Users/dchani/Desktop/project/Misha/U/term_utills.c">
+			<Option target="shell"/>
+		</Unit>
 		<Unit filename="/Users/dchani/Desktop/project/Misha/executing/executing.h">
 			<Option target="shell"/>
 		</Unit>
@@ -85,6 +100,9 @@
 			<Option target="shell"/>
 		</Unit>
 		<Unit filename="/Users/dchani/Desktop/project/Misha/libft_utills.c">
+			<Option target="shell"/>
+		</Unit>
+		<Unit filename="/Users/dchani/Desktop/project/Misha/main.c">
 			<Option target="shell"/>
 		</Unit>
 		<Unit filename="/Users/dchani/Desktop/project/Misha/minishell.h">

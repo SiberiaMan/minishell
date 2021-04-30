@@ -232,6 +232,71 @@ CMakeFiles/shell.dir/executing/kern.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/shell.dir/executing/kern.c.s"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dchani/Desktop/project/Misha/executing/kern.c -o CMakeFiles/shell.dir/executing/kern.c.s
 
+CMakeFiles/shell.dir/U/check_for_exit.c.o: CMakeFiles/shell.dir/flags.make
+CMakeFiles/shell.dir/U/check_for_exit.c.o: ../U/check_for_exit.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dchani/Desktop/project/Misha/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building C object CMakeFiles/shell.dir/U/check_for_exit.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/shell.dir/U/check_for_exit.c.o -c /Users/dchani/Desktop/project/Misha/U/check_for_exit.c
+
+CMakeFiles/shell.dir/U/check_for_exit.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/shell.dir/U/check_for_exit.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dchani/Desktop/project/Misha/U/check_for_exit.c > CMakeFiles/shell.dir/U/check_for_exit.c.i
+
+CMakeFiles/shell.dir/U/check_for_exit.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/shell.dir/U/check_for_exit.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dchani/Desktop/project/Misha/U/check_for_exit.c -o CMakeFiles/shell.dir/U/check_for_exit.c.s
+
+CMakeFiles/shell.dir/main.c.o: CMakeFiles/shell.dir/flags.make
+CMakeFiles/shell.dir/main.c.o: ../main.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dchani/Desktop/project/Misha/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building C object CMakeFiles/shell.dir/main.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/shell.dir/main.c.o -c /Users/dchani/Desktop/project/Misha/main.c
+
+CMakeFiles/shell.dir/main.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/shell.dir/main.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dchani/Desktop/project/Misha/main.c > CMakeFiles/shell.dir/main.c.i
+
+CMakeFiles/shell.dir/main.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/shell.dir/main.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dchani/Desktop/project/Misha/main.c -o CMakeFiles/shell.dir/main.c.s
+
+CMakeFiles/shell.dir/U/keys.c.o: CMakeFiles/shell.dir/flags.make
+CMakeFiles/shell.dir/U/keys.c.o: ../U/keys.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dchani/Desktop/project/Misha/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building C object CMakeFiles/shell.dir/U/keys.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/shell.dir/U/keys.c.o -c /Users/dchani/Desktop/project/Misha/U/keys.c
+
+CMakeFiles/shell.dir/U/keys.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/shell.dir/U/keys.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dchani/Desktop/project/Misha/U/keys.c > CMakeFiles/shell.dir/U/keys.c.i
+
+CMakeFiles/shell.dir/U/keys.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/shell.dir/U/keys.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dchani/Desktop/project/Misha/U/keys.c -o CMakeFiles/shell.dir/U/keys.c.s
+
+CMakeFiles/shell.dir/U/keys2.c.o: CMakeFiles/shell.dir/flags.make
+CMakeFiles/shell.dir/U/keys2.c.o: ../U/keys2.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dchani/Desktop/project/Misha/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building C object CMakeFiles/shell.dir/U/keys2.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/shell.dir/U/keys2.c.o -c /Users/dchani/Desktop/project/Misha/U/keys2.c
+
+CMakeFiles/shell.dir/U/keys2.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/shell.dir/U/keys2.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dchani/Desktop/project/Misha/U/keys2.c > CMakeFiles/shell.dir/U/keys2.c.i
+
+CMakeFiles/shell.dir/U/keys2.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/shell.dir/U/keys2.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dchani/Desktop/project/Misha/U/keys2.c -o CMakeFiles/shell.dir/U/keys2.c.s
+
+CMakeFiles/shell.dir/U/term_utills.c.o: CMakeFiles/shell.dir/flags.make
+CMakeFiles/shell.dir/U/term_utills.c.o: ../U/term_utills.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dchani/Desktop/project/Misha/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building C object CMakeFiles/shell.dir/U/term_utills.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/shell.dir/U/term_utills.c.o -c /Users/dchani/Desktop/project/Misha/U/term_utills.c
+
+CMakeFiles/shell.dir/U/term_utills.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/shell.dir/U/term_utills.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dchani/Desktop/project/Misha/U/term_utills.c > CMakeFiles/shell.dir/U/term_utills.c.i
+
+CMakeFiles/shell.dir/U/term_utills.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/shell.dir/U/term_utills.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dchani/Desktop/project/Misha/U/term_utills.c -o CMakeFiles/shell.dir/U/term_utills.c.s
+
 # Object files for target shell
 shell_OBJECTS = \
 "CMakeFiles/shell.dir/parser/backslash.c.o" \
@@ -245,7 +310,12 @@ shell_OBJECTS = \
 "CMakeFiles/shell.dir/tokenizer/dollar_sign_cnt.c.o" \
 "CMakeFiles/shell.dir/tokenizer/conditions.c.o" \
 "CMakeFiles/shell.dir/tokenizer/redirect_error.c.o" \
-"CMakeFiles/shell.dir/executing/kern.c.o"
+"CMakeFiles/shell.dir/executing/kern.c.o" \
+"CMakeFiles/shell.dir/U/check_for_exit.c.o" \
+"CMakeFiles/shell.dir/main.c.o" \
+"CMakeFiles/shell.dir/U/keys.c.o" \
+"CMakeFiles/shell.dir/U/keys2.c.o" \
+"CMakeFiles/shell.dir/U/term_utills.c.o"
 
 # External object files for target shell
 shell_EXTERNAL_OBJECTS =
@@ -262,9 +332,14 @@ shell: CMakeFiles/shell.dir/tokenizer/dollar_sign_cnt.c.o
 shell: CMakeFiles/shell.dir/tokenizer/conditions.c.o
 shell: CMakeFiles/shell.dir/tokenizer/redirect_error.c.o
 shell: CMakeFiles/shell.dir/executing/kern.c.o
+shell: CMakeFiles/shell.dir/U/check_for_exit.c.o
+shell: CMakeFiles/shell.dir/main.c.o
+shell: CMakeFiles/shell.dir/U/keys.c.o
+shell: CMakeFiles/shell.dir/U/keys2.c.o
+shell: CMakeFiles/shell.dir/U/term_utills.c.o
 shell: CMakeFiles/shell.dir/build.make
 shell: CMakeFiles/shell.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/dchani/Desktop/project/Misha/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Linking C executable shell"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/dchani/Desktop/project/Misha/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Linking C executable shell"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/shell.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

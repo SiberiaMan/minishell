@@ -70,8 +70,8 @@ static size_t handle_pipes(t_line_n_mask l_n_m, size_t i, int *status)
 	return (0);
 }
 
-static void	handle_semicolons(const char *line, char *mask, char **env,
-								 int *status)
+void	handle_semicolons(const char *line, char *mask, char **env,
+int *status)
 {
 	size_t			i;
 	size_t			j;
@@ -94,6 +94,7 @@ static void	handle_semicolons(const char *line, char *mask, char **env,
 	}
 	handle_pipes(l_n_m, j, status);
 }
+/*
 
 static size_t	parse_n_execute(char *line, char **env, int *status) // входит
 // изначальная "грязная
@@ -118,14 +119,12 @@ static size_t	parse_n_execute(char *line, char **env, int *status) // входи
 	return (1);
 }
 
-int main(int argc, char **argv, char **env) {
+int start_cmd(t_gnl *gnl) {
 	//char *line = "kek\\''";
 	//char *line = "kek' okj\\hf''\\$kekehf\\'lol";
 	int status;
 
-	(void)argc;
-	(void)argv;
 	char line[] = " echo $PWD $PWD $BIN $USER dchani   \\$P\\A\\T\\H  | ls -la";
 	if (!parse_n_execute(line, env, &status))
 		return (0);
-}
+} */

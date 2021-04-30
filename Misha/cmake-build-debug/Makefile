@@ -142,6 +142,114 @@ shell/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/build
 .PHONY : shell/fast
 
+U/check_for_exit.o: U/check_for_exit.c.o
+
+.PHONY : U/check_for_exit.o
+
+# target to build an object file
+U/check_for_exit.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/U/check_for_exit.c.o
+.PHONY : U/check_for_exit.c.o
+
+U/check_for_exit.i: U/check_for_exit.c.i
+
+.PHONY : U/check_for_exit.i
+
+# target to preprocess a source file
+U/check_for_exit.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/U/check_for_exit.c.i
+.PHONY : U/check_for_exit.c.i
+
+U/check_for_exit.s: U/check_for_exit.c.s
+
+.PHONY : U/check_for_exit.s
+
+# target to generate assembly for a file
+U/check_for_exit.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/U/check_for_exit.c.s
+.PHONY : U/check_for_exit.c.s
+
+U/keys.o: U/keys.c.o
+
+.PHONY : U/keys.o
+
+# target to build an object file
+U/keys.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/U/keys.c.o
+.PHONY : U/keys.c.o
+
+U/keys.i: U/keys.c.i
+
+.PHONY : U/keys.i
+
+# target to preprocess a source file
+U/keys.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/U/keys.c.i
+.PHONY : U/keys.c.i
+
+U/keys.s: U/keys.c.s
+
+.PHONY : U/keys.s
+
+# target to generate assembly for a file
+U/keys.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/U/keys.c.s
+.PHONY : U/keys.c.s
+
+U/keys2.o: U/keys2.c.o
+
+.PHONY : U/keys2.o
+
+# target to build an object file
+U/keys2.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/U/keys2.c.o
+.PHONY : U/keys2.c.o
+
+U/keys2.i: U/keys2.c.i
+
+.PHONY : U/keys2.i
+
+# target to preprocess a source file
+U/keys2.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/U/keys2.c.i
+.PHONY : U/keys2.c.i
+
+U/keys2.s: U/keys2.c.s
+
+.PHONY : U/keys2.s
+
+# target to generate assembly for a file
+U/keys2.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/U/keys2.c.s
+.PHONY : U/keys2.c.s
+
+U/term_utills.o: U/term_utills.c.o
+
+.PHONY : U/term_utills.o
+
+# target to build an object file
+U/term_utills.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/U/term_utills.c.o
+.PHONY : U/term_utills.c.o
+
+U/term_utills.i: U/term_utills.c.i
+
+.PHONY : U/term_utills.i
+
+# target to preprocess a source file
+U/term_utills.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/U/term_utills.c.i
+.PHONY : U/term_utills.c.i
+
+U/term_utills.s: U/term_utills.c.s
+
+.PHONY : U/term_utills.s
+
+# target to generate assembly for a file
+U/term_utills.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/U/term_utills.c.s
+.PHONY : U/term_utills.c.s
+
 executing/kern.o: executing/kern.c.o
 
 .PHONY : executing/kern.o
@@ -195,6 +303,33 @@ libft_utills.s: libft_utills.c.s
 libft_utills.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/libft_utills.c.s
 .PHONY : libft_utills.c.s
+
+main.o: main.c.o
+
+.PHONY : main.o
+
+# target to build an object file
+main.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/main.c.o
+.PHONY : main.c.o
+
+main.i: main.c.i
+
+.PHONY : main.i
+
+# target to preprocess a source file
+main.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/main.c.i
+.PHONY : main.c.i
+
+main.s: main.c.s
+
+.PHONY : main.s
+
+# target to generate assembly for a file
+main.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/main.c.s
+.PHONY : main.c.s
 
 parser/backslash.o: parser/backslash.c.o
 
@@ -475,12 +610,27 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... shell"
+	@echo "... U/check_for_exit.o"
+	@echo "... U/check_for_exit.i"
+	@echo "... U/check_for_exit.s"
+	@echo "... U/keys.o"
+	@echo "... U/keys.i"
+	@echo "... U/keys.s"
+	@echo "... U/keys2.o"
+	@echo "... U/keys2.i"
+	@echo "... U/keys2.s"
+	@echo "... U/term_utills.o"
+	@echo "... U/term_utills.i"
+	@echo "... U/term_utills.s"
 	@echo "... executing/kern.o"
 	@echo "... executing/kern.i"
 	@echo "... executing/kern.s"
 	@echo "... libft_utills.o"
 	@echo "... libft_utills.i"
 	@echo "... libft_utills.s"
+	@echo "... main.o"
+	@echo "... main.i"
+	@echo "... main.s"
 	@echo "... parser/backslash.o"
 	@echo "... parser/backslash.i"
 	@echo "... parser/backslash.s"

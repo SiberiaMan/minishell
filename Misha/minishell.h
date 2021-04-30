@@ -10,6 +10,9 @@
 #include <stdlib.h>
 #include "history.h"
 #include "parser/parser.h"
+#include "tokenizer/tokenizer.h"
+#include "executing/executing.h"
+#include "U/history1.h"
 
 typedef struct 		s_subtoken
 {

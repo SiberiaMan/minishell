@@ -1,9 +1,4 @@
-#include "history.h"
-
-int ft_putint(int c)
-{
-	return(write(STDOUT_FILENO, &c, 1));
-}
+#include "history1.h"
 
 void ft_putstr(char *str)
 {

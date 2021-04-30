@@ -1,4 +1,4 @@
-#include "history.h"
+#include "history1.h"
 
 char	*realloc_backspace(char *line, t_gnl *gnl)
 {
