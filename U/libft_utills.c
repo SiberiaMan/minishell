@@ -5,8 +5,8 @@ size_t		ft_strlen(const char *s)
 	int i;
 
 	i = 0;
-	// if(!s)
-	// 	return(0);
+	if(!s)
+		return(0);
 	while (s[i] != '\0')
 	{
 		i++;
@@ -30,13 +30,11 @@ void	*ft_calloc(size_t count, size_t size)
 	if (!(str = (void *)malloc(count * size)))
 		return (0);
 	else
-	{
 		ft_bzero(str, count * size);
-		return (str);
-	}
+	return (str);
 }
 
-char	*ft_strjoin(char const *s1, char const *s2)
+char	*ft_strjoin(char *s1, char *s2)
 {
 	char	*str;
 	size_t	i;
@@ -108,65 +106,107 @@ char	*ft_strdup(const char *s1)
 
 int ft_putint(int c)
 {
-    return(write(STDOUT_FILENO, &c, 1));
+	return(write(STDOUT_FILENO, &c, 1));
 }
 
 void ft_putstr(char *str)
 {
-    while(*str)
-    {
-        write(1, str, 1);
-        str++;
-    }
+	size_t len;
+
+	len = ft_strlen(str);
+	write(1, str, len);
 }
 
 int	lst_create_add(t_list **lst, char *line)
 {
 	t_list	*ptr;
-    t_list *new;
+	t_list *new;
 
-    if(!(new = malloc(sizeof(t_list))))
-        return(-1);
-    new->line = line;
-    new->next = NULL;
-    new->prev = NULL;
+	if(!(new = malloc(sizeof(t_list))))
+		return(-1);
+	new->line = line;
+	new->next = NULL;
+	new->prev = NULL;
 	ptr = *lst;
 	if (ptr)
 	{
 		while (ptr->next)
 			ptr = ptr->next;
 		ptr->next = new;
-        new->prev = ptr;
+		new->prev = ptr;
 		*lst = new;
 	}
 	else
 		*lst = new;
-    return (0);
+	return (0);
 }
 
-void lst_add(t_list **lst, t_list *new)
+char	*ft_strchr(const char *s, int c)
 {
-	t_list	*ptr;
+	size_t i;
 
-	ptr = *lst;
-	if (ptr)
+	i = 0;
+	while (i < (ft_strlen(s) + 1))
 	{
-		while (ptr->next)
-			ptr = ptr->next;
-		ptr->next = new;
-        new->prev = ptr;
-		*lst = new;
+		if (s[i] == c)
+			return ((char*)(s + i));
+		i++;
 	}
-	else
-		*lst = new;
-
+	return (NULL);
 }
 
-void list_swap(t_list *a, t_list *b)
+int		ft_isdigit(int c)
 {
-	t_list *c;
-
-	c = a;
-	a = b;
-	b = c;
+	if (c >= 48 && c <= 57)
+		return (1);
+	else
+		return (0);
 }
+
+int		ft_isalpha(int c)
+{
+	if ((c >= 65 && c <= 90) || (c >= 97 && c <= 122))
+		return (1);
+	else
+		return (0);
+}
+
+int		ft_isalnum(int c)
+{
+	if (ft_isalpha(c) > 0 || ft_isdigit(c) > 0)
+		return (1);
+	else
+		return (0);
+}
+
+int		ft_strcmp(const char *s1, const char *s2)
+{
+	size_t i;
+
+	i = 0;
+	while (s1[i] != '\0' || s2[i] != '\0')
+	{
+		if (s1[i] != s2[i])
+			return (((unsigned char*)s1)[i] - ((unsigned char*)s2)[i]);
+		i++;
+	}
+	return (0);
+}
+
+void	*ft_memset(void *b, int c, size_t len)
+{
+	size_t			i;
+	unsigned char	*str;
+	unsigned char	sim;
+
+	i = 0;
+	str = (unsigned char*)b;
+	sim = (unsigned char)c;
+	while (i < len)
+	{
+		str[i] = sim;
+		i++;
+	}
+	return (str);
+}
+
