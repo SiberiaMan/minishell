@@ -1,12 +1,19 @@
-#include "minishell.h"
+#include <stdio.h>
+#include <stdlib.h>
 
 int main(int argc, char **argv, char **env)
 {
 
-	char *line = term();
-	// сигналы
-	//терминал
-	// get string from Ulya
-	// parser -> ok (free) -> tokens -> exec
-	// else return syntax err
+	int d;
+	scanf("%d", &d);
+	if (d < 0)
+	{
+		printf("User input - %d < 0\n", d);
+		exit(1);
+	}
+	else
+	{
+		printf("User input - %d > 0\n", d);
+		exit(0);
+	}
 }
