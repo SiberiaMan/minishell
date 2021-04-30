@@ -78,6 +78,12 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/Users/dchani/Desktop/project/Misha/executing/executing.h">
+			<Option target="shell"/>
+		</Unit>
+		<Unit filename="/Users/dchani/Desktop/project/Misha/executing/kern.c">
+			<Option target="shell"/>
+		</Unit>
 		<Unit filename="/Users/dchani/Desktop/project/Misha/libft_utills.c">
 			<Option target="shell"/>
 		</Unit>
@@ -99,13 +105,25 @@
 		<Unit filename="/Users/dchani/Desktop/project/Misha/parser/syntax_err.c">
 			<Option target="shell"/>
 		</Unit>
-		<Unit filename="/Users/dchani/Desktop/project/Misha/pretokenizer_handler.c">
+		<Unit filename="/Users/dchani/Desktop/project/Misha/tokenizer/cmd.c">
+			<Option target="shell"/>
+		</Unit>
+		<Unit filename="/Users/dchani/Desktop/project/Misha/tokenizer/conditions.c">
+			<Option target="shell"/>
+		</Unit>
+		<Unit filename="/Users/dchani/Desktop/project/Misha/tokenizer/dollar_sign_assign.c">
+			<Option target="shell"/>
+		</Unit>
+		<Unit filename="/Users/dchani/Desktop/project/Misha/tokenizer/dollar_sign_cnt.c">
+			<Option target="shell"/>
+		</Unit>
+		<Unit filename="/Users/dchani/Desktop/project/Misha/tokenizer/redirect_error.c">
+			<Option target="shell"/>
+		</Unit>
+		<Unit filename="/Users/dchani/Desktop/project/Misha/tokenizer/redirects.c">
 			<Option target="shell"/>
 		</Unit>
 		<Unit filename="/Users/dchani/Desktop/project/Misha/tokenizer/tokenizer.h">
-			<Option target="shell"/>
-		</Unit>
-		<Unit filename="/Users/dchani/Desktop/project/Misha/tokenizer_functions.c">
 			<Option target="shell"/>
 		</Unit>
 		<Unit filename="/Users/dchani/Desktop/project/Misha/CMakeLists.txt">

@@ -6,6 +6,16 @@
 
 #IncludeRegexTransform: 
 
+/Users/dchani/Desktop/project/Misha/executing/executing.h
+../minishell.h
+/Users/dchani/Desktop/project/Misha/minishell.h
+../tokenizer/tokenizer.h
+/Users/dchani/Desktop/project/Misha/tokenizer/tokenizer.h
+
+/Users/dchani/Desktop/project/Misha/executing/kern.c
+executing.h
+/Users/dchani/Desktop/project/Misha/executing/executing.h
+
 /Users/dchani/Desktop/project/Misha/history.h
 unistd.h
 -
@@ -33,8 +43,6 @@ history.h
 /Users/dchani/Desktop/project/Misha/history.h
 parser/parser.h
 /Users/dchani/Desktop/project/Misha/parser/parser.h
-dirent.h
--
 
 /Users/dchani/Desktop/project/Misha/parser/parser.h
 stdlib.h
@@ -44,7 +52,21 @@ stdio.h
 ../history.h
 /Users/dchani/Desktop/project/Misha/history.h
 
-/Users/dchani/Desktop/project/Misha/pretokenizer_handler.c
-minishell.h
-/Users/dchani/Desktop/project/Misha/minishell.h
+/Users/dchani/Desktop/project/Misha/tokenizer/tokenizer.h
+sys/types.h
+-
+stdio.h
+-
+sys/wait.h
+-
+stdlib.h
+-
+dirent.h
+-
+../history.h
+/Users/dchani/Desktop/project/Misha/history.h
+../parser/parser.h
+/Users/dchani/Desktop/project/Misha/parser/parser.h
+fcntl.h
+-
 

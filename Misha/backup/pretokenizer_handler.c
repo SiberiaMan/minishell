@@ -1,4 +1,4 @@
-#include "minishell.h"
+#include "tokenizer.h"
 
 t_token token_init(void)
 {
@@ -320,8 +320,7 @@ static size_t	condition_redirects_2(t_line_n_mask l_n_m, size_t i, char c)
 	return (0);
 }
 
-static void	handle_redirects(t_line_n_mask l_n_m, t_pipes_n_pids p_n_pds,
-t_token *token, size_t i)
+static size_t handle_redirects(t_line_n_mask l_n_m, t_token *token, size_t i)
 {
 	while (l_n_m.line[i] && !(l_n_m.line[i] == '|' && l_n_m.mask[i] ==
 	SPEC_SYMBOL) && (l_n_m.mask[i] != CURRENT_SPLIT))
@@ -345,9 +344,11 @@ t_token *token, size_t i)
 			S_IROTH);
 			i++;
 		}
-		redirect_error(token, &l_n_m);
+		if (!redirect_error(token, &l_n_m))
+			return (0);
 		i++;
 	}
+	return (1);
 }
 
 static size_t	condition_cmd_limits(t_line_n_mask l_n_m, size_t i)
@@ -360,10 +361,12 @@ static size_t	condition_cmd_limits(t_line_n_mask l_n_m, size_t i)
 
 static void	get_cnt_to_next_arg(t_line_n_mask l_n_m, size_t *i)
 {
+	if (l_n_m.mask[*i] == OPEN_QUOTE)
+		(*i)++;
 	while (condition_cmd_limits(l_n_m, *i)
 	&& !(l_n_m.line[*i] == ' ' && l_n_m.mask[*i] == '1')
 	&& !(l_n_m.mask[*i] == SPEC_SYMBOL && l_n_m.line[*i] != '$')
-	&& l_n_m.mask[*i] != CLOSE_QUOTE && l_n_m.mask[*i] != OPEN_QUOTE)
+	&& l_n_m.mask[*i] != CLOSE_QUOTE)
 		(*i)++;
 }
 
@@ -374,13 +377,14 @@ static size_t	get_cnt_cmds(t_line_n_mask l_n_m, t_token *token, size_t i)
 	cnt = 0;
 	while (condition_cmd_limits(l_n_m, i))
 	{
-		if (l_n_m.mask[i] == UNUSED_BACKSLASH || l_n_m.mask[i] == OPEN_QUOTE
+		if (l_n_m.mask[i] == UNUSED_BACKSLASH
 		|| l_n_m.mask[i] == CLOSE_QUOTE || l_n_m.mask[i] == UNUSED_SYMBOL
 		|| (l_n_m.mask[i] == '1' && l_n_m.line[i] == ' ')
 		|| (l_n_m.mask[i] == SPEC_SYMBOL && l_n_m.line[i] != '$'))
 			i++;
-		else if (!(l_n_m.line[i] == ' ' && l_n_m.mask[i] == '1')
+		else if ((!(l_n_m.line[i] == ' ' && l_n_m.mask[i] == '1')
 		&& !(l_n_m.mask[i] == SPEC_SYMBOL && l_n_m.line[i] != '$'))
+		|| l_n_m.mask[i] == OPEN_QUOTE)
 		{
 			get_cnt_to_next_arg(l_n_m, &i);
 			cnt++;
@@ -408,6 +412,8 @@ static void	assign_cmd(t_line_n_mask l_n_m, char **line, size_t *i, size_t j)
 static void get_size_to_next_arg(t_line_n_mask l_n_m, size_t *i,
 size_t *cnt_symbols)
 {
+	if (l_n_m.mask[*i] == OPEN_QUOTE)
+		(*i)++;
 	*cnt_symbols = 0;
 	while (condition_cmd_limits(l_n_m, *i)
 	&& !(l_n_m.line[*i] == ' ' && l_n_m.mask[*i] == '1')
@@ -424,6 +430,16 @@ size_t *cnt_symbols)
 			(*i)++;
 }
 
+static size_t	handle_cmd_condition(t_line_n_mask l_n_m, size_t i)
+{
+	if (l_n_m.mask[i] == UNUSED_BACKSLASH
+	|| l_n_m.mask[i] == CLOSE_QUOTE || l_n_m.mask[i] == UNUSED_SYMBOL
+	|| (l_n_m.mask[i] == '1' && l_n_m.line[i] == ' ')
+	|| (l_n_m.mask[i] == SPEC_SYMBOL && l_n_m.line[i] != '$'))
+		return (1);
+	return (0);
+}
+
 static void	handle_cmd(t_line_n_mask l_n_m, t_token *token, size_t i)
 {
 	size_t	cnt;
@@ -438,13 +454,11 @@ static void	handle_cmd(t_line_n_mask l_n_m, t_token *token, size_t i)
 	///if (!token->args)
 		///exit
 	while (k < cnt && condition_cmd_limits(l_n_m, i))
-		if (l_n_m.mask[i] == UNUSED_BACKSLASH || l_n_m.mask[i] == OPEN_QUOTE
-		|| l_n_m.mask[i] == CLOSE_QUOTE || l_n_m.mask[i] == UNUSED_SYMBOL
-		|| (l_n_m.mask[i] == '1' && l_n_m.line[i] == ' ')
-		|| (l_n_m.mask[i] == SPEC_SYMBOL && l_n_m.line[i] != '$'))
+		if (handle_cmd_condition(l_n_m, i))
 			i++;
-		else if (!(l_n_m.line[i] == ' ' && l_n_m.mask[i] == '1')
+		else if ((!(l_n_m.line[i] == ' ' && l_n_m.mask[i] == '1')
 		&& !(l_n_m.mask[i] == SPEC_SYMBOL && l_n_m.line[i] != '$'))
+		|| (l_n_m.mask[i] == OPEN_QUOTE))
 		{
 			j_end = i;
 			get_size_to_next_arg(l_n_m, &j_end, &cnt_symbols);
@@ -456,19 +470,20 @@ static void	handle_cmd(t_line_n_mask l_n_m, t_token *token, size_t i)
 	token->args[k] = 0;
 }
 
-static size_t	kernel(t_line_n_mask l_n_m, t_pipes_n_pids p_n_pds, size_t i,
-int *status) /// status handle
+static size_t	kernel(t_line_n_mask l_n_m, size_t i, int *status) /// status
+// handle
 {
-	int 	fdin;
-	int 	fdout;
 	size_t	j;
 	t_token	temp_cmd;
 
 	j = 0;
-	fdin = dup(0);
 	l_n_m.status = 8475; /// status init
 	temp_cmd = token_init();
-	handle_redirects(l_n_m, p_n_pds, &temp_cmd, i);
+	l_n_m.free_line = &(temp_cmd.line);
+	if (!handle_redirects(l_n_m, &temp_cmd, i))
+		printf("stop this pipe and go to next pipe\n");
+		/// next pipe
+	printf("%s\n", l_n_m.mask);
 	if (temp_cmd.line)
 		free(temp_cmd.line);
 	handle_cmd(l_n_m, &temp_cmd, i);
@@ -487,30 +502,27 @@ int *status) /// status handle
 
 static size_t handle_pipes(t_line_n_mask l_n_m, size_t i, int *status)
 {
-	int				cnt_pipes;
 	size_t 			start;
-	t_pipes_n_pids	p_n_pds;
 
 	start = i;
-	cnt_pipes = 0;
+	l_n_m.cnt_pipes = 0;
 	while (l_n_m.line[i] && l_n_m.mask[i] != CURRENT_SPLIT)
 	{
 		if (l_n_m.line[i] == '|' && l_n_m.mask[i] == SPEC_SYMBOL)
-			cnt_pipes++;
+			l_n_m.cnt_pipes++;
 		i++;
 	}
-	p_n_pds.pipes = (int**)malloc(sizeof(int[2]) * cnt_pipes);
-	if (!p_n_pds.pipes) // exit program + status ?
+	l_n_m.pipes = (int**)malloc(sizeof(int[2]) * l_n_m.cnt_pipes);
+	if (!l_n_m.pipes) // exit program + status ?
 		return (0);
-	p_n_pds.pids = (int*)malloc(sizeof(int) * cnt_pipes + 1);
-	if (!p_n_pds.pids) // exit program + status ?
+	l_n_m.pids = (int*)malloc(sizeof(int) * l_n_m.cnt_pipes + 1);
+	if (!l_n_m.pids) // exit program + status ?
 	{
-		free(p_n_pds.pipes);
+		free(l_n_m.pipes);
 		return (0);
 	}
-	p_n_pds.cnt_pipes = cnt_pipes;
 	i = start;
-	kernel(l_n_m, p_n_pds, i, status);
+	kernel(l_n_m, i, status);
 	return (0);
 }
 
@@ -547,14 +559,16 @@ static size_t	parse_n_execute(char *line, char **env, int *status) // входи
 
 	if (!(mask = get_mask_normal(line)))
 		return (0);
+	/// exit
 	printf("%s\n", line);
 	printf("%s\n", mask);
 	if (!parser(line, mask))
 	{
 		(*status) = 1;
-		free(mask);
+		free(mask); //// free struct
 		return (0);
 	}
+	char *kek = (char*)malloc(sizeof(char) * 5000);
 	handle_semicolons(line, mask, env, status);
 	free(mask);
 	return (1);
@@ -567,7 +581,7 @@ int main(int argc, char **argv, char **env) {
 
 	(void)argc;
 	(void)argv;
-	char line[] = "echo $?kek";
+	char line[] = "echo \"\\$PWD       \" rgjjghr gj jgj   g5jrjg ";
 	if (!parse_n_execute(line, env, &status))
 		return (0);
 }

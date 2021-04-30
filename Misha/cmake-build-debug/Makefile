@@ -142,6 +142,33 @@ shell/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/build
 .PHONY : shell/fast
 
+executing/kern.o: executing/kern.c.o
+
+.PHONY : executing/kern.o
+
+# target to build an object file
+executing/kern.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/executing/kern.c.o
+.PHONY : executing/kern.c.o
+
+executing/kern.i: executing/kern.c.i
+
+.PHONY : executing/kern.i
+
+# target to preprocess a source file
+executing/kern.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/executing/kern.c.i
+.PHONY : executing/kern.c.i
+
+executing/kern.s: executing/kern.c.s
+
+.PHONY : executing/kern.s
+
+# target to generate assembly for a file
+executing/kern.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/executing/kern.c.s
+.PHONY : executing/kern.c.s
+
 libft_utills.o: libft_utills.c.o
 
 .PHONY : libft_utills.o
@@ -277,59 +304,167 @@ parser/syntax_err.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/parser/syntax_err.c.s
 .PHONY : parser/syntax_err.c.s
 
-pretokenizer_handler.o: pretokenizer_handler.c.o
+tokenizer/cmd.o: tokenizer/cmd.c.o
 
-.PHONY : pretokenizer_handler.o
-
-# target to build an object file
-pretokenizer_handler.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/pretokenizer_handler.c.o
-.PHONY : pretokenizer_handler.c.o
-
-pretokenizer_handler.i: pretokenizer_handler.c.i
-
-.PHONY : pretokenizer_handler.i
-
-# target to preprocess a source file
-pretokenizer_handler.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/pretokenizer_handler.c.i
-.PHONY : pretokenizer_handler.c.i
-
-pretokenizer_handler.s: pretokenizer_handler.c.s
-
-.PHONY : pretokenizer_handler.s
-
-# target to generate assembly for a file
-pretokenizer_handler.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/pretokenizer_handler.c.s
-.PHONY : pretokenizer_handler.c.s
-
-tokenizer_functions.o: tokenizer_functions.c.o
-
-.PHONY : tokenizer_functions.o
+.PHONY : tokenizer/cmd.o
 
 # target to build an object file
-tokenizer_functions.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/tokenizer_functions.c.o
-.PHONY : tokenizer_functions.c.o
+tokenizer/cmd.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/tokenizer/cmd.c.o
+.PHONY : tokenizer/cmd.c.o
 
-tokenizer_functions.i: tokenizer_functions.c.i
+tokenizer/cmd.i: tokenizer/cmd.c.i
 
-.PHONY : tokenizer_functions.i
+.PHONY : tokenizer/cmd.i
 
 # target to preprocess a source file
-tokenizer_functions.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/tokenizer_functions.c.i
-.PHONY : tokenizer_functions.c.i
+tokenizer/cmd.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/tokenizer/cmd.c.i
+.PHONY : tokenizer/cmd.c.i
 
-tokenizer_functions.s: tokenizer_functions.c.s
+tokenizer/cmd.s: tokenizer/cmd.c.s
 
-.PHONY : tokenizer_functions.s
+.PHONY : tokenizer/cmd.s
 
 # target to generate assembly for a file
-tokenizer_functions.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/tokenizer_functions.c.s
-.PHONY : tokenizer_functions.c.s
+tokenizer/cmd.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/tokenizer/cmd.c.s
+.PHONY : tokenizer/cmd.c.s
+
+tokenizer/conditions.o: tokenizer/conditions.c.o
+
+.PHONY : tokenizer/conditions.o
+
+# target to build an object file
+tokenizer/conditions.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/tokenizer/conditions.c.o
+.PHONY : tokenizer/conditions.c.o
+
+tokenizer/conditions.i: tokenizer/conditions.c.i
+
+.PHONY : tokenizer/conditions.i
+
+# target to preprocess a source file
+tokenizer/conditions.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/tokenizer/conditions.c.i
+.PHONY : tokenizer/conditions.c.i
+
+tokenizer/conditions.s: tokenizer/conditions.c.s
+
+.PHONY : tokenizer/conditions.s
+
+# target to generate assembly for a file
+tokenizer/conditions.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/tokenizer/conditions.c.s
+.PHONY : tokenizer/conditions.c.s
+
+tokenizer/dollar_sign_assign.o: tokenizer/dollar_sign_assign.c.o
+
+.PHONY : tokenizer/dollar_sign_assign.o
+
+# target to build an object file
+tokenizer/dollar_sign_assign.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/tokenizer/dollar_sign_assign.c.o
+.PHONY : tokenizer/dollar_sign_assign.c.o
+
+tokenizer/dollar_sign_assign.i: tokenizer/dollar_sign_assign.c.i
+
+.PHONY : tokenizer/dollar_sign_assign.i
+
+# target to preprocess a source file
+tokenizer/dollar_sign_assign.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/tokenizer/dollar_sign_assign.c.i
+.PHONY : tokenizer/dollar_sign_assign.c.i
+
+tokenizer/dollar_sign_assign.s: tokenizer/dollar_sign_assign.c.s
+
+.PHONY : tokenizer/dollar_sign_assign.s
+
+# target to generate assembly for a file
+tokenizer/dollar_sign_assign.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/tokenizer/dollar_sign_assign.c.s
+.PHONY : tokenizer/dollar_sign_assign.c.s
+
+tokenizer/dollar_sign_cnt.o: tokenizer/dollar_sign_cnt.c.o
+
+.PHONY : tokenizer/dollar_sign_cnt.o
+
+# target to build an object file
+tokenizer/dollar_sign_cnt.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/tokenizer/dollar_sign_cnt.c.o
+.PHONY : tokenizer/dollar_sign_cnt.c.o
+
+tokenizer/dollar_sign_cnt.i: tokenizer/dollar_sign_cnt.c.i
+
+.PHONY : tokenizer/dollar_sign_cnt.i
+
+# target to preprocess a source file
+tokenizer/dollar_sign_cnt.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/tokenizer/dollar_sign_cnt.c.i
+.PHONY : tokenizer/dollar_sign_cnt.c.i
+
+tokenizer/dollar_sign_cnt.s: tokenizer/dollar_sign_cnt.c.s
+
+.PHONY : tokenizer/dollar_sign_cnt.s
+
+# target to generate assembly for a file
+tokenizer/dollar_sign_cnt.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/tokenizer/dollar_sign_cnt.c.s
+.PHONY : tokenizer/dollar_sign_cnt.c.s
+
+tokenizer/redirect_error.o: tokenizer/redirect_error.c.o
+
+.PHONY : tokenizer/redirect_error.o
+
+# target to build an object file
+tokenizer/redirect_error.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/tokenizer/redirect_error.c.o
+.PHONY : tokenizer/redirect_error.c.o
+
+tokenizer/redirect_error.i: tokenizer/redirect_error.c.i
+
+.PHONY : tokenizer/redirect_error.i
+
+# target to preprocess a source file
+tokenizer/redirect_error.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/tokenizer/redirect_error.c.i
+.PHONY : tokenizer/redirect_error.c.i
+
+tokenizer/redirect_error.s: tokenizer/redirect_error.c.s
+
+.PHONY : tokenizer/redirect_error.s
+
+# target to generate assembly for a file
+tokenizer/redirect_error.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/tokenizer/redirect_error.c.s
+.PHONY : tokenizer/redirect_error.c.s
+
+tokenizer/redirects.o: tokenizer/redirects.c.o
+
+.PHONY : tokenizer/redirects.o
+
+# target to build an object file
+tokenizer/redirects.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/tokenizer/redirects.c.o
+.PHONY : tokenizer/redirects.c.o
+
+tokenizer/redirects.i: tokenizer/redirects.c.i
+
+.PHONY : tokenizer/redirects.i
+
+# target to preprocess a source file
+tokenizer/redirects.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/tokenizer/redirects.c.i
+.PHONY : tokenizer/redirects.c.i
+
+tokenizer/redirects.s: tokenizer/redirects.c.s
+
+.PHONY : tokenizer/redirects.s
+
+# target to generate assembly for a file
+tokenizer/redirects.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/tokenizer/redirects.c.s
+.PHONY : tokenizer/redirects.c.s
 
 # Help Target
 help:
@@ -340,6 +475,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... shell"
+	@echo "... executing/kern.o"
+	@echo "... executing/kern.i"
+	@echo "... executing/kern.s"
 	@echo "... libft_utills.o"
 	@echo "... libft_utills.i"
 	@echo "... libft_utills.s"
@@ -355,12 +493,24 @@ help:
 	@echo "... parser/syntax_err.o"
 	@echo "... parser/syntax_err.i"
 	@echo "... parser/syntax_err.s"
-	@echo "... pretokenizer_handler.o"
-	@echo "... pretokenizer_handler.i"
-	@echo "... pretokenizer_handler.s"
-	@echo "... tokenizer_functions.o"
-	@echo "... tokenizer_functions.i"
-	@echo "... tokenizer_functions.s"
+	@echo "... tokenizer/cmd.o"
+	@echo "... tokenizer/cmd.i"
+	@echo "... tokenizer/cmd.s"
+	@echo "... tokenizer/conditions.o"
+	@echo "... tokenizer/conditions.i"
+	@echo "... tokenizer/conditions.s"
+	@echo "... tokenizer/dollar_sign_assign.o"
+	@echo "... tokenizer/dollar_sign_assign.i"
+	@echo "... tokenizer/dollar_sign_assign.s"
+	@echo "... tokenizer/dollar_sign_cnt.o"
+	@echo "... tokenizer/dollar_sign_cnt.i"
+	@echo "... tokenizer/dollar_sign_cnt.s"
+	@echo "... tokenizer/redirect_error.o"
+	@echo "... tokenizer/redirect_error.i"
+	@echo "... tokenizer/redirect_error.s"
+	@echo "... tokenizer/redirects.o"
+	@echo "... tokenizer/redirects.i"
+	@echo "... tokenizer/redirects.s"
 .PHONY : help
 
 

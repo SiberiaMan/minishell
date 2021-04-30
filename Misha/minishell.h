@@ -10,36 +10,6 @@
 #include <stdlib.h>
 #include "history.h"
 #include "parser/parser.h"
-#include <dirent.h>
-
-typedef struct	s_line_n_mask
-{
-	const char	*line;
-	char		**env;
-	char		*mask;
-	char		*history;
-	int			status;
-}				t_line_n_mask;
-
-typedef struct	s_pipes_n_pids
-{
-	int		**pipes;
-	int 	*pids;
-	size_t	cnt_pipes;
-}				t_pipes_n_pids;
-
-typedef	struct 		s_token
-{
-	char	**args;
-	char	*line;
-	int		pipe_from;
-	int 	pipe_to;
-	int 	fd_from;
-	int 	fd_to;
-	int 	is_from;
-	int 	is_to;
-	int 	status;
-}					t_token;
 
 typedef struct 		s_subtoken
 {
