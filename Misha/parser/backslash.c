@@ -67,19 +67,8 @@ static void	mask_handler_real(char *line, char *mask)
 	}
 }
 
-char	*get_mask_normal(char *line)	 // get normal form !!!
+size_t get_mask_normal(char *line, char *mask)	 // get normal form !!!
 {
-	size_t	len;
-	size_t	i;
-	char	*mask;
-
-	i = 0;
-	len = ft_strlen(line);
-	mask = ft_calloc(ft_strlen(line) + 1, sizeof(char));
-	if (!mask)
-		return (0);
-	while (i < len)
-		mask[i++] = '1';
 	if (!quotes_handler(line, mask))
 	{
 		write(2, "syntax error with quotes\n",
@@ -89,5 +78,5 @@ char	*get_mask_normal(char *line)	 // get normal form !!!
 	}
 	mask_handler_real(line, mask);
 	mask_handler_normal(line, mask);
-	return (mask);
+	return (1);
 }

@@ -17,11 +17,17 @@ CMakeFiles/shell.dir/U/term_utills.c.o: ../U/history1.h
 CMakeFiles/shell.dir/U/term_utills.c.o: ../U/term_utills.c
 CMakeFiles/shell.dir/U/term_utills.c.o: ../history.h
 
+CMakeFiles/shell.dir/executing/free_and_exit.c.o: ../U/history1.h
+CMakeFiles/shell.dir/executing/free_and_exit.c.o: ../executing/executing.h
+CMakeFiles/shell.dir/executing/free_and_exit.c.o: ../executing/free_and_exit.c
+CMakeFiles/shell.dir/executing/free_and_exit.c.o: ../history.h
+CMakeFiles/shell.dir/executing/free_and_exit.c.o: ../parser/parser.h
+CMakeFiles/shell.dir/executing/free_and_exit.c.o: ../tokenizer/tokenizer.h
+
 CMakeFiles/shell.dir/executing/kern.c.o: ../U/history1.h
 CMakeFiles/shell.dir/executing/kern.c.o: ../executing/executing.h
 CMakeFiles/shell.dir/executing/kern.c.o: ../executing/kern.c
 CMakeFiles/shell.dir/executing/kern.c.o: ../history.h
-CMakeFiles/shell.dir/executing/kern.c.o: ../minishell.h
 CMakeFiles/shell.dir/executing/kern.c.o: ../parser/parser.h
 CMakeFiles/shell.dir/executing/kern.c.o: ../tokenizer/tokenizer.h
 
@@ -52,31 +58,43 @@ CMakeFiles/shell.dir/parser/syntax_err.c.o: ../history.h
 CMakeFiles/shell.dir/parser/syntax_err.c.o: ../parser/parser.h
 CMakeFiles/shell.dir/parser/syntax_err.c.o: ../parser/syntax_err.c
 
+CMakeFiles/shell.dir/tokenizer/cmd.c.o: ../U/history1.h
 CMakeFiles/shell.dir/tokenizer/cmd.c.o: ../history.h
 CMakeFiles/shell.dir/tokenizer/cmd.c.o: ../parser/parser.h
 CMakeFiles/shell.dir/tokenizer/cmd.c.o: ../tokenizer/cmd.c
 CMakeFiles/shell.dir/tokenizer/cmd.c.o: ../tokenizer/tokenizer.h
 
+CMakeFiles/shell.dir/tokenizer/conditions.c.o: ../U/history1.h
 CMakeFiles/shell.dir/tokenizer/conditions.c.o: ../history.h
 CMakeFiles/shell.dir/tokenizer/conditions.c.o: ../parser/parser.h
 CMakeFiles/shell.dir/tokenizer/conditions.c.o: ../tokenizer/conditions.c
 CMakeFiles/shell.dir/tokenizer/conditions.c.o: ../tokenizer/tokenizer.h
 
+CMakeFiles/shell.dir/tokenizer/dollar_sign_assign.c.o: ../U/history1.h
 CMakeFiles/shell.dir/tokenizer/dollar_sign_assign.c.o: ../history.h
 CMakeFiles/shell.dir/tokenizer/dollar_sign_assign.c.o: ../parser/parser.h
 CMakeFiles/shell.dir/tokenizer/dollar_sign_assign.c.o: ../tokenizer/dollar_sign_assign.c
 CMakeFiles/shell.dir/tokenizer/dollar_sign_assign.c.o: ../tokenizer/tokenizer.h
 
+CMakeFiles/shell.dir/tokenizer/dollar_sign_cnt.c.o: ../U/history1.h
 CMakeFiles/shell.dir/tokenizer/dollar_sign_cnt.c.o: ../history.h
 CMakeFiles/shell.dir/tokenizer/dollar_sign_cnt.c.o: ../parser/parser.h
 CMakeFiles/shell.dir/tokenizer/dollar_sign_cnt.c.o: ../tokenizer/dollar_sign_cnt.c
 CMakeFiles/shell.dir/tokenizer/dollar_sign_cnt.c.o: ../tokenizer/tokenizer.h
 
+CMakeFiles/shell.dir/tokenizer/free_and_exit_tokenizer.c.o: ../U/history1.h
+CMakeFiles/shell.dir/tokenizer/free_and_exit_tokenizer.c.o: ../history.h
+CMakeFiles/shell.dir/tokenizer/free_and_exit_tokenizer.c.o: ../parser/parser.h
+CMakeFiles/shell.dir/tokenizer/free_and_exit_tokenizer.c.o: ../tokenizer/free_and_exit_tokenizer.c
+CMakeFiles/shell.dir/tokenizer/free_and_exit_tokenizer.c.o: ../tokenizer/tokenizer.h
+
+CMakeFiles/shell.dir/tokenizer/redirect_error.c.o: ../U/history1.h
 CMakeFiles/shell.dir/tokenizer/redirect_error.c.o: ../history.h
 CMakeFiles/shell.dir/tokenizer/redirect_error.c.o: ../parser/parser.h
 CMakeFiles/shell.dir/tokenizer/redirect_error.c.o: ../tokenizer/redirect_error.c
 CMakeFiles/shell.dir/tokenizer/redirect_error.c.o: ../tokenizer/tokenizer.h
 
+CMakeFiles/shell.dir/tokenizer/redirects.c.o: ../U/history1.h
 CMakeFiles/shell.dir/tokenizer/redirects.c.o: ../history.h
 CMakeFiles/shell.dir/tokenizer/redirects.c.o: ../parser/parser.h
 CMakeFiles/shell.dir/tokenizer/redirects.c.o: ../tokenizer/redirects.c

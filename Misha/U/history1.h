@@ -33,6 +33,7 @@ struct s_gnl
 	char *term_name;
 	struct termios *term;
 	struct termios *reset_term;
+	int		status;
 };
 
 int		lst_create_add(t_list **lst, char *line);

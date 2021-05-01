@@ -62,10 +62,12 @@ size_t	quotes_handler(char *line, char *mask)
 					|| (line[i - 1] == '\\' && line[i - 2] == '\\')))
 			|| (i == 0 && ft_strchr("\'\"", line[i])))
 		{
-			if (line[i] == '\'' && !single_quotes_handler(line, mask, &i))
+			if ((line[i] == '\'' && !single_quotes_handler(line, mask, &i))
+			|| (line[i] == '\"' && !double_quotes_handler(line, mask, &i)))
 				return (0);
-			else if (line[i] == '\"' && !double_quotes_handler(line, mask, &i))
-				return (0);
+			/*else if (line[i] == '\"' && !double_quotes_handler(line, mask,
+			 * &i))
+				return (0);*/
 		}
 		i++;
 	}

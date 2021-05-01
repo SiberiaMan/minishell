@@ -67,10 +67,10 @@ RM = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/dchani/Desktop/project/Misha
+CMAKE_SOURCE_DIR = /Users/dchani/Desktop/minishell_project/Misha
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/dchani/Desktop/project/Misha/cmake-build-debug
+CMAKE_BINARY_DIR = /Users/dchani/Desktop/minishell_project/Misha/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -99,9 +99,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/dchani/Desktop/project/Misha/cmake-build-debug/CMakeFiles /Users/dchani/Desktop/project/Misha/cmake-build-debug//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/dchani/Desktop/minishell_project/Misha/cmake-build-debug/CMakeFiles /Users/dchani/Desktop/minishell_project/Misha/cmake-build-debug//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/dchani/Desktop/project/Misha/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/dchani/Desktop/minishell_project/Misha/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -249,6 +249,33 @@ U/term_utills.s: U/term_utills.c.s
 U/term_utills.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/U/term_utills.c.s
 .PHONY : U/term_utills.c.s
+
+executing/free_and_exit.o: executing/free_and_exit.c.o
+
+.PHONY : executing/free_and_exit.o
+
+# target to build an object file
+executing/free_and_exit.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/executing/free_and_exit.c.o
+.PHONY : executing/free_and_exit.c.o
+
+executing/free_and_exit.i: executing/free_and_exit.c.i
+
+.PHONY : executing/free_and_exit.i
+
+# target to preprocess a source file
+executing/free_and_exit.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/executing/free_and_exit.c.i
+.PHONY : executing/free_and_exit.c.i
+
+executing/free_and_exit.s: executing/free_and_exit.c.s
+
+.PHONY : executing/free_and_exit.s
+
+# target to generate assembly for a file
+executing/free_and_exit.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/executing/free_and_exit.c.s
+.PHONY : executing/free_and_exit.c.s
 
 executing/kern.o: executing/kern.c.o
 
@@ -547,6 +574,33 @@ tokenizer/dollar_sign_cnt.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/tokenizer/dollar_sign_cnt.c.s
 .PHONY : tokenizer/dollar_sign_cnt.c.s
 
+tokenizer/free_and_exit_tokenizer.o: tokenizer/free_and_exit_tokenizer.c.o
+
+.PHONY : tokenizer/free_and_exit_tokenizer.o
+
+# target to build an object file
+tokenizer/free_and_exit_tokenizer.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/tokenizer/free_and_exit_tokenizer.c.o
+.PHONY : tokenizer/free_and_exit_tokenizer.c.o
+
+tokenizer/free_and_exit_tokenizer.i: tokenizer/free_and_exit_tokenizer.c.i
+
+.PHONY : tokenizer/free_and_exit_tokenizer.i
+
+# target to preprocess a source file
+tokenizer/free_and_exit_tokenizer.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/tokenizer/free_and_exit_tokenizer.c.i
+.PHONY : tokenizer/free_and_exit_tokenizer.c.i
+
+tokenizer/free_and_exit_tokenizer.s: tokenizer/free_and_exit_tokenizer.c.s
+
+.PHONY : tokenizer/free_and_exit_tokenizer.s
+
+# target to generate assembly for a file
+tokenizer/free_and_exit_tokenizer.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/tokenizer/free_and_exit_tokenizer.c.s
+.PHONY : tokenizer/free_and_exit_tokenizer.c.s
+
 tokenizer/redirect_error.o: tokenizer/redirect_error.c.o
 
 .PHONY : tokenizer/redirect_error.o
@@ -622,6 +676,9 @@ help:
 	@echo "... U/term_utills.o"
 	@echo "... U/term_utills.i"
 	@echo "... U/term_utills.s"
+	@echo "... executing/free_and_exit.o"
+	@echo "... executing/free_and_exit.i"
+	@echo "... executing/free_and_exit.s"
 	@echo "... executing/kern.o"
 	@echo "... executing/kern.i"
 	@echo "... executing/kern.s"
@@ -655,6 +712,9 @@ help:
 	@echo "... tokenizer/dollar_sign_cnt.o"
 	@echo "... tokenizer/dollar_sign_cnt.i"
 	@echo "... tokenizer/dollar_sign_cnt.s"
+	@echo "... tokenizer/free_and_exit_tokenizer.o"
+	@echo "... tokenizer/free_and_exit_tokenizer.i"
+	@echo "... tokenizer/free_and_exit_tokenizer.s"
 	@echo "... tokenizer/redirect_error.o"
 	@echo "... tokenizer/redirect_error.i"
 	@echo "... tokenizer/redirect_error.s"

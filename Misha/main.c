@@ -1,36 +1,31 @@
 #include "minishell.h"
 
-static size_t	parse_n_execute(char *line, char **env, int *status) // входит
-// изначальная "грязная
-// "команда
+void	parse_n_execute(t_gnl *gnl, char **env)
 {
+	size_t	i;
 	char 	*mask;
 
-	if (!(mask = get_mask_normal(line)))
-		return (0);
-	/// exit
-	//printf("%s\n", line);
-	//printf("%s\n", mask);
-	if (!parser(line, mask))
+	i = 0;
+	mask = ft_calloc(ft_strlen(gnl->history->line) + 1, sizeof(char));
+	if (!mask)
 	{
-		(*status) = 1;
-		free(mask); //// free struct
-		return (0);
+		free_gnl(gnl);
+		exit (1);
 	}
-	char *kek = (char*)malloc(sizeof(char) * 5000);
-	handle_semicolons(line, mask, env, status);
-	free(mask);
-	return (1);
-}
-
-int start_cmd(t_gnl *gnl, char **env) {
-	//char *line = "kek\\''";
-	//char *line = "kek' okj\\hf''\\$kekehf\\'lol";
-	int status;
-
-	char *line = gnl->history->line;
-	if (!parse_n_execute(line, env, &status))
-		return (0);
+	while (i < ft_strlen(gnl->history->line))
+		mask[i++] = '1';
+	if (!get_mask_normal(gnl->history->line, mask))
+		return ;
+	if (!parser(gnl->history->line, mask))
+	{
+		free(mask); /// по парсингу не прошла строка, возращаемся в терминал
+		gnl->status = 258;
+		return ;
+	}
+	printf("%s\n", gnl->history->line);
+	printf("%s\n", mask);
+	handle_semicolons(gnl, mask, env);
+	free(mask); ///  прошел парсинг и каоманды успешно выполнились
 }
 
 int comparison(t_gnl *gnl)
@@ -62,7 +57,7 @@ int comparison(t_gnl *gnl)
 int input(t_gnl *gnl, char **env)
 {
 	tputs("minishell=):", 1, ft_putint);
-	tputs(save_cursor, 1, ft_putint);
+	//tputs(save_cursor, 1, ft_putint);
 	while (1)
 	{
 		set_terminal(gnl->term_name, gnl->term, gnl->reset_term, 1);
@@ -71,7 +66,7 @@ int input(t_gnl *gnl, char **env)
 		if (comparison(gnl) == 1)
 		{
 			set_terminal(gnl->term_name, gnl->term, gnl->reset_term, 0);
-			start_cmd(gnl, env);
+			parse_n_execute(gnl, env);
 			set_terminal(gnl->term_name, gnl->term, gnl->reset_term, 1);
 			//write(1, "\n", 1);
 			tputs("minishell=):", 1, ft_putint);

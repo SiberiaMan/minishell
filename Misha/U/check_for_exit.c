@@ -30,11 +30,8 @@ void free_gnl(t_gnl *gnl)
 		free(gnl->edit);
 	if(gnl->term)
 		free(gnl->term);
-//	if(gnl->term_name) //хз надо ли это чистить upd: это не надо чистить
-//		free(gnl->term_name);
 	if(gnl->history)
-		ft_lstclear(gnl->history, gnl->flag); //говно какое-то
-	sleep(1000);
+		ft_lstclear(gnl->history, gnl->flag);
 	exit (0);
 }
 

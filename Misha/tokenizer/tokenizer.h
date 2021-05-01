@@ -8,19 +8,20 @@
 #include <dirent.h>
 #include "../history.h"
 #include "../parser/parser.h"
+#include "../U/history1.h"
 #include <fcntl.h>
 
 typedef struct	s_line_n_mask
 {
-	const char	*line;
+	char		*line;
 	char		**env;
 	char		*mask;
-	char		*history;
 	int			status;
 	char		**free_line;
 	int			**pipes;
 	int 		*pids;
 	size_t		cnt_pipes;
+	t_gnl		*gnl;
 }				t_line_n_mask;
 
 typedef	struct 		s_token
@@ -36,17 +37,20 @@ typedef	struct 		s_token
 	int 	status;
 }					t_token;
 
-size_t handle_redirects(t_line_n_mask l_n_m, t_token *token, size_t i);
-size_t get_cnt_dollar(t_line_n_mask l_n_m, size_t *start);
+void	free_and_exit_tokenizer(t_line_n_mask *l_n_m);
+size_t handle_redirects(t_line_n_mask *l_n_m, t_token *token, size_t i);
+size_t get_cnt_dollar(t_line_n_mask *l_n_m, size_t *start);
 size_t 	get_cnt_after_equal(char *line);
-void	handle_string_dollar(t_line_n_mask l_n_m, char *line,
+void	handle_string_dollar(t_line_n_mask *l_n_m, char *line,
 size_t *start, size_t *i);
-size_t	condition_redirects_1(t_line_n_mask l_n_m, size_t i, char c);
-size_t	condition_redirects_2(t_line_n_mask l_n_m, size_t i, char c);
-size_t	condition_redirects3(t_line_n_mask l_n_m, size_t start);
-int		redirect_error(t_token *token, t_line_n_mask *l_n_m);
-void	handle_cmd(t_line_n_mask l_n_m, t_token *token, size_t i);
-size_t	condition_cmd_limits(t_line_n_mask l_n_m, size_t i);
-size_t	handle_cmd_condition(t_line_n_mask l_n_m, size_t i);
+size_t	condition_redirects_1(t_line_n_mask *l_n_m, size_t i, char c);
+size_t	condition_redirects_2(t_line_n_mask *l_n_m, size_t i, char c);
+size_t	condition_redirects3(t_line_n_mask *l_n_m, size_t start);
+size_t 	redirect_error(t_token *token, t_line_n_mask *l_n_m);
+void	handle_cmd(t_line_n_mask *l_n_m, t_token *token, size_t i);
+size_t	condition_cmd_limits(t_line_n_mask *l_n_m, size_t i);
+size_t	handle_cmd_condition(t_line_n_mask *l_n_m, size_t i);
+void	free_and_exit_tokenizer_cmd(t_token *token, t_line_n_mask *l_n_m,
+size_t i);
 
 #endif
