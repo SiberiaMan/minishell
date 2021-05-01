@@ -59,7 +59,7 @@ char	*get_redir(t_line_n_mask l_n_m, size_t start, char **line) // not 25
 			handle_string_dollar(l_n_m, *line, &start, &i);
 	change_mask(l_n_m, j, start);
 	(*line)[i] = '\0';
-	printf("%s\n", *line);
+	//printf("%s\n", *line);
 	return (*line);
 }
 

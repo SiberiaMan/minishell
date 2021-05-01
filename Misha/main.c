@@ -9,8 +9,8 @@ static size_t	parse_n_execute(char *line, char **env, int *status) // входи
 	if (!(mask = get_mask_normal(line)))
 		return (0);
 	/// exit
-	printf("%s\n", line);
-	printf("%s\n", mask);
+	//printf("%s\n", line);
+	//printf("%s\n", mask);
 	if (!parser(line, mask))
 	{
 		(*status) = 1;
@@ -73,7 +73,7 @@ int input(t_gnl *gnl, char **env)
 			set_terminal(gnl->term_name, gnl->term, gnl->reset_term, 0);
 			start_cmd(gnl, env);
 			set_terminal(gnl->term_name, gnl->term, gnl->reset_term, 1);
-			write(1, "\n", 1);
+			//write(1, "\n", 1);
 			tputs("minishell=):", 1, ft_putint);
 			tputs(save_cursor, 1, ft_putint);
 		}

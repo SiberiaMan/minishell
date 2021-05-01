@@ -5,6 +5,7 @@ int	enter(t_gnl *gnl)
 	check_for_exit(gnl->edit, gnl);
 	if (gnl->edit[0] != '\0')
 	{
+		write(1, "\n", 1);
 		lst_create_add(&gnl->history, ft_strdup(gnl->edit));
 		free(gnl->edit);
 		gnl->edit = ft_calloc(1, 1);

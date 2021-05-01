@@ -27,12 +27,12 @@ size_t	kernel(t_line_n_mask l_n_m, size_t i, int *status) /// status
 	if (!handle_redirects(l_n_m, &temp_cmd, i))
 		printf("stop this pipe and go to next pipe\n");
 	/// next pipe
-	printf("%s\n", l_n_m.mask);
+	//printf("%s\n", l_n_m.mask);
 	if (temp_cmd.line)
 		free(temp_cmd.line);
 	handle_cmd(l_n_m, &temp_cmd, i);
-	while (temp_cmd.args[j])
-		printf("%s\n",temp_cmd.args[j++]);
+/*	while (temp_cmd.args[j])
+		printf("%s\n",temp_cmd.args[j++]); */
 //	printf("kek\n");
 	/*while (j < p_n_pds.cnt_pipes + 1)
 	{
