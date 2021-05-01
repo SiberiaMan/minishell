@@ -53,7 +53,7 @@ int comparison(t_gnl *gnl)
 		backspace(gnl);
 	if(!ft_strcmp(gnl->str, "\4"))
 	{
-		if (ft_strlen(gnl->edit) == 1)
+		if (ft_strlen(gnl->edit) <= 1 || !(gnl->edit))
 			ctrl_d(gnl);
 	}
 	return(0);
@@ -72,7 +72,10 @@ int input(t_gnl *gnl, char **env)
 		{
 			set_terminal(gnl->term_name, gnl->term, gnl->reset_term, 0);
 			start_cmd(gnl, env);
-			//write(1, "kek", 3);
+			set_terminal(gnl->term_name, gnl->term, gnl->reset_term, 1);
+			write(1, "\n", 1);
+			tputs("minishell=):", 1, ft_putint);
+			tputs(save_cursor, 1, ft_putint);
 		}
 	}
 	return(0);

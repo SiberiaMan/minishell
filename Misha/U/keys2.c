@@ -3,9 +3,6 @@
 int	enter(t_gnl *gnl)
 {
 	check_for_exit(gnl->edit, gnl);
-	write(1, "\n", 1);
-	tputs("minishell=):", 1, ft_putint);
-	tputs(save_cursor, 1, ft_putint);
 	if (gnl->edit[0] != '\0')
 	{
 		lst_create_add(&gnl->history, ft_strdup(gnl->edit));
@@ -18,6 +15,9 @@ int	enter(t_gnl *gnl)
 	}
 	else
 	{
+		write(1, "\n", 1);
+		tputs("minishell=):", 1, ft_putint);
+		tputs(save_cursor, 1, ft_putint);
 		if (gnl->history)
 			while (gnl->history->next)
 				gnl->history = gnl->history->next;
@@ -31,6 +31,7 @@ int	get_command(t_gnl *gnl)
 
 	ptr = gnl->edit;
 	write(1, gnl->str, gnl->l);
+	//write(1, "|", 1);
 	gnl->edit = ft_strjoin(gnl->edit, gnl->str);
 	free(ptr);
 	return (0);
