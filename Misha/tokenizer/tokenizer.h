@@ -28,15 +28,12 @@ typedef	struct 		s_token
 {
 	char	**args;
 	char	*line;
-	int		pipe_from;
-	int 	pipe_to;
 	int 	fd_from;
 	int 	fd_to;
-	int 	is_from;
-	int 	is_to;
-	int 	status;
 }					t_token;
 
+size_t	check_cmd(t_line_n_mask *l_n_m, t_token *token, size_t i);
+void	free_token_n_structure_exit(t_token *token, t_line_n_mask *l_n_m);
 void	free_and_exit_tokenizer(t_line_n_mask *l_n_m);
 size_t handle_redirects(t_line_n_mask *l_n_m, t_token *token, size_t i);
 size_t get_cnt_dollar(t_line_n_mask *l_n_m, size_t *start);

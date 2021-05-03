@@ -6,63 +6,155 @@ t_token token_init(void)
 			.args = 0,
 			.line = 0,
 			.fd_from = 0,
-			.fd_to = 0,
-			.pipe_to = 0,
-			.pipe_from = 0,
-			.is_from = 0,
-			.is_to = 0
+			.fd_to = 1
 	});
 }
 
-size_t	kernel(t_line_n_mask *l_n_m, size_t i) /// status
-// handle
+void	free_token(t_token *token)
 {
-	size_t	j;
-	t_token	temp_cmd;
+	size_t	i;
 
-	j = 0;
-	l_n_m->status = 8475; /// status init
-	temp_cmd = token_init();
-	l_n_m->free_line = &(temp_cmd.line);
-	if (!handle_redirects(l_n_m, &temp_cmd, i))
-		printf("stop this pipe and go to next pipe\n");
-	/// next pipe
-	//printf("%s\n", l_n_m.mask);
-	if (temp_cmd.line)
-		free(temp_cmd.line);
-	handle_cmd(l_n_m, &temp_cmd, i);
-	while (temp_cmd.args[j])
-		printf("%s\n",temp_cmd.args[j++]);
-//	printf("kek\n");
-	/*while (j < p_n_pds.cnt_pipes + 1)
+	i = 0;
+	if (token->args)
 	{
-		temp_cmd = tokenizer(l_n_m, p_n_pds, &i, j);
-		if (j == p_n_pds.cnt_pipes)
-		{
+		while(token->args[i])
+			free(token->args[i++]);
+		free(token->args);
+	}
+	if (token->line)
+		free(token->line);
+}
 
+size_t	get_next_pipe(t_line_n_mask *l_n_m, size_t j)
+{
+	while(l_n_m->line[j] && !(l_n_m->line[j] == '|'
+	 && l_n_m->mask[j] == SPEC_SYMBOL))
+		j++;
+	j++;
+	return (j);
+}
+
+size_t check_builtins(char *line)
+{
+	if (!ft_strncmp_cmd("cd", line, ft_strlen(line)))
+		return (1);
+	if (!ft_strncmp_cmd("pwd", line, ft_strlen(line)))
+		return (1);
+	if (!ft_strncmp_cmd("echo", line, ft_strlen(line)))
+		return (1);
+	if (!ft_strncmp_cmd("export", line, ft_strlen(line)))
+		return (1);
+	if (!ft_strncmp_cmd("unset", line, ft_strlen(line)))
+		return (1);
+	return (0);
+}
+
+void	child_process(t_line_n_mask *l_n_m, t_token token, size_t i)
+{
+	change_io(l_n_m, &token, i);
+	execve(token.args[0], token.args, l_n_m->env);
+	perror("Error: ");
+	exit (1);
+}
+
+void	kernel(t_line_n_mask *l_n_m, size_t start)
+{
+	t_token	token;
+	size_t	j;
+	size_t	i;
+
+	j = start;
+	i = 0;
+	while (i < l_n_m->cnt_pipes + 1)
+	{
+		token = token_init();
+		if (handle_redirects(l_n_m, &token, j)
+		&& (check_cmd(l_n_m, &token, j)))
+		{
+			//if (check_builtins(token.args[0]))
+			//	builins(l_n_m, token, i);
+			//else
+			l_n_m->pids[i] = fork();
+			if (l_n_m->pids[i] < 0)
+				free_token_n_structure_exit(&token, l_n_m);
+			if (!l_n_m->pids[i])
+				child_process(l_n_m, token, i);
 		}
-	} */
+		free_token(&token);
+		j = get_next_pipe(l_n_m, j);
+		i++;
+	}
+}
+
+void	kernel_start(t_line_n_mask *l_n_m, size_t start)
+{
+	size_t	i;
+
+	i = 0;
+	kernel(l_n_m, start);
+	while (i < l_n_m->cnt_pipes + 1)
+	{
+		close(l_n_m->pipes[i][0]);
+		close(l_n_m->pipes[i][1]);
+		i++;
+	}
+	i = 0;
+	while (i < l_n_m->cnt_pipes + 1 && waitpid(l_n_m->pids[i],
+	&l_n_m->status, 0))
+		i++;
+}
+
+static void	malloc_pipes(t_line_n_mask *l_n_m)
+{
+	size_t	i;
+	size_t 	j;
+
+	i = 0;
+	while (i < l_n_m->cnt_pipes + 1)
+	{
+		l_n_m->pipes[i] = (int*)malloc(sizeof(int) * 2);
+		if (!l_n_m->pipes[i])
+		{
+			j = 0;
+			while (j < i)
+				free(l_n_m->pipes[j++]);
+			free_and_exit(l_n_m);
+		}
+		if (pipe(l_n_m->pipes[i]) < 0)
+		{
+			j = 0;
+			while (j < i)
+				free(l_n_m->pipes[j++]);
+			free_and_exit(l_n_m);
+		}
+		i++;
+	}
 }
 
 static size_t handle_pipes(t_line_n_mask *l_n_m, size_t i)
 {
-	size_t 			start;
+	size_t 	start;
+	size_t	j;
 
 	start = i;
+	j = 0;
+	l_n_m->cnt_pipes = 0;
 	while (l_n_m->line[i] && l_n_m->mask[i] != CURRENT_SPLIT)
 	{
 		if (l_n_m->line[i] == '|' && l_n_m->mask[i] == SPEC_SYMBOL)
 			l_n_m->cnt_pipes++;
 		i++;
 	}
-	l_n_m->pipes = (int**)malloc(sizeof(int[2]) * l_n_m->cnt_pipes);
-	if (!l_n_m->pipes) // exit program + status ?
+	l_n_m->pipes = (int**)malloc(sizeof(int*) * (l_n_m->cnt_pipes + 1));
+	if (!l_n_m->pipes)
 		free_and_exit(l_n_m);
+	malloc_pipes(l_n_m);
 	l_n_m->pids = (int*)malloc(sizeof(int) * l_n_m->cnt_pipes + 1);
-	if (!l_n_m->pids) // exit program + status ?
+	if (!l_n_m->pids)
 		free_and_exit(l_n_m);
 	i = start;
-	kernel(l_n_m, i);
+	kernel_start(l_n_m, i);
+	free_kernel(l_n_m);
 	return (0);
 }
 
@@ -100,5 +192,14 @@ void	handle_semicolons(t_gnl *gnl, char *mask, char **env)
 		}
 		i++;
 	}
-	handle_pipes(&l_n_m, j);
+	i = j;
+	while (l_n_m.line[i])
+	{
+		if (!(l_n_m.line[i] == ' ' && mask[i] == '1'))
+		{
+			handle_pipes(&l_n_m, j);
+			break ;
+		}
+		i++;
+	}
 }

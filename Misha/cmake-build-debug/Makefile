@@ -67,10 +67,10 @@ RM = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/dchani/Desktop/minishell_project/Misha
+CMAKE_SOURCE_DIR = /Users/dchani/Desktop/minishell_debug_branch/Misha
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/dchani/Desktop/minishell_project/Misha/cmake-build-debug
+CMAKE_BINARY_DIR = /Users/dchani/Desktop/minishell_debug_branch/Misha/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -99,9 +99,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/dchani/Desktop/minishell_project/Misha/cmake-build-debug/CMakeFiles /Users/dchani/Desktop/minishell_project/Misha/cmake-build-debug//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/dchani/Desktop/minishell_debug_branch/Misha/cmake-build-debug/CMakeFiles /Users/dchani/Desktop/minishell_debug_branch/Misha/cmake-build-debug//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/dchani/Desktop/minishell_project/Misha/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/dchani/Desktop/minishell_debug_branch/Misha/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -249,6 +249,33 @@ U/term_utills.s: U/term_utills.c.s
 U/term_utills.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/U/term_utills.c.s
 .PHONY : U/term_utills.c.s
+
+executing/change_io.o: executing/change_io.c.o
+
+.PHONY : executing/change_io.o
+
+# target to build an object file
+executing/change_io.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/executing/change_io.c.o
+.PHONY : executing/change_io.c.o
+
+executing/change_io.i: executing/change_io.c.i
+
+.PHONY : executing/change_io.i
+
+# target to preprocess a source file
+executing/change_io.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/executing/change_io.c.i
+.PHONY : executing/change_io.c.i
+
+executing/change_io.s: executing/change_io.c.s
+
+.PHONY : executing/change_io.s
+
+# target to generate assembly for a file
+executing/change_io.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/executing/change_io.c.s
+.PHONY : executing/change_io.c.s
 
 executing/free_and_exit.o: executing/free_and_exit.c.o
 
@@ -466,6 +493,33 @@ parser/syntax_err.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/parser/syntax_err.c.s
 .PHONY : parser/syntax_err.c.s
 
+tokenizer/check_cmd.o: tokenizer/check_cmd.c.o
+
+.PHONY : tokenizer/check_cmd.o
+
+# target to build an object file
+tokenizer/check_cmd.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/tokenizer/check_cmd.c.o
+.PHONY : tokenizer/check_cmd.c.o
+
+tokenizer/check_cmd.i: tokenizer/check_cmd.c.i
+
+.PHONY : tokenizer/check_cmd.i
+
+# target to preprocess a source file
+tokenizer/check_cmd.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/tokenizer/check_cmd.c.i
+.PHONY : tokenizer/check_cmd.c.i
+
+tokenizer/check_cmd.s: tokenizer/check_cmd.c.s
+
+.PHONY : tokenizer/check_cmd.s
+
+# target to generate assembly for a file
+tokenizer/check_cmd.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/tokenizer/check_cmd.c.s
+.PHONY : tokenizer/check_cmd.c.s
+
 tokenizer/cmd.o: tokenizer/cmd.c.o
 
 .PHONY : tokenizer/cmd.o
@@ -676,6 +730,9 @@ help:
 	@echo "... U/term_utills.o"
 	@echo "... U/term_utills.i"
 	@echo "... U/term_utills.s"
+	@echo "... executing/change_io.o"
+	@echo "... executing/change_io.i"
+	@echo "... executing/change_io.s"
 	@echo "... executing/free_and_exit.o"
 	@echo "... executing/free_and_exit.i"
 	@echo "... executing/free_and_exit.s"
@@ -700,6 +757,9 @@ help:
 	@echo "... parser/syntax_err.o"
 	@echo "... parser/syntax_err.i"
 	@echo "... parser/syntax_err.s"
+	@echo "... tokenizer/check_cmd.o"
+	@echo "... tokenizer/check_cmd.i"
+	@echo "... tokenizer/check_cmd.s"
 	@echo "... tokenizer/cmd.o"
 	@echo "... tokenizer/cmd.i"
 	@echo "... tokenizer/cmd.s"

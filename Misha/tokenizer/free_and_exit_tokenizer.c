@@ -12,6 +12,17 @@ size_t i)
 	free_and_exit_tokenizer(l_n_m);
 }
 
+void	free_token_n_structure_exit(t_token *token, t_line_n_mask *l_n_m)
+{
+	size_t	j;
+
+	j = 0;
+	while (token->args[j])
+		free(token->args[j++]);
+	free(token->args);
+	free_and_exit_tokenizer(l_n_m);
+}
+
 void	free_and_exit_tokenizer(t_line_n_mask *l_n_m)
 {
 	size_t 	j;

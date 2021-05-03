@@ -145,7 +145,7 @@ int ft_putint(int c)
     return(write(STDOUT_FILENO, &c, 1));
 }
 
-int			ft_strncmp(const char *s1, const char *s2, size_t n)
+int			ft_strncmp_env(const char *s1, const char *s2, size_t n)
 {
 	if (!(*s1) || !(*s2))
 		return (1);
@@ -156,6 +156,28 @@ int			ft_strncmp(const char *s1, const char *s2, size_t n)
 		s1++;
 		s2++;
 	}
+	if (*s2 != '=')
+		return (1);
+	return (0);
+}
+
+int	ft_strncmp_cmd(const char *s1, const char *s2, size_t n)
+{
+	const char *ptr1 = s1;
+	const char *ptr2 = s2;
+	if (!s1 || !s2)
+		return (1);
+	if (!(*s1) || !(*s2))
+		return (1);
+	while (*s1 && *s2 && n--)
+	{
+		if (*s1 != *s2)
+			return ((unsigned char)*s1 - (unsigned char)*s2);
+		s1++;
+		s2++;
+	}
+	if (n || *s1 || *s2)
+		return (1);
 	return (0);
 }
 
@@ -217,7 +239,7 @@ static	size_t		ft_len(char const *s, char c, size_t start)
 	return (size);
 }
 
-char				**ft_split(char const *s, char c)
+char				**ft_split(char *s, char c)
 {
 	char		**ptr;
 	size_t		i;
@@ -237,13 +259,13 @@ char				**ft_split(char const *s, char c)
 				return (0);
 			}
 			ft_assign(s, i, i + ft_len(s, c, i), ptr[j]);
-			//printf("%s\n", ptr[j]);
 			i += ft_len(s, c, i);
 			j++;
 		}
 		else
 			i++;
 	ptr[j] = 0;
+	free(s);
 	return (ptr);
 }
 

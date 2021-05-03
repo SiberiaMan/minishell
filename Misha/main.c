@@ -22,10 +22,10 @@ void	parse_n_execute(t_gnl *gnl, char **env)
 		gnl->status = 258;
 		return ;
 	}
-	printf("%s\n", gnl->history->line);
-	printf("%s\n", mask);
+	//printf("%s\n", gnl->history->line);
+	//printf("%s\n", mask);
 	handle_semicolons(gnl, mask, env);
-	free(mask); ///  прошел парсинг и каоманды успешно выполнились
+	free(mask); ///  прошел парсинг и команды успешно выполнились
 }
 
 int comparison(t_gnl *gnl)

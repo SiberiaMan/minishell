@@ -1,3 +1,3 @@
-/Users/dchani/Desktop/minishell_project/Misha/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/Users/dchani/Desktop/minishell_project/Misha/cmake-build-debug/CMakeFiles/edit_cache.dir
-/Users/dchani/Desktop/minishell_project/Misha/cmake-build-debug/CMakeFiles/shell.dir
+/Users/dchani/Desktop/minishell_debug_branch/Misha/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/Users/dchani/Desktop/minishell_debug_branch/Misha/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/dchani/Desktop/minishell_debug_branch/Misha/cmake-build-debug/CMakeFiles/shell.dir
