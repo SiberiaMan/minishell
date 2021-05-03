@@ -29,12 +29,13 @@ static size_t get_cnt_env(t_line_n_mask *l_n_m, size_t *start, size_t j)
 		env[i++] = l_n_m->line[(*start)++];
 	env[i] = '\0';
 	j = 0;
-	while (l_n_m->env[j])
+	while ((*(l_n_m->env))[j])
 	{
-		if (!(ft_strncmp_env(env, l_n_m->env[j], ft_strlen(l_n_m->env[j]))))
+		if (!(ft_strncmp_env(env, (*(l_n_m->env))[j],
+		ft_strlen((*(l_n_m->env))[j]))))
 		{
 			free(env);
-			return (get_cnt_after_equal(l_n_m->env[j]));
+			return (get_cnt_after_equal((*(l_n_m->env))[j]));
 		}
 		j++;
 	}

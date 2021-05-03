@@ -28,5 +28,7 @@ char	*ft_strjoin(char *s1, char *s2);
 void	*ft_memcpy(void *dst, const void *src, size_t n);
 void	*ft_memset(void *b, int c, size_t len);
 char	**ft_split(char *s, char c);
+void	ft_putstr_fd(char *s, int fd);
+void	ft_putchar_fd(char c, int fd);
 
 #endif

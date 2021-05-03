@@ -9,10 +9,10 @@ char	*get_path(t_line_n_mask *l_n_m, t_token *token)
 
 	j = -1;
 	i = 0;
-	while (l_n_m->env[j + 1])
-		if (!ft_strncmp_env("PATH", l_n_m->env[++j], 4))
+	while ((*(l_n_m->env))[j + 1])
+		if (!ft_strncmp_env("PATH", (*(l_n_m->env))[++j], 4))
 			break ;
-	ptr_path = l_n_m->env[j];
+	ptr_path = (*(l_n_m->env))[j];
 	after_equal = (char*)malloc(sizeof(char) * get_cnt_after_equal(ptr_path)
 			+ 1);
 	if (!after_equal)
@@ -62,6 +62,7 @@ static size_t	is_dir(t_line_n_mask *l_n_m, char *line, char **path)
 		write(2, line, ft_strlen(line));
 		write(2, is_a_directory, ft_strlen(is_a_directory));
 		l_n_m->status = 126;
+		closedir(dir);
 		return (0);
 	}
 	else if (!check_slash(line))
@@ -104,6 +105,24 @@ t_line_n_mask *l_n_m)
 	return (1);
 }
 
+size_t check_builtins(char *line)
+{
+	if (line)
+	{
+		if (!ft_strncmp_cmd("cd", line, ft_strlen(line)))
+			return (1);
+		if (!ft_strncmp_cmd("pwd", line, ft_strlen(line)))
+			return (1);
+		if (!ft_strncmp_cmd("echo", line, ft_strlen(line)))
+			return (1);
+		if (!ft_strncmp_cmd("export", line, ft_strlen(line)))
+			return (1);
+		if (!ft_strncmp_cmd("unset", line, ft_strlen(line)))
+			return (1);
+	}
+	return (0);
+}
+
 size_t	check_cmd(t_line_n_mask *l_n_m, t_token *token, size_t i)
 {
 	char			**path;
@@ -113,6 +132,8 @@ size_t	check_cmd(t_line_n_mask *l_n_m, t_token *token, size_t i)
 
 	j = 0;
 	handle_cmd(l_n_m, token, i);
+	if (check_builtins(token->args[0]))
+		return (1);
 	if (token->args[0])
 	{
 		path = ft_split(get_path(l_n_m, token), ':');
@@ -127,7 +148,10 @@ size_t	check_cmd(t_line_n_mask *l_n_m, t_token *token, size_t i)
 					if (!(ft_strncmp_cmd(token->args[0], entry->d_name,
 										 ft_strlen
 												 (entry->d_name))))
+					{
+						closedir(dir);
 						return (change_cmd(path, j, token, l_n_m));
+					}
 					entry = readdir(dir);
 				}
 				closedir(dir);

@@ -14,7 +14,7 @@
 typedef struct	s_line_n_mask
 {
 	char		*line;
-	char		**env;
+	char		***env;
 	char		*mask;
 	int			status;
 	char		**free_line;
@@ -32,6 +32,7 @@ typedef	struct 		s_token
 	int 	fd_to;
 }					t_token;
 
+size_t	check_builtins(char *line);
 size_t	check_cmd(t_line_n_mask *l_n_m, t_token *token, size_t i);
 void	free_token_n_structure_exit(t_token *token, t_line_n_mask *l_n_m);
 void	free_and_exit_tokenizer(t_line_n_mask *l_n_m);

@@ -1,4 +1,5 @@
 #include "history1.h"
+#include "../builtins/builtins.h"
 
 void	ft_lstclear(t_list *history, int flag)
 {
@@ -32,6 +33,9 @@ void free_gnl(t_gnl *gnl)
 		free(gnl->term);
 	if(gnl->history)
 		ft_lstclear(gnl->history, gnl->flag);
+	if (gnl->env)
+		free_vars(*(gnl->env), count_vars(*(gnl->env)) - 1);
+	sleep(100);
 	exit (0);
 }
 
@@ -57,6 +61,7 @@ t_gnl *gnl_init(void)
 	tmp->str = ft_calloc(10, 1);
 	if(!tmp->str)
 		return(NULL);
+	tmp->env = 0;
 	return(tmp);
 }
 

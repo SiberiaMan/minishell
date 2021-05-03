@@ -23,6 +23,7 @@ struct s_list
 
 struct s_gnl
 {
+	char ***env;
 	char *edit;
 	t_list *history;
 	int l;
@@ -43,7 +44,7 @@ int		up(t_gnl *gnl);
 int		down(t_gnl *gnl);
 int		enter(t_gnl *gnl);
 int		backspace(t_gnl *gnl);
-int		input(t_gnl *gnl, char **env);
+int 	input(t_gnl *gnl);
 int		get_command(t_gnl *gnl);
 void 	set_terminal(char *term_name, struct termios *term, struct termios
 			*reset_term,  int flag);

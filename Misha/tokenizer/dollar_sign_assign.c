@@ -34,13 +34,13 @@ static char	*get_env_string(t_line_n_mask *l_n_m, size_t *start, size_t j)
 		env_lvalue[i++] = l_n_m->line[(*start)++];
 	env_lvalue[i] = '\0';
 	j = 0;
-	while (l_n_m->env[j])
+	while ((*(l_n_m->env))[j])
 	{
-		if (!(ft_strncmp_env(env_lvalue, l_n_m->env[j],
-		ft_strlen(l_n_m->env[j]))))
+		if (!(ft_strncmp_env(env_lvalue, (*(l_n_m->env))[j],
+		ft_strlen((*(l_n_m->env))[j]))))
 		{
 			free(env_lvalue);
-			return (get_env_rvalue(l_n_m->env[j], l_n_m));
+			return (get_env_rvalue((*(l_n_m->env))[j], l_n_m));
 		}
 		j++;
 	}

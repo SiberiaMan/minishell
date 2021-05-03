@@ -12,4 +12,6 @@ add_executable(shell minishell.h parser/backslash.c libft_utills.c parser/quotes
         tokenizer/tokenizer.h tokenizer/dollar_sign_assign.c tokenizer/cmd.c tokenizer/dollar_sign_cnt.c
         tokenizer/conditions.c tokenizer/redirect_error.c executing/executing.h executing/kern.c
         U/history1.h U/check_for_exit.c main.c U/keys.c U/keys2.c U/term_utills.c executing/free_functions.c
-        tokenizer/free_and_exit_tokenizer.c tokenizer/check_cmd.c executing/change_io.c)
+        tokenizer/free_and_exit_tokenizer.c tokenizer/check_cmd.c executing/change_io.c
+        builtins/check_export.c builtins/env_alpha.c builtins/export_utills.c builtins/is_builtin.c
+        builtins/manage_duplications.c  builtins/export.c)

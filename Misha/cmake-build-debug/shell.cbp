@@ -93,13 +93,31 @@
 		<Unit filename="/Users/dchani/Desktop/minishell_debug_branch/Misha/U/term_utills.c">
 			<Option target="shell"/>
 		</Unit>
+		<Unit filename="/Users/dchani/Desktop/minishell_debug_branch/Misha/builtins/check_export.c">
+			<Option target="shell"/>
+		</Unit>
+		<Unit filename="/Users/dchani/Desktop/minishell_debug_branch/Misha/builtins/env_alpha.c">
+			<Option target="shell"/>
+		</Unit>
+		<Unit filename="/Users/dchani/Desktop/minishell_debug_branch/Misha/builtins/export.c">
+			<Option target="shell"/>
+		</Unit>
+		<Unit filename="/Users/dchani/Desktop/minishell_debug_branch/Misha/builtins/export_utills.c">
+			<Option target="shell"/>
+		</Unit>
+		<Unit filename="/Users/dchani/Desktop/minishell_debug_branch/Misha/builtins/is_builtin.c">
+			<Option target="shell"/>
+		</Unit>
+		<Unit filename="/Users/dchani/Desktop/minishell_debug_branch/Misha/builtins/manage_duplications.c">
+			<Option target="shell"/>
+		</Unit>
 		<Unit filename="/Users/dchani/Desktop/minishell_debug_branch/Misha/executing/change_io.c">
 			<Option target="shell"/>
 		</Unit>
 		<Unit filename="/Users/dchani/Desktop/minishell_debug_branch/Misha/executing/executing.h">
 			<Option target="shell"/>
 		</Unit>
-		<Unit filename="/Users/dchani/Desktop/minishell_debug_branch/Misha/executing/free_and_exit.c">
+		<Unit filename="/Users/dchani/Desktop/minishell_debug_branch/Misha/executing/free_functions.c">
 			<Option target="shell"/>
 		</Unit>
 		<Unit filename="/Users/dchani/Desktop/minishell_debug_branch/Misha/executing/kern.c">

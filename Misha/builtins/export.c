@@ -1,38 +1,10 @@
 #include "builtins.h"
 
-void   free_and_exit_tokenizer(t_line_n_mask *l_n_m)
-{
-	size_t     j;
-	j = 0;
-	free_gnl(l_n_m->gnl);
-	while (l_n_m->env[j])
-		free(l_n_m->env[j++]);
-	free (l_n_m->env);
-	free (l_n_m->mask);
-	if (l_n_m->pids)
-		free(l_n_m->pids);
-	if (l_n_m->pipes)
-		free(l_n_m->pipes);
-	if (*(l_n_m->free_line))
-		free(*(l_n_m->free_line));
-	exit (1);
-}
-
-void    free_token_n_structure_exit(t_token *token, t_line_n_mask *l_n_m)
-{
-	size_t j;
-	j = 0;
-	while (token->args[j])
-		free(token->args[j++]);
-	free(token->args);
-	free_and_exit_tokenizer(l_n_m);
-}
-
 void	free_export(t_line_n_mask *l_n_m, t_token *token, char **vars, int i)
 {
 	if(vars)
 		free_vars(vars, i);
-	free_token_n_structure_exit(t_token *token, t_line_n_mask *l_n_m);
+	free_token_n_structure_exit(token, l_n_m);
 }
 
 char	**export_one_var(char *var, char **envp, t_line_n_mask *l_n_m, t_token *token)
@@ -70,7 +42,7 @@ int ft_export(t_line_n_mask *l_n_m, t_token *token)
 
 	if (!token->args[1])
 	{
-		sort_vars(token->args);
+		sort_vars(*l_n_m->env);
 		return (0);
 	}
 	count = count_valid_vars(token->args);
@@ -78,8 +50,8 @@ int ft_export(t_line_n_mask *l_n_m, t_token *token)
 		valid_vars = collect_valid_vars(count, token->args, l_n_m, token);
 	else
 		return (1);
-	new_env = manage_duplication(valid_vars, l_n_m->env, l_n_m, token);
-	l_n_m->env = new_env;
+	new_env = manage_duplication(valid_vars, *l_n_m->env, l_n_m, token);
+	*l_n_m->env = new_env;
 	return (0);
 }
 

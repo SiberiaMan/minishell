@@ -250,6 +250,168 @@ U/term_utills.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/U/term_utills.c.s
 .PHONY : U/term_utills.c.s
 
+builtins/check_export.o: builtins/check_export.c.o
+
+.PHONY : builtins/check_export.o
+
+# target to build an object file
+builtins/check_export.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/builtins/check_export.c.o
+.PHONY : builtins/check_export.c.o
+
+builtins/check_export.i: builtins/check_export.c.i
+
+.PHONY : builtins/check_export.i
+
+# target to preprocess a source file
+builtins/check_export.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/builtins/check_export.c.i
+.PHONY : builtins/check_export.c.i
+
+builtins/check_export.s: builtins/check_export.c.s
+
+.PHONY : builtins/check_export.s
+
+# target to generate assembly for a file
+builtins/check_export.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/builtins/check_export.c.s
+.PHONY : builtins/check_export.c.s
+
+builtins/env_alpha.o: builtins/env_alpha.c.o
+
+.PHONY : builtins/env_alpha.o
+
+# target to build an object file
+builtins/env_alpha.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/builtins/env_alpha.c.o
+.PHONY : builtins/env_alpha.c.o
+
+builtins/env_alpha.i: builtins/env_alpha.c.i
+
+.PHONY : builtins/env_alpha.i
+
+# target to preprocess a source file
+builtins/env_alpha.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/builtins/env_alpha.c.i
+.PHONY : builtins/env_alpha.c.i
+
+builtins/env_alpha.s: builtins/env_alpha.c.s
+
+.PHONY : builtins/env_alpha.s
+
+# target to generate assembly for a file
+builtins/env_alpha.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/builtins/env_alpha.c.s
+.PHONY : builtins/env_alpha.c.s
+
+builtins/export.o: builtins/export.c.o
+
+.PHONY : builtins/export.o
+
+# target to build an object file
+builtins/export.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/builtins/export.c.o
+.PHONY : builtins/export.c.o
+
+builtins/export.i: builtins/export.c.i
+
+.PHONY : builtins/export.i
+
+# target to preprocess a source file
+builtins/export.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/builtins/export.c.i
+.PHONY : builtins/export.c.i
+
+builtins/export.s: builtins/export.c.s
+
+.PHONY : builtins/export.s
+
+# target to generate assembly for a file
+builtins/export.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/builtins/export.c.s
+.PHONY : builtins/export.c.s
+
+builtins/export_utills.o: builtins/export_utills.c.o
+
+.PHONY : builtins/export_utills.o
+
+# target to build an object file
+builtins/export_utills.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/builtins/export_utills.c.o
+.PHONY : builtins/export_utills.c.o
+
+builtins/export_utills.i: builtins/export_utills.c.i
+
+.PHONY : builtins/export_utills.i
+
+# target to preprocess a source file
+builtins/export_utills.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/builtins/export_utills.c.i
+.PHONY : builtins/export_utills.c.i
+
+builtins/export_utills.s: builtins/export_utills.c.s
+
+.PHONY : builtins/export_utills.s
+
+# target to generate assembly for a file
+builtins/export_utills.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/builtins/export_utills.c.s
+.PHONY : builtins/export_utills.c.s
+
+builtins/is_builtin.o: builtins/is_builtin.c.o
+
+.PHONY : builtins/is_builtin.o
+
+# target to build an object file
+builtins/is_builtin.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/builtins/is_builtin.c.o
+.PHONY : builtins/is_builtin.c.o
+
+builtins/is_builtin.i: builtins/is_builtin.c.i
+
+.PHONY : builtins/is_builtin.i
+
+# target to preprocess a source file
+builtins/is_builtin.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/builtins/is_builtin.c.i
+.PHONY : builtins/is_builtin.c.i
+
+builtins/is_builtin.s: builtins/is_builtin.c.s
+
+.PHONY : builtins/is_builtin.s
+
+# target to generate assembly for a file
+builtins/is_builtin.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/builtins/is_builtin.c.s
+.PHONY : builtins/is_builtin.c.s
+
+builtins/manage_duplications.o: builtins/manage_duplications.c.o
+
+.PHONY : builtins/manage_duplications.o
+
+# target to build an object file
+builtins/manage_duplications.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/builtins/manage_duplications.c.o
+.PHONY : builtins/manage_duplications.c.o
+
+builtins/manage_duplications.i: builtins/manage_duplications.c.i
+
+.PHONY : builtins/manage_duplications.i
+
+# target to preprocess a source file
+builtins/manage_duplications.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/builtins/manage_duplications.c.i
+.PHONY : builtins/manage_duplications.c.i
+
+builtins/manage_duplications.s: builtins/manage_duplications.c.s
+
+.PHONY : builtins/manage_duplications.s
+
+# target to generate assembly for a file
+builtins/manage_duplications.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/builtins/manage_duplications.c.s
+.PHONY : builtins/manage_duplications.c.s
+
 executing/change_io.o: executing/change_io.c.o
 
 .PHONY : executing/change_io.o
@@ -277,32 +439,32 @@ executing/change_io.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/executing/change_io.c.s
 .PHONY : executing/change_io.c.s
 
-executing/free_and_exit.o: executing/free_and_exit.c.o
+executing/free_functions.o: executing/free_functions.c.o
 
-.PHONY : executing/free_and_exit.o
+.PHONY : executing/free_functions.o
 
 # target to build an object file
-executing/free_and_exit.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/executing/free_and_exit.c.o
-.PHONY : executing/free_and_exit.c.o
+executing/free_functions.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/executing/free_functions.c.o
+.PHONY : executing/free_functions.c.o
 
-executing/free_and_exit.i: executing/free_and_exit.c.i
+executing/free_functions.i: executing/free_functions.c.i
 
-.PHONY : executing/free_and_exit.i
+.PHONY : executing/free_functions.i
 
 # target to preprocess a source file
-executing/free_and_exit.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/executing/free_and_exit.c.i
-.PHONY : executing/free_and_exit.c.i
+executing/free_functions.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/executing/free_functions.c.i
+.PHONY : executing/free_functions.c.i
 
-executing/free_and_exit.s: executing/free_and_exit.c.s
+executing/free_functions.s: executing/free_functions.c.s
 
-.PHONY : executing/free_and_exit.s
+.PHONY : executing/free_functions.s
 
 # target to generate assembly for a file
-executing/free_and_exit.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/executing/free_and_exit.c.s
-.PHONY : executing/free_and_exit.c.s
+executing/free_functions.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/executing/free_functions.c.s
+.PHONY : executing/free_functions.c.s
 
 executing/kern.o: executing/kern.c.o
 
@@ -730,12 +892,30 @@ help:
 	@echo "... U/term_utills.o"
 	@echo "... U/term_utills.i"
 	@echo "... U/term_utills.s"
+	@echo "... builtins/check_export.o"
+	@echo "... builtins/check_export.i"
+	@echo "... builtins/check_export.s"
+	@echo "... builtins/env_alpha.o"
+	@echo "... builtins/env_alpha.i"
+	@echo "... builtins/env_alpha.s"
+	@echo "... builtins/export.o"
+	@echo "... builtins/export.i"
+	@echo "... builtins/export.s"
+	@echo "... builtins/export_utills.o"
+	@echo "... builtins/export_utills.i"
+	@echo "... builtins/export_utills.s"
+	@echo "... builtins/is_builtin.o"
+	@echo "... builtins/is_builtin.i"
+	@echo "... builtins/is_builtin.s"
+	@echo "... builtins/manage_duplications.o"
+	@echo "... builtins/manage_duplications.i"
+	@echo "... builtins/manage_duplications.s"
 	@echo "... executing/change_io.o"
 	@echo "... executing/change_io.i"
 	@echo "... executing/change_io.s"
-	@echo "... executing/free_and_exit.o"
-	@echo "... executing/free_and_exit.i"
-	@echo "... executing/free_and_exit.s"
+	@echo "... executing/free_functions.o"
+	@echo "... executing/free_functions.i"
+	@echo "... executing/free_functions.s"
 	@echo "... executing/kern.o"
 	@echo "... executing/kern.i"
 	@echo "... executing/kern.s"

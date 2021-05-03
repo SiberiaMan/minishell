@@ -297,18 +297,18 @@ CMakeFiles/shell.dir/U/term_utills.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/shell.dir/U/term_utills.c.s"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dchani/Desktop/minishell_debug_branch/Misha/U/term_utills.c -o CMakeFiles/shell.dir/U/term_utills.c.s
 
-CMakeFiles/shell.dir/executing/free_and_exit.c.o: CMakeFiles/shell.dir/flags.make
-CMakeFiles/shell.dir/executing/free_and_exit.c.o: ../executing/free_and_exit.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dchani/Desktop/minishell_debug_branch/Misha/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building C object CMakeFiles/shell.dir/executing/free_and_exit.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/shell.dir/executing/free_and_exit.c.o -c /Users/dchani/Desktop/minishell_debug_branch/Misha/executing/free_and_exit.c
+CMakeFiles/shell.dir/executing/free_functions.c.o: CMakeFiles/shell.dir/flags.make
+CMakeFiles/shell.dir/executing/free_functions.c.o: ../executing/free_functions.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dchani/Desktop/minishell_debug_branch/Misha/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building C object CMakeFiles/shell.dir/executing/free_functions.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/shell.dir/executing/free_functions.c.o -c /Users/dchani/Desktop/minishell_debug_branch/Misha/executing/free_functions.c
 
-CMakeFiles/shell.dir/executing/free_and_exit.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/shell.dir/executing/free_and_exit.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dchani/Desktop/minishell_debug_branch/Misha/executing/free_and_exit.c > CMakeFiles/shell.dir/executing/free_and_exit.c.i
+CMakeFiles/shell.dir/executing/free_functions.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/shell.dir/executing/free_functions.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dchani/Desktop/minishell_debug_branch/Misha/executing/free_functions.c > CMakeFiles/shell.dir/executing/free_functions.c.i
 
-CMakeFiles/shell.dir/executing/free_and_exit.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/shell.dir/executing/free_and_exit.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dchani/Desktop/minishell_debug_branch/Misha/executing/free_and_exit.c -o CMakeFiles/shell.dir/executing/free_and_exit.c.s
+CMakeFiles/shell.dir/executing/free_functions.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/shell.dir/executing/free_functions.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dchani/Desktop/minishell_debug_branch/Misha/executing/free_functions.c -o CMakeFiles/shell.dir/executing/free_functions.c.s
 
 CMakeFiles/shell.dir/tokenizer/free_and_exit_tokenizer.c.o: CMakeFiles/shell.dir/flags.make
 CMakeFiles/shell.dir/tokenizer/free_and_exit_tokenizer.c.o: ../tokenizer/free_and_exit_tokenizer.c
@@ -349,6 +349,84 @@ CMakeFiles/shell.dir/executing/change_io.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/shell.dir/executing/change_io.c.s"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dchani/Desktop/minishell_debug_branch/Misha/executing/change_io.c -o CMakeFiles/shell.dir/executing/change_io.c.s
 
+CMakeFiles/shell.dir/builtins/check_export.c.o: CMakeFiles/shell.dir/flags.make
+CMakeFiles/shell.dir/builtins/check_export.c.o: ../builtins/check_export.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dchani/Desktop/minishell_debug_branch/Misha/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building C object CMakeFiles/shell.dir/builtins/check_export.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/shell.dir/builtins/check_export.c.o -c /Users/dchani/Desktop/minishell_debug_branch/Misha/builtins/check_export.c
+
+CMakeFiles/shell.dir/builtins/check_export.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/shell.dir/builtins/check_export.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dchani/Desktop/minishell_debug_branch/Misha/builtins/check_export.c > CMakeFiles/shell.dir/builtins/check_export.c.i
+
+CMakeFiles/shell.dir/builtins/check_export.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/shell.dir/builtins/check_export.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dchani/Desktop/minishell_debug_branch/Misha/builtins/check_export.c -o CMakeFiles/shell.dir/builtins/check_export.c.s
+
+CMakeFiles/shell.dir/builtins/env_alpha.c.o: CMakeFiles/shell.dir/flags.make
+CMakeFiles/shell.dir/builtins/env_alpha.c.o: ../builtins/env_alpha.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dchani/Desktop/minishell_debug_branch/Misha/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building C object CMakeFiles/shell.dir/builtins/env_alpha.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/shell.dir/builtins/env_alpha.c.o -c /Users/dchani/Desktop/minishell_debug_branch/Misha/builtins/env_alpha.c
+
+CMakeFiles/shell.dir/builtins/env_alpha.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/shell.dir/builtins/env_alpha.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dchani/Desktop/minishell_debug_branch/Misha/builtins/env_alpha.c > CMakeFiles/shell.dir/builtins/env_alpha.c.i
+
+CMakeFiles/shell.dir/builtins/env_alpha.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/shell.dir/builtins/env_alpha.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dchani/Desktop/minishell_debug_branch/Misha/builtins/env_alpha.c -o CMakeFiles/shell.dir/builtins/env_alpha.c.s
+
+CMakeFiles/shell.dir/builtins/export_utills.c.o: CMakeFiles/shell.dir/flags.make
+CMakeFiles/shell.dir/builtins/export_utills.c.o: ../builtins/export_utills.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dchani/Desktop/minishell_debug_branch/Misha/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building C object CMakeFiles/shell.dir/builtins/export_utills.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/shell.dir/builtins/export_utills.c.o -c /Users/dchani/Desktop/minishell_debug_branch/Misha/builtins/export_utills.c
+
+CMakeFiles/shell.dir/builtins/export_utills.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/shell.dir/builtins/export_utills.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dchani/Desktop/minishell_debug_branch/Misha/builtins/export_utills.c > CMakeFiles/shell.dir/builtins/export_utills.c.i
+
+CMakeFiles/shell.dir/builtins/export_utills.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/shell.dir/builtins/export_utills.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dchani/Desktop/minishell_debug_branch/Misha/builtins/export_utills.c -o CMakeFiles/shell.dir/builtins/export_utills.c.s
+
+CMakeFiles/shell.dir/builtins/is_builtin.c.o: CMakeFiles/shell.dir/flags.make
+CMakeFiles/shell.dir/builtins/is_builtin.c.o: ../builtins/is_builtin.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dchani/Desktop/minishell_debug_branch/Misha/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building C object CMakeFiles/shell.dir/builtins/is_builtin.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/shell.dir/builtins/is_builtin.c.o -c /Users/dchani/Desktop/minishell_debug_branch/Misha/builtins/is_builtin.c
+
+CMakeFiles/shell.dir/builtins/is_builtin.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/shell.dir/builtins/is_builtin.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dchani/Desktop/minishell_debug_branch/Misha/builtins/is_builtin.c > CMakeFiles/shell.dir/builtins/is_builtin.c.i
+
+CMakeFiles/shell.dir/builtins/is_builtin.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/shell.dir/builtins/is_builtin.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dchani/Desktop/minishell_debug_branch/Misha/builtins/is_builtin.c -o CMakeFiles/shell.dir/builtins/is_builtin.c.s
+
+CMakeFiles/shell.dir/builtins/manage_duplications.c.o: CMakeFiles/shell.dir/flags.make
+CMakeFiles/shell.dir/builtins/manage_duplications.c.o: ../builtins/manage_duplications.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dchani/Desktop/minishell_debug_branch/Misha/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Building C object CMakeFiles/shell.dir/builtins/manage_duplications.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/shell.dir/builtins/manage_duplications.c.o -c /Users/dchani/Desktop/minishell_debug_branch/Misha/builtins/manage_duplications.c
+
+CMakeFiles/shell.dir/builtins/manage_duplications.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/shell.dir/builtins/manage_duplications.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dchani/Desktop/minishell_debug_branch/Misha/builtins/manage_duplications.c > CMakeFiles/shell.dir/builtins/manage_duplications.c.i
+
+CMakeFiles/shell.dir/builtins/manage_duplications.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/shell.dir/builtins/manage_duplications.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dchani/Desktop/minishell_debug_branch/Misha/builtins/manage_duplications.c -o CMakeFiles/shell.dir/builtins/manage_duplications.c.s
+
+CMakeFiles/shell.dir/builtins/export.c.o: CMakeFiles/shell.dir/flags.make
+CMakeFiles/shell.dir/builtins/export.c.o: ../builtins/export.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dchani/Desktop/minishell_debug_branch/Misha/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Building C object CMakeFiles/shell.dir/builtins/export.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/shell.dir/builtins/export.c.o -c /Users/dchani/Desktop/minishell_debug_branch/Misha/builtins/export.c
+
+CMakeFiles/shell.dir/builtins/export.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/shell.dir/builtins/export.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dchani/Desktop/minishell_debug_branch/Misha/builtins/export.c > CMakeFiles/shell.dir/builtins/export.c.i
+
+CMakeFiles/shell.dir/builtins/export.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/shell.dir/builtins/export.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dchani/Desktop/minishell_debug_branch/Misha/builtins/export.c -o CMakeFiles/shell.dir/builtins/export.c.s
+
 # Object files for target shell
 shell_OBJECTS = \
 "CMakeFiles/shell.dir/parser/backslash.c.o" \
@@ -368,10 +446,16 @@ shell_OBJECTS = \
 "CMakeFiles/shell.dir/U/keys.c.o" \
 "CMakeFiles/shell.dir/U/keys2.c.o" \
 "CMakeFiles/shell.dir/U/term_utills.c.o" \
-"CMakeFiles/shell.dir/executing/free_and_exit.c.o" \
+"CMakeFiles/shell.dir/executing/free_functions.c.o" \
 "CMakeFiles/shell.dir/tokenizer/free_and_exit_tokenizer.c.o" \
 "CMakeFiles/shell.dir/tokenizer/check_cmd.c.o" \
-"CMakeFiles/shell.dir/executing/change_io.c.o"
+"CMakeFiles/shell.dir/executing/change_io.c.o" \
+"CMakeFiles/shell.dir/builtins/check_export.c.o" \
+"CMakeFiles/shell.dir/builtins/env_alpha.c.o" \
+"CMakeFiles/shell.dir/builtins/export_utills.c.o" \
+"CMakeFiles/shell.dir/builtins/is_builtin.c.o" \
+"CMakeFiles/shell.dir/builtins/manage_duplications.c.o" \
+"CMakeFiles/shell.dir/builtins/export.c.o"
 
 # External object files for target shell
 shell_EXTERNAL_OBJECTS =
@@ -393,13 +477,19 @@ shell: CMakeFiles/shell.dir/main.c.o
 shell: CMakeFiles/shell.dir/U/keys.c.o
 shell: CMakeFiles/shell.dir/U/keys2.c.o
 shell: CMakeFiles/shell.dir/U/term_utills.c.o
-shell: CMakeFiles/shell.dir/executing/free_and_exit.c.o
+shell: CMakeFiles/shell.dir/executing/free_functions.c.o
 shell: CMakeFiles/shell.dir/tokenizer/free_and_exit_tokenizer.c.o
 shell: CMakeFiles/shell.dir/tokenizer/check_cmd.c.o
 shell: CMakeFiles/shell.dir/executing/change_io.c.o
+shell: CMakeFiles/shell.dir/builtins/check_export.c.o
+shell: CMakeFiles/shell.dir/builtins/env_alpha.c.o
+shell: CMakeFiles/shell.dir/builtins/export_utills.c.o
+shell: CMakeFiles/shell.dir/builtins/is_builtin.c.o
+shell: CMakeFiles/shell.dir/builtins/manage_duplications.c.o
+shell: CMakeFiles/shell.dir/builtins/export.c.o
 shell: CMakeFiles/shell.dir/build.make
 shell: CMakeFiles/shell.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/dchani/Desktop/minishell_debug_branch/Misha/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Linking C executable shell"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/dchani/Desktop/minishell_debug_branch/Misha/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Linking C executable shell"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/shell.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

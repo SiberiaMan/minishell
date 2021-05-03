@@ -27,32 +27,17 @@ void	free_token(t_token *token)
 
 size_t	get_next_pipe(t_line_n_mask *l_n_m, size_t j)
 {
-	while(l_n_m->line[j] && !(l_n_m->line[j] == '|'
-	 && l_n_m->mask[j] == SPEC_SYMBOL))
+	while (l_n_m->line[j] && !(l_n_m->line[j] == '|'
+							   && l_n_m->mask[j] == SPEC_SYMBOL))
 		j++;
 	j++;
 	return (j);
 }
 
-size_t check_builtins(char *line)
-{
-	if (!ft_strncmp_cmd("cd", line, ft_strlen(line)))
-		return (1);
-	if (!ft_strncmp_cmd("pwd", line, ft_strlen(line)))
-		return (1);
-	if (!ft_strncmp_cmd("echo", line, ft_strlen(line)))
-		return (1);
-	if (!ft_strncmp_cmd("export", line, ft_strlen(line)))
-		return (1);
-	if (!ft_strncmp_cmd("unset", line, ft_strlen(line)))
-		return (1);
-	return (0);
-}
-
 void	child_process(t_line_n_mask *l_n_m, t_token token, size_t i)
 {
 	change_io(l_n_m, &token, i);
-	execve(token.args[0], token.args, l_n_m->env);
+	execve(token.args[0], token.args, *l_n_m->env);
 	perror("Error: ");
 	exit (1);
 }
@@ -71,14 +56,16 @@ void	kernel(t_line_n_mask *l_n_m, size_t start)
 		if (handle_redirects(l_n_m, &token, j)
 		&& (check_cmd(l_n_m, &token, j)))
 		{
-			//if (check_builtins(token.args[0]))
-			//	builins(l_n_m, token, i);
-			//else
-			l_n_m->pids[i] = fork();
-			if (l_n_m->pids[i] < 0)
-				free_token_n_structure_exit(&token, l_n_m);
-			if (!l_n_m->pids[i])
-				child_process(l_n_m, token, i);
+			if (check_builtins(token.args[0]))
+				choose_builtin(l_n_m, &token, i);
+			else
+			{
+				l_n_m->pids[i] = fork();
+				if (l_n_m->pids[i] < 0)
+					free_token_n_structure_exit(&token, l_n_m);
+				if (!l_n_m->pids[i])
+					child_process(l_n_m, token, i);
+			}
 		}
 		free_token(&token);
 		j = get_next_pipe(l_n_m, j);
@@ -158,7 +145,7 @@ static size_t handle_pipes(t_line_n_mask *l_n_m, size_t i)
 	return (0);
 }
 
-static t_line_n_mask struct_init(char **env, char *mask, t_gnl *gnl)
+static t_line_n_mask struct_init(char ***env, char *mask, t_gnl *gnl)
 {
 	return (t_line_n_mask) {
 		.line = gnl->history->line,
@@ -173,7 +160,7 @@ static t_line_n_mask struct_init(char **env, char *mask, t_gnl *gnl)
 	};
 }
 
-void	handle_semicolons(t_gnl *gnl, char *mask, char **env)
+void	handle_semicolons(t_gnl *gnl, char *mask, char ***env)
 {
 	size_t			i;
 	size_t			j;

@@ -49,10 +49,3 @@ char	**copy_envp(char **envp)
 	return (res);
 }
 
-void ft_putstr(char *str)
-{
-	size_t len;
-
-	len = ft_strlen(str);
-	write(1, str, len);
-}

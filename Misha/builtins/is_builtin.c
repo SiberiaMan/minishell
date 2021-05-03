@@ -16,7 +16,7 @@
 // void func(t_line_n_mask *l_n_m, t_token *token)
 // **args -> token->args
 // status ->l_n_m->status
-int	choose_builtin(t_line_n_mask *l_n_m, t_token *token)
+int	choose_builtin(t_line_n_mask *l_n_m, t_token *token, size_t i)
 {
 	/// **args -> token->args
 	/// status ->l_n_m->status везде с собой таскать, чтобы делать free, но
@@ -29,8 +29,8 @@ int	choose_builtin(t_line_n_mask *l_n_m, t_token *token)
 	//	l_n_m->status = ft_pwd(t_line_n_mask *l_n_m, t_token *token);
 	//else if (!(ft_strcmp(token->args[0], "env"))
 	//	l_n_m->status = ft_env(t_line_n_mask *l_n_m, t_token *token);
-	else if (!(ft_strcmp(token->args[0], "export"))
-		l_n_m->status = ft_export(t_line_n_mask *l_n_m, t_token *token);
+	if (!(ft_strcmp(token->args[0], "export")))
+		l_n_m->status = ft_export(l_n_m, token);
 	//else if (!(ft_strcmp(token->args[0], "unset"))
 	//	l_n_m->status = ft_unset(t_line_n_mask *l_n_m, t_token *token);
 	return (0);

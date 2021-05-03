@@ -1,12 +1,5 @@
 #include "builtins.h"
 
-void	ft_putchar_fd(char c, int fd)
-{
-	if (fd == -1)
-		return ;
-	write(fd, &c, 1);
-}
-
 void	print_envp(char **envp)
 {
 	int i;
@@ -71,21 +64,21 @@ void	sort_vars(char **v)
 }
 
 
-int main(int args, char **argv, char **envp)
-{
-	char **copy;
-	char **ptr;
-
-	copy = copy_envp(envp);
-	ptr = copy;
-	while(*ptr)
-	{
-		printf("%s\n", *ptr);
-		ptr++;
-	}
-	printf("\n\n\n");
-	char *massiv[] = {"B=0", "C=lol", "F=haha",  "A=2", "Z=3",
-					  "D=4", NULL};
-	sort_vars(copy);
-	return(0);
-}
+//int main(int args, char **argv, char **envp)
+//{
+//	char **copy;
+//	char **ptr;
+//
+//	copy = copy_envp(envp);
+//	ptr = copy;
+//	while(*ptr)
+//	{
+//		printf("%s\n", *ptr);
+//		ptr++;
+//	}
+//	printf("\n\n\n");
+//	char *massiv[] = {"B=0", "C=lol", "F=haha",  "A=2", "Z=3",
+//					  "D=4", NULL};
+//	sort_vars(copy);
+//	return(0);
+//}

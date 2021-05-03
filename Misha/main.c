@@ -1,9 +1,11 @@
 #include "minishell.h"
+#include "builtins/builtins.h"
 
-void	parse_n_execute(t_gnl *gnl, char **env)
+void	parse_n_execute(t_gnl *gnl, char ***env)
 {
 	size_t	i;
 	char 	*mask;
+
 
 	i = 0;
 	mask = ft_calloc(ft_strlen(gnl->history->line) + 1, sizeof(char));
@@ -54,7 +56,7 @@ int comparison(t_gnl *gnl)
 	return(0);
 }
 
-int input(t_gnl *gnl, char **env)
+int input(t_gnl *gnl)
 {
 	tputs("minishell=):", 1, ft_putint);
 	//tputs(save_cursor, 1, ft_putint);
@@ -66,7 +68,7 @@ int input(t_gnl *gnl, char **env)
 		if (comparison(gnl) == 1)
 		{
 			set_terminal(gnl->term_name, gnl->term, gnl->reset_term, 0);
-			parse_n_execute(gnl, env);
+			parse_n_execute(gnl, gnl->env);
 			set_terminal(gnl->term_name, gnl->term, gnl->reset_term, 1);
 			//write(1, "\n", 1);
 			tputs("minishell=):", 1, ft_putint);
@@ -109,6 +111,8 @@ int main(int argc, char const **argv, char **env)
 	(void)(argv);
 	(void)(argc);
 	t_gnl *gnl;
+	char **envp = copy_envp(env); /// handle
+	size_t i = 0;
 	//struct termios *term;
 	//struct termios *reset_term;
 	//char *term_name;
@@ -116,12 +120,13 @@ int main(int argc, char const **argv, char **env)
 	gnl = gnl_init();
 	if (!gnl)
 		free_gnl(gnl);
+	gnl->env = &envp;
 	signal(SIGQUIT, sig_slash); // ctrl + slash
 	signal(SIGINT, sig_c); //ctrl + C
 	tcgetattr(0, gnl->term); //получить атрибут терминала
 	tcgetattr(0, gnl->reset_term);
 	set_terminal(gnl->term_name, gnl->term, gnl->reset_term, 1);
-	input(gnl, env);
+	input(gnl);
 	return(0);
 }
 

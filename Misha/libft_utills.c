@@ -181,6 +181,20 @@ int	ft_strncmp_cmd(const char *s1, const char *s2, size_t n)
 	return (0);
 }
 
+void	ft_putchar_fd(char c, int fd)
+{
+	if (fd == -1)
+		return ;
+	write(fd, &c, 1);
+}
+
+void	ft_putstr_fd(char *s, int fd)
+{
+	if (!s || fd == -1)
+		return ;
+	write(fd, s, ft_strlen(s));
+}
+
 static	size_t		ft_count(char const *s, char c)
 {
 	size_t		i;
