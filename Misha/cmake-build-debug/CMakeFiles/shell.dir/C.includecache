@@ -6,11 +6,11 @@
 
 #IncludeRegexTransform: 
 
-/Users/dchani/Desktop/minishell_project/Misha/executing.c
+/home/phili/Desktop/project/Misha/executing.c
 minishell.h
-/Users/dchani/Desktop/minishell_project/Misha/minishell.h
+/home/phili/Desktop/project/Misha/minishell.h
 
-/Users/dchani/Desktop/minishell_project/Misha/history.h
+/home/phili/Desktop/project/Misha/history.h
 unistd.h
 -
 stdlib.h
@@ -18,7 +18,7 @@ stdlib.h
 stdio.h
 -
 
-/Users/dchani/Desktop/minishell_project/Misha/minishell.h
+/home/phili/Desktop/project/Misha/minishell.h
 fcntl.h
 -
 unistd.h
@@ -34,17 +34,17 @@ sys/wait.h
 stdlib.h
 -
 history.h
-/Users/dchani/Desktop/minishell_project/Misha/history.h
+/home/phili/Desktop/project/Misha/history.h
 parser/parser.h
-/Users/dchani/Desktop/minishell_project/Misha/parser/parser.h
+/home/phili/Desktop/project/Misha/parser/parser.h
 dirent.h
 -
 
-/Users/dchani/Desktop/minishell_project/Misha/parser/parser.h
+/home/phili/Desktop/project/Misha/parser/parser.h
 stdlib.h
 -
 stdio.h
 -
 ../history.h
-/Users/dchani/Desktop/minishell_project/Misha/history.h
+/home/phili/Desktop/project/Misha/history.h
 

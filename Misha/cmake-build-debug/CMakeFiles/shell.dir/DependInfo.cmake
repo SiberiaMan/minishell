@@ -4,9 +4,9 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "/Users/dchani/Desktop/minishell_project/Misha/executing.c" "/Users/dchani/Desktop/minishell_project/Misha/cmake-build-debug/CMakeFiles/shell.dir/executing.c.o"
+  "/home/phili/Desktop/project/Misha/executing.c" "/home/phili/Desktop/project/Misha/cmake-build-debug/CMakeFiles/shell.dir/executing.c.o"
   )
-set(CMAKE_C_COMPILER_ID "AppleClang")
+set(CMAKE_C_COMPILER_ID "GNU")
 
 # The include file search paths:
 set(CMAKE_C_TARGET_INCLUDE_PATH
