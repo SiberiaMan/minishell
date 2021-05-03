@@ -90,7 +90,7 @@ static size_t	pipe_syntax(const char *line, const char *mask, char *c)
 			k = i - 1;
 			j = i + 1;
 			move_spaces(line, mask, &j, &k);
-			if ((mask[j] == SPEC_SYMBOL && line[j] != '$')
+			if (!mask[j] || (mask[j] == SPEC_SYMBOL && line[j] != '$')
 				|| (mask[k] == SPEC_SYMBOL && line[j] != '$'))
 				return (0);
 		}

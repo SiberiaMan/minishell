@@ -6,17 +6,17 @@
 
 #IncludeRegexTransform: 
 
-/Users/dchani/Desktop/project/Misha/executing/executing.h
+/home/phili/Desktop/minishell/Misha/executing/executing.h
 ../minishell.h
-/Users/dchani/Desktop/project/Misha/minishell.h
+/home/phili/Desktop/minishell/Misha/minishell.h
 ../tokenizer/tokenizer.h
-/Users/dchani/Desktop/project/Misha/tokenizer/tokenizer.h
+/home/phili/Desktop/minishell/Misha/tokenizer/tokenizer.h
 
-/Users/dchani/Desktop/project/Misha/executing/kern.c
+/home/phili/Desktop/minishell/Misha/executing/kern.c
 executing.h
-/Users/dchani/Desktop/project/Misha/executing/executing.h
+/home/phili/Desktop/minishell/Misha/executing/executing.h
 
-/Users/dchani/Desktop/project/Misha/history.h
+/home/phili/Desktop/minishell/Misha/history.h
 unistd.h
 -
 stdlib.h
@@ -24,7 +24,7 @@ stdlib.h
 stdio.h
 -
 
-/Users/dchani/Desktop/project/Misha/minishell.h
+/home/phili/Desktop/minishell/Misha/minishell.h
 fcntl.h
 -
 unistd.h
@@ -40,19 +40,19 @@ sys/wait.h
 stdlib.h
 -
 history.h
-/Users/dchani/Desktop/project/Misha/history.h
+/home/phili/Desktop/minishell/Misha/history.h
 parser/parser.h
-/Users/dchani/Desktop/project/Misha/parser/parser.h
+/home/phili/Desktop/minishell/Misha/parser/parser.h
 
-/Users/dchani/Desktop/project/Misha/parser/parser.h
+/home/phili/Desktop/minishell/Misha/parser/parser.h
 stdlib.h
 -
 stdio.h
 -
 ../history.h
-/Users/dchani/Desktop/project/Misha/history.h
+/home/phili/Desktop/minishell/Misha/history.h
 
-/Users/dchani/Desktop/project/Misha/tokenizer/tokenizer.h
+/home/phili/Desktop/minishell/Misha/tokenizer/tokenizer.h
 sys/types.h
 -
 stdio.h
@@ -64,9 +64,9 @@ stdlib.h
 dirent.h
 -
 ../history.h
-/Users/dchani/Desktop/project/Misha/history.h
+/home/phili/Desktop/minishell/Misha/history.h
 ../parser/parser.h
-/Users/dchani/Desktop/project/Misha/parser/parser.h
+/home/phili/Desktop/minishell/Misha/parser/parser.h
 fcntl.h
 -
 

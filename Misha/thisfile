@@ -1,0 +1,23 @@
+total 128
+drwxrwxr-x 10 phili phili  4096 мая  3 11:43 .
+drwxrwxr-x  8 phili phili  4096 мая  2 20:03 ..
+-rwxrwxr-x  1 phili phili 41040 мая  3 11:42 a.out
+drwxrwxr-x  3 phili phili  4096 мая  2 20:03 a.out.dSYM
+drwxrwxr-x  2 phili phili  4096 мая  2 20:03 backup
+drwxrwxr-x  5 phili phili  4096 мая  3 03:01 cmake-build-debug
+-rw-rw-r--  1 phili phili   478 мая  3 01:03 CMakeLists.txt
+drwxrwxr-x  2 phili phili  4096 мая  3 11:41 executing
+-rw-rw-r--  1 phili phili  1926 мая  2 20:03 executing.c
+-rw-rw-r--  1 phili phili    20 мая  3 11:43 file
+-rw-r--r--  1 phili phili     4 мая  3 03:00 grepkek.txt
+-rw-rw-r--  1 phili phili   861 мая  2 20:03 history.h
+drwxrwxr-x  2 phili phili  4096 мая  2 20:03 .idea
+-rw-r--r--  1 phili phili    15 мая  3 02:58 kek.txt
+drwxrwxr-x  2 phili phili  4096 мая  2 20:03 libft
+-rw-rw-r--  1 phili phili  4341 мая  2 20:15 libft_utills.c
+-rw-r--r--  1 phili phili    18 мая  3 02:57 lol.txt
+-rw-rw-r--  1 phili phili   227 мая  2 20:03 main.c
+-rw-rw-r--  1 phili phili   494 мая  2 20:03 minishell.h
+drwxrwxr-x  2 phili phili  4096 мая  3 01:31 parser
+-rw-rw-r--  1 phili phili     0 мая  3 11:43 thisfile
+drwxrwxr-x  2 phili phili  4096 мая  2 20:15 tokenizer

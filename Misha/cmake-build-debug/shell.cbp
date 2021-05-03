@@ -8,125 +8,126 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="/Users/dchani/Desktop/project/Misha/cmake-build-debug"/>
+				<Option working_dir="/home/phili/Desktop/minishell/Misha/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/Users/dchani/Desktop/project/Misha/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/dchani/Desktop/project/Misha/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/Users/dchani/Desktop/project/Misha/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/dchani/Desktop/project/Misha/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/phili/Desktop/minishell/Misha/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/phili/Desktop/minishell/Misha/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/phili/Desktop/minishell/Misha/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/phili/Desktop/minishell/Misha/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="/Users/dchani/Desktop/project/Misha/cmake-build-debug"/>
+				<Option working_dir="/home/phili/Desktop/minishell/Misha/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/Users/dchani/Desktop/project/Misha/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/dchani/Desktop/project/Misha/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/Users/dchani/Desktop/project/Misha/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/dchani/Desktop/project/Misha/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/phili/Desktop/minishell/Misha/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/phili/Desktop/minishell/Misha/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/phili/Desktop/minishell/Misha/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/phili/Desktop/minishell/Misha/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="/Users/dchani/Desktop/project/Misha/cmake-build-debug"/>
+				<Option working_dir="/home/phili/Desktop/minishell/Misha/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/Users/dchani/Desktop/project/Misha/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/dchani/Desktop/project/Misha/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/Users/dchani/Desktop/project/Misha/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/dchani/Desktop/project/Misha/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/phili/Desktop/minishell/Misha/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/phili/Desktop/minishell/Misha/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/phili/Desktop/minishell/Misha/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/phili/Desktop/minishell/Misha/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="shell">
-				<Option output="/Users/dchani/Desktop/project/Misha/cmake-build-debug/shell" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/Users/dchani/Desktop/project/Misha/cmake-build-debug"/>
+				<Option output="/home/phili/Desktop/minishell/Misha/cmake-build-debug/shell" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/phili/Desktop/minishell/Misha/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
 					<Add directory="/usr/local/include"/>
-					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/11.0.0/include"/>
-					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
-					<Add directory="/System/Library/Frameworks"/>
-					<Add directory="/Library/Frameworks"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/Users/dchani/Desktop/project/Misha/cmake-build-debug/Makefile&quot;  VERBOSE=1 shell"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/dchani/Desktop/project/Misha/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/Users/dchani/Desktop/project/Misha/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/dchani/Desktop/project/Misha/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/phili/Desktop/minishell/Misha/cmake-build-debug/Makefile&quot;  VERBOSE=1 shell"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/phili/Desktop/minishell/Misha/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/phili/Desktop/minishell/Misha/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/phili/Desktop/minishell/Misha/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="shell/fast">
-				<Option output="/Users/dchani/Desktop/project/Misha/cmake-build-debug/shell" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/Users/dchani/Desktop/project/Misha/cmake-build-debug"/>
+				<Option output="/home/phili/Desktop/minishell/Misha/cmake-build-debug/shell" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/phili/Desktop/minishell/Misha/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
 					<Add directory="/usr/local/include"/>
-					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/11.0.0/include"/>
-					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
-					<Add directory="/System/Library/Frameworks"/>
-					<Add directory="/Library/Frameworks"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/Users/dchani/Desktop/project/Misha/cmake-build-debug/Makefile&quot;  VERBOSE=1 shell/fast"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/dchani/Desktop/project/Misha/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/Users/dchani/Desktop/project/Misha/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/dchani/Desktop/project/Misha/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/phili/Desktop/minishell/Misha/cmake-build-debug/Makefile&quot;  VERBOSE=1 shell/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/phili/Desktop/minishell/Misha/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/phili/Desktop/minishell/Misha/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/phili/Desktop/minishell/Misha/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/Users/dchani/Desktop/project/Misha/executing/executing.h">
+		<Unit filename="/home/phili/Desktop/minishell/Misha/executing/change_io.c">
 			<Option target="shell"/>
 		</Unit>
-		<Unit filename="/Users/dchani/Desktop/project/Misha/executing/kern.c">
+		<Unit filename="/home/phili/Desktop/minishell/Misha/executing/executing.h">
 			<Option target="shell"/>
 		</Unit>
-		<Unit filename="/Users/dchani/Desktop/project/Misha/libft_utills.c">
+		<Unit filename="/home/phili/Desktop/minishell/Misha/executing/kern.c">
 			<Option target="shell"/>
 		</Unit>
-		<Unit filename="/Users/dchani/Desktop/project/Misha/minishell.h">
+		<Unit filename="/home/phili/Desktop/minishell/Misha/libft_utills.c">
 			<Option target="shell"/>
 		</Unit>
-		<Unit filename="/Users/dchani/Desktop/project/Misha/parser/backslash.c">
+		<Unit filename="/home/phili/Desktop/minishell/Misha/minishell.h">
 			<Option target="shell"/>
 		</Unit>
-		<Unit filename="/Users/dchani/Desktop/project/Misha/parser/parser.c">
+		<Unit filename="/home/phili/Desktop/minishell/Misha/parser/backslash.c">
 			<Option target="shell"/>
 		</Unit>
-		<Unit filename="/Users/dchani/Desktop/project/Misha/parser/parser.h">
+		<Unit filename="/home/phili/Desktop/minishell/Misha/parser/parser.c">
 			<Option target="shell"/>
 		</Unit>
-		<Unit filename="/Users/dchani/Desktop/project/Misha/parser/quotes_handler.c">
+		<Unit filename="/home/phili/Desktop/minishell/Misha/parser/parser.h">
 			<Option target="shell"/>
 		</Unit>
-		<Unit filename="/Users/dchani/Desktop/project/Misha/parser/syntax_err.c">
+		<Unit filename="/home/phili/Desktop/minishell/Misha/parser/quotes_handler.c">
 			<Option target="shell"/>
 		</Unit>
-		<Unit filename="/Users/dchani/Desktop/project/Misha/tokenizer/cmd.c">
+		<Unit filename="/home/phili/Desktop/minishell/Misha/parser/syntax_err.c">
 			<Option target="shell"/>
 		</Unit>
-		<Unit filename="/Users/dchani/Desktop/project/Misha/tokenizer/conditions.c">
+		<Unit filename="/home/phili/Desktop/minishell/Misha/tokenizer/cmd.c">
 			<Option target="shell"/>
 		</Unit>
-		<Unit filename="/Users/dchani/Desktop/project/Misha/tokenizer/dollar_sign_assign.c">
+		<Unit filename="/home/phili/Desktop/minishell/Misha/tokenizer/conditions.c">
 			<Option target="shell"/>
 		</Unit>
-		<Unit filename="/Users/dchani/Desktop/project/Misha/tokenizer/dollar_sign_cnt.c">
+		<Unit filename="/home/phili/Desktop/minishell/Misha/tokenizer/dollar_sign_assign.c">
 			<Option target="shell"/>
 		</Unit>
-		<Unit filename="/Users/dchani/Desktop/project/Misha/tokenizer/redirect_error.c">
+		<Unit filename="/home/phili/Desktop/minishell/Misha/tokenizer/dollar_sign_cnt.c">
 			<Option target="shell"/>
 		</Unit>
-		<Unit filename="/Users/dchani/Desktop/project/Misha/tokenizer/redirects.c">
+		<Unit filename="/home/phili/Desktop/minishell/Misha/tokenizer/redirect_error.c">
 			<Option target="shell"/>
 		</Unit>
-		<Unit filename="/Users/dchani/Desktop/project/Misha/tokenizer/tokenizer.h">
+		<Unit filename="/home/phili/Desktop/minishell/Misha/tokenizer/redirects.c">
 			<Option target="shell"/>
 		</Unit>
-		<Unit filename="/Users/dchani/Desktop/project/Misha/CMakeLists.txt">
+		<Unit filename="/home/phili/Desktop/minishell/Misha/tokenizer/tokenizer.h">
+			<Option target="shell"/>
+		</Unit>
+		<Unit filename="/home/phili/Desktop/minishell/Misha/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>

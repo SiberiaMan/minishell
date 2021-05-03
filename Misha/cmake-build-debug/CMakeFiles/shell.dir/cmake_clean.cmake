@@ -1,4 +1,5 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/shell.dir/executing/change_io.c.o"
   "CMakeFiles/shell.dir/executing/kern.c.o"
   "CMakeFiles/shell.dir/libft_utills.c.o"
   "CMakeFiles/shell.dir/parser/backslash.c.o"

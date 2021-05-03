@@ -79,11 +79,11 @@ size_t handle_redirects(t_line_n_mask l_n_m, t_token *token, size_t i)
 		}
 		else if (condition_redirects_1(l_n_m, i, '>'))
 			token->fd_to = open(get_redir(l_n_m, i + 1, &(token->line)), O_RDWR
-			| O_CREAT | O_TRUNC, S_IREAD | S_IWRITE | S_IRGRP | S_IROTH);
+			| O_CREAT | O_TRUNC, S_IRUSR  | S_IWUSR | S_IRGRP | S_IROTH);
 		else if (condition_redirects_2(l_n_m, i, '>'))
 		{
 			token->fd_to = open(get_redir(l_n_m, i + 2, &(token->line)),
-			O_RDWR | O_APPEND | O_CREAT, S_IREAD | S_IWRITE | S_IRGRP |
+			O_RDWR | O_APPEND | O_CREAT, S_IRUSR | S_IWUSR | S_IRGRP |
 			S_IROTH);
 			i++;
 		}

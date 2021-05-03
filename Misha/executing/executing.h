@@ -4,6 +4,7 @@
 # include "../minishell.h"
 # include "../tokenizer/tokenizer.h"
 
-size_t	kernel(t_line_n_mask l_n_m, size_t i, int *status);
+void change_io(t_line_n_mask *l_n_m, t_token token, size_t i, int fdout, int
+fdin);
 
 #endif
