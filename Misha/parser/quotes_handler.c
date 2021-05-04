@@ -65,9 +65,6 @@ size_t	quotes_handler(char *line, char *mask)
 			if ((line[i] == '\'' && !single_quotes_handler(line, mask, &i))
 			|| (line[i] == '\"' && !double_quotes_handler(line, mask, &i)))
 				return (0);
-			/*else if (line[i] == '\"' && !double_quotes_handler(line, mask,
-			 * &i))
-				return (0);*/
 		}
 		i++;
 	}

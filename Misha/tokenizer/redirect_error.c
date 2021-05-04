@@ -1,8 +1,9 @@
 #include "tokenizer.h"
 
 static size_t check_dir_error(t_token *token, t_line_n_mask *l_n_m,
-char *is_a_directory)
+char *is_a_directory, DIR *dir)
 {
+	closedir(dir);
 	l_n_m->gnl->status = 1;
 	write(2, token->line, ft_strlen(token->line));
 	write(2, is_a_directory, ft_strlen(is_a_directory));
@@ -38,7 +39,7 @@ size_t 	redirect_error(t_token *token, t_line_n_mask *l_n_m)
 	{
 		dir = opendir(token->line);
 		if (dir)
-			return (check_dir_error(token, l_n_m, is_a_directory));
+			return (check_dir_error(token, l_n_m, is_a_directory, dir));
 	}
 	if (token->line && (token->fd_from < 0 || token->fd_to < 0))
 		return check_fd_error(token, l_n_m, not_file_error);

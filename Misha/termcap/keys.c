@@ -1,4 +1,4 @@
-#include "history1.h"
+#include "termcap.h"
 
 char	*realloc_backspace(char *line, t_gnl *gnl)
 {

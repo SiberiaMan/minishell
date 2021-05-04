@@ -30,11 +30,12 @@ int	check_line(char *line, char *eqsign, size_t len)
 
 char	**collect_valid_vars(int count, char **vars, t_line_n_mask *l_n_m, t_token *token)
 {
+	//char *tmp;
 	char	**ptr;
 	char	**valid_vars;
 	char	*equalsign;
 	int		k;
-
+	
 	k = 0;
 	ptr = vars;
 	valid_vars = (char **)malloc((sizeof(char *) * (count + 1)));
@@ -45,9 +46,11 @@ char	**collect_valid_vars(int count, char **vars, t_line_n_mask *l_n_m, t_token 
 		equalsign = ft_strchr(*ptr, '=');
 		if (equalsign)
 		{
+			//tmp = *ptr;
 			valid_vars[k] = ft_strdup(*ptr);
 			if (!valid_vars[k])
 				free_export(l_n_m, token, valid_vars, k - 1);
+			//free(tmp);
 			k++;
 		}
 		ptr++;

@@ -112,6 +112,8 @@ int main(int argc, char const **argv, char **env)
 	(void)(argc);
 	t_gnl *gnl;
 	char **envp = copy_envp(env); /// handle
+	if (!envp)
+		exit (1);
 	size_t i = 0;
 	//struct termios *term;
 	//struct termios *reset_term;

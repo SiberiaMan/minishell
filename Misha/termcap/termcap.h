@@ -1,5 +1,5 @@
-#ifndef HISTORY1_H
-# define HISTORY1_H
+#ifndef TERMCAP_H
+# define TERMCAP_H
 
 #include <unistd.h>
 #include <stdlib.h>
@@ -9,7 +9,7 @@
 #include <term.h>
 #include <curses.h>
 #include <termcap.h>
-#include "../history.h"
+#include "../minishell_utils/minishell_utils.h"
 
 typedef struct s_list       t_list;
 typedef struct s_gnl		t_gnl;

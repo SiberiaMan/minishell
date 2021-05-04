@@ -42,7 +42,10 @@ char	**copy_envp(char **envp)
 	{
 		res[i] = ft_strdup(envp[i]);
 		if (!res[i])
+		{
 			free_vars(res, i);
+			return (0);
+		}
 		i++;
 	}
 	res[i] = NULL;

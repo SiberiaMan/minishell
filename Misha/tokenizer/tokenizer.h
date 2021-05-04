@@ -6,9 +6,9 @@
 #include <sys/wait.h>
 #include <stdlib.h>
 #include <dirent.h>
-#include "../history.h"
+#include "../minishell_utils/minishell_utils.h"
 #include "../parser/parser.h"
-#include "../U/history1.h"
+#include "../termcap/termcap.h"
 #include <fcntl.h>
 
 typedef struct	s_line_n_mask
@@ -32,6 +32,7 @@ typedef	struct 		s_token
 	int 	fd_to;
 }					t_token;
 
+char	*get_redir(t_line_n_mask *l_n_m, size_t start, char **line);
 size_t	check_builtins(char *line);
 size_t	check_cmd(t_line_n_mask *l_n_m, t_token *token, size_t i);
 void	free_token_n_structure_exit(t_token *token, t_line_n_mask *l_n_m);

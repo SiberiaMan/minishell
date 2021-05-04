@@ -1,4 +1,4 @@
-#include "history1.h"
+#include "termcap.h"
 
 int	enter(t_gnl *gnl)
 {

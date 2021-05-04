@@ -72,5 +72,5 @@ size_t get_cnt_dollar(t_line_n_mask *l_n_m, size_t *start)
 		return (get_cnt_status(l_n_m));
 	while (l_n_m->line[j] && (ft_isalpha(l_n_m->line[j]) || l_n_m->line[j] == '_'))
 		j++;
-	return (get_cnt_env(l_n_m, start, j)); // cnt for env var
+	return (get_cnt_env(l_n_m, start, j));
 }

@@ -142,114 +142,6 @@ shell/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/build
 .PHONY : shell/fast
 
-U/check_for_exit.o: U/check_for_exit.c.o
-
-.PHONY : U/check_for_exit.o
-
-# target to build an object file
-U/check_for_exit.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/U/check_for_exit.c.o
-.PHONY : U/check_for_exit.c.o
-
-U/check_for_exit.i: U/check_for_exit.c.i
-
-.PHONY : U/check_for_exit.i
-
-# target to preprocess a source file
-U/check_for_exit.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/U/check_for_exit.c.i
-.PHONY : U/check_for_exit.c.i
-
-U/check_for_exit.s: U/check_for_exit.c.s
-
-.PHONY : U/check_for_exit.s
-
-# target to generate assembly for a file
-U/check_for_exit.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/U/check_for_exit.c.s
-.PHONY : U/check_for_exit.c.s
-
-U/keys.o: U/keys.c.o
-
-.PHONY : U/keys.o
-
-# target to build an object file
-U/keys.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/U/keys.c.o
-.PHONY : U/keys.c.o
-
-U/keys.i: U/keys.c.i
-
-.PHONY : U/keys.i
-
-# target to preprocess a source file
-U/keys.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/U/keys.c.i
-.PHONY : U/keys.c.i
-
-U/keys.s: U/keys.c.s
-
-.PHONY : U/keys.s
-
-# target to generate assembly for a file
-U/keys.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/U/keys.c.s
-.PHONY : U/keys.c.s
-
-U/keys2.o: U/keys2.c.o
-
-.PHONY : U/keys2.o
-
-# target to build an object file
-U/keys2.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/U/keys2.c.o
-.PHONY : U/keys2.c.o
-
-U/keys2.i: U/keys2.c.i
-
-.PHONY : U/keys2.i
-
-# target to preprocess a source file
-U/keys2.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/U/keys2.c.i
-.PHONY : U/keys2.c.i
-
-U/keys2.s: U/keys2.c.s
-
-.PHONY : U/keys2.s
-
-# target to generate assembly for a file
-U/keys2.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/U/keys2.c.s
-.PHONY : U/keys2.c.s
-
-U/term_utills.o: U/term_utills.c.o
-
-.PHONY : U/term_utills.o
-
-# target to build an object file
-U/term_utills.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/U/term_utills.c.o
-.PHONY : U/term_utills.c.o
-
-U/term_utills.i: U/term_utills.c.i
-
-.PHONY : U/term_utills.i
-
-# target to preprocess a source file
-U/term_utills.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/U/term_utills.c.i
-.PHONY : U/term_utills.c.i
-
-U/term_utills.s: U/term_utills.c.s
-
-.PHONY : U/term_utills.s
-
-# target to generate assembly for a file
-U/term_utills.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/U/term_utills.c.s
-.PHONY : U/term_utills.c.s
-
 builtins/check_export.o: builtins/check_export.c.o
 
 .PHONY : builtins/check_export.o
@@ -439,6 +331,87 @@ executing/change_io.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/executing/change_io.c.s
 .PHONY : executing/change_io.c.s
 
+executing/child_process.o: executing/child_process.c.o
+
+.PHONY : executing/child_process.o
+
+# target to build an object file
+executing/child_process.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/executing/child_process.c.o
+.PHONY : executing/child_process.c.o
+
+executing/child_process.i: executing/child_process.c.i
+
+.PHONY : executing/child_process.i
+
+# target to preprocess a source file
+executing/child_process.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/executing/child_process.c.i
+.PHONY : executing/child_process.c.i
+
+executing/child_process.s: executing/child_process.c.s
+
+.PHONY : executing/child_process.s
+
+# target to generate assembly for a file
+executing/child_process.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/executing/child_process.c.s
+.PHONY : executing/child_process.c.s
+
+executing/executing.o: executing/executing.c.o
+
+.PHONY : executing/executing.o
+
+# target to build an object file
+executing/executing.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/executing/executing.c.o
+.PHONY : executing/executing.c.o
+
+executing/executing.i: executing/executing.c.i
+
+.PHONY : executing/executing.i
+
+# target to preprocess a source file
+executing/executing.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/executing/executing.c.i
+.PHONY : executing/executing.c.i
+
+executing/executing.s: executing/executing.c.s
+
+.PHONY : executing/executing.s
+
+# target to generate assembly for a file
+executing/executing.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/executing/executing.c.s
+.PHONY : executing/executing.c.s
+
+executing/executing_utils.o: executing/executing_utils.c.o
+
+.PHONY : executing/executing_utils.o
+
+# target to build an object file
+executing/executing_utils.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/executing/executing_utils.c.o
+.PHONY : executing/executing_utils.c.o
+
+executing/executing_utils.i: executing/executing_utils.c.i
+
+.PHONY : executing/executing_utils.i
+
+# target to preprocess a source file
+executing/executing_utils.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/executing/executing_utils.c.i
+.PHONY : executing/executing_utils.c.i
+
+executing/executing_utils.s: executing/executing_utils.c.s
+
+.PHONY : executing/executing_utils.s
+
+# target to generate assembly for a file
+executing/executing_utils.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/executing/executing_utils.c.s
+.PHONY : executing/executing_utils.c.s
+
 executing/free_functions.o: executing/free_functions.c.o
 
 .PHONY : executing/free_functions.o
@@ -466,60 +439,6 @@ executing/free_functions.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/executing/free_functions.c.s
 .PHONY : executing/free_functions.c.s
 
-executing/kern.o: executing/kern.c.o
-
-.PHONY : executing/kern.o
-
-# target to build an object file
-executing/kern.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/executing/kern.c.o
-.PHONY : executing/kern.c.o
-
-executing/kern.i: executing/kern.c.i
-
-.PHONY : executing/kern.i
-
-# target to preprocess a source file
-executing/kern.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/executing/kern.c.i
-.PHONY : executing/kern.c.i
-
-executing/kern.s: executing/kern.c.s
-
-.PHONY : executing/kern.s
-
-# target to generate assembly for a file
-executing/kern.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/executing/kern.c.s
-.PHONY : executing/kern.c.s
-
-libft_utills.o: libft_utills.c.o
-
-.PHONY : libft_utills.o
-
-# target to build an object file
-libft_utills.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/libft_utills.c.o
-.PHONY : libft_utills.c.o
-
-libft_utills.i: libft_utills.c.i
-
-.PHONY : libft_utills.i
-
-# target to preprocess a source file
-libft_utills.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/libft_utills.c.i
-.PHONY : libft_utills.c.i
-
-libft_utills.s: libft_utills.c.s
-
-.PHONY : libft_utills.s
-
-# target to generate assembly for a file
-libft_utills.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/libft_utills.c.s
-.PHONY : libft_utills.c.s
-
 main.o: main.c.o
 
 .PHONY : main.o
@@ -546,6 +465,141 @@ main.s: main.c.s
 main.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/main.c.s
 .PHONY : main.c.s
+
+minishell_utils/ft_itoa.o: minishell_utils/ft_itoa.c.o
+
+.PHONY : minishell_utils/ft_itoa.o
+
+# target to build an object file
+minishell_utils/ft_itoa.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/minishell_utils/ft_itoa.c.o
+.PHONY : minishell_utils/ft_itoa.c.o
+
+minishell_utils/ft_itoa.i: minishell_utils/ft_itoa.c.i
+
+.PHONY : minishell_utils/ft_itoa.i
+
+# target to preprocess a source file
+minishell_utils/ft_itoa.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/minishell_utils/ft_itoa.c.i
+.PHONY : minishell_utils/ft_itoa.c.i
+
+minishell_utils/ft_itoa.s: minishell_utils/ft_itoa.c.s
+
+.PHONY : minishell_utils/ft_itoa.s
+
+# target to generate assembly for a file
+minishell_utils/ft_itoa.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/minishell_utils/ft_itoa.c.s
+.PHONY : minishell_utils/ft_itoa.c.s
+
+minishell_utils/ft_split.o: minishell_utils/ft_split.c.o
+
+.PHONY : minishell_utils/ft_split.o
+
+# target to build an object file
+minishell_utils/ft_split.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/minishell_utils/ft_split.c.o
+.PHONY : minishell_utils/ft_split.c.o
+
+minishell_utils/ft_split.i: minishell_utils/ft_split.c.i
+
+.PHONY : minishell_utils/ft_split.i
+
+# target to preprocess a source file
+minishell_utils/ft_split.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/minishell_utils/ft_split.c.i
+.PHONY : minishell_utils/ft_split.c.i
+
+minishell_utils/ft_split.s: minishell_utils/ft_split.c.s
+
+.PHONY : minishell_utils/ft_split.s
+
+# target to generate assembly for a file
+minishell_utils/ft_split.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/minishell_utils/ft_split.c.s
+.PHONY : minishell_utils/ft_split.c.s
+
+minishell_utils/memory_handle_utils.o: minishell_utils/memory_handle_utils.c.o
+
+.PHONY : minishell_utils/memory_handle_utils.o
+
+# target to build an object file
+minishell_utils/memory_handle_utils.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/minishell_utils/memory_handle_utils.c.o
+.PHONY : minishell_utils/memory_handle_utils.c.o
+
+minishell_utils/memory_handle_utils.i: minishell_utils/memory_handle_utils.c.i
+
+.PHONY : minishell_utils/memory_handle_utils.i
+
+# target to preprocess a source file
+minishell_utils/memory_handle_utils.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/minishell_utils/memory_handle_utils.c.i
+.PHONY : minishell_utils/memory_handle_utils.c.i
+
+minishell_utils/memory_handle_utils.s: minishell_utils/memory_handle_utils.c.s
+
+.PHONY : minishell_utils/memory_handle_utils.s
+
+# target to generate assembly for a file
+minishell_utils/memory_handle_utils.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/minishell_utils/memory_handle_utils.c.s
+.PHONY : minishell_utils/memory_handle_utils.c.s
+
+minishell_utils/string_utils1.o: minishell_utils/string_utils1.c.o
+
+.PHONY : minishell_utils/string_utils1.o
+
+# target to build an object file
+minishell_utils/string_utils1.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/minishell_utils/string_utils1.c.o
+.PHONY : minishell_utils/string_utils1.c.o
+
+minishell_utils/string_utils1.i: minishell_utils/string_utils1.c.i
+
+.PHONY : minishell_utils/string_utils1.i
+
+# target to preprocess a source file
+minishell_utils/string_utils1.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/minishell_utils/string_utils1.c.i
+.PHONY : minishell_utils/string_utils1.c.i
+
+minishell_utils/string_utils1.s: minishell_utils/string_utils1.c.s
+
+.PHONY : minishell_utils/string_utils1.s
+
+# target to generate assembly for a file
+minishell_utils/string_utils1.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/minishell_utils/string_utils1.c.s
+.PHONY : minishell_utils/string_utils1.c.s
+
+minishell_utils/string_utils2.o: minishell_utils/string_utils2.c.o
+
+.PHONY : minishell_utils/string_utils2.o
+
+# target to build an object file
+minishell_utils/string_utils2.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/minishell_utils/string_utils2.c.o
+.PHONY : minishell_utils/string_utils2.c.o
+
+minishell_utils/string_utils2.i: minishell_utils/string_utils2.c.i
+
+.PHONY : minishell_utils/string_utils2.i
+
+# target to preprocess a source file
+minishell_utils/string_utils2.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/minishell_utils/string_utils2.c.i
+.PHONY : minishell_utils/string_utils2.c.i
+
+minishell_utils/string_utils2.s: minishell_utils/string_utils2.c.s
+
+.PHONY : minishell_utils/string_utils2.s
+
+# target to generate assembly for a file
+minishell_utils/string_utils2.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/minishell_utils/string_utils2.c.s
+.PHONY : minishell_utils/string_utils2.c.s
 
 parser/backslash.o: parser/backslash.c.o
 
@@ -628,6 +682,33 @@ parser/quotes_handler.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/parser/quotes_handler.c.s
 .PHONY : parser/quotes_handler.c.s
 
+parser/redirects_syntax.o: parser/redirects_syntax.c.o
+
+.PHONY : parser/redirects_syntax.o
+
+# target to build an object file
+parser/redirects_syntax.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/parser/redirects_syntax.c.o
+.PHONY : parser/redirects_syntax.c.o
+
+parser/redirects_syntax.i: parser/redirects_syntax.c.i
+
+.PHONY : parser/redirects_syntax.i
+
+# target to preprocess a source file
+parser/redirects_syntax.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/parser/redirects_syntax.c.i
+.PHONY : parser/redirects_syntax.c.i
+
+parser/redirects_syntax.s: parser/redirects_syntax.c.s
+
+.PHONY : parser/redirects_syntax.s
+
+# target to generate assembly for a file
+parser/redirects_syntax.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/parser/redirects_syntax.c.s
+.PHONY : parser/redirects_syntax.c.s
+
 parser/syntax_err.o: parser/syntax_err.c.o
 
 .PHONY : parser/syntax_err.o
@@ -654,6 +735,114 @@ parser/syntax_err.s: parser/syntax_err.c.s
 parser/syntax_err.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/parser/syntax_err.c.s
 .PHONY : parser/syntax_err.c.s
+
+termcap/check_for_exit.o: termcap/check_for_exit.c.o
+
+.PHONY : termcap/check_for_exit.o
+
+# target to build an object file
+termcap/check_for_exit.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/termcap/check_for_exit.c.o
+.PHONY : termcap/check_for_exit.c.o
+
+termcap/check_for_exit.i: termcap/check_for_exit.c.i
+
+.PHONY : termcap/check_for_exit.i
+
+# target to preprocess a source file
+termcap/check_for_exit.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/termcap/check_for_exit.c.i
+.PHONY : termcap/check_for_exit.c.i
+
+termcap/check_for_exit.s: termcap/check_for_exit.c.s
+
+.PHONY : termcap/check_for_exit.s
+
+# target to generate assembly for a file
+termcap/check_for_exit.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/termcap/check_for_exit.c.s
+.PHONY : termcap/check_for_exit.c.s
+
+termcap/keys.o: termcap/keys.c.o
+
+.PHONY : termcap/keys.o
+
+# target to build an object file
+termcap/keys.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/termcap/keys.c.o
+.PHONY : termcap/keys.c.o
+
+termcap/keys.i: termcap/keys.c.i
+
+.PHONY : termcap/keys.i
+
+# target to preprocess a source file
+termcap/keys.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/termcap/keys.c.i
+.PHONY : termcap/keys.c.i
+
+termcap/keys.s: termcap/keys.c.s
+
+.PHONY : termcap/keys.s
+
+# target to generate assembly for a file
+termcap/keys.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/termcap/keys.c.s
+.PHONY : termcap/keys.c.s
+
+termcap/keys2.o: termcap/keys2.c.o
+
+.PHONY : termcap/keys2.o
+
+# target to build an object file
+termcap/keys2.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/termcap/keys2.c.o
+.PHONY : termcap/keys2.c.o
+
+termcap/keys2.i: termcap/keys2.c.i
+
+.PHONY : termcap/keys2.i
+
+# target to preprocess a source file
+termcap/keys2.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/termcap/keys2.c.i
+.PHONY : termcap/keys2.c.i
+
+termcap/keys2.s: termcap/keys2.c.s
+
+.PHONY : termcap/keys2.s
+
+# target to generate assembly for a file
+termcap/keys2.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/termcap/keys2.c.s
+.PHONY : termcap/keys2.c.s
+
+termcap/term_utills.o: termcap/term_utills.c.o
+
+.PHONY : termcap/term_utills.o
+
+# target to build an object file
+termcap/term_utills.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/termcap/term_utills.c.o
+.PHONY : termcap/term_utills.c.o
+
+termcap/term_utills.i: termcap/term_utills.c.i
+
+.PHONY : termcap/term_utills.i
+
+# target to preprocess a source file
+termcap/term_utills.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/termcap/term_utills.c.i
+.PHONY : termcap/term_utills.c.i
+
+termcap/term_utills.s: termcap/term_utills.c.s
+
+.PHONY : termcap/term_utills.s
+
+# target to generate assembly for a file
+termcap/term_utills.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/termcap/term_utills.c.s
+.PHONY : termcap/term_utills.c.s
 
 tokenizer/check_cmd.o: tokenizer/check_cmd.c.o
 
@@ -817,6 +1006,33 @@ tokenizer/free_and_exit_tokenizer.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/tokenizer/free_and_exit_tokenizer.c.s
 .PHONY : tokenizer/free_and_exit_tokenizer.c.s
 
+tokenizer/get_redirect.o: tokenizer/get_redirect.c.o
+
+.PHONY : tokenizer/get_redirect.o
+
+# target to build an object file
+tokenizer/get_redirect.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/tokenizer/get_redirect.c.o
+.PHONY : tokenizer/get_redirect.c.o
+
+tokenizer/get_redirect.i: tokenizer/get_redirect.c.i
+
+.PHONY : tokenizer/get_redirect.i
+
+# target to preprocess a source file
+tokenizer/get_redirect.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/tokenizer/get_redirect.c.i
+.PHONY : tokenizer/get_redirect.c.i
+
+tokenizer/get_redirect.s: tokenizer/get_redirect.c.s
+
+.PHONY : tokenizer/get_redirect.s
+
+# target to generate assembly for a file
+tokenizer/get_redirect.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/tokenizer/get_redirect.c.s
+.PHONY : tokenizer/get_redirect.c.s
+
 tokenizer/redirect_error.o: tokenizer/redirect_error.c.o
 
 .PHONY : tokenizer/redirect_error.o
@@ -880,18 +1096,6 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... shell"
-	@echo "... U/check_for_exit.o"
-	@echo "... U/check_for_exit.i"
-	@echo "... U/check_for_exit.s"
-	@echo "... U/keys.o"
-	@echo "... U/keys.i"
-	@echo "... U/keys.s"
-	@echo "... U/keys2.o"
-	@echo "... U/keys2.i"
-	@echo "... U/keys2.s"
-	@echo "... U/term_utills.o"
-	@echo "... U/term_utills.i"
-	@echo "... U/term_utills.s"
 	@echo "... builtins/check_export.o"
 	@echo "... builtins/check_export.i"
 	@echo "... builtins/check_export.s"
@@ -913,18 +1117,36 @@ help:
 	@echo "... executing/change_io.o"
 	@echo "... executing/change_io.i"
 	@echo "... executing/change_io.s"
+	@echo "... executing/child_process.o"
+	@echo "... executing/child_process.i"
+	@echo "... executing/child_process.s"
+	@echo "... executing/executing.o"
+	@echo "... executing/executing.i"
+	@echo "... executing/executing.s"
+	@echo "... executing/executing_utils.o"
+	@echo "... executing/executing_utils.i"
+	@echo "... executing/executing_utils.s"
 	@echo "... executing/free_functions.o"
 	@echo "... executing/free_functions.i"
 	@echo "... executing/free_functions.s"
-	@echo "... executing/kern.o"
-	@echo "... executing/kern.i"
-	@echo "... executing/kern.s"
-	@echo "... libft_utills.o"
-	@echo "... libft_utills.i"
-	@echo "... libft_utills.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... minishell_utils/ft_itoa.o"
+	@echo "... minishell_utils/ft_itoa.i"
+	@echo "... minishell_utils/ft_itoa.s"
+	@echo "... minishell_utils/ft_split.o"
+	@echo "... minishell_utils/ft_split.i"
+	@echo "... minishell_utils/ft_split.s"
+	@echo "... minishell_utils/memory_handle_utils.o"
+	@echo "... minishell_utils/memory_handle_utils.i"
+	@echo "... minishell_utils/memory_handle_utils.s"
+	@echo "... minishell_utils/string_utils1.o"
+	@echo "... minishell_utils/string_utils1.i"
+	@echo "... minishell_utils/string_utils1.s"
+	@echo "... minishell_utils/string_utils2.o"
+	@echo "... minishell_utils/string_utils2.i"
+	@echo "... minishell_utils/string_utils2.s"
 	@echo "... parser/backslash.o"
 	@echo "... parser/backslash.i"
 	@echo "... parser/backslash.s"
@@ -934,9 +1156,24 @@ help:
 	@echo "... parser/quotes_handler.o"
 	@echo "... parser/quotes_handler.i"
 	@echo "... parser/quotes_handler.s"
+	@echo "... parser/redirects_syntax.o"
+	@echo "... parser/redirects_syntax.i"
+	@echo "... parser/redirects_syntax.s"
 	@echo "... parser/syntax_err.o"
 	@echo "... parser/syntax_err.i"
 	@echo "... parser/syntax_err.s"
+	@echo "... termcap/check_for_exit.o"
+	@echo "... termcap/check_for_exit.i"
+	@echo "... termcap/check_for_exit.s"
+	@echo "... termcap/keys.o"
+	@echo "... termcap/keys.i"
+	@echo "... termcap/keys.s"
+	@echo "... termcap/keys2.o"
+	@echo "... termcap/keys2.i"
+	@echo "... termcap/keys2.s"
+	@echo "... termcap/term_utills.o"
+	@echo "... termcap/term_utills.i"
+	@echo "... termcap/term_utills.s"
 	@echo "... tokenizer/check_cmd.o"
 	@echo "... tokenizer/check_cmd.i"
 	@echo "... tokenizer/check_cmd.s"
@@ -955,6 +1192,9 @@ help:
 	@echo "... tokenizer/free_and_exit_tokenizer.o"
 	@echo "... tokenizer/free_and_exit_tokenizer.i"
 	@echo "... tokenizer/free_and_exit_tokenizer.s"
+	@echo "... tokenizer/get_redirect.o"
+	@echo "... tokenizer/get_redirect.i"
+	@echo "... tokenizer/get_redirect.s"
 	@echo "... tokenizer/redirect_error.o"
 	@echo "... tokenizer/redirect_error.i"
 	@echo "... tokenizer/redirect_error.s"

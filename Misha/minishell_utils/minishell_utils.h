@@ -1,5 +1,5 @@
-#ifndef HISTORY_H
-# define HISTORY_H
+#ifndef MINISHELL_UTILS_H
+# define MINISHELL_UTILS_H
 
 #include <unistd.h>
 #include <stdlib.h>
@@ -12,7 +12,6 @@
 #include <term.h>
 #include <curses.h>
 #include <termcap.h>
-
 
 int		ft_strncmp_cmd(const char *s1, const char *s2, size_t n);
 int		ft_strncmp_env(const char *s1, const char *s2, size_t n);

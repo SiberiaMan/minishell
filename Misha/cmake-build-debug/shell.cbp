@@ -78,21 +78,6 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/Users/dchani/Desktop/minishell_debug_branch/Misha/U/check_for_exit.c">
-			<Option target="shell"/>
-		</Unit>
-		<Unit filename="/Users/dchani/Desktop/minishell_debug_branch/Misha/U/history1.h">
-			<Option target="shell"/>
-		</Unit>
-		<Unit filename="/Users/dchani/Desktop/minishell_debug_branch/Misha/U/keys.c">
-			<Option target="shell"/>
-		</Unit>
-		<Unit filename="/Users/dchani/Desktop/minishell_debug_branch/Misha/U/keys2.c">
-			<Option target="shell"/>
-		</Unit>
-		<Unit filename="/Users/dchani/Desktop/minishell_debug_branch/Misha/U/term_utills.c">
-			<Option target="shell"/>
-		</Unit>
 		<Unit filename="/Users/dchani/Desktop/minishell_debug_branch/Misha/builtins/check_export.c">
 			<Option target="shell"/>
 		</Unit>
@@ -114,22 +99,43 @@
 		<Unit filename="/Users/dchani/Desktop/minishell_debug_branch/Misha/executing/change_io.c">
 			<Option target="shell"/>
 		</Unit>
+		<Unit filename="/Users/dchani/Desktop/minishell_debug_branch/Misha/executing/child_process.c">
+			<Option target="shell"/>
+		</Unit>
+		<Unit filename="/Users/dchani/Desktop/minishell_debug_branch/Misha/executing/executing.c">
+			<Option target="shell"/>
+		</Unit>
 		<Unit filename="/Users/dchani/Desktop/minishell_debug_branch/Misha/executing/executing.h">
 			<Option target="shell"/>
 		</Unit>
+		<Unit filename="/Users/dchani/Desktop/minishell_debug_branch/Misha/executing/executing_utils.c">
+			<Option target="shell"/>
+		</Unit>
 		<Unit filename="/Users/dchani/Desktop/minishell_debug_branch/Misha/executing/free_functions.c">
-			<Option target="shell"/>
-		</Unit>
-		<Unit filename="/Users/dchani/Desktop/minishell_debug_branch/Misha/executing/kern.c">
-			<Option target="shell"/>
-		</Unit>
-		<Unit filename="/Users/dchani/Desktop/minishell_debug_branch/Misha/libft_utills.c">
 			<Option target="shell"/>
 		</Unit>
 		<Unit filename="/Users/dchani/Desktop/minishell_debug_branch/Misha/main.c">
 			<Option target="shell"/>
 		</Unit>
 		<Unit filename="/Users/dchani/Desktop/minishell_debug_branch/Misha/minishell.h">
+			<Option target="shell"/>
+		</Unit>
+		<Unit filename="/Users/dchani/Desktop/minishell_debug_branch/Misha/minishell_utils/ft_itoa.c">
+			<Option target="shell"/>
+		</Unit>
+		<Unit filename="/Users/dchani/Desktop/minishell_debug_branch/Misha/minishell_utils/ft_split.c">
+			<Option target="shell"/>
+		</Unit>
+		<Unit filename="/Users/dchani/Desktop/minishell_debug_branch/Misha/minishell_utils/memory_handle_utils.c">
+			<Option target="shell"/>
+		</Unit>
+		<Unit filename="/Users/dchani/Desktop/minishell_debug_branch/Misha/minishell_utils/minishell_utils.h">
+			<Option target="shell"/>
+		</Unit>
+		<Unit filename="/Users/dchani/Desktop/minishell_debug_branch/Misha/minishell_utils/string_utils1.c">
+			<Option target="shell"/>
+		</Unit>
+		<Unit filename="/Users/dchani/Desktop/minishell_debug_branch/Misha/minishell_utils/string_utils2.c">
 			<Option target="shell"/>
 		</Unit>
 		<Unit filename="/Users/dchani/Desktop/minishell_debug_branch/Misha/parser/backslash.c">
@@ -144,7 +150,25 @@
 		<Unit filename="/Users/dchani/Desktop/minishell_debug_branch/Misha/parser/quotes_handler.c">
 			<Option target="shell"/>
 		</Unit>
+		<Unit filename="/Users/dchani/Desktop/minishell_debug_branch/Misha/parser/redirects_syntax.c">
+			<Option target="shell"/>
+		</Unit>
 		<Unit filename="/Users/dchani/Desktop/minishell_debug_branch/Misha/parser/syntax_err.c">
+			<Option target="shell"/>
+		</Unit>
+		<Unit filename="/Users/dchani/Desktop/minishell_debug_branch/Misha/termcap/check_for_exit.c">
+			<Option target="shell"/>
+		</Unit>
+		<Unit filename="/Users/dchani/Desktop/minishell_debug_branch/Misha/termcap/keys.c">
+			<Option target="shell"/>
+		</Unit>
+		<Unit filename="/Users/dchani/Desktop/minishell_debug_branch/Misha/termcap/keys2.c">
+			<Option target="shell"/>
+		</Unit>
+		<Unit filename="/Users/dchani/Desktop/minishell_debug_branch/Misha/termcap/term_utills.c">
+			<Option target="shell"/>
+		</Unit>
+		<Unit filename="/Users/dchani/Desktop/minishell_debug_branch/Misha/termcap/termcap.h">
 			<Option target="shell"/>
 		</Unit>
 		<Unit filename="/Users/dchani/Desktop/minishell_debug_branch/Misha/tokenizer/check_cmd.c">
@@ -163,6 +187,9 @@
 			<Option target="shell"/>
 		</Unit>
 		<Unit filename="/Users/dchani/Desktop/minishell_debug_branch/Misha/tokenizer/free_and_exit_tokenizer.c">
+			<Option target="shell"/>
+		</Unit>
+		<Unit filename="/Users/dchani/Desktop/minishell_debug_branch/Misha/tokenizer/get_redirect.c">
 			<Option target="shell"/>
 		</Unit>
 		<Unit filename="/Users/dchani/Desktop/minishell_debug_branch/Misha/tokenizer/redirect_error.c">

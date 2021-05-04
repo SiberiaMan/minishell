@@ -101,7 +101,6 @@ t_line_n_mask *l_n_m)
 	free(temp_ptr);
 	free(token->args[0]);
 	token->args[0] = new_path;
-	//printf("%s\n", new_path);
 	return (1);
 }
 
@@ -123,42 +122,47 @@ size_t check_builtins(char *line)
 	return (0);
 }
 
+static size_t	find_cmd(t_line_n_mask *l_n_m, t_token *token, char **path)
+{
+	DIR				*dir;
+	struct dirent	*entry;
+	size_t 			j;
+
+	j = 0;
+	while (path[j])
+	{
+		dir = opendir(path[j]);
+		if (dir)
+		{
+			entry = readdir(dir);
+			while (entry != 0)
+			{
+				if (!(ft_strncmp_cmd(token->args[0], entry->d_name,
+				ft_strlen(entry->d_name))))
+				{
+					closedir(dir);
+					return (change_cmd(path, j, token, l_n_m));
+				}
+				entry = readdir(dir);
+			}
+			closedir(dir);
+		}
+		j++;
+	}
+	return (is_dir(l_n_m, token->args[0], path));
+}
+
 size_t	check_cmd(t_line_n_mask *l_n_m, t_token *token, size_t i)
 {
 	char			**path;
-	DIR				*dir;
-	struct dirent	*entry;
-	size_t			j;
 
-	j = 0;
 	handle_cmd(l_n_m, token, i);
 	if (check_builtins(token->args[0]))
 		return (1);
+	path = ft_split(get_path(l_n_m, token), ':');
+	if (!path)
+		free_token_n_structure_exit(token, l_n_m);
 	if (token->args[0])
-	{
-		path = ft_split(get_path(l_n_m, token), ':');
-		while (path[j])
-		{
-			dir = opendir(path[j]);
-			if (dir)
-			{
-				entry = readdir(dir);
-				while (entry != 0)
-				{
-					if (!(ft_strncmp_cmd(token->args[0], entry->d_name,
-										 ft_strlen
-												 (entry->d_name))))
-					{
-						closedir(dir);
-						return (change_cmd(path, j, token, l_n_m));
-					}
-					entry = readdir(dir);
-				}
-				closedir(dir);
-			}
-			j++;
-		}
-		return (is_dir(l_n_m, token->args[0], path));
-	}
+		return (find_cmd(l_n_m, token, path));
 	return (0);
 }

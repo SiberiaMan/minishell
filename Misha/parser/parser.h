@@ -3,7 +3,7 @@
 
 # include <stdlib.h>
 # include <stdio.h>
-# include "../history.h"
+# include "../minishell_utils/minishell_utils.h"
 
 # define SYNTAX_ERR "syntax error near token "
 # define CMD_NF		"command not found"
@@ -20,6 +20,7 @@
 # define UNUSED_SYMBOL '0'
 
 int		parser(const char *line, const char *mask);
+size_t	redirect_syntax(const char *line, const char *mask, char *c);
 void	print_syntax_err(char err);
 size_t 	get_mask_normal(char *line, char *mask);
 size_t	quotes_handler(char *line, char *mask);

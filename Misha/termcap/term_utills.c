@@ -1,4 +1,4 @@
-#include "history1.h"
+#include "termcap.h"
 
 void ft_putstr(char *str)
 {
