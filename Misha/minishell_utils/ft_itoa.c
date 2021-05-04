@@ -1,6 +1,6 @@
 #include "minishell_utils.h"
 
-static	int			ft_abs(int n)
+static	int	ft_abs(int n)
 {
 	if (n < 0)
 		return (n * (-1));
@@ -8,7 +8,7 @@ static	int			ft_abs(int n)
 		return (n);
 }
 
-static	int			nlen(int n, int fl)
+static	int	nlen(int n, int fl)
 {
 	int	size;
 
@@ -25,15 +25,18 @@ static	int			nlen(int n, int fl)
 	return (size);
 }
 
-char				*ft_itoa(int n)
+char	*ft_itoa(int n)
 {
 	char	*ptr;
 	int		size;
 	int		fl;
 
-	fl = (n < 0) ? 1 : 0;
+	if (n < 0)
+		fl = 1;
+	else
+		fl = 0;
 	size = nlen(n, fl);
-	ptr = (char*)malloc(size + 1);
+	ptr = (char *)malloc(size + 1);
 	if (!ptr)
 		return (0);
 	ptr[size--] = '\0';

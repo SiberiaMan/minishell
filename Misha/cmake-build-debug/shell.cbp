@@ -138,6 +138,9 @@
 		<Unit filename="/Users/dchani/Desktop/minishell_debug_branch/Misha/minishell_utils/string_utils2.c">
 			<Option target="shell"/>
 		</Unit>
+		<Unit filename="/Users/dchani/Desktop/minishell_debug_branch/Misha/minishell_utils/string_utils3.c">
+			<Option target="shell"/>
+		</Unit>
 		<Unit filename="/Users/dchani/Desktop/minishell_debug_branch/Misha/parser/backslash.c">
 			<Option target="shell"/>
 		</Unit>
@@ -174,10 +177,16 @@
 		<Unit filename="/Users/dchani/Desktop/minishell_debug_branch/Misha/tokenizer/check_cmd.c">
 			<Option target="shell"/>
 		</Unit>
+		<Unit filename="/Users/dchani/Desktop/minishell_debug_branch/Misha/tokenizer/check_directory.c">
+			<Option target="shell"/>
+		</Unit>
 		<Unit filename="/Users/dchani/Desktop/minishell_debug_branch/Misha/tokenizer/cmd.c">
 			<Option target="shell"/>
 		</Unit>
 		<Unit filename="/Users/dchani/Desktop/minishell_debug_branch/Misha/tokenizer/conditions.c">
+			<Option target="shell"/>
+		</Unit>
+		<Unit filename="/Users/dchani/Desktop/minishell_debug_branch/Misha/tokenizer/conditions_utils.c">
 			<Option target="shell"/>
 		</Unit>
 		<Unit filename="/Users/dchani/Desktop/minishell_debug_branch/Misha/tokenizer/dollar_sign_assign.c">

@@ -37,6 +37,8 @@ struct s_gnl
 	int		status;
 };
 
+void sig_slash(int signum);
+void sig_c(int signum);
 int		lst_create_add(t_list **lst, char *line);
 void	ft_putstr(char *str);
 int		ctrl_d(t_gnl *gnl);

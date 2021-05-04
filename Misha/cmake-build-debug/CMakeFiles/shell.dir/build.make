@@ -531,6 +531,45 @@ CMakeFiles/shell.dir/tokenizer/get_redirect.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/shell.dir/tokenizer/get_redirect.c.s"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dchani/Desktop/minishell_debug_branch/Misha/tokenizer/get_redirect.c -o CMakeFiles/shell.dir/tokenizer/get_redirect.c.s
 
+CMakeFiles/shell.dir/tokenizer/check_directory.c.o: CMakeFiles/shell.dir/flags.make
+CMakeFiles/shell.dir/tokenizer/check_directory.c.o: ../tokenizer/check_directory.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dchani/Desktop/minishell_debug_branch/Misha/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_36) "Building C object CMakeFiles/shell.dir/tokenizer/check_directory.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/shell.dir/tokenizer/check_directory.c.o -c /Users/dchani/Desktop/minishell_debug_branch/Misha/tokenizer/check_directory.c
+
+CMakeFiles/shell.dir/tokenizer/check_directory.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/shell.dir/tokenizer/check_directory.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dchani/Desktop/minishell_debug_branch/Misha/tokenizer/check_directory.c > CMakeFiles/shell.dir/tokenizer/check_directory.c.i
+
+CMakeFiles/shell.dir/tokenizer/check_directory.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/shell.dir/tokenizer/check_directory.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dchani/Desktop/minishell_debug_branch/Misha/tokenizer/check_directory.c -o CMakeFiles/shell.dir/tokenizer/check_directory.c.s
+
+CMakeFiles/shell.dir/tokenizer/conditions_utils.c.o: CMakeFiles/shell.dir/flags.make
+CMakeFiles/shell.dir/tokenizer/conditions_utils.c.o: ../tokenizer/conditions_utils.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dchani/Desktop/minishell_debug_branch/Misha/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_37) "Building C object CMakeFiles/shell.dir/tokenizer/conditions_utils.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/shell.dir/tokenizer/conditions_utils.c.o -c /Users/dchani/Desktop/minishell_debug_branch/Misha/tokenizer/conditions_utils.c
+
+CMakeFiles/shell.dir/tokenizer/conditions_utils.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/shell.dir/tokenizer/conditions_utils.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dchani/Desktop/minishell_debug_branch/Misha/tokenizer/conditions_utils.c > CMakeFiles/shell.dir/tokenizer/conditions_utils.c.i
+
+CMakeFiles/shell.dir/tokenizer/conditions_utils.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/shell.dir/tokenizer/conditions_utils.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dchani/Desktop/minishell_debug_branch/Misha/tokenizer/conditions_utils.c -o CMakeFiles/shell.dir/tokenizer/conditions_utils.c.s
+
+CMakeFiles/shell.dir/minishell_utils/string_utils3.c.o: CMakeFiles/shell.dir/flags.make
+CMakeFiles/shell.dir/minishell_utils/string_utils3.c.o: ../minishell_utils/string_utils3.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dchani/Desktop/minishell_debug_branch/Misha/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_38) "Building C object CMakeFiles/shell.dir/minishell_utils/string_utils3.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/shell.dir/minishell_utils/string_utils3.c.o -c /Users/dchani/Desktop/minishell_debug_branch/Misha/minishell_utils/string_utils3.c
+
+CMakeFiles/shell.dir/minishell_utils/string_utils3.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/shell.dir/minishell_utils/string_utils3.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dchani/Desktop/minishell_debug_branch/Misha/minishell_utils/string_utils3.c > CMakeFiles/shell.dir/minishell_utils/string_utils3.c.i
+
+CMakeFiles/shell.dir/minishell_utils/string_utils3.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/shell.dir/minishell_utils/string_utils3.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dchani/Desktop/minishell_debug_branch/Misha/minishell_utils/string_utils3.c -o CMakeFiles/shell.dir/minishell_utils/string_utils3.c.s
+
 # Object files for target shell
 shell_OBJECTS = \
 "CMakeFiles/shell.dir/parser/backslash.c.o" \
@@ -567,7 +606,10 @@ shell_OBJECTS = \
 "CMakeFiles/shell.dir/minishell_utils/memory_handle_utils.c.o" \
 "CMakeFiles/shell.dir/minishell_utils/string_utils1.c.o" \
 "CMakeFiles/shell.dir/minishell_utils/string_utils2.c.o" \
-"CMakeFiles/shell.dir/tokenizer/get_redirect.c.o"
+"CMakeFiles/shell.dir/tokenizer/get_redirect.c.o" \
+"CMakeFiles/shell.dir/tokenizer/check_directory.c.o" \
+"CMakeFiles/shell.dir/tokenizer/conditions_utils.c.o" \
+"CMakeFiles/shell.dir/minishell_utils/string_utils3.c.o"
 
 # External object files for target shell
 shell_EXTERNAL_OBJECTS =
@@ -607,9 +649,12 @@ shell: CMakeFiles/shell.dir/minishell_utils/memory_handle_utils.c.o
 shell: CMakeFiles/shell.dir/minishell_utils/string_utils1.c.o
 shell: CMakeFiles/shell.dir/minishell_utils/string_utils2.c.o
 shell: CMakeFiles/shell.dir/tokenizer/get_redirect.c.o
+shell: CMakeFiles/shell.dir/tokenizer/check_directory.c.o
+shell: CMakeFiles/shell.dir/tokenizer/conditions_utils.c.o
+shell: CMakeFiles/shell.dir/minishell_utils/string_utils3.c.o
 shell: CMakeFiles/shell.dir/build.make
 shell: CMakeFiles/shell.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/dchani/Desktop/minishell_debug_branch/Misha/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_36) "Linking C executable shell"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/dchani/Desktop/minishell_debug_branch/Misha/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_39) "Linking C executable shell"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/shell.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

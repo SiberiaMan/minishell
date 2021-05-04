@@ -1,6 +1,6 @@
 #include "tokenizer.h"
 
-static size_t check_dir_error(t_token *token, t_line_n_mask *l_n_m,
+static size_t	check_dir_error(t_token *token, t_line_n_mask *l_n_m,
 char *is_a_directory, DIR *dir)
 {
 	closedir(dir);
@@ -12,7 +12,7 @@ char *is_a_directory, DIR *dir)
 	return (0);
 }
 
-static size_t check_fd_error(t_token *token, t_line_n_mask *l_n_m,
+static size_t	check_fd_error(t_token *token, t_line_n_mask *l_n_m,
 char *not_file_error)
 {
 	if (token->fd_from < 0)
@@ -29,9 +29,9 @@ char *not_file_error)
 
 size_t 	redirect_error(t_token *token, t_line_n_mask *l_n_m)
 {
-	DIR	*dir;
-	char *not_file_error;
-	char *is_a_directory;
+	DIR		*dir;
+	char	*not_file_error;
+	char	*is_a_directory;
 
 	is_a_directory = ": is a directory\n";
 	not_file_error = ": No such file or directory\n";
@@ -42,6 +42,6 @@ size_t 	redirect_error(t_token *token, t_line_n_mask *l_n_m)
 			return (check_dir_error(token, l_n_m, is_a_directory, dir));
 	}
 	if (token->line && (token->fd_from < 0 || token->fd_to < 0))
-		return check_fd_error(token, l_n_m, not_file_error);
+		return (check_fd_error(token, l_n_m, not_file_error));
 	return (1);
 }

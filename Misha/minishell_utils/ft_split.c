@@ -1,6 +1,6 @@
 #include "minishell_utils.h"
 
-static	size_t		ft_count(char const *s, char c)
+static	size_t	ft_count(char const *s, char c)
 {
 	size_t		i;
 	size_t		cnt;
@@ -21,31 +21,21 @@ static	size_t		ft_count(char const *s, char c)
 	return (cnt);
 }
 
-static	void		ft_free(char **ptr)
+static	char	**ft_free(char **ptr, size_t j)
 {
 	size_t	i;
 
 	i = 0;
-	while (ptr[i])
+	while (i < j)
 	{
 		free(ptr[i]);
 		i++;
 	}
-	free(ptr[i]);
+	free(ptr);
+	return (0);
 }
 
-static	void		ft_assign(char const *s, size_t from, size_t to, char *ptr)
-{
-	while (from < to)
-	{
-		*ptr = s[from];
-		from++;
-		ptr++;
-	}
-	*ptr = '\0';
-}
-
-static	size_t		ft_len(char const *s, char c, size_t start)
+static	size_t	ft_len(char const *s, char c, size_t start)
 {
 	size_t	size;
 
@@ -58,31 +48,43 @@ static	size_t		ft_len(char const *s, char c, size_t start)
 	return (size);
 }
 
-char				**ft_split(char *s, char c)
+static	void	ft_assign(char const *s, size_t *i, char c, char *ptr)
+{
+	size_t	to;
+
+	to = *i + ft_len(s, c, *i);
+	while (*i < to)
+	{
+		*ptr = s[*i];
+		(*i)++;
+		ptr++;
+	}
+	*ptr = '\0';
+}
+
+char	**ft_split(char *s, char c)
 {
 	char		**ptr;
 	size_t		i;
 	size_t		j;
 
-	ptr = (char**)malloc(sizeof(char*) * (ft_count(s, c) + 1));
+	ptr = (char **)malloc(sizeof(char *) * (ft_count(s, c) + 1));
 	if (!ptr)
 		return (0);
 	i = 0;
 	j = 0;
 	while (s[i])
+	{
 		if (s[i] != c)
 		{
-			if (!(ptr[j] = (char*)malloc(ft_len(s, c, i) + 1)))
-			{
-				ft_free(ptr);
-				return (0);
-			}
-			ft_assign(s, i, i + ft_len(s, c, i), ptr[j]);
-			i += ft_len(s, c, i);
-			j++;
+			ptr[j] = (char *)malloc(ft_len(s, c, i) + 1);
+			if (!ptr[j])
+				return (ft_free(ptr, j));
+			ft_assign(s, &i, c, ptr[j++]);
 		}
 		else
 			i++;
+	}
 	ptr[j] = 0;
 	free(s);
 	return (ptr);

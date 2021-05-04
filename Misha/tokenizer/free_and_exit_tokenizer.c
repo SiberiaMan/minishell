@@ -1,9 +1,19 @@
 #include "tokenizer.h"
 
+void	free_path(char **path)
+{
+	size_t	i;
+
+	i = 0;
+	while (path[i])
+		free(path[i++]);
+	free(path);
+}
+
 void	free_and_exit_tokenizer_cmd(t_token *token, t_line_n_mask *l_n_m,
 size_t i)
 {
-	size_t j;
+	size_t	j;
 
 	j = 0;
 	while (j < i)
@@ -20,12 +30,13 @@ void	free_token_n_structure_exit(t_token *token, t_line_n_mask *l_n_m)
 	while (token->args[j])
 		free(token->args[j++]);
 	free(token->args);
+	free(token->lower);
 	free_and_exit_tokenizer(l_n_m);
 }
 
 void	free_and_exit_tokenizer(t_line_n_mask *l_n_m)
 {
-	size_t 	j;
+	size_t	j;
 
 	j = 0;
 	free_gnl(l_n_m->gnl);

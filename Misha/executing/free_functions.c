@@ -19,7 +19,7 @@ void	free_kernel(t_line_n_mask *l_n_m)
 
 void	free_and_exit(t_line_n_mask *l_n_m)
 {
-	size_t 	j;
+	size_t	j;
 
 	j = 0;
 	free_gnl(l_n_m->gnl);

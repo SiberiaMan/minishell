@@ -16,13 +16,15 @@ size_t	condition_redirects_2(t_line_n_mask *l_n_m, size_t i, char c)
 	return (0);
 }
 
-size_t condition_redirects3(t_line_n_mask *l_n_m, size_t start)
+size_t	condition_redirects3(t_line_n_mask *l_n_m, size_t start)
 {
 	if (l_n_m->line[start] && ((l_n_m->mask[start] == '1'
-	 && !(l_n_m->mask[start] == '1' && l_n_m->line[start] == ' '))
-	 || (l_n_m->line[start] == '$') || (l_n_m->mask[start] == UNUSED_BACKSLASH)
-	 || (l_n_m->mask[start] == OPEN_QUOTE) || (l_n_m->mask[start] == CLOSE_QUOTE)
-	 || (l_n_m->mask[start] == SPACE_VISIBLE)))
+				&& !(l_n_m->mask[start] == '1' && l_n_m->line[start] == ' '))
+			|| (l_n_m->line[start] == '$')
+			|| (l_n_m->mask[start] == UNUSED_BACKSLASH)
+			|| (l_n_m->mask[start] == OPEN_QUOTE)
+			|| (l_n_m->mask[start] == CLOSE_QUOTE)
+			|| (l_n_m->mask[start] == SPACE_VISIBLE)))
 		return (1);
 	return (0);
 }
@@ -30,7 +32,8 @@ size_t condition_redirects3(t_line_n_mask *l_n_m, size_t start)
 size_t	condition_cmd_limits(t_line_n_mask *l_n_m, size_t i)
 {
 	if (l_n_m->line[i] && !(l_n_m->line[i] == '|'
-	&& l_n_m->mask[i] == SPEC_SYMBOL) && (l_n_m->mask[i] != CURRENT_SPLIT))
+			&& l_n_m->mask[i] == SPEC_SYMBOL)
+		&& (l_n_m->mask[i] != CURRENT_SPLIT))
 		return (1);
 	return (0);
 }

@@ -7,8 +7,8 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 	unsigned char	*str2;
 
 	i = 0;
-	str1 = (unsigned char*)src;
-	str2 = (unsigned char*)dst;
+	str1 = (unsigned char *)src;
+	str2 = (unsigned char *)dst;
 	if (!src && !dst)
 		return (dst);
 	while (i < n)
@@ -21,18 +21,19 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 
 void	ft_bzero(void *s, size_t n)
 {
-	unsigned char *str;
+	unsigned char	*str;
 
-	str = (unsigned char*)s;
+	str = (unsigned char *)s;
 	while (n-- > 0)
 		str[n] = '\0';
 }
 
 void	*ft_calloc(size_t count, size_t size)
 {
-	char *str;
+	char	*str;
 
-	if (!(str = (void *)malloc(count * size)))
+	str = (void *)malloc(count * size);
+	if (!str)
 		return (0);
 	else
 	{
@@ -48,7 +49,7 @@ void	*ft_memset(void *b, int c, size_t len)
 	unsigned char	sim;
 
 	i = 0;
-	str = (unsigned char*)b;
+	str = (unsigned char *)b;
 	sim = (unsigned char)c;
 	while (i < len)
 	{
@@ -57,4 +58,3 @@ void	*ft_memset(void *b, int c, size_t len)
 	}
 	return (str);
 }
-

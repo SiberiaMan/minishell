@@ -1,4 +1,4 @@
-# include "executing.h"
+#include "executing.h"
 
 static void	dup_error(t_line_n_mask *l_n_m)
 {
@@ -8,7 +8,7 @@ static void	dup_error(t_line_n_mask *l_n_m)
 static void	change_first_io(t_line_n_mask *l_n_m, t_token *token, size_t i)
 {
 	int	tmpin;
-	int tmpout;
+	int	tmpout;
 
 	tmpin = dup(token->fd_from);
 	if (tmpin < 0)
@@ -18,12 +18,12 @@ static void	change_first_io(t_line_n_mask *l_n_m, t_token *token, size_t i)
 	close(tmpin);
 	if (i != l_n_m->cnt_pipes)
 	{
-		tmpout = dup(l_n_m->pipes[i + 1][1]); ///handle dup
+		tmpout = dup(l_n_m->pipes[i + 1][1]);
 		if (tmpout < 0)
 			return (dup_error(l_n_m));
 		if (token->fd_to != 1)
 			tmpout = token->fd_to;
-		if (dup2(tmpout, 1) < 0) /// handle dup
+		if (dup2(tmpout, 1) < 0)
 			return (dup_error(l_n_m));
 		close(tmpout);
 	}
@@ -32,7 +32,7 @@ static void	change_first_io(t_line_n_mask *l_n_m, t_token *token, size_t i)
 static void	change_last_io(t_line_n_mask *l_n_m, t_token *token, size_t i)
 {
 	int	tmpin;
-	int tmpout;
+	int	tmpout;
 
 	if (i != 0)
 	{
@@ -48,19 +48,19 @@ static void	change_last_io(t_line_n_mask *l_n_m, t_token *token, size_t i)
 	tmpout = dup(token->fd_to);
 	if (tmpout < 0)
 		return (dup_error(l_n_m));
-	if (dup2(tmpout, 1) < 0) /// handle dup
+	if (dup2(tmpout, 1) < 0)
 		return (dup_error(l_n_m));
 	close(tmpout);
 }
 
-static void change_inside_io(t_line_n_mask *l_n_m, t_token *token, size_t i)
+static void	change_inside_io(t_line_n_mask *l_n_m, t_token *token, size_t i)
 {
 	int	tmpin;
 	int	tmpout;
 
 	tmpin = dup(l_n_m->pipes[i][0]);
 	if (tmpin < 0)
-		return dup_error(l_n_m);
+		return (dup_error(l_n_m));
 	tmpout = dup(l_n_m->pipes[i + 1][1]);
 	if (tmpout < 0)
 		return (dup_error(l_n_m));
@@ -78,8 +78,6 @@ static void change_inside_io(t_line_n_mask *l_n_m, t_token *token, size_t i)
 
 void	change_io(t_line_n_mask *l_n_m, t_token *token, size_t i)
 {
-	int		tmpin;
-	int		tmpout;
 	size_t	k;
 
 	k = 0;
@@ -93,7 +91,7 @@ void	change_io(t_line_n_mask *l_n_m, t_token *token, size_t i)
 	}
 	if (i == 0)
 		change_first_io(l_n_m, token, i);
-	if (i ==  l_n_m->cnt_pipes)
+	if (i == l_n_m->cnt_pipes)
 		change_last_io(l_n_m, token, i);
 	if (i != 0 && i != l_n_m->cnt_pipes)
 		change_inside_io(l_n_m, token, i);

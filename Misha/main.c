@@ -59,7 +59,7 @@ int comparison(t_gnl *gnl)
 int input(t_gnl *gnl)
 {
 	tputs("minishell=):", 1, ft_putint);
-	//tputs(save_cursor, 1, ft_putint);
+	tputs(save_cursor, 1, ft_putint);
 	while (1)
 	{
 		set_terminal(gnl->term_name, gnl->term, gnl->reset_term, 1);
@@ -76,18 +76,6 @@ int input(t_gnl *gnl)
 		}
 	}
 	return(0);
-}
-
-void sig_slash(int signum)
-{
-	(void)(signum);
-}
-
-void sig_c(int signum)
-{
-	(void)(signum);
-	write(1, "\n", 1);
-	tputs("minishell=):", 1, ft_putint);
 }
 
 void set_terminal(char *term_name, struct termios *term, struct termios

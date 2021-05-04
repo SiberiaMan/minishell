@@ -32,7 +32,7 @@ static void	mask_handler_normal(char *line, char *mask)
 		else if (line[i] && ((line[i] == 92 && line[i + 1] && line[i + 1] == 92)
 				|| (line[i] == 92 && !line[i + 1])))
 		{
-			mask[i] = UNUSED_BACKSLASH; // "\\"
+			mask[i] = UNUSED_BACKSLASH;
 			i += 2;
 		}
 		else if (line[i] && line[i] == 92 && line[i + 1]
@@ -60,14 +60,14 @@ static void	mask_handler_real(char *line, char *mask)
 				;
 			i++;
 		}
-		else if (ft_strchr("<>|;$", line[i])) // экранирование либо 5 либо 1
+		else if (ft_strchr("<>|;$", line[i]))
 			mask[i++] = SPEC_SYMBOL;
 		else
 			i++;
 	}
 }
 
-size_t get_mask_normal(char *line, char *mask)	 // get normal form !!!
+size_t	get_mask_normal(char *line, char *mask)
 {
 	if (!quotes_handler(line, mask))
 	{

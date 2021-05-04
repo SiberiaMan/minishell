@@ -1,12 +1,13 @@
 #include "builtins.h"
 
-void export_error(char *line)
+int export_error(char *line)
 {
 	ft_putstr_fd("export: ", 2);
 	ft_putstr_fd("'", 2);
 	ft_putstr_fd(line, 2);
 	ft_putstr_fd("':", 2);
-	ft_putstr_fd(" not a valid identifier", 2);
+	ft_putstr_fd(" not a valid identifier\n", 2);
+	return (-1);
 }
 
 int	check_line(char *line, char *eqsign, size_t len)
@@ -15,17 +16,18 @@ int	check_line(char *line, char *eqsign, size_t len)
 
 	valid_len = 0;
 	if(*line == '=')
-		export_error(eqsign);
+		return(export_error(eqsign));
 	else if (*(eqsign - 1) == ' ')
-		export_error(eqsign);
+		return(export_error(eqsign));
 	else if (*(eqsign + 1) == ' ')
 	{
 		eqsign++;
 		while(*eqsign == ' ' && *eqsign != '\0')
 			eqsign++;
 		if(*eqsign != '\0')
-			export_error(eqsign);
+			return(export_error(eqsign));
 	}
+	return(0);
 }
 
 char	**collect_valid_vars(int count, char **vars, t_line_n_mask *l_n_m, t_token *token)
@@ -35,7 +37,7 @@ char	**collect_valid_vars(int count, char **vars, t_line_n_mask *l_n_m, t_token 
 	char	**valid_vars;
 	char	*equalsign;
 	int		k;
-	
+
 	k = 0;
 	ptr = vars;
 	valid_vars = (char **)malloc((sizeof(char *) * (count + 1)));
@@ -61,21 +63,21 @@ char	**collect_valid_vars(int count, char **vars, t_line_n_mask *l_n_m, t_token 
 
 int	count_valid_vars(char **vars)
 {
-	char	**ptr;
+	int		i;
 	char	*equalsign;
 	int		count;
 
 	count = 0;
-	ptr = vars;
-	while (*ptr)
+	i = 1;
+	while (vars[i])
 	{
-		equalsign = ft_strchr(*ptr, '=');
-		if (equalsign)
-		{
-			count++;
-			check_line(*ptr, equalsign, ft_strlen(*ptr));
-		}
-		ptr++;
+		equalsign = ft_strchr(vars[i], '=');
+		if(!(equalsign))
+			return(export_error(vars[i]));
+		if (check_line(vars[i], equalsign, ft_strlen(vars[i])) != 0)
+			return(-1);
+		count++;
+		i++;
 	}
 	return (count);
 }

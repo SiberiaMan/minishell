@@ -1,6 +1,7 @@
 #include "executing.h"
+#include "../termcap/termcap.h"
 
-void	child_process(t_line_n_mask *l_n_m, t_token token, size_t i)
+static void	child_process(t_line_n_mask *l_n_m, t_token token, size_t i)
 {
 	change_io(l_n_m, &token, i);
 	execve(token.args[0], token.args, *l_n_m->env);
@@ -8,7 +9,15 @@ void	child_process(t_line_n_mask *l_n_m, t_token token, size_t i)
 	exit (1);
 }
 
-void	kernel(t_line_n_mask *l_n_m, size_t start)
+static void	next_iteration(t_line_n_mask *l_n_m, t_token *token, size_t *j,
+size_t *i)
+{
+	free_token(token);
+	*j = get_next_pipe(l_n_m, *j);
+	(*i)++;
+}
+
+static void	kernel(t_line_n_mask *l_n_m, size_t start)
 {
 	t_token	token;
 	size_t	j;
@@ -22,7 +31,7 @@ void	kernel(t_line_n_mask *l_n_m, size_t start)
 		if (handle_redirects(l_n_m, &token, j)
 			&& (check_cmd(l_n_m, &token, j)))
 		{
-			if (check_builtins(token.args[0]))
+			if (check_builtins(token.lower))
 				choose_builtin(l_n_m, &token, i);
 			else
 			{
@@ -33,9 +42,7 @@ void	kernel(t_line_n_mask *l_n_m, size_t start)
 					child_process(l_n_m, token, i);
 			}
 		}
-		free_token(&token);
-		j = get_next_pipe(l_n_m, j);
-		i++;
+		next_iteration(l_n_m, &token, &j, &i);
 	}
 }
 
@@ -53,6 +60,6 @@ void	kernel_start(t_line_n_mask *l_n_m, size_t start)
 	}
 	i = 0;
 	while (i < l_n_m->cnt_pipes + 1 && waitpid(l_n_m->pids[i],
-		&l_n_m->status, 0))
+			&l_n_m->status, 0))
 		i++;
 }

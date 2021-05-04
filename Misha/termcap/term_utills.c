@@ -45,3 +45,15 @@ int		ft_strcmp(const char *s1, const char *s2)
 	}
 	return (0);
 }
+
+void sig_slash(int signum)
+{
+	(void)(signum);
+}
+
+void sig_c(int signum)
+{
+	(void)(signum);
+	write(1, "\n", 1);
+	tputs("minishell=):", 1, ft_putint);
+}

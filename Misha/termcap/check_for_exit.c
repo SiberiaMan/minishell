@@ -35,6 +35,7 @@ void free_gnl(t_gnl *gnl)
 		ft_lstclear(gnl->history, gnl->flag);
 	if (gnl->env)
 		free_vars(*(gnl->env), count_vars(*(gnl->env)) - 1);
+	set_terminal(gnl->term_name, gnl->term, gnl->reset_term, 0);
 	//sleep(100);
 	exit (0);
 }

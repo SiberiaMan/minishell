@@ -601,6 +601,33 @@ minishell_utils/string_utils2.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/minishell_utils/string_utils2.c.s
 .PHONY : minishell_utils/string_utils2.c.s
 
+minishell_utils/string_utils3.o: minishell_utils/string_utils3.c.o
+
+.PHONY : minishell_utils/string_utils3.o
+
+# target to build an object file
+minishell_utils/string_utils3.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/minishell_utils/string_utils3.c.o
+.PHONY : minishell_utils/string_utils3.c.o
+
+minishell_utils/string_utils3.i: minishell_utils/string_utils3.c.i
+
+.PHONY : minishell_utils/string_utils3.i
+
+# target to preprocess a source file
+minishell_utils/string_utils3.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/minishell_utils/string_utils3.c.i
+.PHONY : minishell_utils/string_utils3.c.i
+
+minishell_utils/string_utils3.s: minishell_utils/string_utils3.c.s
+
+.PHONY : minishell_utils/string_utils3.s
+
+# target to generate assembly for a file
+minishell_utils/string_utils3.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/minishell_utils/string_utils3.c.s
+.PHONY : minishell_utils/string_utils3.c.s
+
 parser/backslash.o: parser/backslash.c.o
 
 .PHONY : parser/backslash.o
@@ -871,6 +898,33 @@ tokenizer/check_cmd.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/tokenizer/check_cmd.c.s
 .PHONY : tokenizer/check_cmd.c.s
 
+tokenizer/check_directory.o: tokenizer/check_directory.c.o
+
+.PHONY : tokenizer/check_directory.o
+
+# target to build an object file
+tokenizer/check_directory.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/tokenizer/check_directory.c.o
+.PHONY : tokenizer/check_directory.c.o
+
+tokenizer/check_directory.i: tokenizer/check_directory.c.i
+
+.PHONY : tokenizer/check_directory.i
+
+# target to preprocess a source file
+tokenizer/check_directory.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/tokenizer/check_directory.c.i
+.PHONY : tokenizer/check_directory.c.i
+
+tokenizer/check_directory.s: tokenizer/check_directory.c.s
+
+.PHONY : tokenizer/check_directory.s
+
+# target to generate assembly for a file
+tokenizer/check_directory.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/tokenizer/check_directory.c.s
+.PHONY : tokenizer/check_directory.c.s
+
 tokenizer/cmd.o: tokenizer/cmd.c.o
 
 .PHONY : tokenizer/cmd.o
@@ -924,6 +978,33 @@ tokenizer/conditions.s: tokenizer/conditions.c.s
 tokenizer/conditions.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/tokenizer/conditions.c.s
 .PHONY : tokenizer/conditions.c.s
+
+tokenizer/conditions_utils.o: tokenizer/conditions_utils.c.o
+
+.PHONY : tokenizer/conditions_utils.o
+
+# target to build an object file
+tokenizer/conditions_utils.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/tokenizer/conditions_utils.c.o
+.PHONY : tokenizer/conditions_utils.c.o
+
+tokenizer/conditions_utils.i: tokenizer/conditions_utils.c.i
+
+.PHONY : tokenizer/conditions_utils.i
+
+# target to preprocess a source file
+tokenizer/conditions_utils.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/tokenizer/conditions_utils.c.i
+.PHONY : tokenizer/conditions_utils.c.i
+
+tokenizer/conditions_utils.s: tokenizer/conditions_utils.c.s
+
+.PHONY : tokenizer/conditions_utils.s
+
+# target to generate assembly for a file
+tokenizer/conditions_utils.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/tokenizer/conditions_utils.c.s
+.PHONY : tokenizer/conditions_utils.c.s
 
 tokenizer/dollar_sign_assign.o: tokenizer/dollar_sign_assign.c.o
 
@@ -1147,6 +1228,9 @@ help:
 	@echo "... minishell_utils/string_utils2.o"
 	@echo "... minishell_utils/string_utils2.i"
 	@echo "... minishell_utils/string_utils2.s"
+	@echo "... minishell_utils/string_utils3.o"
+	@echo "... minishell_utils/string_utils3.i"
+	@echo "... minishell_utils/string_utils3.s"
 	@echo "... parser/backslash.o"
 	@echo "... parser/backslash.i"
 	@echo "... parser/backslash.s"
@@ -1177,12 +1261,18 @@ help:
 	@echo "... tokenizer/check_cmd.o"
 	@echo "... tokenizer/check_cmd.i"
 	@echo "... tokenizer/check_cmd.s"
+	@echo "... tokenizer/check_directory.o"
+	@echo "... tokenizer/check_directory.i"
+	@echo "... tokenizer/check_directory.s"
 	@echo "... tokenizer/cmd.o"
 	@echo "... tokenizer/cmd.i"
 	@echo "... tokenizer/cmd.s"
 	@echo "... tokenizer/conditions.o"
 	@echo "... tokenizer/conditions.i"
 	@echo "... tokenizer/conditions.s"
+	@echo "... tokenizer/conditions_utils.o"
+	@echo "... tokenizer/conditions_utils.i"
+	@echo "... tokenizer/conditions_utils.s"
 	@echo "... tokenizer/dollar_sign_assign.o"
 	@echo "... tokenizer/dollar_sign_assign.i"
 	@echo "... tokenizer/dollar_sign_assign.s"

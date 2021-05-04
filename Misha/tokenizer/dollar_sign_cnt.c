@@ -1,4 +1,4 @@
-# include "tokenizer.h"
+#include "tokenizer.h"
 
 size_t 	get_cnt_after_equal(char *line)
 {
@@ -14,15 +14,15 @@ size_t 	get_cnt_after_equal(char *line)
 	return (cnt);
 }
 
-static size_t get_cnt_env(t_line_n_mask *l_n_m, size_t *start, size_t j)
+static size_t	get_cnt_env(t_line_n_mask *l_n_m, size_t *start, size_t j)
 {
 	size_t	cnt;
 	char	*env;
-	size_t 	i;
+	size_t	i;
 
 	cnt = j - *start;
 	i = 0;
-	env = (char*)malloc(sizeof(char) * cnt + 1);
+	env = (char *)malloc(sizeof(char) * cnt + 1);
 	if (!env)
 		free_and_exit_tokenizer(l_n_m);
 	while (*start < j)
@@ -32,7 +32,7 @@ static size_t get_cnt_env(t_line_n_mask *l_n_m, size_t *start, size_t j)
 	while ((*(l_n_m->env))[j])
 	{
 		if (!(ft_strncmp_env(env, (*(l_n_m->env))[j],
-		ft_strlen((*(l_n_m->env))[j]))))
+				ft_strlen((*(l_n_m->env))[j]))))
 		{
 			free(env);
 			return (get_cnt_after_equal((*(l_n_m->env))[j]));
@@ -43,10 +43,10 @@ static size_t get_cnt_env(t_line_n_mask *l_n_m, size_t *start, size_t j)
 	return (0);
 }
 
-static size_t get_cnt_status(t_line_n_mask *l_n_m)
+static size_t	get_cnt_status(t_line_n_mask *l_n_m)
 {
 	char	*line;
-	size_t 	cnt;
+	size_t	cnt;
 
 	line = ft_itoa(l_n_m->status);
 	if (!line)
@@ -56,21 +56,23 @@ static size_t get_cnt_status(t_line_n_mask *l_n_m)
 	return (cnt);
 }
 
-size_t get_cnt_dollar(t_line_n_mask *l_n_m, size_t *start)
+size_t	get_cnt_dollar(t_line_n_mask *l_n_m, size_t *start)
 {
-	size_t 	j;
+	size_t	j;
 
 	(*start)++;
 	j = *start;
 	if (!l_n_m->mask[j] || (!ft_isalpha(l_n_m->line[j])
-	 && l_n_m->line[j] != '_' && l_n_m->line[j] != '?'))
+			&& l_n_m->line[j] != '_' && l_n_m->line[j] != '?'))
 	{
-		(*start)++;
+		if (l_n_m->mask[j])
+			(*start)++;
 		return (1);
 	}
 	if (l_n_m->line[j] == '?')
 		return (get_cnt_status(l_n_m));
-	while (l_n_m->line[j] && (ft_isalpha(l_n_m->line[j]) || l_n_m->line[j] == '_'))
+	while (l_n_m->line[j]
+		&& (ft_isalpha(l_n_m->line[j]) || l_n_m->line[j] == '_'))
 		j++;
 	return (get_cnt_env(l_n_m, start, j));
 }

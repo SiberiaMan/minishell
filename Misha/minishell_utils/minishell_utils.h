@@ -1,26 +1,28 @@
 #ifndef MINISHELL_UTILS_H
 # define MINISHELL_UTILS_H
 
-#include <unistd.h>
-#include <stdlib.h>
-#include <stdio.h>
-#include <unistd.h>
-#include <stdlib.h>
-#include <stdio.h>
-#include <fcntl.h>
-#include <signal.h>
-#include <term.h>
-#include <curses.h>
-#include <termcap.h>
+# include <unistd.h>
+# include <stdlib.h>
+# include <stdio.h>
+# include <unistd.h>
+# include <stdlib.h>
+# include <stdio.h>
+# include <fcntl.h>
+# include <signal.h>
+# include <term.h>
+# include <curses.h>
+# include <termcap.h>
 
+void	to_upper(char *line);
+void	to_lower(char *line);
 int		ft_strncmp_cmd(const char *s1, const char *s2, size_t n);
 int		ft_strncmp_env(const char *s1, const char *s2, size_t n);
 char	*ft_strdup(const char *s1);
 void	*ft_calloc(size_t count, size_t size);
-size_t		ft_strlen(const char *s);
-char		*ft_strchr(const char *s, int c);
+size_t	ft_strlen(const char *s);
+char	*ft_strchr(const char *s, int c);
 char	*ft_strdup(const char *s1);
-int 	ft_putint(int c);
+int		ft_putint(int c);
 int		ft_isalpha(int c);
 char	*ft_itoa(int n);
 char	*ft_strjoin(char *s1, char *s2);

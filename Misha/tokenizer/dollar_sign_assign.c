@@ -1,16 +1,16 @@
 #include "tokenizer.h"
 
-static char *get_env_rvalue(char *line, t_line_n_mask *l_n_m)
+static char	*get_env_rvalue(char *line, t_line_n_mask *l_n_m)
 {
 	size_t	i;
-	size_t 	j;
+	size_t	j;
 	char	*env_rvalue;
 	size_t	cnt;
 
 	i = 0;
 	j = 0;
 	cnt = get_cnt_after_equal(line);
-	env_rvalue = (char*)malloc(sizeof(char) * cnt + 1);
+	env_rvalue = (char *)malloc(sizeof(char) * cnt + 1);
 	if (!env_rvalue)
 		free_and_exit_tokenizer(l_n_m);
 	while (line[i++] != '=')
@@ -21,13 +21,12 @@ static char *get_env_rvalue(char *line, t_line_n_mask *l_n_m)
 	return (env_rvalue);
 }
 
-static char	*get_env_string(t_line_n_mask *l_n_m, size_t *start, size_t j)
+static char	*get_env_string(t_line_n_mask *l_n_m, size_t *start, size_t j,
+size_t i)
 {
-	char 	*env_lvalue;
-	size_t 	i;
+	char	*env_lvalue;
 
-	i = 0;
-	env_lvalue = (char*)malloc(sizeof(char) * (j - *start) + 1);
+	env_lvalue = (char *)malloc(sizeof(char) * (j - *start) + 1);
 	if (!env_lvalue)
 		free_and_exit_tokenizer(l_n_m);
 	while (*start < j)
@@ -37,7 +36,7 @@ static char	*get_env_string(t_line_n_mask *l_n_m, size_t *start, size_t j)
 	while ((*(l_n_m->env))[j])
 	{
 		if (!(ft_strncmp_env(env_lvalue, (*(l_n_m->env))[j],
-		ft_strlen((*(l_n_m->env))[j]))))
+				ft_strlen((*(l_n_m->env))[j]))))
 		{
 			free(env_lvalue);
 			return (get_env_rvalue((*(l_n_m->env))[j], l_n_m));
@@ -53,7 +52,7 @@ static char	*get_env_string(t_line_n_mask *l_n_m, size_t *start, size_t j)
 
 static void	append_line(char *line, char *env, size_t *i)
 {
-	size_t j;
+	size_t	j;
 
 	j = 0;
 	while (env[j])
@@ -81,15 +80,17 @@ void	handle_string_dollar(t_line_n_mask *l_n_m, char *line,
 size_t *start, size_t *i)
 {
 	size_t	j;
-	char 	*env;
+	size_t	cur;
+	char	*env;
 
+	cur = 0;
 	(*start)++;
 	j = *start;
-	if (!l_n_m->mask[*start] || (!ft_isalpha(l_n_m->line[j])
-	&& l_n_m->line[j] != '_' && l_n_m->line[j] != '?'))
+	if (condition_handle_dollar(l_n_m, j))
 	{
+		if (l_n_m->mask[*start])
+			(*start)++;
 		line[(*i)++] = '$';
-		(*start)++;
 		return ;
 	}
 	if (l_n_m->line[j] == '?')
@@ -98,8 +99,9 @@ size_t *start, size_t *i)
 		(*start)++;
 		return ;
 	}
-	while (l_n_m->line[j] && (ft_isalpha(l_n_m->line[j]) || l_n_m->line[j] == '_'))
+	while (l_n_m->line[j]
+		&& (ft_isalpha(l_n_m->line[j]) || l_n_m->line[j] == '_'))
 		j++;
-	env = get_env_string(l_n_m, start, j);
+	env = get_env_string(l_n_m, start, j, cur);
 	append_line(line, env, i);
 }
