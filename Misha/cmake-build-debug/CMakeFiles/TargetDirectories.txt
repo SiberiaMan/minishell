@@ -1,3 +1,0 @@
-/Users/dchani/Desktop/project/Misha/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/Users/dchani/Desktop/project/Misha/cmake-build-debug/CMakeFiles/edit_cache.dir
-/Users/dchani/Desktop/project/Misha/cmake-build-debug/CMakeFiles/shell.dir
