@@ -32,5 +32,7 @@ void	*ft_memset(void *b, int c, size_t len);
 char	**ft_split(char *s, char c);
 void	ft_putstr_fd(char *s, int fd);
 void	ft_putchar_fd(char c, int fd);
+int		is_digit(char c);
+int		ft_is_printable(char *str);
 
 #endif

@@ -52,7 +52,7 @@ static void	delete_unused_dollars_handle(t_line_n_mask *l_n_m, size_t *i)
 
 	start = *i;
 	cnt = get_cnt_dollar(l_n_m, &start);
-	if (!cnt)
+	if (!cnt && l_n_m->line[(*i) + 1] && !is_digit(l_n_m->line[(*i) + 1]))
 	{
 		while (*i < start)
 		{

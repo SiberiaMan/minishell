@@ -19,6 +19,13 @@ void	to_lower(char *line)
 	}
 }
 
+int	is_digit(char c)
+{
+	if ('0' <= c && c <= '9')
+		return (1);
+	return (0);
+}
+
 int		ft_strncmp(const char *s1, const char *s2, size_t n)
 {
 	size_t i;
@@ -31,4 +38,15 @@ int		ft_strncmp(const char *s1, const char *s2, size_t n)
 		i++;
 	}
 	return (0);
+}
+
+int ft_is_printable(char *str)
+{
+	while (str[0] != '\0')
+	{
+		if (!(str[0] >= 32 && str[0] <= 126))
+			return (0);
+		str++;
+	}
+	return (1);
 }

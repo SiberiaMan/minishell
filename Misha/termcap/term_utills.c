@@ -1,4 +1,5 @@
 #include "termcap.h"
+#include "../minishell.h"
 
 void ft_putstr(char *str)
 {
@@ -55,7 +56,16 @@ void sig_c(int signum)
 {
 	(void)(signum);
 
-	errno = 1;
+	g_var = 1;
 	write(1, "\n", 1);
 	tputs("minishell=):", 1, ft_putint);
+}
+
+void sig_c_2(int signum)
+{
+	(void)(signum);
+
+	g_var = 1;
+	write(1, "\n", 1);
+	//tputs("minishell=):", 1, ft_putint);
 }

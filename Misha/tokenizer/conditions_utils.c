@@ -20,7 +20,8 @@ size_t 	condition_get_redir_util(t_line_n_mask *l_n_m, size_t start)
 size_t	condition_handle_dollar(t_line_n_mask *l_n_m, size_t j)
 {
 	if (!l_n_m->mask[j] || (!ft_isalpha(l_n_m->line[j])
-			&& l_n_m->line[j] != '_' && l_n_m->line[j] != '?'))
+			&& l_n_m->line[j] != '_' && l_n_m->line[j] != '?'
+			&& !is_digit(l_n_m->line[j])))
 		return (1);
 	return (0);
 }

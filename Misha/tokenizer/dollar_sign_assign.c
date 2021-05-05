@@ -86,6 +86,12 @@ size_t *start, size_t *i)
 	cur = 0;
 	(*start)++;
 	j = *start;
+	if (is_digit(l_n_m->line[j]))
+	{
+		if (l_n_m->mask[*start])
+			(*start)++;
+		return ;
+	}
 	if (condition_handle_dollar(l_n_m, j))
 	{
 		if (l_n_m->mask[*start])

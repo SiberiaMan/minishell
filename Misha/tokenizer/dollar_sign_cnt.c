@@ -62,6 +62,12 @@ size_t	get_cnt_dollar(t_line_n_mask *l_n_m, size_t *start)
 
 	(*start)++;
 	j = *start;
+	if (is_digit(l_n_m->line[j]))
+	{
+		if (l_n_m->line[j])
+			(*start)++;
+		return (0);
+	}
 	if (!l_n_m->mask[j] || (!ft_isalpha(l_n_m->line[j])
 			&& l_n_m->line[j] != '_' && l_n_m->line[j] != '?'))
 	{

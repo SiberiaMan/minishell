@@ -7,4 +7,6 @@
 #include "termcap/termcap.h"
 #include "tokenizer/tokenizer.h"
 
+size_t g_var;
+
 #endif //SHELL_MINISHELL_H

@@ -24,35 +24,29 @@ void	parse_n_execute(t_gnl *gnl, char ***env)
 		gnl->status = 258;
 		return ;
 	}
-	//printf("%s\n", gnl->history->line);
-	//printf("%s\n", mask);
 	handle_semicolons(gnl, mask, env);
 	free(mask); ///  прошел парсинг и команды успешно выполнились
 }
 
 int comparison(t_gnl *gnl)
 {
-	if(!ft_strcmp(gnl->str, "\e[D"))
-		ft_memset(gnl->str, 0, 10);
-	if(!ft_strcmp(gnl->str, "\e[C"))
-		ft_memset(gnl->str, 0, 10);
-	if(!ft_strcmp(gnl->str, "\t"))
-		ft_memset(gnl->str, 0, 10);
-	if(!ft_strcmp(gnl->str, "\n"))
-		return(enter(gnl));
-	if (!ft_strcmp(gnl->str, "\e[A"))
-		up(gnl);
-	else if (!ft_strcmp(gnl->str, "\e[B"))
-		down(gnl);
-	else if (ft_strcmp(gnl->str, "\n"))
-		get_command(gnl);
-	if (!ft_strcmp(gnl->str, "\177"))
-		backspace(gnl);
-	if(!ft_strcmp(gnl->str, "\4"))
+	if(!ft_strcmp(gnl->str, "\4"))//////////////ctrl+d
 	{
 		if (ft_strlen(gnl->edit) <= 1 || !(gnl->edit))
 			ctrl_d(gnl);
 	}
+	if (!ft_strcmp(gnl->str, "\e[A")) ////////////up
+		up(gnl);
+	if (!ft_strcmp(gnl->str, "\e[B"))///////down
+		down(gnl);
+	if (!ft_strcmp(gnl->str, "\177"))///////////backspace
+		backspace(gnl);
+	if(!ft_strcmp(gnl->str, "\n"))///////////////enter
+		return(enter(gnl));
+	if (!ft_is_printable(gnl->str))
+		ft_memset(gnl->str, 0, 10);
+	else ///////////write
+		get_command(gnl);
 	return(0);
 }
 
@@ -62,15 +56,23 @@ int input(t_gnl *gnl)
 	tputs(save_cursor, 1, ft_putint);
 	while (1)
 	{
+		signal(SIGINT, sig_c);
 		set_terminal(gnl->term_name, gnl->term, gnl->reset_term, 1);
 		ft_memset(gnl->str, 0, 10);
 		gnl->l = read(0, gnl->str, 10);
 		if (comparison(gnl) == 1)
 		{
+			signal(SIGINT, sig_c_2);
 			set_terminal(gnl->term_name, gnl->term, gnl->reset_term, 0);
+			if (g_var == 1 && gnl->status != 130)
+			{
+				gnl->status = g_var;
+				g_var = 0;
+			}
+			else if (g_var == 1 && gnl->status)
+				g_var = 0;
 			parse_n_execute(gnl, gnl->env);
 			set_terminal(gnl->term_name, gnl->term, gnl->reset_term, 1);
-			//write(1, "\n", 1);
 			tputs("minishell=):", 1, ft_putint);
 			tputs(save_cursor, 1, ft_putint);
 		}
