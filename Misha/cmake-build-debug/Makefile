@@ -67,10 +67,10 @@ RM = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/dchani/Desktop/minishell_debug_branch/Misha
+CMAKE_SOURCE_DIR = /Users/bmysaria/Desktop/minishell/Misha
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/dchani/Desktop/minishell_debug_branch/Misha/cmake-build-debug
+CMAKE_BINARY_DIR = /Users/bmysaria/Desktop/minishell/Misha/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -99,9 +99,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/dchani/Desktop/minishell_debug_branch/Misha/cmake-build-debug/CMakeFiles /Users/dchani/Desktop/minishell_debug_branch/Misha/cmake-build-debug//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/bmysaria/Desktop/minishell/Misha/cmake-build-debug/CMakeFiles /Users/bmysaria/Desktop/minishell/Misha/cmake-build-debug//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/dchani/Desktop/minishell_debug_branch/Misha/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/bmysaria/Desktop/minishell/Misha/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -168,6 +168,33 @@ builtins/check_export.s: builtins/check_export.c.s
 builtins/check_export.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/builtins/check_export.c.s
 .PHONY : builtins/check_export.c.s
+
+builtins/echo.o: builtins/echo.c.o
+
+.PHONY : builtins/echo.o
+
+# target to build an object file
+builtins/echo.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/builtins/echo.c.o
+.PHONY : builtins/echo.c.o
+
+builtins/echo.i: builtins/echo.c.i
+
+.PHONY : builtins/echo.i
+
+# target to preprocess a source file
+builtins/echo.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/builtins/echo.c.i
+.PHONY : builtins/echo.c.i
+
+builtins/echo.s: builtins/echo.c.s
+
+.PHONY : builtins/echo.s
+
+# target to generate assembly for a file
+builtins/echo.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/builtins/echo.c.s
+.PHONY : builtins/echo.c.s
 
 builtins/env_alpha.o: builtins/env_alpha.c.o
 
@@ -1180,6 +1207,9 @@ help:
 	@echo "... builtins/check_export.o"
 	@echo "... builtins/check_export.i"
 	@echo "... builtins/check_export.s"
+	@echo "... builtins/echo.o"
+	@echo "... builtins/echo.i"
+	@echo "... builtins/echo.s"
 	@echo "... builtins/env_alpha.o"
 	@echo "... builtins/env_alpha.i"
 	@echo "... builtins/env_alpha.s"

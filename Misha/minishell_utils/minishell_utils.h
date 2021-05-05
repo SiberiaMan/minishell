@@ -17,6 +17,7 @@ void	to_upper(char *line);
 void	to_lower(char *line);
 int		ft_strncmp_cmd(const char *s1, const char *s2, size_t n);
 int		ft_strncmp_env(const char *s1, const char *s2, size_t n);
+int		ft_strncmp(const char *s1, const char *s2, size_t n);
 char	*ft_strdup(const char *s1);
 void	*ft_calloc(size_t count, size_t size);
 size_t	ft_strlen(const char *s);
