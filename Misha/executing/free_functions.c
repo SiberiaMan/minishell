@@ -30,7 +30,12 @@ void	free_and_exit(t_line_n_mask *l_n_m)
 	if (l_n_m->pids)
 		free(l_n_m->pids);
 	if (l_n_m->pipes)
+	{
+		j = 0;
+		while (j < l_n_m->cnt_pipes + 1)
+			free(l_n_m->pipes[j++]);
 		free(l_n_m->pipes);
+	}
 	if (*(l_n_m->free_line))
 		free(*(l_n_m->free_line));
 	exit (1);

@@ -1,4 +1,5 @@
 #include "builtins.h"
+#include "../executing/executing.h"
 //тебе надо сделать функцию, которая на вход будет принимать указатели на мои структуры (пусть это будет функция 1)
 //эта функция сработает если первый элемент массива явялется билтином (я проверяю)
 //в этой функции ты определяешь какой именно билтин нужно использовать. в моей структуре есть касающиеся тебя status и env, соответсвенно,
@@ -16,12 +17,22 @@
 // void func(t_line_n_mask *l_n_m, t_token *token)
 // **args -> token->args
 // status ->l_n_m->status
-int	choose_builtin(t_line_n_mask *l_n_m, t_token *token, size_t i)
+void choose_builtin(t_line_n_mask *l_n_m, t_token *token, size_t i)
 {
+	int fdin;
+	int fdout;
+
+	fdin = dup(0);
+	if (fdin < 0)
+		return (dup_error(l_n_m));
+	fdout = dup(1);
+	if (fdout < 0)
+		return (dup_error(l_n_m));
+	change_io(l_n_m, token, i, 0);
 	/// **args -> token->args
 	/// status ->l_n_m->status везде с собой таскать, чтобы делать free, но
 	/// записывать только тут 0 или 1
-	if (!(ft_strcmp(token->args[0], "echo")))
+	if (!(ft_strcmp(token->lower, "echo")))
 		l_n_m->status = ft_echo(token->args);
 	//else if	(!(ft_strcmp(token->args[0], "cd"))
 	//	l_n_m->status = ft_cd(t_line_n_mask *l_n_m, t_token *token);
@@ -33,5 +44,8 @@ int	choose_builtin(t_line_n_mask *l_n_m, t_token *token, size_t i)
 		l_n_m->status = ft_export(l_n_m, token);
 	//else if (!(ft_strcmp(token->args[0], "unset"))
 	//	l_n_m->status = ft_unset(t_line_n_mask *l_n_m, t_token *token);
-	return (0);
+	if (dup2(fdin, 0) < 0)
+		return (dup_error(l_n_m));
+	if (dup2(fdout, 1) < 0)
+		return (dup_error(l_n_m));
 }

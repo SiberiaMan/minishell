@@ -1,6 +1,6 @@
 #include "executing.h"
 
-static void	dup_error(t_line_n_mask *l_n_m)
+void	dup_error(t_line_n_mask *l_n_m)
 {
 	l_n_m->status = errno;
 }
@@ -76,18 +76,22 @@ static void	change_inside_io(t_line_n_mask *l_n_m, t_token *token, size_t i)
 	close (tmpout);
 }
 
-void	change_io(t_line_n_mask *l_n_m, t_token *token, size_t i)
+void	change_io(t_line_n_mask *l_n_m, t_token *token, size_t i,
+size_t is_child)
 {
 	size_t	k;
 
 	k = 0;
-	while (k < l_n_m->cnt_pipes + 1)
+	if (is_child)
 	{
-		if (i != k)
-			close(l_n_m->pipes[k][0]);
-		if (i + 1 != k)
-			close(l_n_m->pipes[k][1]);
-		k++;
+		while (k < l_n_m->cnt_pipes + 1)
+		{
+			if (i != k)
+				close(l_n_m->pipes[k][0]);
+			if (i + 1 != k)
+				close(l_n_m->pipes[k][1]);
+			k++;
+		}
 	}
 	if (i == 0)
 		change_first_io(l_n_m, token, i);

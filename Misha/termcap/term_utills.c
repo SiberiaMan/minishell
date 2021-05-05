@@ -54,6 +54,8 @@ void sig_slash(int signum)
 void sig_c(int signum)
 {
 	(void)(signum);
+
+	errno = 1;
 	write(1, "\n", 1);
 	tputs("minishell=):", 1, ft_putint);
 }

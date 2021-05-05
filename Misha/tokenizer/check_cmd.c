@@ -109,10 +109,12 @@ size_t	check_cmd(t_line_n_mask *l_n_m, t_token *token, size_t i)
 	entry = 0;
 	handle_cmd(l_n_m, token, i);
 	if (token->args[0])
+	{
 		token->lower = ft_strdup(token->args[0]);
-	if (!token->lower)
-		free_token_n_structure_exit(token, l_n_m);
-	to_lower(token->lower);
+		if (!token->lower)
+			free_token_n_structure_exit(token, l_n_m);
+		to_lower(token->lower);
+	}
 	if (check_builtins(token->lower))
 		return (1);
 	path = ft_split(get_path(l_n_m, token), ':');

@@ -6,7 +6,7 @@
 #include <stdlib.h>
 #include "../tokenizer/tokenizer.h"
 
-int	choose_builtin(t_line_n_mask *l_n_m, t_token *token, size_t i);
+void choose_builtin(t_line_n_mask *l_n_m, t_token *token, size_t i);
 void	free_vars(char **vars, int i);
 int		count_vars(char **vars);
 char	**copy_envp(char **envp);

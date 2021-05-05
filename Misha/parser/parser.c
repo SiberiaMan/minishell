@@ -28,7 +28,7 @@ static size_t	pipe_syntax(const char *line, const char *mask, char *c)
 			j = i + 1;
 			move_spaces(line, mask, &j, &k);
 			if (!mask[j] || (mask[j] == SPEC_SYMBOL && line[j] != '$')
-				|| (mask[k] == SPEC_SYMBOL && line[j] != '$'))
+				|| (mask[k] == SPEC_SYMBOL && line[k] != '$'))
 				return (0);
 		}
 		i++;
@@ -54,7 +54,7 @@ static size_t	semicolon_syntax(const char *line, const char *mask, char *c)
 			j = i + 1;
 			move_spaces(line, mask, &j, &k);
 			if ((mask[j] == SPEC_SYMBOL && line[j] != '$')
-				|| (mask[k] == SPEC_SYMBOL && line[j] != '$'))
+				|| (mask[k] == SPEC_SYMBOL && line[k] != '$'))
 				return (0);
 		}
 		i++;

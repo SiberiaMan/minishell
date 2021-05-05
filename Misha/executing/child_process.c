@@ -3,7 +3,7 @@
 
 static void	child_process(t_line_n_mask *l_n_m, t_token token, size_t i)
 {
-	change_io(l_n_m, &token, i);
+	change_io(l_n_m, &token, i, 1);
 	execve(token.args[0], token.args, *l_n_m->env);
 	perror(token.args[0]);
 	exit (1);
@@ -46,6 +46,32 @@ static void	kernel(t_line_n_mask *l_n_m, size_t start)
 	}
 }
 
+void	wait_childs(t_line_n_mask *l_n_m)
+{
+	size_t	i;
+
+	i = 0;
+	while (i < l_n_m->cnt_pipes + 1)
+	{
+		if (l_n_m->pids[i] != -1)
+		{
+			if (i == l_n_m->cnt_pipes)
+			{
+				waitpid(l_n_m->pids[i], &l_n_m->status, WUNTRACED);
+				if (WIFEXITED(l_n_m->status))
+					l_n_m->status = WEXITSTATUS(l_n_m->status);
+				else if (WIFSIGNALED(l_n_m->status))
+					l_n_m->status = 128 + WTERMSIG(l_n_m->status);
+				else if (WIFSTOPPED(l_n_m->status))
+					l_n_m->status = 128 + WSTOPSIG(l_n_m->status);
+			}
+			else
+				waitpid(l_n_m->pids[i], 0, 0);
+		}
+		i++;
+	}
+}
+
 void	kernel_start(t_line_n_mask *l_n_m, size_t start)
 {
 	size_t	i;
@@ -58,8 +84,5 @@ void	kernel_start(t_line_n_mask *l_n_m, size_t start)
 		close(l_n_m->pipes[i][1]);
 		i++;
 	}
-	i = 0;
-	while (i < l_n_m->cnt_pipes + 1 && waitpid(l_n_m->pids[i],
-			&l_n_m->status, 0))
-		i++;
+	wait_childs(l_n_m);
 }

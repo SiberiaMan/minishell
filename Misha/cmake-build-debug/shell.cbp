@@ -8,38 +8,38 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="/Users/bmysaria/Desktop/minishell/Misha/cmake-build-debug"/>
+				<Option working_dir="/Users/dchani/Desktop/debug_branch/Misha/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/Users/bmysaria/Desktop/minishell/Misha/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/bmysaria/Desktop/minishell/Misha/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/Users/bmysaria/Desktop/minishell/Misha/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/bmysaria/Desktop/minishell/Misha/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/dchani/Desktop/debug_branch/Misha/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/dchani/Desktop/debug_branch/Misha/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/dchani/Desktop/debug_branch/Misha/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/dchani/Desktop/debug_branch/Misha/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="/Users/bmysaria/Desktop/minishell/Misha/cmake-build-debug"/>
+				<Option working_dir="/Users/dchani/Desktop/debug_branch/Misha/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/Users/bmysaria/Desktop/minishell/Misha/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/bmysaria/Desktop/minishell/Misha/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/Users/bmysaria/Desktop/minishell/Misha/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/bmysaria/Desktop/minishell/Misha/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/dchani/Desktop/debug_branch/Misha/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/dchani/Desktop/debug_branch/Misha/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/dchani/Desktop/debug_branch/Misha/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/dchani/Desktop/debug_branch/Misha/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="/Users/bmysaria/Desktop/minishell/Misha/cmake-build-debug"/>
+				<Option working_dir="/Users/dchani/Desktop/debug_branch/Misha/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/Users/bmysaria/Desktop/minishell/Misha/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/bmysaria/Desktop/minishell/Misha/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/Users/bmysaria/Desktop/minishell/Misha/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/bmysaria/Desktop/minishell/Misha/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/dchani/Desktop/debug_branch/Misha/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/dchani/Desktop/debug_branch/Misha/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/dchani/Desktop/debug_branch/Misha/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/dchani/Desktop/debug_branch/Misha/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="shell">
-				<Option output="/Users/bmysaria/Desktop/minishell/Misha/cmake-build-debug/shell" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/Users/bmysaria/Desktop/minishell/Misha/cmake-build-debug"/>
+				<Option output="/Users/dchani/Desktop/debug_branch/Misha/cmake-build-debug/shell" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/dchani/Desktop/debug_branch/Misha/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -51,15 +51,15 @@
 					<Add directory="/Library/Frameworks"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/Users/bmysaria/Desktop/minishell/Misha/cmake-build-debug/Makefile&quot;  VERBOSE=1 shell"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/bmysaria/Desktop/minishell/Misha/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/Users/bmysaria/Desktop/minishell/Misha/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/bmysaria/Desktop/minishell/Misha/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/dchani/Desktop/debug_branch/Misha/cmake-build-debug/Makefile&quot;  VERBOSE=1 shell"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/dchani/Desktop/debug_branch/Misha/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/dchani/Desktop/debug_branch/Misha/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/dchani/Desktop/debug_branch/Misha/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="shell/fast">
-				<Option output="/Users/bmysaria/Desktop/minishell/Misha/cmake-build-debug/shell" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/Users/bmysaria/Desktop/minishell/Misha/cmake-build-debug"/>
+				<Option output="/Users/dchani/Desktop/debug_branch/Misha/cmake-build-debug/shell" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/dchani/Desktop/debug_branch/Misha/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -71,149 +71,149 @@
 					<Add directory="/Library/Frameworks"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/Users/bmysaria/Desktop/minishell/Misha/cmake-build-debug/Makefile&quot;  VERBOSE=1 shell/fast"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/bmysaria/Desktop/minishell/Misha/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/Users/bmysaria/Desktop/minishell/Misha/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/bmysaria/Desktop/minishell/Misha/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/dchani/Desktop/debug_branch/Misha/cmake-build-debug/Makefile&quot;  VERBOSE=1 shell/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/dchani/Desktop/debug_branch/Misha/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/dchani/Desktop/debug_branch/Misha/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/dchani/Desktop/debug_branch/Misha/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/Users/bmysaria/Desktop/minishell/Misha/builtins/check_export.c">
+		<Unit filename="/Users/dchani/Desktop/debug_branch/Misha/builtins/check_export.c">
 			<Option target="shell"/>
 		</Unit>
-		<Unit filename="/Users/bmysaria/Desktop/minishell/Misha/builtins/echo.c">
+		<Unit filename="/Users/dchani/Desktop/debug_branch/Misha/builtins/echo.c">
 			<Option target="shell"/>
 		</Unit>
-		<Unit filename="/Users/bmysaria/Desktop/minishell/Misha/builtins/env_alpha.c">
+		<Unit filename="/Users/dchani/Desktop/debug_branch/Misha/builtins/env_alpha.c">
 			<Option target="shell"/>
 		</Unit>
-		<Unit filename="/Users/bmysaria/Desktop/minishell/Misha/builtins/export.c">
+		<Unit filename="/Users/dchani/Desktop/debug_branch/Misha/builtins/export.c">
 			<Option target="shell"/>
 		</Unit>
-		<Unit filename="/Users/bmysaria/Desktop/minishell/Misha/builtins/export_utills.c">
+		<Unit filename="/Users/dchani/Desktop/debug_branch/Misha/builtins/export_utills.c">
 			<Option target="shell"/>
 		</Unit>
-		<Unit filename="/Users/bmysaria/Desktop/minishell/Misha/builtins/is_builtin.c">
+		<Unit filename="/Users/dchani/Desktop/debug_branch/Misha/builtins/is_builtin.c">
 			<Option target="shell"/>
 		</Unit>
-		<Unit filename="/Users/bmysaria/Desktop/minishell/Misha/builtins/manage_duplications.c">
+		<Unit filename="/Users/dchani/Desktop/debug_branch/Misha/builtins/manage_duplications.c">
 			<Option target="shell"/>
 		</Unit>
-		<Unit filename="/Users/bmysaria/Desktop/minishell/Misha/executing/change_io.c">
+		<Unit filename="/Users/dchani/Desktop/debug_branch/Misha/executing/change_io.c">
 			<Option target="shell"/>
 		</Unit>
-		<Unit filename="/Users/bmysaria/Desktop/minishell/Misha/executing/child_process.c">
+		<Unit filename="/Users/dchani/Desktop/debug_branch/Misha/executing/child_process.c">
 			<Option target="shell"/>
 		</Unit>
-		<Unit filename="/Users/bmysaria/Desktop/minishell/Misha/executing/executing.c">
+		<Unit filename="/Users/dchani/Desktop/debug_branch/Misha/executing/executing.c">
 			<Option target="shell"/>
 		</Unit>
-		<Unit filename="/Users/bmysaria/Desktop/minishell/Misha/executing/executing.h">
+		<Unit filename="/Users/dchani/Desktop/debug_branch/Misha/executing/executing.h">
 			<Option target="shell"/>
 		</Unit>
-		<Unit filename="/Users/bmysaria/Desktop/minishell/Misha/executing/executing_utils.c">
+		<Unit filename="/Users/dchani/Desktop/debug_branch/Misha/executing/executing_utils.c">
 			<Option target="shell"/>
 		</Unit>
-		<Unit filename="/Users/bmysaria/Desktop/minishell/Misha/executing/free_functions.c">
+		<Unit filename="/Users/dchani/Desktop/debug_branch/Misha/executing/free_functions.c">
 			<Option target="shell"/>
 		</Unit>
-		<Unit filename="/Users/bmysaria/Desktop/minishell/Misha/main.c">
+		<Unit filename="/Users/dchani/Desktop/debug_branch/Misha/main.c">
 			<Option target="shell"/>
 		</Unit>
-		<Unit filename="/Users/bmysaria/Desktop/minishell/Misha/minishell.h">
+		<Unit filename="/Users/dchani/Desktop/debug_branch/Misha/minishell.h">
 			<Option target="shell"/>
 		</Unit>
-		<Unit filename="/Users/bmysaria/Desktop/minishell/Misha/minishell_utils/ft_itoa.c">
+		<Unit filename="/Users/dchani/Desktop/debug_branch/Misha/minishell_utils/ft_itoa.c">
 			<Option target="shell"/>
 		</Unit>
-		<Unit filename="/Users/bmysaria/Desktop/minishell/Misha/minishell_utils/ft_split.c">
+		<Unit filename="/Users/dchani/Desktop/debug_branch/Misha/minishell_utils/ft_split.c">
 			<Option target="shell"/>
 		</Unit>
-		<Unit filename="/Users/bmysaria/Desktop/minishell/Misha/minishell_utils/memory_handle_utils.c">
+		<Unit filename="/Users/dchani/Desktop/debug_branch/Misha/minishell_utils/memory_handle_utils.c">
 			<Option target="shell"/>
 		</Unit>
-		<Unit filename="/Users/bmysaria/Desktop/minishell/Misha/minishell_utils/minishell_utils.h">
+		<Unit filename="/Users/dchani/Desktop/debug_branch/Misha/minishell_utils/minishell_utils.h">
 			<Option target="shell"/>
 		</Unit>
-		<Unit filename="/Users/bmysaria/Desktop/minishell/Misha/minishell_utils/string_utils1.c">
+		<Unit filename="/Users/dchani/Desktop/debug_branch/Misha/minishell_utils/string_utils1.c">
 			<Option target="shell"/>
 		</Unit>
-		<Unit filename="/Users/bmysaria/Desktop/minishell/Misha/minishell_utils/string_utils2.c">
+		<Unit filename="/Users/dchani/Desktop/debug_branch/Misha/minishell_utils/string_utils2.c">
 			<Option target="shell"/>
 		</Unit>
-		<Unit filename="/Users/bmysaria/Desktop/minishell/Misha/minishell_utils/string_utils3.c">
+		<Unit filename="/Users/dchani/Desktop/debug_branch/Misha/minishell_utils/string_utils3.c">
 			<Option target="shell"/>
 		</Unit>
-		<Unit filename="/Users/bmysaria/Desktop/minishell/Misha/parser/backslash.c">
+		<Unit filename="/Users/dchani/Desktop/debug_branch/Misha/parser/backslash.c">
 			<Option target="shell"/>
 		</Unit>
-		<Unit filename="/Users/bmysaria/Desktop/minishell/Misha/parser/parser.c">
+		<Unit filename="/Users/dchani/Desktop/debug_branch/Misha/parser/parser.c">
 			<Option target="shell"/>
 		</Unit>
-		<Unit filename="/Users/bmysaria/Desktop/minishell/Misha/parser/parser.h">
+		<Unit filename="/Users/dchani/Desktop/debug_branch/Misha/parser/parser.h">
 			<Option target="shell"/>
 		</Unit>
-		<Unit filename="/Users/bmysaria/Desktop/minishell/Misha/parser/quotes_handler.c">
+		<Unit filename="/Users/dchani/Desktop/debug_branch/Misha/parser/quotes_handler.c">
 			<Option target="shell"/>
 		</Unit>
-		<Unit filename="/Users/bmysaria/Desktop/minishell/Misha/parser/redirects_syntax.c">
+		<Unit filename="/Users/dchani/Desktop/debug_branch/Misha/parser/redirects_syntax.c">
 			<Option target="shell"/>
 		</Unit>
-		<Unit filename="/Users/bmysaria/Desktop/minishell/Misha/parser/syntax_err.c">
+		<Unit filename="/Users/dchani/Desktop/debug_branch/Misha/parser/syntax_err.c">
 			<Option target="shell"/>
 		</Unit>
-		<Unit filename="/Users/bmysaria/Desktop/minishell/Misha/termcap/check_for_exit.c">
+		<Unit filename="/Users/dchani/Desktop/debug_branch/Misha/termcap/check_for_exit.c">
 			<Option target="shell"/>
 		</Unit>
-		<Unit filename="/Users/bmysaria/Desktop/minishell/Misha/termcap/keys.c">
+		<Unit filename="/Users/dchani/Desktop/debug_branch/Misha/termcap/keys.c">
 			<Option target="shell"/>
 		</Unit>
-		<Unit filename="/Users/bmysaria/Desktop/minishell/Misha/termcap/keys2.c">
+		<Unit filename="/Users/dchani/Desktop/debug_branch/Misha/termcap/keys2.c">
 			<Option target="shell"/>
 		</Unit>
-		<Unit filename="/Users/bmysaria/Desktop/minishell/Misha/termcap/term_utills.c">
+		<Unit filename="/Users/dchani/Desktop/debug_branch/Misha/termcap/term_utills.c">
 			<Option target="shell"/>
 		</Unit>
-		<Unit filename="/Users/bmysaria/Desktop/minishell/Misha/termcap/termcap.h">
+		<Unit filename="/Users/dchani/Desktop/debug_branch/Misha/termcap/termcap.h">
 			<Option target="shell"/>
 		</Unit>
-		<Unit filename="/Users/bmysaria/Desktop/minishell/Misha/tokenizer/check_cmd.c">
+		<Unit filename="/Users/dchani/Desktop/debug_branch/Misha/tokenizer/check_cmd.c">
 			<Option target="shell"/>
 		</Unit>
-		<Unit filename="/Users/bmysaria/Desktop/minishell/Misha/tokenizer/check_directory.c">
+		<Unit filename="/Users/dchani/Desktop/debug_branch/Misha/tokenizer/check_directory.c">
 			<Option target="shell"/>
 		</Unit>
-		<Unit filename="/Users/bmysaria/Desktop/minishell/Misha/tokenizer/cmd.c">
+		<Unit filename="/Users/dchani/Desktop/debug_branch/Misha/tokenizer/cmd.c">
 			<Option target="shell"/>
 		</Unit>
-		<Unit filename="/Users/bmysaria/Desktop/minishell/Misha/tokenizer/conditions.c">
+		<Unit filename="/Users/dchani/Desktop/debug_branch/Misha/tokenizer/conditions.c">
 			<Option target="shell"/>
 		</Unit>
-		<Unit filename="/Users/bmysaria/Desktop/minishell/Misha/tokenizer/conditions_utils.c">
+		<Unit filename="/Users/dchani/Desktop/debug_branch/Misha/tokenizer/conditions_utils.c">
 			<Option target="shell"/>
 		</Unit>
-		<Unit filename="/Users/bmysaria/Desktop/minishell/Misha/tokenizer/dollar_sign_assign.c">
+		<Unit filename="/Users/dchani/Desktop/debug_branch/Misha/tokenizer/dollar_sign_assign.c">
 			<Option target="shell"/>
 		</Unit>
-		<Unit filename="/Users/bmysaria/Desktop/minishell/Misha/tokenizer/dollar_sign_cnt.c">
+		<Unit filename="/Users/dchani/Desktop/debug_branch/Misha/tokenizer/dollar_sign_cnt.c">
 			<Option target="shell"/>
 		</Unit>
-		<Unit filename="/Users/bmysaria/Desktop/minishell/Misha/tokenizer/free_and_exit_tokenizer.c">
+		<Unit filename="/Users/dchani/Desktop/debug_branch/Misha/tokenizer/free_and_exit_tokenizer.c">
 			<Option target="shell"/>
 		</Unit>
-		<Unit filename="/Users/bmysaria/Desktop/minishell/Misha/tokenizer/get_redirect.c">
+		<Unit filename="/Users/dchani/Desktop/debug_branch/Misha/tokenizer/get_redirect.c">
 			<Option target="shell"/>
 		</Unit>
-		<Unit filename="/Users/bmysaria/Desktop/minishell/Misha/tokenizer/redirect_error.c">
+		<Unit filename="/Users/dchani/Desktop/debug_branch/Misha/tokenizer/redirect_error.c">
 			<Option target="shell"/>
 		</Unit>
-		<Unit filename="/Users/bmysaria/Desktop/minishell/Misha/tokenizer/redirects.c">
+		<Unit filename="/Users/dchani/Desktop/debug_branch/Misha/tokenizer/redirects.c">
 			<Option target="shell"/>
 		</Unit>
-		<Unit filename="/Users/bmysaria/Desktop/minishell/Misha/tokenizer/tokenizer.h">
+		<Unit filename="/Users/dchani/Desktop/debug_branch/Misha/tokenizer/tokenizer.h">
 			<Option target="shell"/>
 		</Unit>
-		<Unit filename="/Users/bmysaria/Desktop/minishell/Misha/CMakeLists.txt">
+		<Unit filename="/Users/dchani/Desktop/debug_branch/Misha/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>

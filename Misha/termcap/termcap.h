@@ -10,6 +10,7 @@
 #include <curses.h>
 #include <termcap.h>
 #include "../minishell_utils/minishell_utils.h"
+#include "errno.h"
 
 typedef struct s_list       t_list;
 typedef struct s_gnl		t_gnl;

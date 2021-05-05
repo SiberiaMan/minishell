@@ -19,6 +19,9 @@ static size_t	handle_pipes(t_line_n_mask *l_n_m, size_t i)
 	l_n_m->pids = (int *)malloc(sizeof(int) * l_n_m->cnt_pipes + 1);
 	if (!l_n_m->pids)
 		free_and_exit(l_n_m);
+	i = 0;
+	while (i < l_n_m->cnt_pipes + 1)
+		l_n_m->pids[i++] = -1;
 	i = start;
 	kernel_start(l_n_m, i);
 	l_n_m->gnl->status = l_n_m->status;
