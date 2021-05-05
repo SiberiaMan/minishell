@@ -1,4 +1,5 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/shell.dir/builtins/cd.c.o"
   "CMakeFiles/shell.dir/builtins/check_export.c.o"
   "CMakeFiles/shell.dir/builtins/echo.c.o"
   "CMakeFiles/shell.dir/builtins/env_alpha.c.o"
@@ -6,6 +7,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/shell.dir/builtins/export_utills.c.o"
   "CMakeFiles/shell.dir/builtins/is_builtin.c.o"
   "CMakeFiles/shell.dir/builtins/manage_duplications.c.o"
+  "CMakeFiles/shell.dir/builtins/pwd.c.o"
   "CMakeFiles/shell.dir/executing/change_io.c.o"
   "CMakeFiles/shell.dir/executing/child_process.c.o"
   "CMakeFiles/shell.dir/executing/executing.c.o"
@@ -18,6 +20,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/shell.dir/minishell_utils/string_utils1.c.o"
   "CMakeFiles/shell.dir/minishell_utils/string_utils2.c.o"
   "CMakeFiles/shell.dir/minishell_utils/string_utils3.c.o"
+  "CMakeFiles/shell.dir/minishell_utils/string_utils4.c.o"
   "CMakeFiles/shell.dir/parser/backslash.c.o"
   "CMakeFiles/shell.dir/parser/parser.c.o"
   "CMakeFiles/shell.dir/parser/quotes_handler.c.o"

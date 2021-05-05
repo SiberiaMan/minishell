@@ -13,7 +13,6 @@
 # include <curses.h>
 # include <termcap.h>
 
-void	to_upper(char *line);
 void	to_lower(char *line);
 int		ft_strncmp_cmd(const char *s1, const char *s2, size_t n);
 int		ft_strncmp_env(const char *s1, const char *s2, size_t n);
@@ -34,5 +33,6 @@ void	ft_putstr_fd(char *s, int fd);
 void	ft_putchar_fd(char c, int fd);
 int		is_digit(char c);
 int		ft_is_printable(char *str);
+char	*ft_strrchr(const char *s, int c);
 
 #endif

@@ -67,10 +67,10 @@ RM = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/dchani/Desktop/debug_branch/Misha
+CMAKE_SOURCE_DIR = /Users/bmysaria/Desktop/minishell/Misha
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/dchani/Desktop/debug_branch/Misha/cmake-build-debug
+CMAKE_BINARY_DIR = /Users/bmysaria/Desktop/minishell/Misha/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -99,9 +99,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/dchani/Desktop/debug_branch/Misha/cmake-build-debug/CMakeFiles /Users/dchani/Desktop/debug_branch/Misha/cmake-build-debug//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/bmysaria/Desktop/minishell/Misha/cmake-build-debug/CMakeFiles /Users/bmysaria/Desktop/minishell/Misha/cmake-build-debug//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/dchani/Desktop/debug_branch/Misha/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/bmysaria/Desktop/minishell/Misha/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -141,6 +141,33 @@ shell: cmake_check_build_system
 shell/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/build
 .PHONY : shell/fast
+
+builtins/cd.o: builtins/cd.c.o
+
+.PHONY : builtins/cd.o
+
+# target to build an object file
+builtins/cd.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/builtins/cd.c.o
+.PHONY : builtins/cd.c.o
+
+builtins/cd.i: builtins/cd.c.i
+
+.PHONY : builtins/cd.i
+
+# target to preprocess a source file
+builtins/cd.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/builtins/cd.c.i
+.PHONY : builtins/cd.c.i
+
+builtins/cd.s: builtins/cd.c.s
+
+.PHONY : builtins/cd.s
+
+# target to generate assembly for a file
+builtins/cd.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/builtins/cd.c.s
+.PHONY : builtins/cd.c.s
 
 builtins/check_export.o: builtins/check_export.c.o
 
@@ -330,6 +357,33 @@ builtins/manage_duplications.s: builtins/manage_duplications.c.s
 builtins/manage_duplications.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/builtins/manage_duplications.c.s
 .PHONY : builtins/manage_duplications.c.s
+
+builtins/pwd.o: builtins/pwd.c.o
+
+.PHONY : builtins/pwd.o
+
+# target to build an object file
+builtins/pwd.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/builtins/pwd.c.o
+.PHONY : builtins/pwd.c.o
+
+builtins/pwd.i: builtins/pwd.c.i
+
+.PHONY : builtins/pwd.i
+
+# target to preprocess a source file
+builtins/pwd.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/builtins/pwd.c.i
+.PHONY : builtins/pwd.c.i
+
+builtins/pwd.s: builtins/pwd.c.s
+
+.PHONY : builtins/pwd.s
+
+# target to generate assembly for a file
+builtins/pwd.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/builtins/pwd.c.s
+.PHONY : builtins/pwd.c.s
 
 executing/change_io.o: executing/change_io.c.o
 
@@ -654,6 +708,33 @@ minishell_utils/string_utils3.s: minishell_utils/string_utils3.c.s
 minishell_utils/string_utils3.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/minishell_utils/string_utils3.c.s
 .PHONY : minishell_utils/string_utils3.c.s
+
+minishell_utils/string_utils4.o: minishell_utils/string_utils4.c.o
+
+.PHONY : minishell_utils/string_utils4.o
+
+# target to build an object file
+minishell_utils/string_utils4.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/minishell_utils/string_utils4.c.o
+.PHONY : minishell_utils/string_utils4.c.o
+
+minishell_utils/string_utils4.i: minishell_utils/string_utils4.c.i
+
+.PHONY : minishell_utils/string_utils4.i
+
+# target to preprocess a source file
+minishell_utils/string_utils4.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/minishell_utils/string_utils4.c.i
+.PHONY : minishell_utils/string_utils4.c.i
+
+minishell_utils/string_utils4.s: minishell_utils/string_utils4.c.s
+
+.PHONY : minishell_utils/string_utils4.s
+
+# target to generate assembly for a file
+minishell_utils/string_utils4.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/minishell_utils/string_utils4.c.s
+.PHONY : minishell_utils/string_utils4.c.s
 
 parser/backslash.o: parser/backslash.c.o
 
@@ -1204,6 +1285,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... shell"
+	@echo "... builtins/cd.o"
+	@echo "... builtins/cd.i"
+	@echo "... builtins/cd.s"
 	@echo "... builtins/check_export.o"
 	@echo "... builtins/check_export.i"
 	@echo "... builtins/check_export.s"
@@ -1225,6 +1309,9 @@ help:
 	@echo "... builtins/manage_duplications.o"
 	@echo "... builtins/manage_duplications.i"
 	@echo "... builtins/manage_duplications.s"
+	@echo "... builtins/pwd.o"
+	@echo "... builtins/pwd.i"
+	@echo "... builtins/pwd.s"
 	@echo "... executing/change_io.o"
 	@echo "... executing/change_io.i"
 	@echo "... executing/change_io.s"
@@ -1261,6 +1348,9 @@ help:
 	@echo "... minishell_utils/string_utils3.o"
 	@echo "... minishell_utils/string_utils3.i"
 	@echo "... minishell_utils/string_utils3.s"
+	@echo "... minishell_utils/string_utils4.o"
+	@echo "... minishell_utils/string_utils4.i"
+	@echo "... minishell_utils/string_utils4.s"
 	@echo "... parser/backslash.o"
 	@echo "... parser/backslash.i"
 	@echo "... parser/backslash.s"

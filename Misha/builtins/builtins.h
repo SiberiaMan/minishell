@@ -19,10 +19,10 @@ char	**collect_valid_vars(int count, char **vars, t_line_n_mask *l_n_m,
 char	**manage_duplication(char **p_vars, char **p_envp, t_line_n_mask
 			*l_n_m, t_token *token);
 int	ft_echo(char **str);
+int ft_cd(t_token *token, t_line_n_mask *l_n_m);
+int ft_pwd();
 ///char	**unset(char **vars, char **envp);
-///void ft_pwd();
 ///void ft_echo(char *str, int option);
-///int ft_cd(char *path);
 void	sort_vars(char **v);
 void	free_export(t_line_n_mask *l_n_m, t_token *token, char **vars, int i);
 //int		choose_builtin(t_line_n_mask *l_n_m, t_token *token);
