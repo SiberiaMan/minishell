@@ -1,26 +1,7 @@
 #include "builtins.h"
 
-int	echo_dollar(char *dollar, char **envp)
-{
-	char	**ptr;
-	int		i;
-
-	if (!dollar)
-		return (-1);
-	i = 0;
-	ptr = envp;
-	while (ptr[i])
-	{
-		if (!ft_strncmp(dollar + 1, ptr[i], ft_strlen(dollar + 1)))
-			return (i);
-		i++;
-	}
-	return (-1);
-}
-
 void	echo_output(char **str, int opt, char **envp, char *spaces)
 {
-	char	*dollar;
 	int		i;
 	int		last;
 	int		j;
@@ -31,15 +12,7 @@ void	echo_output(char **str, int opt, char **envp, char *spaces)
 	{
 		if (spaces[i] == 'b')
 		{
-			dollar = ft_strchr(str[i], '$');
-			if (dollar)
-			{
-				j = echo_dollar(dollar, envp);
-				if (j >= 0)
-					ft_putstr_fd(envp[j] + ft_strlen(dollar), 1);
-			}
-			else
-				ft_putstr_fd(str[i], 1);
+			ft_putstr_fd(str[i], 1);
 			if (i != last)
 				ft_putchar_fd(' ', 1);
 		}
@@ -51,21 +24,14 @@ int	count_spaces(char **str, int opt, char **envp, char *spaces)
 {
 	int	ok;
 	int	i;
-	int	j;
 
 	i = opt + 1;
 	ok = 0;
 	while (str[i])
 	{
-		j = echo_dollar(ft_strchr(str[i], '$'), envp);
-		if (j >= 0)
-		{
+		if (!ft_strcmp(str[i], "-n") && ok == 1 )
 			spaces[i] = 'b';
-			ok = 1;
-		}
-		else if (!ft_strcmp(str[i], "-n") && ok == 1 )
-			spaces[i] = 'b';
-		else if (ft_strcmp(str[i], "-n") && !ft_strchr(str[i], '$'))
+		else if (ft_strcmp(str[i], "-n"))
 		{
 			ok = 1;
 			spaces[i] = 'b';
