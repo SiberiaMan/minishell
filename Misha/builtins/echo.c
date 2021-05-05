@@ -1,10 +1,9 @@
 #include "builtins.h"
 
-void	echo_output(char **str, int opt, char **envp, char *spaces)
+void	echo_output(char **str, int opt, char *spaces)
 {
 	int		i;
 	int		last;
-	int		j;
 
 	last = count_vars(str) - 1;
 	i = opt + 1;
@@ -20,7 +19,7 @@ void	echo_output(char **str, int opt, char **envp, char *spaces)
 	}
 }
 
-int	count_spaces(char **str, int opt, char **envp, char *spaces)
+int	count_spaces(char **str, int opt, char *spaces)
 {
 	int	ok;
 	int	i;
@@ -38,11 +37,11 @@ int	count_spaces(char **str, int opt, char **envp, char *spaces)
 		}
 		i++;
 	}
-	echo_output(str, opt, envp, spaces);
+	echo_output(str, opt, spaces);
 	return (0);
 }
 
-int	ft_echo(char **str, char **envp)
+int	ft_echo(char **str)
 {
 	int		i;
 	int		opt;
@@ -63,7 +62,7 @@ int	ft_echo(char **str, char **envp)
 	}
 	if (opt == 1 && str[2] == NULL)
 		return (0);
-	count_spaces(str, opt, envp, spaces);
+	count_spaces(str, opt, spaces);
 	if (opt == 0)
 		ft_putchar_fd('\n', 1);
 	return (0);

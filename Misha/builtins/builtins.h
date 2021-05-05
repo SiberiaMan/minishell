@@ -18,7 +18,7 @@ char	**collect_valid_vars(int count, char **vars, t_line_n_mask *l_n_m,
 						  t_token *token);
 char	**manage_duplication(char **p_vars, char **p_envp, t_line_n_mask
 			*l_n_m, t_token *token);
-int	ft_echo(char **str, char **envp);
+int	ft_echo(char **str);
 ///char	**unset(char **vars, char **envp);
 ///void ft_pwd();
 ///void ft_echo(char *str, int option);

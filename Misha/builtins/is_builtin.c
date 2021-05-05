@@ -22,7 +22,7 @@ int	choose_builtin(t_line_n_mask *l_n_m, t_token *token, size_t i)
 	/// status ->l_n_m->status везде с собой таскать, чтобы делать free, но
 	/// записывать только тут 0 или 1
 	if (!(ft_strcmp(token->args[0], "echo")))
-		l_n_m->status = ft_echo(token->args, *l_n_m->env);
+		l_n_m->status = ft_echo(token->args);
 	//else if	(!(ft_strcmp(token->args[0], "cd"))
 	//	l_n_m->status = ft_cd(t_line_n_mask *l_n_m, t_token *token);
 	//else if (!(ft_strcmp(token->args[0], "pwd"))
