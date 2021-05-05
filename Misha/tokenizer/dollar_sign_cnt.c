@@ -78,7 +78,8 @@ size_t	get_cnt_dollar(t_line_n_mask *l_n_m, size_t *start)
 	if (l_n_m->line[j] == '?')
 		return (get_cnt_status(l_n_m));
 	while (l_n_m->line[j]
-		&& (ft_isalpha(l_n_m->line[j]) || l_n_m->line[j] == '_'))
+		&& (ft_isalpha(l_n_m->line[j]) || l_n_m->line[j] == '_'
+			|| is_digit(l_n_m->line[j])))
 		j++;
 	return (get_cnt_env(l_n_m, start, j));
 }

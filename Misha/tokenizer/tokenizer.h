@@ -57,5 +57,8 @@ size_t	condition_cmd_limits(t_line_n_mask *l_n_m, size_t i);
 size_t	handle_cmd_condition(t_line_n_mask *l_n_m, size_t i);
 void	free_and_exit_tokenizer_cmd(t_token *token, t_line_n_mask *l_n_m,
 			size_t i);
+void	body_condition_dollar(t_line_n_mask *l_n_m, char *line, size_t *start,
+			size_t *i);
+void	body_condition_digit(t_line_n_mask *l_n_m, size_t *start);
 
 #endif

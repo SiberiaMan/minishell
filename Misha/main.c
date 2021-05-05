@@ -30,23 +30,27 @@ void	parse_n_execute(t_gnl *gnl, char ***env)
 
 int comparison(t_gnl *gnl)
 {
-	if(!ft_strcmp(gnl->str, "\4"))//////////////ctrl+d
+	if(!ft_strcmp(gnl->str, "\e[D"))
+		ft_memset(gnl->str, 0, 10);
+	if(!ft_strcmp(gnl->str, "\e[C"))
+		ft_memset(gnl->str, 0, 10);
+	if(!ft_strcmp(gnl->str, "\t"))
+		ft_memset(gnl->str, 0, 10);
+	if(!ft_strcmp(gnl->str, "\n"))
+		return(enter(gnl));
+	if (!ft_strcmp(gnl->str, "\e[A"))
+		up(gnl);
+	else if (!ft_strcmp(gnl->str, "\e[B"))
+		down(gnl);
+	else if (ft_strcmp(gnl->str, "\n"))
+		get_command(gnl);
+	if (!ft_strcmp(gnl->str, "\177"))
+		backspace(gnl);
+	if(!ft_strcmp(gnl->str, "\4"))
 	{
-		if (ft_strlen(gnl->edit) <= 1 || !(gnl->edit))
+		if (ft_strlen(gnl->edit) == 1)
 			ctrl_d(gnl);
 	}
-	if (!ft_strcmp(gnl->str, "\e[A")) ////////////up
-		up(gnl);
-	if (!ft_strcmp(gnl->str, "\e[B"))///////down
-		down(gnl);
-	if (!ft_strcmp(gnl->str, "\177"))///////////backspace
-		backspace(gnl);
-	if(!ft_strcmp(gnl->str, "\n"))///////////////enter
-		return(enter(gnl));
-	if (!ft_is_printable(gnl->str))
-		ft_memset(gnl->str, 0, 10);
-	else ///////////write
-		get_command(gnl);
 	return(0);
 }
 

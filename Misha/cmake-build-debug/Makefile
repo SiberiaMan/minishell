@@ -67,10 +67,10 @@ RM = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/bmysaria/Desktop/minishell/Misha
+CMAKE_SOURCE_DIR = /Users/dchani/Desktop/minishell/Misha
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/bmysaria/Desktop/minishell/Misha/cmake-build-debug
+CMAKE_BINARY_DIR = /Users/dchani/Desktop/minishell/Misha/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -99,9 +99,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/bmysaria/Desktop/minishell/Misha/cmake-build-debug/CMakeFiles /Users/bmysaria/Desktop/minishell/Misha/cmake-build-debug//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/dchani/Desktop/minishell/Misha/cmake-build-debug/CMakeFiles /Users/dchani/Desktop/minishell/Misha/cmake-build-debug//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/bmysaria/Desktop/minishell/Misha/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/dchani/Desktop/minishell/Misha/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -519,6 +519,33 @@ executing/free_functions.s: executing/free_functions.c.s
 executing/free_functions.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/executing/free_functions.c.s
 .PHONY : executing/free_functions.c.s
+
+executing/waiting_childs.o: executing/waiting_childs.c.o
+
+.PHONY : executing/waiting_childs.o
+
+# target to build an object file
+executing/waiting_childs.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/executing/waiting_childs.c.o
+.PHONY : executing/waiting_childs.c.o
+
+executing/waiting_childs.i: executing/waiting_childs.c.i
+
+.PHONY : executing/waiting_childs.i
+
+# target to preprocess a source file
+executing/waiting_childs.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/executing/waiting_childs.c.i
+.PHONY : executing/waiting_childs.c.i
+
+executing/waiting_childs.s: executing/waiting_childs.c.s
+
+.PHONY : executing/waiting_childs.s
+
+# target to generate assembly for a file
+executing/waiting_childs.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/executing/waiting_childs.c.s
+.PHONY : executing/waiting_childs.c.s
 
 main.o: main.c.o
 
@@ -1327,6 +1354,9 @@ help:
 	@echo "... executing/free_functions.o"
 	@echo "... executing/free_functions.i"
 	@echo "... executing/free_functions.s"
+	@echo "... executing/waiting_childs.o"
+	@echo "... executing/waiting_childs.i"
+	@echo "... executing/waiting_childs.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

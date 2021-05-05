@@ -87,18 +87,9 @@ size_t *start, size_t *i)
 	(*start)++;
 	j = *start;
 	if (is_digit(l_n_m->line[j]))
-	{
-		if (l_n_m->mask[*start])
-			(*start)++;
-		return ;
-	}
+		return (body_condition_digit(l_n_m, start));
 	if (condition_handle_dollar(l_n_m, j))
-	{
-		if (l_n_m->mask[*start])
-			(*start)++;
-		line[(*i)++] = '$';
-		return ;
-	}
+		return (body_condition_dollar(l_n_m, line, start, i));
 	if (l_n_m->line[j] == '?')
 	{
 		handle_string_question(l_n_m, line, i);
@@ -106,7 +97,8 @@ size_t *start, size_t *i)
 		return ;
 	}
 	while (l_n_m->line[j]
-		&& (ft_isalpha(l_n_m->line[j]) || l_n_m->line[j] == '_'))
+		&& (ft_isalpha(l_n_m->line[j]) || l_n_m->line[j] == '_'
+			|| is_digit(l_n_m->line[j])))
 		j++;
 	env = get_env_string(l_n_m, start, j, cur);
 	append_line(line, env, i);

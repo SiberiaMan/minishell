@@ -13,6 +13,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/shell.dir/executing/executing.c.o"
   "CMakeFiles/shell.dir/executing/executing_utils.c.o"
   "CMakeFiles/shell.dir/executing/free_functions.c.o"
+  "CMakeFiles/shell.dir/executing/waiting_childs.c.o"
   "CMakeFiles/shell.dir/main.c.o"
   "CMakeFiles/shell.dir/minishell_utils/ft_itoa.c.o"
   "CMakeFiles/shell.dir/minishell_utils/ft_split.c.o"

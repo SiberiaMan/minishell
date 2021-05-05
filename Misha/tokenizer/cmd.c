@@ -64,7 +64,7 @@ size_t *cnt_symbols, size_t cur)
 		   && !(l_n_m->line[*i] == ' ' && l_n_m->mask[*i] == '1')
 		   && !(l_n_m->mask[*i] == SPEC_SYMBOL && l_n_m->line[*i] != '$'))
 	{
-		if (l_n_m->line[*i] == '$')
+		if (l_n_m->line[*i] == '$' && l_n_m->mask[*i] == SPEC_SYMBOL)
 			(*cnt_symbols) += get_cnt_dollar(l_n_m, i);
 		else if (l_n_m->mask[*i] != UNUSED_BACKSLASH
 			&& l_n_m->mask[*i] != OPEN_QUOTE && l_n_m->mask[*i] != CLOSE_QUOTE)

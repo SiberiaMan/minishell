@@ -25,3 +25,17 @@ size_t	condition_handle_dollar(t_line_n_mask *l_n_m, size_t j)
 		return (1);
 	return (0);
 }
+
+void	body_condition_dollar(t_line_n_mask *l_n_m, char *line, size_t *start,
+size_t *i)
+{
+	if (l_n_m->mask[*start])
+		(*start)++;
+	line[(*i)++] = '$';
+}
+
+void	body_condition_digit(t_line_n_mask *l_n_m, size_t *start)
+{
+	if (l_n_m->mask[*start])
+		(*start)++;
+}
