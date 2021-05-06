@@ -23,48 +23,16 @@ int	check_line(char *line, char *eqsign)
 	{
 		if(!(*start == '_' || ft_isalpha(*start)))
 			return(export_error(line));
+		start++;
 	}
 	return(0);
 }
 
-char	**collect_valid_vars(int count, char **vars, t_line_n_mask *l_n_m, t_token *token)
-{
-	//char *tmp;
-	char	**ptr;
-	char	**valid_vars;
-	char	*equalsign;
-	int		k;
-
-	k = 0;
-	ptr = vars;
-	valid_vars = (char **)malloc((sizeof(char *) * (count + 1)));
-	if (!valid_vars)
-		free_export(l_n_m, token, NULL, 0);
-	while (*ptr)
-	{
-		equalsign = ft_strchr(*ptr, '=');
-		if (equalsign)
-		{
-			//tmp = *ptr;
-			valid_vars[k] = ft_strdup(*ptr);
-			if (!valid_vars[k])
-				free_export(l_n_m, token, valid_vars, k - 1);
-			//free(tmp);
-			k++;
-		}
-		ptr++;
-	}
-	valid_vars[count] = NULL;
-	return (valid_vars);
-}
-
-int	count_valid_vars(char **vars)
+int	export_validation(char **vars)
 {
 	int		i;
 	char	*equalsign;
-	int		count;
 
-	count = 0;
 	i = 1;
 	while (vars[i])
 	{
@@ -74,8 +42,7 @@ int	count_valid_vars(char **vars)
 			if (check_line(vars[i], equalsign) != 0)
 				return (-1);
 		}
-		count++;
 		i++;
 	}
-	return (count);
+	return (0);
 }

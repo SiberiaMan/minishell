@@ -40,6 +40,7 @@ char	**manage_duplication(char **p_vars, char **p_envp, t_line_n_mask *l_n_m, t_
 	while (*vars)
 	{
 		v = *vars;
+		check_duplication(v, envp);
 		if (check_duplication(v, envp) == 0)
 		{
 			new_envp = export_one_var(v, envp, l_n_m, token); ///маллок

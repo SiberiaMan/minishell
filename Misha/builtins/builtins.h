@@ -13,7 +13,7 @@ char	**copy_envp(char **envp);
 char	**export_one_var(char *var, char **envp, t_line_n_mask *l_n_m,
 					  t_token *token);
 char	**check_for_equal_sign(char **vars);
-int count_valid_vars(char **vars);
+int export_validation(char **vars);
 char	**collect_valid_vars(int count, char **vars, t_line_n_mask *l_n_m,
 						  t_token *token);
 char	**manage_duplication(char **p_vars, char **p_envp, t_line_n_mask

@@ -28,29 +28,25 @@ char	**export_one_var(char *var, char **envp, t_line_n_mask *l_n_m, t_token *tok
 	if (!res[i])
 		free_export(l_n_m, token, res, i - 1);
 	res[i+1] = NULL;
-	free(var);
 	return (res);
 }
 
 int ft_export(t_line_n_mask *l_n_m, t_token *token)
 {
-	// **args -> token->args
-	// status ->l_n_m->status
-	char **valid_vars;
-	int count;
 	char **new_env;
+	int validation;
 
 	if (!token->args[1])
 	{
 		sort_vars(*l_n_m->env);
 		return (0);
 	}
-	count = count_valid_vars(token->args);
-	if (count > 0)
-		valid_vars = collect_valid_vars(count, token->args, l_n_m, token);
-	else
-		return (1);
-	new_env = manage_duplication(valid_vars, *l_n_m->env, l_n_m, token);
-	*l_n_m->env = new_env;
-	return (0);
+	validation = export_validation(token->args);
+	if (validation == 0)
+	{
+		new_env = manage_duplication(token->args, *l_n_m->env, l_n_m, token);
+		*l_n_m->env = new_env;
+		return (0);
+	}
+	return (1);
 }
