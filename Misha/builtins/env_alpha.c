@@ -4,13 +4,11 @@ void	print_envp(char **envp)
 {
 	int i;
 	int j;
-	char *equalsign;
 
 	i = 0;
 	j = 0;
 	while(envp[i])
 	{
-		equalsign = ft_strchr(*envp, '=');
 		ft_putstr_fd("declare -x ", 1);
 		while(envp[i][j] != '=' && envp[i][j] != '\0')
 		{
@@ -18,7 +16,12 @@ void	print_envp(char **envp)
 			j++;
 		}
 		ft_putstr_fd("=\"", 1);
-		ft_putstr_fd(equalsign + 1, 1);
+		j++;
+		while(envp[i][j] != '\0')
+		{
+			ft_putchar_fd(envp[i][j], 1);
+			j++;
+		}
 		ft_putstr_fd("\"\n", 1);
 		j = 0;
 		i++;
@@ -62,23 +65,3 @@ void	sort_vars(char **v)
 	}
 	print_envp(v);
 }
-
-
-//int main(int args, char **argv, char **envp)
-//{
-//	char **copy;
-//	char **ptr;
-//
-//	copy = copy_envp(envp);
-//	ptr = copy;
-//	while(*ptr)
-//	{
-//		printf("%s\n", *ptr);
-//		ptr++;
-//	}
-//	printf("\n\n\n");
-//	char *massiv[] = {"B=0", "C=lol", "F=haha",  "A=2", "Z=3",
-//					  "D=4", NULL};
-//	sort_vars(copy);
-//	return(0);
-//}
