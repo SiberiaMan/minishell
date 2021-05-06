@@ -40,11 +40,16 @@ char	**copy_envp(char **envp)
 		return (NULL);
 	while (envp[i])
 	{
-		res[i] = ft_strdup(envp[i]);
-		if (!res[i])
+		if (!ft_strncmp(envp[i], "OLDPWD", 6))
+			res[i] = ft_strdup("OLDPWD");
+		else
 		{
-			free_vars(res, i);
-			return (0);
+			res[i] = ft_strdup(envp[i]);
+			if (!res[i])
+			{
+				free_vars(res, i);
+				return (0);
+			}
 		}
 		i++;
 	}
