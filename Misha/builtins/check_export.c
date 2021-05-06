@@ -3,7 +3,7 @@
 int export_error(char *line)
 {
 	ft_putstr_fd("export: ", 2);
-	ft_putstr_fd("'", 2);
+	ft_putstr_fd("`", 2);
 	ft_putstr_fd(line, 2);
 	ft_putstr_fd("':", 2);
 	ft_putstr_fd(" not a valid identifier\n", 2);
@@ -19,9 +19,13 @@ int	check_line(char *line, char *eqsign)
 		return(export_error(eqsign));
 	else if (*(eqsign - 1) == ' ')
 		return(export_error(eqsign));
+	else if(!(*start == '_' || ft_isalpha(*start)))
+		return(export_error(line));
+	if(*(start + 1) != '\0')
+		start++;
 	while(*start != '=' && *start != '\0')
 	{
-		if(!(*start == '_' || ft_isalpha(*start)))
+		if(!(*start == '_' || ft_isalnum(*start)))
 			return(export_error(line));
 		start++;
 	}

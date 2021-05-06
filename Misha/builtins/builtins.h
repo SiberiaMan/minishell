@@ -16,8 +16,8 @@ char	**check_for_equal_sign(char **vars);
 int export_validation(char **vars);
 char	**collect_valid_vars(int count, char **vars, t_line_n_mask *l_n_m,
 						  t_token *token);
-char	**manage_duplication(char **p_vars, char **p_envp, t_line_n_mask
-			*l_n_m, t_token *token);
+char	**manage_duplication(char **vars, char **envp, t_line_n_mask *l_n_m,
+						  t_token *token);
 int	ft_echo(char **str);
 int ft_cd(t_token *token, t_line_n_mask *l_n_m);
 int ft_pwd();

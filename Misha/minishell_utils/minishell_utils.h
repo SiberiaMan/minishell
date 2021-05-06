@@ -34,5 +34,7 @@ void	ft_putchar_fd(char c, int fd);
 int		is_digit(char c);
 int		ft_is_printable(char *str);
 char	*ft_strrchr(const char *s, int c);
+int		ft_isalnum(int c);
+int		ft_isdigit(int c);
 
 #endif

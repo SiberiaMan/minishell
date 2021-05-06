@@ -28,26 +28,22 @@ int	check_duplication(char *v, char **envp)
 	return (flag);
 }
 
-char	**manage_duplication(char **p_vars, char **p_envp, t_line_n_mask *l_n_m, t_token *token)
+char	**manage_duplication(char **vars, char **envp, t_line_n_mask *l_n_m, t_token *token)
 {
-	char	**vars;
-	char	**envp;
-	char	*v;
 	char	**new_envp;
+	int i;
 
-	vars = p_vars;
-	envp = p_envp;
-	while (*vars)
+	i = 1;
+	while (vars[i])
 	{
-		v = *vars;
-		check_duplication(v, envp);
-		if (check_duplication(v, envp) == 0)
+		check_duplication(vars[i], envp);
+		if (check_duplication(vars[i], envp) == 0)
 		{
-			new_envp = export_one_var(v, envp, l_n_m, token); ///маллок
+			new_envp = export_one_var(vars[i], envp, l_n_m, token); ///маллок
 			free_vars(envp, count_vars(envp) - 1 );
 			envp = new_envp;
 		}
-		vars++;
+		i++;
 	}
 	return (envp);
 }
