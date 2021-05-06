@@ -21,6 +21,7 @@ char	**manage_duplication(char **p_vars, char **p_envp, t_line_n_mask
 int	ft_echo(char **str);
 int ft_cd(t_token *token, t_line_n_mask *l_n_m);
 int ft_pwd();
+int ft_env(char **envp);
 ///char	**unset(char **vars, char **envp);
 ///void ft_echo(char *str, int option);
 void	sort_vars(char **v);

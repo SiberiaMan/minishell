@@ -22,8 +22,8 @@ void choose_builtin(t_line_n_mask *l_n_m, t_token *token, size_t i)
 		l_n_m->status = ft_cd(token, l_n_m);
 	else if (!(ft_strcmp(token->lower, "pwd")))
 		l_n_m->status = ft_pwd();
-	//else if (!(ft_strcmp(token->args[0], "env"))
-	//	l_n_m->status = ft_env(t_line_n_mask *l_n_m, t_token *token);
+	else if (!(ft_strcmp(token->lower, "env")))
+		l_n_m->status=ft_env(*l_n_m->env);
 	if (!(ft_strcmp(token->lower, "export")))
 		l_n_m->status = ft_export(l_n_m, token);
 	//else if (!(ft_strcmp(token->args[0], "unset"))
