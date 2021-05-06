@@ -108,6 +108,9 @@
 		<Unit filename="/Users/bmysaria/Desktop/minishell/Misha/builtins/pwd.c">
 			<Option target="shell"/>
 		</Unit>
+		<Unit filename="/Users/bmysaria/Desktop/minishell/Misha/builtins/unset.c">
+			<Option target="shell"/>
+		</Unit>
 		<Unit filename="/Users/bmysaria/Desktop/minishell/Misha/executing/change_io.c">
 			<Option target="shell"/>
 		</Unit>

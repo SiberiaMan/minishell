@@ -9,6 +9,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/shell.dir/builtins/is_builtin.c.o"
   "CMakeFiles/shell.dir/builtins/manage_duplications.c.o"
   "CMakeFiles/shell.dir/builtins/pwd.c.o"
+  "CMakeFiles/shell.dir/builtins/unset.c.o"
   "CMakeFiles/shell.dir/executing/change_io.c.o"
   "CMakeFiles/shell.dir/executing/child_process.c.o"
   "CMakeFiles/shell.dir/executing/executing.c.o"

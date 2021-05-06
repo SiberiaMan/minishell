@@ -14,6 +14,7 @@ set(CMAKE_DEPENDS_CHECK_C
   "/Users/bmysaria/Desktop/minishell/Misha/builtins/is_builtin.c" "/Users/bmysaria/Desktop/minishell/Misha/cmake-build-debug/CMakeFiles/shell.dir/builtins/is_builtin.c.o"
   "/Users/bmysaria/Desktop/minishell/Misha/builtins/manage_duplications.c" "/Users/bmysaria/Desktop/minishell/Misha/cmake-build-debug/CMakeFiles/shell.dir/builtins/manage_duplications.c.o"
   "/Users/bmysaria/Desktop/minishell/Misha/builtins/pwd.c" "/Users/bmysaria/Desktop/minishell/Misha/cmake-build-debug/CMakeFiles/shell.dir/builtins/pwd.c.o"
+  "/Users/bmysaria/Desktop/minishell/Misha/builtins/unset.c" "/Users/bmysaria/Desktop/minishell/Misha/cmake-build-debug/CMakeFiles/shell.dir/builtins/unset.c.o"
   "/Users/bmysaria/Desktop/minishell/Misha/executing/change_io.c" "/Users/bmysaria/Desktop/minishell/Misha/cmake-build-debug/CMakeFiles/shell.dir/executing/change_io.c.o"
   "/Users/bmysaria/Desktop/minishell/Misha/executing/child_process.c" "/Users/bmysaria/Desktop/minishell/Misha/cmake-build-debug/CMakeFiles/shell.dir/executing/child_process.c.o"
   "/Users/bmysaria/Desktop/minishell/Misha/executing/executing.c" "/Users/bmysaria/Desktop/minishell/Misha/cmake-build-debug/CMakeFiles/shell.dir/executing/executing.c.o"

@@ -105,6 +105,9 @@ int main(int argc, char const **argv, char **env)
 	(void)(argv);
 	(void)(argc);
 	t_gnl *gnl;
+
+	if (!env[0])
+		return(0);
 	char **envp = copy_envp(env); /// handle
 	if (!envp)
 		exit (1);

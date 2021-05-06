@@ -412,6 +412,33 @@ builtins/pwd.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/builtins/pwd.c.s
 .PHONY : builtins/pwd.c.s
 
+builtins/unset.o: builtins/unset.c.o
+
+.PHONY : builtins/unset.o
+
+# target to build an object file
+builtins/unset.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/builtins/unset.c.o
+.PHONY : builtins/unset.c.o
+
+builtins/unset.i: builtins/unset.c.i
+
+.PHONY : builtins/unset.i
+
+# target to preprocess a source file
+builtins/unset.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/builtins/unset.c.i
+.PHONY : builtins/unset.c.i
+
+builtins/unset.s: builtins/unset.c.s
+
+.PHONY : builtins/unset.s
+
+# target to generate assembly for a file
+builtins/unset.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/builtins/unset.c.s
+.PHONY : builtins/unset.c.s
+
 executing/change_io.o: executing/change_io.c.o
 
 .PHONY : executing/change_io.o
@@ -1369,6 +1396,9 @@ help:
 	@echo "... builtins/pwd.o"
 	@echo "... builtins/pwd.i"
 	@echo "... builtins/pwd.s"
+	@echo "... builtins/unset.o"
+	@echo "... builtins/unset.i"
+	@echo "... builtins/unset.s"
 	@echo "... executing/change_io.o"
 	@echo "... executing/change_io.i"
 	@echo "... executing/change_io.s"
