@@ -22,6 +22,7 @@ int	ft_echo(char **str);
 int ft_cd(t_token *token, t_line_n_mask *l_n_m);
 int ft_pwd();
 int ft_env(char **envp);
+char *return_new_pwd();
 ///char	**unset(char **vars, char **envp);
 ///void ft_echo(char *str, int option);
 void	sort_vars(char **v);

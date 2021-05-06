@@ -73,9 +73,33 @@ int change_to_prev_dir(char **envp,  t_token *token, t_line_n_mask *l_n_m)
 	return (change_directory(path));
 }
 
+int join_oldpwd(t_token *token, t_line_n_mask *l_n_m)
+{
+	char *tmp;
+	char *oldpwd;
+	char *ret_pwd;
+	char **new_envp;
+	char *pwd;
+
+	oldpwd = ft_strdup("OLDPWD=");
+	///if(!oldpwd)
+		///
+	ret_pwd = return_pwd(*l_n_m->env);
+	tmp = oldpwd;
+	oldpwd = ft_strjoin(oldpwd, ret_pwd);
+	///if(!oldpwd)
+	new_envp = export_one_var(oldpwd, *l_n_m->env, l_n_m, token);
+	pwd = ft_strdup("PWD=");
+	///if (!pwd)
+	pwd = ft_strjoin(pwd, return_new_pwd());
+	new_envp = export_one_var(pwd, new_envp, l_n_m, token);
+	*l_n_m->env = new_envp;
+	return(0);
+}
 
 int absolute_or_relative_path(char **args, t_token *token, t_line_n_mask *l_n_m)
 {
+	int res;
 	int i;
 	char *ptr;
 	char *path;
@@ -96,19 +120,25 @@ int absolute_or_relative_path(char **args, t_token *token, t_line_n_mask *l_n_m)
 		i++;
 	}
 	//printf("path = %s\n", path);
-	return (change_directory(path));
+	res = change_directory(path);
+	if (res == 0)
+	{
+		join_oldpwd(token, l_n_m);
+	}
+	return(0);
 }
 
 int ft_cd(t_token *token, t_line_n_mask *l_n_m)
 {
 	char **args = token->args;
 	char **envp = *l_n_m->env;
-
+	int res;
 
 	if (!args[1])
-		return(change_to_home_dir(envp));
+		res = change_to_home_dir(envp);
 	else if (!ft_strcmp(args[1], ".."))
-		return(change_to_prev_dir(envp, token, l_n_m));
+		res = change_to_prev_dir(envp, token, l_n_m);
 	else
-		return(absolute_or_relative_path(args, token, l_n_m));
+		res = (absolute_or_relative_path(args, token, l_n_m));
+	return(0);
 }
