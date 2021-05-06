@@ -223,6 +223,33 @@ builtins/echo.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/builtins/echo.c.s
 .PHONY : builtins/echo.c.s
 
+builtins/env.o: builtins/env.c.o
+
+.PHONY : builtins/env.o
+
+# target to build an object file
+builtins/env.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/builtins/env.c.o
+.PHONY : builtins/env.c.o
+
+builtins/env.i: builtins/env.c.i
+
+.PHONY : builtins/env.i
+
+# target to preprocess a source file
+builtins/env.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/builtins/env.c.i
+.PHONY : builtins/env.c.i
+
+builtins/env.s: builtins/env.c.s
+
+.PHONY : builtins/env.s
+
+# target to generate assembly for a file
+builtins/env.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/builtins/env.c.s
+.PHONY : builtins/env.c.s
+
 builtins/env_alpha.o: builtins/env_alpha.c.o
 
 .PHONY : builtins/env_alpha.o
@@ -1321,6 +1348,9 @@ help:
 	@echo "... builtins/echo.o"
 	@echo "... builtins/echo.i"
 	@echo "... builtins/echo.s"
+	@echo "... builtins/env.o"
+	@echo "... builtins/env.i"
+	@echo "... builtins/env.s"
 	@echo "... builtins/env_alpha.o"
 	@echo "... builtins/env_alpha.i"
 	@echo "... builtins/env_alpha.s"

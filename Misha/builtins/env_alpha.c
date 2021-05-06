@@ -15,14 +15,18 @@ void	print_envp(char **envp)
 			ft_putchar_fd(envp[i][j], 1);
 			j++;
 		}
-		ft_putstr_fd("=\"", 1);
-		j++;
-		while(envp[i][j] != '\0')
+		if(envp[i][j] == '=' && envp[i][j + 1] != '\0')
 		{
-			ft_putchar_fd(envp[i][j], 1);
+			ft_putstr_fd("=\"", 1);
 			j++;
+			while (envp[i][j] != '\0')
+			{
+				ft_putchar_fd(envp[i][j], 1);
+				j++;
+			}
+			ft_putstr_fd("\"", 1);
 		}
-		ft_putstr_fd("\"\n", 1);
+		ft_putstr_fd("\n", 1);
 		j = 0;
 		i++;
 	}

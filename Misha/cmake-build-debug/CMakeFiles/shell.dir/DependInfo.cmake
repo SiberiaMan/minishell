@@ -7,6 +7,7 @@ set(CMAKE_DEPENDS_CHECK_C
   "/Users/bmysaria/Desktop/minishell/Misha/builtins/cd.c" "/Users/bmysaria/Desktop/minishell/Misha/cmake-build-debug/CMakeFiles/shell.dir/builtins/cd.c.o"
   "/Users/bmysaria/Desktop/minishell/Misha/builtins/check_export.c" "/Users/bmysaria/Desktop/minishell/Misha/cmake-build-debug/CMakeFiles/shell.dir/builtins/check_export.c.o"
   "/Users/bmysaria/Desktop/minishell/Misha/builtins/echo.c" "/Users/bmysaria/Desktop/minishell/Misha/cmake-build-debug/CMakeFiles/shell.dir/builtins/echo.c.o"
+  "/Users/bmysaria/Desktop/minishell/Misha/builtins/env.c" "/Users/bmysaria/Desktop/minishell/Misha/cmake-build-debug/CMakeFiles/shell.dir/builtins/env.c.o"
   "/Users/bmysaria/Desktop/minishell/Misha/builtins/env_alpha.c" "/Users/bmysaria/Desktop/minishell/Misha/cmake-build-debug/CMakeFiles/shell.dir/builtins/env_alpha.c.o"
   "/Users/bmysaria/Desktop/minishell/Misha/builtins/export.c" "/Users/bmysaria/Desktop/minishell/Misha/cmake-build-debug/CMakeFiles/shell.dir/builtins/export.c.o"
   "/Users/bmysaria/Desktop/minishell/Misha/builtins/export_utills.c" "/Users/bmysaria/Desktop/minishell/Misha/cmake-build-debug/CMakeFiles/shell.dir/builtins/export_utills.c.o"

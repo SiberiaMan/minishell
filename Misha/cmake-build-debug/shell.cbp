@@ -87,6 +87,9 @@
 		<Unit filename="/Users/bmysaria/Desktop/minishell/Misha/builtins/echo.c">
 			<Option target="shell"/>
 		</Unit>
+		<Unit filename="/Users/bmysaria/Desktop/minishell/Misha/builtins/env.c">
+			<Option target="shell"/>
+		</Unit>
 		<Unit filename="/Users/bmysaria/Desktop/minishell/Misha/builtins/env_alpha.c">
 			<Option target="shell"/>
 		</Unit>

@@ -10,22 +10,19 @@ int export_error(char *line)
 	return (-1);
 }
 
-int	check_line(char *line, char *eqsign, size_t len)
+int	check_line(char *line, char *eqsign)
 {
-	size_t	valid_len;
+	char *start;
 
-	valid_len = 0;
+	start = line;
 	if(*line == '=')
 		return(export_error(eqsign));
 	else if (*(eqsign - 1) == ' ')
 		return(export_error(eqsign));
-	else if (*(eqsign + 1) == ' ')
+	while(*start != '=' && *start != '\0')
 	{
-		eqsign++;
-		while(*eqsign == ' ' && *eqsign != '\0')
-			eqsign++;
-		if(*eqsign != '\0')
-			return(export_error(eqsign));
+		if(!(*start == '_' || ft_isalpha(*start)))
+			return(export_error(line));
 	}
 	return(0);
 }
@@ -72,10 +69,11 @@ int	count_valid_vars(char **vars)
 	while (vars[i])
 	{
 		equalsign = ft_strchr(vars[i], '=');
-		if(!(equalsign))
-			return(export_error(vars[i]));
-		if (check_line(vars[i], equalsign, ft_strlen(vars[i])) != 0)
-			return(-1);
+		if (equalsign)
+		{
+			if (check_line(vars[i], equalsign) != 0)
+				return (-1);
+		}
 		count++;
 		i++;
 	}

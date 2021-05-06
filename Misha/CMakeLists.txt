@@ -18,4 +18,4 @@ add_executable(shell minishell.h parser/backslash.c parser/quotes_handler.c pars
         minishell_utils/ft_itoa.c minishell_utils/ft_split.c minishell_utils/memory_handle_utils.c minishell_utils/string_utils1.c
         minishell_utils/string_utils2.c minishell_utils/minishell_utils.h tokenizer/get_redirect.c
         tokenizer/check_directory.c tokenizer/conditions_utils.c minishell_utils/string_utils3.c builtins/echo.c
-        builtins/cd.c builtins/pwd.c minishell_utils/string_utils4.c executing/waiting_childs.c)
+        builtins/cd.c builtins/pwd.c minishell_utils/string_utils4.c executing/waiting_childs.c builtins/env.c)
