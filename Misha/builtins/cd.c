@@ -27,7 +27,7 @@ int change_directory(char *path)
 	return (res);
 }
 
-char *return_pwd(char **envp)
+char *return_env(char *env, char **envp)
 {
 	int i;
 	int j;
@@ -36,7 +36,7 @@ char *return_pwd(char **envp)
 	j = 0;
 	while(envp[i])
 	{
-		if(!ft_strncmp(envp[i], "PWD", 3))
+		if(!ft_strncmp(envp[i], env, ft_strlen(env)))
 		{
 			while (envp[i][j] != '=' && envp[i][j] != '\0')
 				j++;
@@ -47,28 +47,38 @@ char *return_pwd(char **envp)
 	return(NULL);
 }
 
+int change_to_home_dir(char **envp)
+{
+	char *path;
+
+	while (*envp)
+	{
+		if (!ft_strncmp(*envp, "HOME=", 5))
+		{
+			path = *envp + 5;
+		}
+		envp++;
+	}
+	return (change_directory(path));
+}
+
 int join_oldpwd(t_token *token, t_line_n_mask *l_n_m)
 {
-	char *tmp;
-	char *oldpwd;
-	char *ret_pwd;
 	char **new_envp;
 	char *pwd;
+	char *oldpwd;
 
+	pwd = return_new_pwd();
+	pwd = ft_strjoin("PWD=", pwd);
 	oldpwd = ft_strdup("OLDPWD=");
-	///if(!oldpwd)
-		///
-	ret_pwd = return_pwd(*l_n_m->env);
-	tmp = oldpwd;
-	oldpwd = ft_strjoin(oldpwd, ret_pwd);
-	///if(!oldpwd)
-	new_envp = export_one_var(oldpwd, *l_n_m->env, l_n_m, token);
-	pwd = ft_strdup("PWD=");
-	///if (!pwd)
-	pwd = ft_strjoin(pwd, return_new_pwd());
-	char *unset_pwd[] = {"PWD", NULL};
-	new_envp= unset(unset_pwd, new_envp);
-	new_envp = export_one_var(pwd, new_envp, l_n_m, token);
+	oldpwd = ft_strjoin(oldpwd, return_env("PWD", *l_n_m->env));
+	char **ex;
+	ex = (char **)malloc((sizeof(char *) * 4));
+	ex[0] = ft_strdup("export");
+	ex[1] = ft_strdup(pwd);
+	ex[2] = ft_strdup(oldpwd);
+	ex[3] = NULL;
+	new_envp = manage_duplication(ex, *l_n_m->env, l_n_m, token);
 	*l_n_m->env = new_envp;
 	return(0);
 }
@@ -79,14 +89,15 @@ int absolute_or_relative_path(char **args, t_token *token, t_line_n_mask *l_n_m)
 	int i;
 	char *ptr;
 	char *path;
-
 	(void)(token);
 	(void)(l_n_m);
 	path = ft_calloc(1, 1);
 	///if(!path)
 	///free
 	i = 1;
-	if (args[1])
+	if (args[1] == NULL)
+		res = change_to_home_dir(*l_n_m->env);
+	else
 	{
 		while (args[i])
 		{
@@ -97,8 +108,8 @@ int absolute_or_relative_path(char **args, t_token *token, t_line_n_mask *l_n_m)
 			free(ptr);
 			i++;
 		}
+		res = change_directory(path);
 	}
-	res = change_directory(path);
 //	printf("res = %d\n", res);
 	if (res == 0)
 		return(join_oldpwd(token, l_n_m));
