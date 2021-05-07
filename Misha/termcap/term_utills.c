@@ -59,7 +59,7 @@ void sig_c(int signum)
 	g_var = 1;
 	write(1, "\n", 1);
 	tputs("minishell=):", 1, ft_putint);
-	tputs(save_cursor, 1, ft_putint);
+	tputs(tgoto(tgetstr("ch", 0), 0, 12), 1, ft_putint);
 }
 
 void sig_c_2(int signum)

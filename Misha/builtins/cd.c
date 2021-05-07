@@ -1,6 +1,6 @@
 #include "builtins.h"
 #include "errno.h"
-
+#include "string.h"
 int cd_error(char *path, int res)
 {
 	printf("minishell: %s: %s\n", path, strerror(errno));

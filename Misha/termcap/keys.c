@@ -27,7 +27,8 @@ char	*realloc_backspace(char *line, t_gnl *gnl)
 
 int	backspace(t_gnl *gnl)
 {
-	tputs(tgetstr("rc", 0), 1, ft_putint); //restore cursor
+	//tputs(tgetstr("rc", 0), 1, ft_putint); //restore cursor
+	tputs(tgoto(tgetstr("ch", 0), 0, 12), 1, ft_putint);
 	tputs(tgetstr("ce", 0), 1, ft_putint); //чистит до конца строки
 	if ((gnl->edit = realloc_backspace(gnl->edit, gnl)))
 		ft_putstr(gnl->edit);
@@ -43,7 +44,8 @@ int	up(t_gnl *gnl)
 		char *ptr;
 
 		gnl->flag = 1;
-		tputs(tgetstr("rc", 0), 1, ft_putint); //restore cursor
+		tputs(tgoto(tgetstr("ch", 0), 0, 12), 1, ft_putint);
+		//tputs(tgetstr("rc", 0), 1, ft_putint); //restore cursor
 		tputs(tgetstr("ce", 0), 1, ft_putint); //чистит до конца строки
 		ptr = gnl->edit;
 		gnl->edit = ft_strdup(gnl->history->line);
@@ -59,16 +61,18 @@ int	up(t_gnl *gnl)
 
 int	down(t_gnl *gnl)
 {
+	char *new;
+	char *ptr;
+
 	if (gnl->flag == 1)
 		gnl->history = gnl->history->next;
 	if (gnl->history)
 	{
 		if (gnl->history->next)
 		{
-			char *ptr;
-
 			gnl->flag = 2;
-			tputs(tgetstr("rc", 0), 1, ft_putint); //restore cursor
+			//tputs(tgetstr("rc", 0), 1, ft_putint); //restore cursor
+			tputs(tgoto(tgetstr("ch", 0), 0, 12), 1, ft_putint);
 			tputs(tgetstr("ce", 0), 1, ft_putint); //чистит до конца строки
 			gnl->history = gnl->history->next;
 			ptr = gnl->edit;
@@ -78,7 +82,14 @@ int	down(t_gnl *gnl)
 		}
 		else
 		{
-			tputs(tgetstr("rc", 0), 1, ft_putint); //restore cursor
+			ptr = gnl->edit;
+			new = ft_calloc(1, 1);
+			if(!new)
+				free_gnl_error(gnl);
+			gnl->edit = new;
+			free(ptr);
+			//tputs(tgetstr("rc", 0), 1, ft_putint); //restore cursor
+			tputs(tgoto(tgetstr("ch", 0), 0, 12), 1, ft_putint);
 			tputs(tgetstr("ce", 0), 1, ft_putint); //чистит до конца строки
 			gnl->flag = 0;
 		}

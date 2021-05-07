@@ -6,7 +6,6 @@
 #include <stdlib.h>
 #include "../tokenizer/tokenizer.h"
 
-# define MAX_LONG 9223372036854775807
 
 void choose_builtin(t_line_n_mask *l_n_m, t_token *token, size_t i);
 void	free_vars(char **vars, int i);
