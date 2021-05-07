@@ -69,6 +69,8 @@ size_t	check_builtins(char *line)
 			return (1);
 		if (!ft_strncmp_cmd("env", line, ft_strlen(line)))
 			return (1);
+		if (!ft_strncmp_cmd("exit", line, ft_strlen(line)))
+			return (1);
 	}
 	return (0);
 }

@@ -277,6 +277,33 @@ builtins/env_alpha.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/builtins/env_alpha.c.s
 .PHONY : builtins/env_alpha.c.s
 
+builtins/exit.o: builtins/exit.c.o
+
+.PHONY : builtins/exit.o
+
+# target to build an object file
+builtins/exit.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/builtins/exit.c.o
+.PHONY : builtins/exit.c.o
+
+builtins/exit.i: builtins/exit.c.i
+
+.PHONY : builtins/exit.i
+
+# target to preprocess a source file
+builtins/exit.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/builtins/exit.c.i
+.PHONY : builtins/exit.c.i
+
+builtins/exit.s: builtins/exit.c.s
+
+.PHONY : builtins/exit.s
+
+# target to generate assembly for a file
+builtins/exit.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/builtins/exit.c.s
+.PHONY : builtins/exit.c.s
+
 builtins/export.o: builtins/export.c.o
 
 .PHONY : builtins/export.o
@@ -1381,6 +1408,9 @@ help:
 	@echo "... builtins/env_alpha.o"
 	@echo "... builtins/env_alpha.i"
 	@echo "... builtins/env_alpha.s"
+	@echo "... builtins/exit.o"
+	@echo "... builtins/exit.i"
+	@echo "... builtins/exit.s"
 	@echo "... builtins/export.o"
 	@echo "... builtins/export.i"
 	@echo "... builtins/export.s"

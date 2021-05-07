@@ -28,6 +28,8 @@ void choose_builtin(t_line_n_mask *l_n_m, t_token *token, size_t i)
 		l_n_m->status = ft_export(l_n_m, token);
 	else if (!(ft_strcmp(token->lower, "unset")))
 		l_n_m->status = ft_unset(l_n_m, token);
+	else if (!(ft_strcmp(token->lower, "exit")))
+		l_n_m->status = ft_exit(l_n_m, token);
 	if (dup2(fdin, 0) < 0)
 		return (dup_error(l_n_m));
 	if (dup2(fdout, 1) < 0)

@@ -9,6 +9,7 @@ set(CMAKE_DEPENDS_CHECK_C
   "/Users/bmysaria/Desktop/minishell/Misha/builtins/echo.c" "/Users/bmysaria/Desktop/minishell/Misha/cmake-build-debug/CMakeFiles/shell.dir/builtins/echo.c.o"
   "/Users/bmysaria/Desktop/minishell/Misha/builtins/env.c" "/Users/bmysaria/Desktop/minishell/Misha/cmake-build-debug/CMakeFiles/shell.dir/builtins/env.c.o"
   "/Users/bmysaria/Desktop/minishell/Misha/builtins/env_alpha.c" "/Users/bmysaria/Desktop/minishell/Misha/cmake-build-debug/CMakeFiles/shell.dir/builtins/env_alpha.c.o"
+  "/Users/bmysaria/Desktop/minishell/Misha/builtins/exit.c" "/Users/bmysaria/Desktop/minishell/Misha/cmake-build-debug/CMakeFiles/shell.dir/builtins/exit.c.o"
   "/Users/bmysaria/Desktop/minishell/Misha/builtins/export.c" "/Users/bmysaria/Desktop/minishell/Misha/cmake-build-debug/CMakeFiles/shell.dir/builtins/export.c.o"
   "/Users/bmysaria/Desktop/minishell/Misha/builtins/export_utills.c" "/Users/bmysaria/Desktop/minishell/Misha/cmake-build-debug/CMakeFiles/shell.dir/builtins/export_utills.c.o"
   "/Users/bmysaria/Desktop/minishell/Misha/builtins/is_builtin.c" "/Users/bmysaria/Desktop/minishell/Misha/cmake-build-debug/CMakeFiles/shell.dir/builtins/is_builtin.c.o"

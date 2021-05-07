@@ -2,7 +2,7 @@
 
 int	enter(t_gnl *gnl)
 {
-	check_for_exit(gnl->edit, gnl);
+	///check_for_exit(gnl->edit, gnl);
 	if (gnl->edit[0] != '\0')
 	{
 		write(1, "\n", 1);

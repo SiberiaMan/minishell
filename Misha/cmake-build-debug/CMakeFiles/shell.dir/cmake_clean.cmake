@@ -4,6 +4,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/shell.dir/builtins/echo.c.o"
   "CMakeFiles/shell.dir/builtins/env.c.o"
   "CMakeFiles/shell.dir/builtins/env_alpha.c.o"
+  "CMakeFiles/shell.dir/builtins/exit.c.o"
   "CMakeFiles/shell.dir/builtins/export.c.o"
   "CMakeFiles/shell.dir/builtins/export_utills.c.o"
   "CMakeFiles/shell.dir/builtins/is_builtin.c.o"

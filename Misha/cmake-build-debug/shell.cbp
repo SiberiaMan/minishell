@@ -93,6 +93,9 @@
 		<Unit filename="/Users/bmysaria/Desktop/minishell/Misha/builtins/env_alpha.c">
 			<Option target="shell"/>
 		</Unit>
+		<Unit filename="/Users/bmysaria/Desktop/minishell/Misha/builtins/exit.c">
+			<Option target="shell"/>
+		</Unit>
 		<Unit filename="/Users/bmysaria/Desktop/minishell/Misha/builtins/export.c">
 			<Option target="shell"/>
 		</Unit>
