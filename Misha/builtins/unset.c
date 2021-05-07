@@ -17,7 +17,7 @@ int check_entry(char *v, char **envp, int count)
 		{
 			while (e[i] == v[i] && i < len)
 				i++;
-			if (e[i] == '=')
+			if (e[i] == '=' || e[i] == '\0')
 			{
 				return (c);
 			}
