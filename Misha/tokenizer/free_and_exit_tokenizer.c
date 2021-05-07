@@ -54,6 +54,5 @@ void	free_and_exit_tokenizer(t_line_n_mask *l_n_m)
 	}
 	if (*(l_n_m->free_line))
 		free(*(l_n_m->free_line));
-//	sleep(100);
 	exit (1);
 }

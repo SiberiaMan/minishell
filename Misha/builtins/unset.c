@@ -55,11 +55,13 @@ char **unset(char **vars, char **envp)
 		if (envp[i] != NULL)
 		{
 			res[j] = ft_strdup(envp[i]);
+			free(envp[i]);
 			j++;
 		}
 		i++;
 	}
 	res[j] = NULL;
+	free(envp);
 	return(res);
 }
 
