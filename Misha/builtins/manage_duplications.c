@@ -15,11 +15,11 @@ int	check_duplication(char *v, char **envp)
 		ptr = *envp;
 		while (v[i] == e[i] && v[i] != '=' && e[i] != '=')
 			i++;
-		if (v[i] == '=' && e[i] == '=')
+		if (v[i] == '=' && (e[i] == '=' || e[i] == '\0'))
 		{
 			*envp = ft_strdup(v);
 			free(ptr);
-			free(v);
+			//free(v);
 			i = 0;
 			flag = 1;
 		}
