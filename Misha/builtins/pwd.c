@@ -14,6 +14,7 @@ int ft_pwd()
 		write(1, pwd, len);
 		write(1, "\n", 1);
 		free(buff);
+		free(pwd);
 		return (0);
 	}
 	return (1);

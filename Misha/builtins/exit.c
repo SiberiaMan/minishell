@@ -33,7 +33,7 @@ void	free_token_n_structure_exit_2(t_token *token, t_line_n_mask *l_n_m)
 
 long long		ft_atoi(const char *str)
 {
-	long long int	a;
+	long long		a;
 	int				i;
 	int				mn;
 
@@ -67,15 +67,24 @@ void exit_error(int error, char *arg)
 	}
 }
 
+int all_digits(char *line)
+{
+	char *ptr;
+
+	ptr = line;
+	while(ft_isdigit(*ptr) && *ptr != '\0')
+		ptr++;
+	if (*ptr == '\0')
+		return(1);
+	return(-1);
+}
+
 int ft_exit(t_line_n_mask *l_n_m, t_token *token)
 {
 	long long a;
 
 	if (!(token->args[1]))
-	{
-		free_token_n_structure_exit_2(token, l_n_m);
 		a = 0;
-	}
 	else if (token->args[2])
 	{
 		exit_error(1, NULL);
@@ -83,16 +92,23 @@ int ft_exit(t_line_n_mask *l_n_m, t_token *token)
 	}
 	else
 	{
-		a = ft_atoi(token->args[1]);
-		if (a < 0 )
+		if (all_digits(token->args[1]) == -1)
 		{
-			a = 256;
+			a = 255;
 			exit_error(2, token->args[1]);
 		}
-		free_token_n_structure_exit_2(token, l_n_m);
+		else
+		{
+			a = ft_atoi(token->args[1]);
+			if ((token->args[1][0] == '-' && a > 0) ||
+				(token->args[1][0] != '-' && a < 0))
+			{
+				exit_error(2, token->args[1]);
+				a = 255;
+			}
+		}
 	}
+	free_token_n_structure_exit_2(token, l_n_m);
 	ft_putstr_fd("exit\n", 1);
-	//set_terminal(l_n_m->gnl->term_name, l_n_m->gnl->term,
-			 //  l_n_m->gnl->reset_term, 0);
 	exit (a);
 }

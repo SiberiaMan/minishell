@@ -48,8 +48,14 @@ int comparison(t_gnl *gnl)
 		backspace(gnl);
 	if(!ft_strcmp(gnl->str, "\4"))
 	{
+		ft_memset(gnl->str, 0, 10);
 		if (ft_strlen(gnl->edit) == 1)
-			ctrl_d(gnl);
+		{
+			free_gnl(gnl);
+			ft_putstr_fd("\nexit\n", 1);
+			set_terminal(gnl->term_name, gnl->term, gnl->reset_term, 0);
+			exit(0);
+		}
 	}
 	return(0);
 }

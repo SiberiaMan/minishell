@@ -27,7 +27,7 @@ int check_entry(char *v, char **envp, int count)
 	return(0);
 }
 
-char **unset(char **vars, char **envp)
+char **unset(char **vars, char **envp, t_line_n_mask *l_n_m, t_token *token)
 {
 	int count;
 	int i;
@@ -49,12 +49,16 @@ char **unset(char **vars, char **envp)
 		vars++;
 	}
 	res = (char **)malloc((sizeof(char *) * count - del + 1 ));
+	if (!res)
+		free_export(l_n_m, token, NULL, 0);
 	i = 0;
 	while(i < count)
 	{
 		if (envp[i] != NULL)
 		{
 			res[j] = ft_strdup(envp[i]);
+			if (!res[j])
+				free_export(l_n_m, token, res, j - 1);
 			free(envp[i]);
 			j++;
 		}
@@ -73,7 +77,7 @@ int	ft_unset(t_line_n_mask *l_n_m, t_token *token)
 	vars = token->args;
 	envp = *l_n_m->env;
 
-	*l_n_m->env = unset(vars, envp);
+	*l_n_m->env = unset(vars, envp, l_n_m, token);
 	return(0);
 }
 

@@ -88,7 +88,6 @@ t_gnl *gnl_init(void)
 
 int ctrl_d(t_gnl *gnl)
 {
-
 	write(1, " exit\n", 6);
 	free_gnl(gnl);
 	return(0);

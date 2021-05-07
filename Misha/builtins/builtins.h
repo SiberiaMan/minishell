@@ -6,6 +6,8 @@
 #include <stdlib.h>
 #include "../tokenizer/tokenizer.h"
 
+# define MAX_LONG 9223372036854775807
+
 void choose_builtin(t_line_n_mask *l_n_m, t_token *token, size_t i);
 void	free_vars(char **vars, int i);
 int		count_vars(char **vars);
@@ -24,7 +26,7 @@ int ft_pwd();
 int ft_env(char **envp);
 char *return_new_pwd();
 int	ft_unset(t_line_n_mask *l_n_m, t_token *token);
-char **unset(char **vars, char **envp);
+char **unset(char **vars, char **envp, t_line_n_mask *l_n_m, t_token *token);
 int ft_exit(t_line_n_mask *l_n_m, t_token *token);
 ///char	**unset(char **vars, char **envp);
 ///void ft_echo(char *str, int option);

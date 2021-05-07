@@ -72,13 +72,28 @@ int join_oldpwd(t_token *token, t_line_n_mask *l_n_m)
 	pwd = return_new_pwd();
 	tmp = pwd;
 	pwd = ft_strjoin("PWD=", pwd);
+//	if(!pwd)
+//	{
+//		free(tmp);
+//		free_token_n_structure_exit(token, l_n_m);
+//	}
 	free(tmp);
 	oldpwd = ft_strdup("OLDPWD=");
+//	if (!oldpwd)
+//		free_token_n_structure_exit(token, l_n_m);
 	tmp = oldpwd;
 	oldpwd = ft_strjoin(oldpwd, return_env("PWD", *l_n_m->env));
+//	if (!oldpwd)
+//		free_token_n_structure_exit(token, l_n_m);
 	free(tmp);
 	char **ex;
 	ex = (char **)malloc((sizeof(char *) * 4));
+//	if (!ex)
+//	{
+//		free(pwd);
+//		free(oldpwd);
+//		free_token_n_structure_exit(token, l_n_m);
+//	}
 	ex[0] = ft_strdup("export");
 	ex[1] = ft_strdup(pwd);
 	ex[2] = ft_strdup(oldpwd);
@@ -100,8 +115,8 @@ int absolute_or_relative_path(char **args, t_token *token, t_line_n_mask *l_n_m)
 	(void)(token);
 	(void)(l_n_m);
 	path = ft_calloc(1, 1);
-	///if(!path)
-	///free
+	if(!path)
+		free_token_n_structure_exit(token, l_n_m);
 	i = 1;
 	if (args[1] == NULL)
 		res = change_to_home_dir(*l_n_m->env);
@@ -111,8 +126,11 @@ int absolute_or_relative_path(char **args, t_token *token, t_line_n_mask *l_n_m)
 		{
 			ptr = path;
 			path = ft_strjoin(path, args[i]);
-			///if(!path)
-			///free
+			if(!path)
+			{
+				free_token_n_structure_exit(token, l_n_m);
+				free(ptr);
+			}
 			free(ptr);
 			i++;
 		}
