@@ -40,8 +40,6 @@ void	free_and_exit_tokenizer(t_line_n_mask *l_n_m)
 
 	j = 0;
 	free_gnl(l_n_m->gnl);
-	while (l_n_m->env[j])
-		free(l_n_m->env[j++]);
 	free (l_n_m->env);
 	free (l_n_m->mask);
 	if (l_n_m->pids)
@@ -52,7 +50,7 @@ void	free_and_exit_tokenizer(t_line_n_mask *l_n_m)
 			free(l_n_m->pipes[j++]);
 		free(l_n_m->pipes);
 	}
-	if (*(l_n_m->free_line))
-		free(*(l_n_m->free_line));
+	if (l_n_m->free_line)
+		free(*l_n_m->free_line);
 	exit (1);
 }

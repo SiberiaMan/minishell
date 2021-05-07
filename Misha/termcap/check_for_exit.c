@@ -36,8 +36,6 @@ void free_gnl(t_gnl *gnl)
 	if (gnl->env)
 		free_vars(*(gnl->env), count_vars(*(gnl->env)) - 1);
 	set_terminal(gnl->term_name, gnl->term, gnl->reset_term, 0);
-	//sleep(100);
-	exit (0);
 }
 
 t_gnl *gnl_init(void)
@@ -66,27 +64,27 @@ t_gnl *gnl_init(void)
 	return(tmp);
 }
 
-int check_for_exit(char *line, t_gnl *gnl)
-{
-	char *ptr;
-	size_t i;
-
-	(void)(gnl);
-	i = 0;
-	ptr = line;
-	while(*ptr == ' ')
-	{
-		i++;
-		ptr++;
-	}
-	if(!ft_strcmp(ptr, "exit"))
-	{
-		write(1, "\n", 1);
-		write(1, "exit\n", 6);
-		free_gnl(gnl);
-	}
-	return(0);
-}
+//int check_for_exit(char *line, t_gnl *gnl)
+//{
+//	char *ptr;
+//	size_t i;
+//
+//	(void)(gnl);
+//	i = 0;
+//	ptr = line;
+//	while(*ptr == ' ')
+//	{
+//		i++;
+//		ptr++;
+//	}
+//	if(!ft_strcmp(ptr, "exit"))
+//	{
+//		write(1, "\n", 1);
+//		write(1, "exit\n", 6);
+//		free_gnl(gnl);
+//	}
+//	return(0);
+//}
 
 int ctrl_d(t_gnl *gnl)
 {
