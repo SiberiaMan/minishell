@@ -32,7 +32,7 @@ char	**ft_split(char *s, char c);
 void	ft_putstr_fd(char *s, int fd);
 void	ft_putchar_fd(char c, int fd);
 int		is_digit(char c);
-int		ft_is_printable(char *str);
+int		ft_is_printable(int c);
 char	*ft_strrchr(const char *s, int c);
 int		ft_isalnum(int c);
 int		ft_isdigit(int c);

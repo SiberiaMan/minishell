@@ -31,7 +31,6 @@ int	get_command(t_gnl *gnl)
 
 	ptr = gnl->edit;
 	write(1, gnl->str, gnl->l);
-	//write(1, "|", 1);
 	gnl->edit = ft_strjoin(gnl->edit, gnl->str);
 	free(ptr);
 	return (0);

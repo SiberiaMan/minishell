@@ -42,7 +42,7 @@ int comparison(t_gnl *gnl)
 		up(gnl);
 	else if (!ft_strcmp(gnl->str, "\e[B"))
 		down(gnl);
-	else if (ft_strcmp(gnl->str, "\n"))
+	else if (ft_strcmp(gnl->str, "\n") && ft_strcmp(gnl->str, "\4"))
 		get_command(gnl);
 	if (!ft_strcmp(gnl->str, "\177"))
 		backspace(gnl);

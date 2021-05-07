@@ -40,13 +40,9 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 	return (0);
 }
 
-int	ft_is_printable(char *str)
+int	ft_is_printable(int c)
 {
-	while (str[0] != '\0')
-	{
-		if (!(str[0] >= 32 && str[0] <= 126))
+	if (!(c >= 32 && c <= 126))
 			return (0);
-		str++;
-	}
 	return (1);
 }

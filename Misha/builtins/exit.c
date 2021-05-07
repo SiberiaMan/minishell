@@ -110,6 +110,6 @@ int ft_exit(t_line_n_mask *l_n_m, t_token *token)
 	}
 	free_token_n_structure_exit_2(token, l_n_m);
 	ft_putstr_fd("exit\n", 1);
-	sleep (100);
+	//sleep (100);
 	exit (a);
 }
