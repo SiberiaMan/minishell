@@ -1,21 +1,9 @@
 #include "builtins.h"
+#include "errno.h"
 
-int cd_error(char **args)
+int cd_error(char *path, int res)
 {
-	int count;
-	int i;
-
-	i = 1;
-	count = count_vars(args);
-	ft_putstr_fd("minishell: cd: ", 2);
-	while(args[i])
-	{
-		ft_putstr_fd(args[i], 2);
-		if(i < count - 1)
-			ft_putchar_fd('/', 2);
-		i++;
-	}
-	ft_putstr_fd(": No such file or directory\n", 2);
+	printf("minishell: %s: %s\n", path, strerror(errno));
 	return(1);
 }
 
@@ -152,11 +140,13 @@ int absolute_or_relative_path(char **args, t_token *token, t_line_n_mask *l_n_m)
 		}
 		res = change_directory(path);
 	}
-	free(path);
 	if (res == 0)
-		return(join_oldpwd(token, l_n_m));
+	{
+		free(path);
+		return (join_oldpwd(token, l_n_m));
+	}
 	else
-		return(cd_error(args));
+		return(cd_error(path, res));
 }
 
 int ft_cd(t_token *token, t_line_n_mask *l_n_m)
