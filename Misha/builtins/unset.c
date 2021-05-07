@@ -19,7 +19,6 @@ int check_entry(char *v, char **envp, int count)
 				i++;
 			if (e[i] == '=')
 			{
-				//printf("i = %d, e[i] = %s\n", i, e);
 				return (c);
 			}
 		}
@@ -41,7 +40,7 @@ char **unset(char **vars, char **envp)
 	while(*vars)
 	{
 		i = check_entry(*vars, envp, count);
-		if(i != 0)
+		if(i >= 0)
 		{
 			del++;
 			free(envp[i]);

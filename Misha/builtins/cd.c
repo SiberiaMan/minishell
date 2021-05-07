@@ -99,6 +99,7 @@ int absolute_or_relative_path(char **args, t_token *token, t_line_n_mask *l_n_m)
 		}
 	}
 	res = change_directory(path);
+//	printf("res = %d\n", res);
 	if (res == 0)
 		return(join_oldpwd(token, l_n_m));
 	else

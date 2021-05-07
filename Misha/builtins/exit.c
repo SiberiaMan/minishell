@@ -21,14 +21,9 @@ int ft_exit(t_line_n_mask *l_n_m, t_token *token)
 		exit_error(1);
 		return(1);
 	}
-//	else
-//	{
-//		///unsigned char 256
-//		a = token->args[1];
-//		a = a % 256;
-//		if(a < 0)
-//			return (a + 256);
-//		else
-//			return(a);
-//	}
+	else
+	{
+		///unsigned char 256
+		exit(123456789);
+	}
 }
