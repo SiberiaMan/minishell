@@ -1,19 +1,4 @@
 #include "builtins.h"
-#include "errno.h"
-#include "string.h"
-int cd_error(char *path, int res)
-{
-	printf("minishell: %s: %s\n", path, strerror(errno));
-	return(1);
-}
-
-int change_directory(char *path)
-{
-	int res;
-
-	res = chdir(path);
-	return (res);
-}
 
 char *return_env(char *env, char **envp)
 {
@@ -110,17 +95,13 @@ int join_oldpwd(t_token *token, t_line_n_mask *l_n_m)
 	return(export_pwd_oldpwd(pwd, oldpwd, token, l_n_m));
 }
 
-int absolute_or_relative_path(char **args, t_token *token, t_line_n_mask *l_n_m)
+int absolute_or_relative_path(char *path, char **args, t_token *token,
+							  t_line_n_mask *l_n_m)
 {
 	int res;
 	int i;
 	char *ptr;
-	char *path;
-	(void)(token);
-	(void)(l_n_m);
-	path = ft_calloc(1, 1);
-	if(!path)
-		free_token_n_structure_exit(token, l_n_m);
+
 	i = 1;
 	if (args[1] == NULL)
 		res = change_to_home_dir(*l_n_m->env);
@@ -130,16 +111,30 @@ int absolute_or_relative_path(char **args, t_token *token, t_line_n_mask *l_n_m)
 		{
 			ptr = path;
 			path = ft_strjoin(path, args[i]);
+			free(ptr);
 			if(!path)
 			{
 				free_token_n_structure_exit(token, l_n_m);
 				free(ptr);
 			}
-			free(ptr);
+			//free(ptr);
 			i++;
 		}
 		res = change_directory(path);
 	}
+	return (res);
+}
+
+int ft_cd(t_token *token, t_line_n_mask *l_n_m)
+{
+	int res;
+	char **args = token->args;
+	char *path;
+
+	path = ft_calloc(1, 1);
+	if(!path)
+		free_token_n_structure_exit(token, l_n_m);
+	res = absolute_or_relative_path(path, args, token, l_n_m);
 	if (res == 0)
 	{
 		free(path);
@@ -147,11 +142,4 @@ int absolute_or_relative_path(char **args, t_token *token, t_line_n_mask *l_n_m)
 	}
 	else
 		return(cd_error(path, res));
-}
-
-int ft_cd(t_token *token, t_line_n_mask *l_n_m)
-{
-	char **args = token->args;
-
-	return(absolute_or_relative_path(args, token, l_n_m));
 }
