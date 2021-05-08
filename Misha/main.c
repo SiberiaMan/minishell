@@ -63,7 +63,7 @@ int comparison(t_gnl *gnl)
 int input(t_gnl *gnl)
 {
 	tputs("minishell=):", 1, ft_putint);
-	tputs(tgoto(tgetstr("ch", 0), 0, 12), 1, ft_putint);
+	tputs(save_cursor, 1, ft_putint);
 	while (1)
 	{
 		signal(SIGINT, sig_c);
@@ -84,7 +84,7 @@ int input(t_gnl *gnl)
 			parse_n_execute(gnl, gnl->env);
 			set_terminal(gnl->term_name, gnl->term, gnl->reset_term, 1);
 			tputs("minishell=):", 1, ft_putint);
-			tputs(tgoto(tgetstr("ch", 0), 0, 12), 1, ft_putint);
+			tputs(save_cursor, 1, ft_putint);
 		}
 	}
 	return(0);

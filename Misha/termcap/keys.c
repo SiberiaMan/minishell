@@ -28,7 +28,7 @@ char	*realloc_backspace(char *line, t_gnl *gnl)
 
 int	backspace(t_gnl *gnl)
 {
-	tputs(tgoto(tgetstr("ch", 0), 0, 12), 1, ft_putint);
+	tputs(tgetstr("rc", 0), 1, ft_putint);
 	tputs(tgetstr("ce", 0), 1, ft_putint);
 	gnl->edit = realloc_backspace(gnl->edit, gnl);
 	ft_putstr(gnl->edit);
@@ -44,7 +44,7 @@ int	up(t_gnl *gnl)
 	if (gnl->history)
 	{
 		gnl->flag = 1;
-		tputs(tgoto(tgetstr("ch", 0), 0, 12), 1, ft_putint);
+		tputs(tgetstr("rc", 0), 1, ft_putint);
 		tputs(tgetstr("ce", 0), 1, ft_putint);
 		ptr = gnl->edit;
 		gnl->edit = ft_strdup(gnl->history->line);
@@ -69,7 +69,7 @@ void	new_edit_line(t_gnl *gnl)
 		free_gnl_error(gnl);
 	gnl->edit = new;
 	free(ptr);
-	tputs(tgoto(tgetstr("ch", 0), 0, 12), 1, ft_putint);
+	tputs(tgetstr("rc", 0), 1, ft_putint);
 	tputs(tgetstr("ce", 0), 1, ft_putint);
 	gnl->flag = 0;
 }
@@ -85,7 +85,7 @@ int	down(t_gnl *gnl)
 		if (gnl->history->next)
 		{
 			gnl->flag = 2;
-			tputs(tgoto(tgetstr("ch", 0), 0, 12), 1, ft_putint);
+			tputs(tgetstr("rc", 0), 1, ft_putint);
 			tputs(tgetstr("ce", 0), 1, ft_putint);
 			gnl->history = gnl->history->next;
 			ptr = gnl->edit;

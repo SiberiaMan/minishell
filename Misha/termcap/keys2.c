@@ -21,7 +21,7 @@ int	enter(t_gnl *gnl)
 	{
 		write(1, "\n", 1);
 		tputs("minishell=):", 1, ft_putint);
-		tputs(tgoto(tgetstr("ch", 0), 0, 12), 1, ft_putint);
+		tputs(save_cursor, 1, ft_putint);
 		if (gnl->history)
 			while (gnl->history->next)
 				gnl->history = gnl->history->next;
