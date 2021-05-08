@@ -38,5 +38,6 @@ int			ft_isalnum(int c);
 int			ft_isdigit(int c);
 long long	ft_atoi(const char *str);
 int			all_digits(char *line);
+void		ft_putstr(char *str);
 
 #endif

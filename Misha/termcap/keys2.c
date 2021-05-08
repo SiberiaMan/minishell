@@ -2,10 +2,14 @@
 
 int	enter(t_gnl *gnl)
 {
+	int	res;
+
 	if (gnl->edit[0] != '\0')
 	{
 		write(1, "\n", 1);
-		lst_create_add(&gnl->history, ft_strdup(gnl->edit));
+		res = lst_create_add(&gnl->history, ft_strdup(gnl->edit));
+		if (res == -1)
+			free_gnl_error(gnl);
 		free(gnl->edit);
 		gnl->edit = ft_calloc(1, 1);
 		if (!gnl->edit)

@@ -10,9 +10,10 @@ char	*realloc_backspace(char *line, t_gnl *gnl)
 	i = ft_strlen(line);
 	if (i > 1)
 	{
-		if (!(new = ft_calloc(i-1, 1)))
-			return (NULL);
-		new = ft_memcpy(new, line, i-2);
+		new = ft_calloc(i - 1, 1);
+		if (!(new))
+			free_gnl_error(gnl);
+		new = ft_memcpy(new, line, i - 2);
 		free(ptr);
 	}
 	else
@@ -20,33 +21,31 @@ char	*realloc_backspace(char *line, t_gnl *gnl)
 		free(gnl->edit);
 		new = ft_calloc(1, 1);
 		if (!new)
-			return (NULL);
+			free_gnl_error(gnl);
 	}
 	return (new);
 }
 
 int	backspace(t_gnl *gnl)
 {
-	//tputs(tgetstr("rc", 0), 1, ft_putint); //restore cursor
 	tputs(tgoto(tgetstr("ch", 0), 0, 12), 1, ft_putint);
-	tputs(tgetstr("ce", 0), 1, ft_putint); //чистит до конца строки
-	if ((gnl->edit = realloc_backspace(gnl->edit, gnl)))
-		ft_putstr(gnl->edit);
-return (0);
+	tputs(tgetstr("ce", 0), 1, ft_putint);
+	gnl->edit = realloc_backspace(gnl->edit, gnl);
+	ft_putstr(gnl->edit);
+	return (0);
 }
 
 int	up(t_gnl *gnl)
 {
+	char	*ptr;
+
 	if (gnl->flag == 2)
 		gnl->history = gnl->history->prev;
 	if (gnl->history)
 	{
-		char *ptr;
-
 		gnl->flag = 1;
 		tputs(tgoto(tgetstr("ch", 0), 0, 12), 1, ft_putint);
-		//tputs(tgetstr("rc", 0), 1, ft_putint); //restore cursor
-		tputs(tgetstr("ce", 0), 1, ft_putint); //чистит до конца строки
+		tputs(tgetstr("ce", 0), 1, ft_putint);
 		ptr = gnl->edit;
 		gnl->edit = ft_strdup(gnl->history->line);
 		free(ptr);
@@ -59,10 +58,25 @@ int	up(t_gnl *gnl)
 	return (0);
 }
 
+void	new_edit_line(t_gnl *gnl)
+{
+	char	*new;
+	char	*ptr;
+
+	ptr = gnl->edit;
+	new = ft_calloc(1, 1);
+	if (!new)
+		free_gnl_error(gnl);
+	gnl->edit = new;
+	free(ptr);
+	tputs(tgoto(tgetstr("ch", 0), 0, 12), 1, ft_putint);
+	tputs(tgetstr("ce", 0), 1, ft_putint);
+	gnl->flag = 0;
+}
+
 int	down(t_gnl *gnl)
 {
-	char *new;
-	char *ptr;
+	char	*ptr;
 
 	if (gnl->flag == 1)
 		gnl->history = gnl->history->next;
@@ -71,9 +85,8 @@ int	down(t_gnl *gnl)
 		if (gnl->history->next)
 		{
 			gnl->flag = 2;
-			//tputs(tgetstr("rc", 0), 1, ft_putint); //restore cursor
 			tputs(tgoto(tgetstr("ch", 0), 0, 12), 1, ft_putint);
-			tputs(tgetstr("ce", 0), 1, ft_putint); //чистит до конца строки
+			tputs(tgetstr("ce", 0), 1, ft_putint);
 			gnl->history = gnl->history->next;
 			ptr = gnl->edit;
 			gnl->edit = ft_strdup(gnl->history->line);
@@ -81,18 +94,7 @@ int	down(t_gnl *gnl)
 			ft_putstr(gnl->edit);
 		}
 		else
-		{
-			ptr = gnl->edit;
-			new = ft_calloc(1, 1);
-			if(!new)
-				free_gnl_error(gnl);
-			gnl->edit = new;
-			free(ptr);
-			//tputs(tgetstr("rc", 0), 1, ft_putint); //restore cursor
-			tputs(tgoto(tgetstr("ch", 0), 0, 12), 1, ft_putint);
-			tputs(tgetstr("ce", 0), 1, ft_putint); //чистит до конца строки
-			gnl->flag = 0;
-		}
+			new_edit_line(gnl);
 	}
 	return (0);
 }
