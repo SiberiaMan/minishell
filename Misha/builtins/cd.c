@@ -117,7 +117,6 @@ int absolute_or_relative_path(char *path, char **args, t_token *token,
 				free_token_n_structure_exit(token, l_n_m);
 				free(ptr);
 			}
-			//free(ptr);
 			i++;
 		}
 		res = change_directory(path);
@@ -137,7 +136,7 @@ int ft_cd(t_token *token, t_line_n_mask *l_n_m)
 	res = absolute_or_relative_path(path, args, token, l_n_m);
 	if (res == 0)
 	{
-		free(path);
+		//free(path);
 		return (join_oldpwd(token, l_n_m));
 	}
 	else

@@ -50,5 +50,6 @@ int	change_directory(char *path)
 	int	res;
 
 	res = chdir(path);
+	free(path);
 	return (res);
 }
