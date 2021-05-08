@@ -37,11 +37,19 @@ void	print_envp(char **envp)
 	}
 }
 
+void	ft_swap(char **v1, char **v2)
+{
+	char	*tmp;
+
+	tmp = *v1;
+	*v1 = *v2;
+	*v2 = tmp;
+}
+
 void	sort_vars(char **v)
 {
 	int		i;
 	int		j;
-	char	*tmp;
 	int		count;
 
 	j = 0;
@@ -55,11 +63,7 @@ void	sort_vars(char **v)
 				1] != '\0' && v[i + 1][j + 1] != '=' && v[i + 1][j + 1] != '\0')
 				j++;
 			if (v[i][j] - v[i + 1][j] > 0)
-			{
-				tmp = v[i];
-				v[i] = v[i + 1];
-				v[i + 1] = tmp;
-			}
+				ft_swap(&(v[i]), &(v[i + 1]));
 			j = 0;
 			i++;
 		}

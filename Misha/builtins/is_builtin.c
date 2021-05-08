@@ -1,17 +1,22 @@
 #include "builtins.h"
 #include "../executing/executing.h"
 
+static void	assign_fd(int *fdin, int *fdout, t_line_n_mask *l_n_m)
+{
+	*fdin = dup(0);
+	if (*fdin < 0)
+		return (dup_error(l_n_m));
+	*fdout = dup(1);
+	if (*fdout < 0)
+		return (dup_error(l_n_m));
+}
+
 void	choose_builtin(t_line_n_mask *l_n_m, t_token *token, size_t i)
 {
 	int	fdin;
 	int	fdout;
 
-	fdin = dup(0);
-	if (fdin < 0)
-		return (dup_error(l_n_m));
-	fdout = dup(1);
-	if (fdout < 0)
-		return (dup_error(l_n_m));
+	assign_fd(&fdin, &fdout, l_n_m);
 	change_io(l_n_m, token, i, 0);
 	if (!(ft_strcmp(token->lower, "echo")))
 		l_n_m->status = ft_echo(token->args);
