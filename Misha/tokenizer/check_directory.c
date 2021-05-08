@@ -14,17 +14,13 @@ static size_t	check_slash(char *line)
 size_t	is_dir(t_line_n_mask *l_n_m, char *line, char **path)
 {
 	DIR		*dir;
-	char	*is_a_directory;
-	char	*cmd_not_found;
 
 	free_path(path);
-	is_a_directory = ": is a directory\n";
-	cmd_not_found = ": command not found\n";
 	dir = opendir(line);
 	if (check_slash(line) && dir)
 	{
 		write(2, line, ft_strlen(line));
-		write(2, is_a_directory, ft_strlen(is_a_directory));
+		write(2, IS_DIR, ft_strlen(IS_DIR));
 		l_n_m->status = 126;
 		closedir(dir);
 		return (0);
@@ -32,8 +28,10 @@ size_t	is_dir(t_line_n_mask *l_n_m, char *line, char **path)
 	else if (!check_slash(line))
 	{
 		write(2, line, ft_strlen(line));
-		write(2, cmd_not_found, ft_strlen(cmd_not_found));
+		write(2, CMD_NF, ft_strlen(CMD_NF));
 		l_n_m->status = 127;
+		if (dir)
+			closedir(dir);
 		return (0);
 	}
 	return (1);

@@ -29,6 +29,7 @@ int	change_to_home_dir(char **envp, char *path)
 	{
 		if (!ft_strncmp(*envp, "HOME=", 5))
 			path = *envp + 5;
+		//else ()
 		envp++;
 	}
 	res = chdir(path);

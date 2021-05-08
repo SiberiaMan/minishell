@@ -11,6 +11,9 @@
 # include "../termcap/termcap.h"
 # include <fcntl.h>
 
+# define IS_DIR ": is a directory\n"
+# define CMD_NF ": command not found\n"
+
 typedef struct s_line_n_mask
 {
 	char		*line;

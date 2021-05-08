@@ -59,7 +59,14 @@ int	ft_cd(t_token *token, t_line_n_mask *l_n_m)
 	int		res;
 	char	**args;
 	char	*path;
+	char	*home;
+	char	*pwd;
 
+	home = (char *)(getenv("HOME"));
+	if (!home)
+		return(1);
+	if (!pwd)
+		return(1);
 	args = token->args;
 	path = ft_calloc(1, 1);
 	if (!path)
