@@ -45,9 +45,7 @@ int	ft_export(t_line_n_mask *l_n_m, t_token *token)
 	validation = export_validation(token->args);
 	if (validation == 0)
 	{
-		/*new_env = */manage_duplication(token->args, *l_n_m->env, l_n_m,
-								   token);
-		//*l_n_m->env = new_env;
+		manage_duplication(token->args, *l_n_m->env, l_n_m, token);
 		return (0);
 	}
 	return (1);

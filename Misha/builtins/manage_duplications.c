@@ -46,5 +46,4 @@ void	manage_duplication(char **vars, char **envp, t_line_n_mask *l_n_m,
 		i++;
 	}
 	*l_n_m->env = envp;
-	//return (envp);
 }
