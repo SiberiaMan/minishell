@@ -20,18 +20,23 @@ char *return_env(char *env, char **envp)
 	return(NULL);
 }
 
-int change_to_home_dir(char **envp)
+int change_to_home_dir(char **envp, char *path)
 {
-	char *path;
+	free(path);
 
 	while (*envp)
 	{
 		if (!ft_strncmp(*envp, "HOME=", 5))
 		{
 			path = *envp + 5;
+			///if (!path)
+				///return(-1);
 		}
 		envp++;
 	}
+	int	res;
+	res = chdir(path);
+	return (res);
 	return (change_directory(path));
 }
 
@@ -58,8 +63,8 @@ int export_pwd_oldpwd(char *pwd, char *oldpwd, t_token *token, t_line_n_mask
 	if(!ex[2])
 		free_vars(ex, 1);
 	ex[3] = NULL;
-	new_envp = manage_duplication(ex, *l_n_m->env, l_n_m, token);
-	*l_n_m->env = new_envp;
+	/*new_envp = */manage_duplication(ex, *l_n_m->env, l_n_m, token);
+	//*l_n_m->env = new_envp;
 	free(pwd);
 	free(oldpwd);
 	free_vars(ex, count_vars(ex) - 1);
@@ -104,7 +109,7 @@ int absolute_or_relative_path(char *path, char **args, t_token *token,
 
 	i = 1;
 	if (args[1] == NULL)
-		res = change_to_home_dir(*l_n_m->env);
+		res = change_to_home_dir(*l_n_m->env, path);
 	else
 	{
 		while (args[i])
@@ -135,10 +140,7 @@ int ft_cd(t_token *token, t_line_n_mask *l_n_m)
 		free_token_n_structure_exit(token, l_n_m);
 	res = absolute_or_relative_path(path, args, token, l_n_m);
 	if (res == 0)
-	{
-		//free(path);
 		return (join_oldpwd(token, l_n_m));
-	}
 	else
 		return(cd_error(path, res));
 }

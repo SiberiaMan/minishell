@@ -49,7 +49,7 @@ int comparison(t_gnl *gnl)
 	if(!ft_strcmp(gnl->str, "\4"))
 	{
 		ft_memset(gnl->str, 0, 10);
-		if (ft_strlen(gnl->edit) == 1)
+		if (ft_strlen(gnl->edit) == 0)
 		{
 			free_gnl(gnl);
 			ft_putstr_fd("\nexit\n", 1);
