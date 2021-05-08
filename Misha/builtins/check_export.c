@@ -1,6 +1,6 @@
 #include "builtins.h"
 
-int export_error(char *line)
+int	export_error(char *line)
 {
 	ft_putstr_fd("export: ", 2);
 	ft_putstr_fd("`", 2);
@@ -12,24 +12,24 @@ int export_error(char *line)
 
 int	check_line(char *line, char *eqsign)
 {
-	char *start;
+	char	*start;
 
 	start = line;
-	if(*line == '=')
-		return(export_error(eqsign));
+	if (*line == '=')
+		return (export_error(eqsign));
 	else if (*(eqsign - 1) == ' ')
-		return(export_error(eqsign));
-	else if(!(*start == '_' || ft_isalpha(*start)))
-		return(export_error(line));
-	if(*(start + 1) != '\0')
+		return (export_error(eqsign));
+	else if (!(*start == '_' || ft_isalpha(*start)))
+		return (export_error(line));
+	if (*(start + 1) != '\0')
 		start++;
-	while(*start != '=' && *start != '\0')
+	while (*start != '=' && *start != '\0')
 	{
-		if(!(*start == '_' || ft_isalnum(*start)))
-			return(export_error(line));
+		if (!(*start == '_' || ft_isalnum(*start)))
+			return (export_error(line));
 		start++;
 	}
-	return(0);
+	return (0);
 }
 
 int	export_validation(char **vars)

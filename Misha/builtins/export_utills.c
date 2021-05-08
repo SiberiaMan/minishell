@@ -56,4 +56,3 @@ char	**copy_envp(char **envp)
 	res[i] = NULL;
 	return (res);
 }
-

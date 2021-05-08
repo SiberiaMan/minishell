@@ -2,12 +2,13 @@
 
 void	free_export(t_line_n_mask *l_n_m, t_token *token, char **vars, int i)
 {
-	if(vars)
+	if (vars)
 		free_vars(vars, i);
 	free_token_n_structure_exit(token, l_n_m);
 }
 
-char	**export_one_var(char *var, char **envp, t_line_n_mask *l_n_m, t_token *token)
+char	**export_one_var(char *var, char **envp, t_line_n_mask *l_n_m,
+					  t_token *token)
 {
 	char	**res;
 	int		i;
@@ -27,14 +28,14 @@ char	**export_one_var(char *var, char **envp, t_line_n_mask *l_n_m, t_token *tok
 	res[i] = ft_strdup(var);
 	if (!res[i])
 		free_export(l_n_m, token, res, i - 1);
-	res[i+1] = NULL;
+	res[i + 1] = NULL;
 	return (res);
 }
 
-int ft_export(t_line_n_mask *l_n_m, t_token *token)
+int	ft_export(t_line_n_mask *l_n_m, t_token *token)
 {
-	char **new_env;
-	int validation;
+	char	**new_env;
+	int		validation;
 
 	if (!token->args[1])
 	{

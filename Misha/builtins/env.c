@@ -1,12 +1,12 @@
 #include "builtins.h"
 
-int ft_env(char **envp)
+int	ft_env(char **envp)
 {
-	char *equalsign;
-	char **ptr;
+	char	*equalsign;
+	char	**ptr;
 
 	ptr = envp;
-	while(*ptr)
+	while (*ptr)
 	{
 		equalsign = ft_strchr(*ptr, '=');
 		if (equalsign)
