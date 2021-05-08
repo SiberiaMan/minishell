@@ -19,7 +19,6 @@ int	check_duplication(char *v, char **envp)
 		{
 			*envp = ft_strdup(v);
 			free(ptr);
-			//free(v);
 			i = 0;
 			flag = 1;
 		}
@@ -28,10 +27,11 @@ int	check_duplication(char *v, char **envp)
 	return (flag);
 }
 
-char	**manage_duplication(char **vars, char **envp, t_line_n_mask *l_n_m, t_token *token)
+char	**manage_duplication(char **vars, char **envp, t_line_n_mask *l_n_m,
+						  t_token *token)
 {
 	char	**new_envp;
-	int i;
+	int		i;
 
 	i = 1;
 	while (vars[i])
