@@ -29,7 +29,6 @@ int	change_to_home_dir(char **envp, char *path)
 	{
 		if (!ft_strncmp(*envp, "HOME=", 5))
 			path = *envp + 5;
-		//else ()
 		envp++;
 	}
 	res = chdir(path);
@@ -84,6 +83,8 @@ int	join_oldpwd(t_token *token, t_line_n_mask *l_n_m)
 	if (!oldpwd)
 		free_token_n_structure_exit(token, l_n_m);
 	tmp = oldpwd;
+	if (return_env("PWD", *l_n_m->env) == NULL)
+		return (0);
 	oldpwd = ft_strjoin(oldpwd, return_env("PWD", *l_n_m->env));
 	if (!oldpwd)
 	{

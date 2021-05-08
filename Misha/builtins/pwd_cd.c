@@ -63,6 +63,7 @@ int	ft_cd(t_token *token, t_line_n_mask *l_n_m)
 	char	*pwd;
 
 	home = (char *)(getenv("HOME"));
+	pwd = (char *)(getenv("PWD"));
 	if (!home)
 		return(1);
 	if (!pwd)

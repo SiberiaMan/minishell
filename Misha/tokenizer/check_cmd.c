@@ -11,16 +11,17 @@ char	*get_path(t_line_n_mask *l_n_m, t_token *token)
 	i = 0;
 	while ((*(l_n_m->env))[j + 1])
 		if (!ft_strncmp_env("PATH", (*(l_n_m->env))[++j], 4))
-			break ;
+			break;
+	if (!(*(l_n_m->env))[j])
+		return (0);
 	ptr_path = (*(l_n_m->env))[j];
-	after_equal = (char *)malloc(sizeof(char) * get_cnt_after_equal(ptr_path)
-			+ 1);
+	after_equal = (char *)malloc(sizeof(char) * (get_cnt_after_equal(ptr_path) + 1));
 	if (!after_equal)
 		free_token_n_structure_exit(token, l_n_m);
 	j = 0;
 	while (ptr_path[j++] != '=')
 		;
-	while (i < ft_strlen(ptr_path))
+	while (i < get_cnt_after_equal(ptr_path))
 		after_equal[i++] = ptr_path[j++];
 	after_equal[i] = '\0';
 	return (after_equal);
@@ -109,6 +110,7 @@ size_t	check_cmd(t_line_n_mask *l_n_m, t_token *token, size_t i)
 {
 	char			**path;
 	struct dirent	*entry;
+	char			*get_pth;
 
 	entry = 0;
 	handle_cmd(l_n_m, token, i);
@@ -121,7 +123,10 @@ size_t	check_cmd(t_line_n_mask *l_n_m, t_token *token, size_t i)
 	}
 	if (check_builtins(token->lower))
 		return (1);
-	path = ft_split(get_path(l_n_m, token), ':');
+	get_pth = get_path(l_n_m, token);
+	if (!get_pth)
+		return (is_dir(l_n_m, token->args[0], 0));
+	path = ft_split(get_pth, ':');
 	if (!path)
 		free_token_n_structure_exit(token, l_n_m);
 	if (token->args[0])

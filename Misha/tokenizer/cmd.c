@@ -87,7 +87,7 @@ void	handle_cmd(t_line_n_mask *l_n_m, t_token *token, size_t i)
 	k = 0;
 	j_end = 0;
 	cnt = get_cnt_cmds(l_n_m, token, i);
-	token->args = (char **)malloc(sizeof(char *) * cnt + 1);
+	token->args = (char **)malloc(sizeof(char *) * (cnt + 1));
 	if (!token->args)
 		free_and_exit_tokenizer(l_n_m);
 	while (k < cnt && condition_cmd_limits(l_n_m, i))
