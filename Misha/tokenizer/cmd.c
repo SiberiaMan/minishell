@@ -11,7 +11,7 @@ static void	get_cnt_to_next_arg(t_line_n_mask *l_n_m, size_t *i)
 		(*i)++;
 }
 
-static size_t	get_cnt_cmds(t_line_n_mask *l_n_m, t_token *token, size_t i)
+static size_t	get_cnt_cmds(t_line_n_mask *l_n_m, size_t i)
 {
 	size_t	cnt;
 
@@ -86,7 +86,7 @@ void	handle_cmd(t_line_n_mask *l_n_m, t_token *token, size_t i)
 
 	k = 0;
 	j_end = 0;
-	cnt = get_cnt_cmds(l_n_m, token, i);
+	cnt = get_cnt_cmds(l_n_m, i);
 	token->args = (char **)malloc(sizeof(char *) * (cnt + 1));
 	if (!token->args)
 		free_and_exit_tokenizer(l_n_m);

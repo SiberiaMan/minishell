@@ -71,7 +71,7 @@ t_gnl	*gnl_init(void)
 	tcgetattr(0, tmp->term);
 	tcgetattr(0, tmp->reset_term);
 	tmp->history = NULL;
-	tmp->edit = ft_calloc(1,1);
+	tmp->edit = ft_calloc(1, 1);
 	if (!tmp->edit)
 		return (NULL);
 	tmp->str = ft_calloc(10, 1);

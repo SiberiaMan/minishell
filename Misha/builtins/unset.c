@@ -4,7 +4,7 @@ int	check_entry(char *v, char **envp, int count)
 {
 	size_t	len;
 	char	*e;
-	int		i;
+	size_t	i;
 	int		c;
 
 	i = 0;

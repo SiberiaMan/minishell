@@ -37,3 +37,34 @@ void	choose_builtin(t_line_n_mask *l_n_m, t_token *token, size_t i)
 	if (dup2(fdout, 1) < 0)
 		return (dup_error(l_n_m));
 }
+
+void	free_and_exit_tokenizer_2(t_line_n_mask *l_n_m)
+{
+	size_t	j;
+
+	j = 0;
+	free_gnl(l_n_m->gnl);
+	free (l_n_m->mask);
+	if (l_n_m->pids)
+		free(l_n_m->pids);
+	if (l_n_m->pipes)
+	{
+		while (j < l_n_m->cnt_pipes + 1)
+			free(l_n_m->pipes[j++]);
+		free(l_n_m->pipes);
+	}
+	if (l_n_m->free_line)
+		free(*l_n_m->free_line);
+}
+
+void	free_token_n_structure_exit_2(t_token *token, t_line_n_mask *l_n_m)
+{
+	size_t	j;
+
+	j = 0;
+	while (token->args[j])
+		free(token->args[j++]);
+	free(token->args);
+	free(token->lower);
+	free_and_exit_tokenizer_2(l_n_m);
+}

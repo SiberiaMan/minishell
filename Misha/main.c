@@ -4,8 +4,7 @@
 void	parse_n_execute(t_gnl *gnl, char ***env)
 {
 	size_t	i;
-	char 	*mask;
-
+	char	*mask;
 
 	i = 0;
 	mask = ft_calloc(ft_strlen(gnl->history->line) + 1, sizeof(char));
@@ -20,24 +19,21 @@ void	parse_n_execute(t_gnl *gnl, char ***env)
 		return ;
 	if (!parser(gnl->history->line, mask))
 	{
-		free(mask); /// по парсингу не прошла строка, возращаемся в терминал
+		free(mask);
 		gnl->status = 258;
 		return ;
 	}
 	handle_semicolons(gnl, mask, env);
-	free(mask); ///  прошел парсинг и команды успешно выполнились
+	free(mask);
 }
 
-int comparison(t_gnl *gnl)
+int	comparison(t_gnl *gnl)
 {
-	if(!ft_strcmp(gnl->str, "\e[D"))
+	if (!ft_strcmp(gnl->str, "\e[D") || !ft_strcmp(gnl->str, "\t") || !ft_strcmp
+		(gnl->str, "\e[C"))
 		ft_memset(gnl->str, 0, 10);
-	if(!ft_strcmp(gnl->str, "\e[C"))
-		ft_memset(gnl->str, 0, 10);
-	if(!ft_strcmp(gnl->str, "\t"))
-		ft_memset(gnl->str, 0, 10);
-	if(!ft_strcmp(gnl->str, "\n"))
-		return(enter(gnl));
+	if (!ft_strcmp(gnl->str, "\n"))
+		return (enter(gnl));
 	if (!ft_strcmp(gnl->str, "\e[A"))
 		up(gnl);
 	else if (!ft_strcmp(gnl->str, "\e[B"))
@@ -46,7 +42,7 @@ int comparison(t_gnl *gnl)
 		get_command(gnl);
 	if (!ft_strcmp(gnl->str, "\177"))
 		backspace(gnl);
-	if(!ft_strcmp(gnl->str, "\4"))
+	if (!ft_strcmp(gnl->str, "\4"))
 	{
 		ft_memset(gnl->str, 0, 10);
 		if (ft_strlen(gnl->edit) == 0)
@@ -54,16 +50,14 @@ int comparison(t_gnl *gnl)
 			free_gnl(gnl);
 			ft_putstr_fd("\nexit\n", 1);
 			set_terminal(gnl, 0);
-			exit(0);
+			exit (0);
 		}
 	}
-	return(0);
+	return (0);
 }
 
-int input(t_gnl *gnl)
+int	input(t_gnl *gnl)
 {
-	tputs("minishell=):", 1, ft_putint);
-	tputs(save_cursor, 1, ft_putint);
 	while (1)
 	{
 		signal(SIGINT, sig_c);
@@ -87,12 +81,12 @@ int input(t_gnl *gnl)
 			tputs(save_cursor, 1, ft_putint);
 		}
 	}
-	return(0);
+	return (0);
 }
 
-void set_terminal(t_gnl *gnl, int flag)
+void	set_terminal(t_gnl *gnl, int flag)
 {
-	int res;
+	int	res;
 
 	if (flag == 1)
 	{
@@ -102,36 +96,34 @@ void set_terminal(t_gnl *gnl, int flag)
 		gnl->term->c_cc[VMIN] = 1;
 		tcsetattr(0, TCSANOW, gnl->term);
 		res = tgetent(0, gnl->term_name);
+		if (res < 0)
+			free_gnl_error(gnl);
 	}
 	if (flag == 0)
 		tcsetattr(0, TCSANOW, gnl->reset_term);
 }
 
-int main(int argc, char const **argv, char **env)
+int	main(int argc, char const **argv, char **env)
 {
+	t_gnl	*gnl;
+	char	**envp;
+
 	(void)(argv);
 	(void)(argc);
-	t_gnl *gnl;
-
 	if (!env[0])
-		return(0);
-	char **envp = copy_envp(env); /// handle
+		return (0);
+	envp = copy_envp(env);
 	if (!envp)
 		exit (1);
 	gnl = gnl_init();
 	if (!gnl)
 		free_gnl(gnl);
 	gnl->env = &envp;
-	signal(SIGQUIT, sig_slash); // ctrl + slash
-	signal(SIGINT, sig_c); //ctrl + C
+	signal(SIGQUIT, sig_slash);
+	signal(SIGINT, sig_c);
 	set_terminal(gnl, 1);
+	tputs("minishell=):", 1, ft_putint);
+	tputs(save_cursor, 1, ft_putint);
 	input(gnl);
-	return(0);
+	return (0);
 }
-
-
-
-
-
-
-

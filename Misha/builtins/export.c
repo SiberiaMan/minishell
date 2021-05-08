@@ -34,7 +34,6 @@ char	**export_one_var(char *var, char **envp, t_line_n_mask *l_n_m,
 
 int	ft_export(t_line_n_mask *l_n_m, t_token *token)
 {
-	char	**new_env;
 	int		validation;
 
 	if (!token->args[1])

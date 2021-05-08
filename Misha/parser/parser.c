@@ -1,7 +1,7 @@
 #include "parser.h"
 
 static void	move_spaces(const char *line, const char *mask,
-int *j, int *k)
+size_t *j, size_t *k)
 {
 	while (line[*j] && line[*j] == ' ' && mask[*j] == '1')
 		(*j)++;
@@ -11,9 +11,9 @@ int *j, int *k)
 
 static size_t	pipe_syntax(const char *line, const char *mask, char *c)
 {
-	int	i;
-	int	j;
-	int	k;
+	size_t	i;
+	size_t	j;
+	size_t	k;
 
 	*c = '|';
 	i = 0;
@@ -38,9 +38,9 @@ static size_t	pipe_syntax(const char *line, const char *mask, char *c)
 
 static size_t	semicolon_syntax(const char *line, const char *mask, char *c)
 {
-	int	i;
-	int	j;
-	int	k;
+	size_t	i;
+	size_t	j;
+	size_t	k;
 
 	*c = ';';
 	i = 0;

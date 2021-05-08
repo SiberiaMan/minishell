@@ -29,10 +29,12 @@ int		ft_exit(t_line_n_mask *l_n_m, t_token *token);
 void	sort_vars(char **v);
 void	free_export(t_line_n_mask *l_n_m, t_token *token, char **vars, int i);
 int		ft_export(t_line_n_mask *l_n_m, t_token *token);
-int		cd_error(char *path, int res);
+int		cd_error(char *path);
 int		change_directory(char *path);
 int		absolute_or_relative_path(char *path, char **args, t_token *token,
 			t_line_n_mask *l_n_m);
 int		join_oldpwd(t_token *token, t_line_n_mask *l_n_m);
+char	*return_env(char *env, char **envp);
+void	free_token_n_structure_exit_2(t_token *token, t_line_n_mask *l_n_m);
 
 #endif
