@@ -42,7 +42,7 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 
 int	ft_is_printable(int c)
 {
-	if (!(c >= 32 && c <= 126))
+	if (!(c >= 32 && c <= 127))
 			return (0);
 	return (1);
 }

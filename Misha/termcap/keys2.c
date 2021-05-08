@@ -35,7 +35,10 @@ int	get_command(t_gnl *gnl)
 
 	ptr = gnl->edit;
 	write(1, gnl->str, gnl->l);
-	gnl->edit = ft_strjoin(gnl->edit, gnl->str);
-	free(ptr);
+	if (ft_is_printable(gnl->str[0]))
+	{
+		gnl->edit = ft_strjoin(gnl->edit, gnl->str);
+		free(ptr);
+	}
 	return (0);
 }
