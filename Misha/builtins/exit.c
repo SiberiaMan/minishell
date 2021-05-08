@@ -25,7 +25,11 @@ long long	exit_with_atoi(t_token *token)
 		a = 255;
 	}
 	else
+	{
+		if (a < 0)
+			a = a - 256;
 		ft_putstr_fd("exit\n", 1);
+	}
 	return (a);
 }
 

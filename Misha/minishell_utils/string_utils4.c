@@ -53,6 +53,8 @@ int	all_digits(char *line)
 	char	*ptr;
 
 	ptr = line;
+	if (*ptr == '-' || ft_isdigit(*ptr))
+		ptr++;
 	while (ft_isdigit(*ptr) && *ptr != '\0')
 		ptr++;
 	if (*ptr == '\0')
