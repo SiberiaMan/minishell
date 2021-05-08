@@ -53,7 +53,7 @@ int comparison(t_gnl *gnl)
 		{
 			free_gnl(gnl);
 			ft_putstr_fd("\nexit\n", 1);
-			set_terminal(gnl->term_name, gnl->term, gnl->reset_term, 0);
+			set_terminal(gnl, 0);
 			exit(0);
 		}
 	}
@@ -67,13 +67,13 @@ int input(t_gnl *gnl)
 	while (1)
 	{
 		signal(SIGINT, sig_c);
-		set_terminal(gnl->term_name, gnl->term, gnl->reset_term, 1);
+		set_terminal(gnl, 1);
 		ft_memset(gnl->str, 0, 10);
 		gnl->l = read(0, gnl->str, 10);
 		if (comparison(gnl) == 1)
 		{
 			signal(SIGINT, sig_c_2);
-			set_terminal(gnl->term_name, gnl->term, gnl->reset_term, 0);
+			set_terminal(gnl, 0);
 			if (g_var == 1 && gnl->status != 130)
 			{
 				gnl->status = g_var;
@@ -82,7 +82,7 @@ int input(t_gnl *gnl)
 			else if (g_var == 1 && gnl->status)
 				g_var = 0;
 			parse_n_execute(gnl, gnl->env);
-			set_terminal(gnl->term_name, gnl->term, gnl->reset_term, 1);
+			set_terminal(gnl, 1);
 			tputs("minishell=):", 1, ft_putint);
 			tputs(save_cursor, 1, ft_putint);
 		}
@@ -90,20 +90,21 @@ int input(t_gnl *gnl)
 	return(0);
 }
 
-void set_terminal(char *term_name, struct termios *term, struct termios
-		*reset_term, int flag)
+void set_terminal(t_gnl *gnl, int flag)
 {
+	int res;
+
 	if (flag == 1)
 	{
-		term->c_lflag &= ~(ECHO);
-		term->c_lflag &= ~(ICANON);
-		term->c_cc[VTIME] = 0;
-		term->c_cc[VMIN] = 1;
-		tcsetattr(0, TCSANOW, term);
-		tgetent(0, term_name); //проверять на возвращаемые значения!
+		gnl->term->c_lflag &= ~(ECHO);
+		gnl->term->c_lflag &= ~(ICANON);
+		gnl->term->c_cc[VTIME] = 0;
+		gnl->term->c_cc[VMIN] = 1;
+		tcsetattr(0, TCSANOW, gnl->term);
+		res = tgetent(0, gnl->term_name);
 	}
 	if (flag == 0)
-		tcsetattr(0, TCSANOW, reset_term);
+		tcsetattr(0, TCSANOW, gnl->reset_term);
 }
 
 int main(int argc, char const **argv, char **env)
@@ -117,20 +118,13 @@ int main(int argc, char const **argv, char **env)
 	char **envp = copy_envp(env); /// handle
 	if (!envp)
 		exit (1);
-	size_t i = 0;
-	//struct termios *term;
-	//struct termios *reset_term;
-	//char *term_name;
-
 	gnl = gnl_init();
 	if (!gnl)
 		free_gnl(gnl);
 	gnl->env = &envp;
 	signal(SIGQUIT, sig_slash); // ctrl + slash
 	signal(SIGINT, sig_c); //ctrl + C
-	tcgetattr(0, gnl->term); //получить атрибут терминала
-	tcgetattr(0, gnl->reset_term);
-	set_terminal(gnl->term_name, gnl->term, gnl->reset_term, 1);
+	set_terminal(gnl, 1);
 	input(gnl);
 	return(0);
 }

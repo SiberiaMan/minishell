@@ -57,5 +57,4 @@ void	sig_c(int signum)
 void	sig_c_2(int signum)
 {
 	(void)(signum);
-	g_var = 1;
 }

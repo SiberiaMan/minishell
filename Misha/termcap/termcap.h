@@ -47,11 +47,10 @@ int		enter(t_gnl *gnl);
 int		backspace(t_gnl *gnl);
 int		input(t_gnl *gnl);
 int		get_command(t_gnl *gnl);
-void	set_terminal(char *term_name, struct termios *term, struct termios
-			*reset_term, int flag);
 t_gnl	*gnl_init(void);
 void	free_gnl_error(t_gnl *gnl);
 void	free_gnl(t_gnl *gnl);
 int		ft_strcmp(const char *s1, const char *s2);
+void	set_terminal(t_gnl *gnl, int flag);
 
 #endif

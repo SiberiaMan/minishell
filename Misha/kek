@@ -1,0 +1,20 @@
+total 176
+-rw-r--r--   1 bmysaria  student      0 May  8 19:22 [3~
+drwxr-xr-x  19 bmysaria  student    646 May  8 21:07 .
+drwxr-xr-x   9 bmysaria  student    306 May  8 19:22 ..
+-rw-r--r--   1 bmysaria  student   8196 May  8 19:22 .DS_Store
+drwxr-xr-x   8 bmysaria  student    272 May  8 19:22 .idea
+-rw-r--r--   1 bmysaria  student   1650 May  8 19:22 CMakeLists.txt
+-rwxr-xr-x   1 bmysaria  student  59128 May  8 20:51 a.out
+drwxr-xr-x   3 bmysaria  student    102 May  8 19:22 a.out.dSYM
+drwxr-xr-x  16 bmysaria  student    544 May  8 19:32 builtins
+drwxr-xr-x  10 bmysaria  student    340 May  8 19:22 cmake-build-debug
+drwxr-xr-x   9 bmysaria  student    306 May  8 19:50 executing
+-rw-r--r--   1 bmysaria  student      0 May  8 21:07 kek
+-rw-r--r--   1 bmysaria  student   3243 May  8 19:22 main.c
+-rw-r--r--   1 bmysaria  student    263 May  8 19:22 minishell.h
+drwxr-xr-x  10 bmysaria  student    340 May  8 19:24 minishell_utils
+drwxr-xr-x   8 bmysaria  student    272 May  8 19:22 parser
+-rw-r--r--   1 bmysaria  student    105 May  8 20:43 script.sh
+drwxr-xr-x   8 bmysaria  student    272 May  8 19:23 termcap
+drwxr-xr-x  14 bmysaria  student    476 May  8 20:51 tokenizer
