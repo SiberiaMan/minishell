@@ -1,50 +1,44 @@
 #include "builtins.h"
 
-char *return_env(char *env, char **envp)
+char	*return_env(char *env, char **envp)
 {
-	int i;
-	int j;
+	int	i;
+	int	j;
 
 	i = 0;
 	j = 0;
-	while(envp[i])
+	while (envp[i])
 	{
-		if(!ft_strncmp(envp[i], env, ft_strlen(env)))
+		if (!ft_strncmp(envp[i], env, ft_strlen(env)))
 		{
 			while (envp[i][j] != '=' && envp[i][j] != '\0')
 				j++;
-			return(&envp[i][j + 1]);
+			return (&envp[i][j + 1]);
 		}
 		i++;
 	}
-	return(NULL);
+	return (NULL);
 }
 
-int change_to_home_dir(char **envp, char *path)
+int	change_to_home_dir(char **envp, char *path)
 {
-	free(path);
+	int	res;
 
+	free(path);
 	while (*envp)
 	{
 		if (!ft_strncmp(*envp, "HOME=", 5))
-		{
 			path = *envp + 5;
-			///if (!path)
-				///return(-1);
-		}
 		envp++;
 	}
-	int	res;
 	res = chdir(path);
 	return (res);
-	return (change_directory(path));
 }
 
-int export_pwd_oldpwd(char *pwd, char *oldpwd, t_token *token, t_line_n_mask
+int	export_pwd_oldpwd(char *pwd, char *oldpwd, t_token *token, t_line_n_mask
 		*l_n_m)
 {
-	char **ex;
-	char **new_envp;
+	char	**ex;
 
 	ex = (char **)malloc((sizeof(char *) * 4));
 	if (!ex)
@@ -54,33 +48,32 @@ int export_pwd_oldpwd(char *pwd, char *oldpwd, t_token *token, t_line_n_mask
 		free_token_n_structure_exit(token, l_n_m);
 	}
 	ex[0] = ft_strdup("export");
-	if(!ex[0])
+	if (!ex[0])
 		free(ex);
 	ex[1] = ft_strdup(pwd);
-	if(!ex[1])
+	if (!ex[1])
 		free_vars(ex, 0);
 	ex[2] = ft_strdup(oldpwd);
-	if(!ex[2])
+	if (!ex[2])
 		free_vars(ex, 1);
 	ex[3] = NULL;
-	/*new_envp = */manage_duplication(ex, *l_n_m->env, l_n_m, token);
-	//*l_n_m->env = new_envp;
+	manage_duplication(ex, *l_n_m->env, l_n_m, token);
 	free(pwd);
 	free(oldpwd);
 	free_vars(ex, count_vars(ex) - 1);
-	return(0);
+	return (0);
 }
 
-int join_oldpwd(t_token *token, t_line_n_mask *l_n_m)
+int	join_oldpwd(t_token *token, t_line_n_mask *l_n_m)
 {
-	char *pwd;
-	char *oldpwd;
-	char *tmp;
+	char	*pwd;
+	char	*oldpwd;
+	char	*tmp;
 
 	pwd = return_new_pwd();
 	tmp = pwd;
 	pwd = ft_strjoin("PWD=", pwd);
-	if(!pwd)
+	if (!pwd)
 	{
 		free(tmp);
 		free_token_n_structure_exit(token, l_n_m);
@@ -97,15 +90,15 @@ int join_oldpwd(t_token *token, t_line_n_mask *l_n_m)
 		free_token_n_structure_exit(token, l_n_m);
 	}
 	free(tmp);
-	return(export_pwd_oldpwd(pwd, oldpwd, token, l_n_m));
+	return (export_pwd_oldpwd(pwd, oldpwd, token, l_n_m));
 }
 
-int absolute_or_relative_path(char *path, char **args, t_token *token,
+int	absolute_or_relative_path(char *path, char **args, t_token *token,
 							  t_line_n_mask *l_n_m)
 {
-	int res;
-	int i;
-	char *ptr;
+	int		res;
+	int		i;
+	char	*ptr;
 
 	i = 1;
 	if (args[1] == NULL)
@@ -117,7 +110,7 @@ int absolute_or_relative_path(char *path, char **args, t_token *token,
 			ptr = path;
 			path = ft_strjoin(path, args[i]);
 			free(ptr);
-			if(!path)
+			if (!path)
 			{
 				free_token_n_structure_exit(token, l_n_m);
 				free(ptr);
@@ -127,20 +120,4 @@ int absolute_or_relative_path(char *path, char **args, t_token *token,
 		res = change_directory(path);
 	}
 	return (res);
-}
-
-int ft_cd(t_token *token, t_line_n_mask *l_n_m)
-{
-	int res;
-	char **args = token->args;
-	char *path;
-
-	path = ft_calloc(1, 1);
-	if(!path)
-		free_token_n_structure_exit(token, l_n_m);
-	res = absolute_or_relative_path(path, args, token, l_n_m);
-	if (res == 0)
-		return (join_oldpwd(token, l_n_m));
-	else
-		return(cd_error(path, res));
 }

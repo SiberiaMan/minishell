@@ -53,3 +53,20 @@ int	change_directory(char *path)
 	free(path);
 	return (res);
 }
+
+int	ft_cd(t_token *token, t_line_n_mask *l_n_m)
+{
+	int		res;
+	char	**args;
+	char	*path;
+
+	args = token->args;
+	path = ft_calloc(1, 1);
+	if (!path)
+		free_token_n_structure_exit(token, l_n_m);
+	res = absolute_or_relative_path(path, args, token, l_n_m);
+	if (res == 0)
+		return (join_oldpwd(token, l_n_m));
+	else
+		return (cd_error(path, res));
+}

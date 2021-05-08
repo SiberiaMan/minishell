@@ -78,7 +78,7 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/Users/bmysaria/Desktop/minishell/Misha/builtins/cd.c">
+		<Unit filename="/Users/bmysaria/Desktop/minishell/Misha/builtins/cd_utils.c">
 			<Option target="shell"/>
 		</Unit>
 		<Unit filename="/Users/bmysaria/Desktop/minishell/Misha/builtins/check_export.c">
@@ -108,7 +108,7 @@
 		<Unit filename="/Users/bmysaria/Desktop/minishell/Misha/builtins/manage_duplications.c">
 			<Option target="shell"/>
 		</Unit>
-		<Unit filename="/Users/bmysaria/Desktop/minishell/Misha/builtins/pwd.c">
+		<Unit filename="/Users/bmysaria/Desktop/minishell/Misha/builtins/pwd_cd.c">
 			<Option target="shell"/>
 		</Unit>
 		<Unit filename="/Users/bmysaria/Desktop/minishell/Misha/builtins/unset.c">

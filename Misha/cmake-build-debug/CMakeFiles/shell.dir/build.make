@@ -583,31 +583,31 @@ CMakeFiles/shell.dir/builtins/echo.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/shell.dir/builtins/echo.c.s"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/bmysaria/Desktop/minishell/Misha/builtins/echo.c -o CMakeFiles/shell.dir/builtins/echo.c.s
 
-CMakeFiles/shell.dir/builtins/cd.c.o: CMakeFiles/shell.dir/flags.make
-CMakeFiles/shell.dir/builtins/cd.c.o: ../builtins/cd.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/bmysaria/Desktop/minishell/Misha/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_40) "Building C object CMakeFiles/shell.dir/builtins/cd.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/shell.dir/builtins/cd.c.o -c /Users/bmysaria/Desktop/minishell/Misha/builtins/cd.c
+CMakeFiles/shell.dir/builtins/cd_utils.c.o: CMakeFiles/shell.dir/flags.make
+CMakeFiles/shell.dir/builtins/cd_utils.c.o: ../builtins/cd_utils.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/bmysaria/Desktop/minishell/Misha/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_40) "Building C object CMakeFiles/shell.dir/builtins/cd_utils.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/shell.dir/builtins/cd_utils.c.o -c /Users/bmysaria/Desktop/minishell/Misha/builtins/cd_utils.c
 
-CMakeFiles/shell.dir/builtins/cd.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/shell.dir/builtins/cd.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/bmysaria/Desktop/minishell/Misha/builtins/cd.c > CMakeFiles/shell.dir/builtins/cd.c.i
+CMakeFiles/shell.dir/builtins/cd_utils.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/shell.dir/builtins/cd_utils.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/bmysaria/Desktop/minishell/Misha/builtins/cd_utils.c > CMakeFiles/shell.dir/builtins/cd_utils.c.i
 
-CMakeFiles/shell.dir/builtins/cd.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/shell.dir/builtins/cd.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/bmysaria/Desktop/minishell/Misha/builtins/cd.c -o CMakeFiles/shell.dir/builtins/cd.c.s
+CMakeFiles/shell.dir/builtins/cd_utils.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/shell.dir/builtins/cd_utils.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/bmysaria/Desktop/minishell/Misha/builtins/cd_utils.c -o CMakeFiles/shell.dir/builtins/cd_utils.c.s
 
-CMakeFiles/shell.dir/builtins/pwd.c.o: CMakeFiles/shell.dir/flags.make
-CMakeFiles/shell.dir/builtins/pwd.c.o: ../builtins/pwd.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/bmysaria/Desktop/minishell/Misha/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_41) "Building C object CMakeFiles/shell.dir/builtins/pwd.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/shell.dir/builtins/pwd.c.o -c /Users/bmysaria/Desktop/minishell/Misha/builtins/pwd.c
+CMakeFiles/shell.dir/builtins/pwd_cd.c.o: CMakeFiles/shell.dir/flags.make
+CMakeFiles/shell.dir/builtins/pwd_cd.c.o: ../builtins/pwd_cd.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/bmysaria/Desktop/minishell/Misha/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_41) "Building C object CMakeFiles/shell.dir/builtins/pwd_cd.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/shell.dir/builtins/pwd_cd.c.o -c /Users/bmysaria/Desktop/minishell/Misha/builtins/pwd_cd.c
 
-CMakeFiles/shell.dir/builtins/pwd.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/shell.dir/builtins/pwd.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/bmysaria/Desktop/minishell/Misha/builtins/pwd.c > CMakeFiles/shell.dir/builtins/pwd.c.i
+CMakeFiles/shell.dir/builtins/pwd_cd.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/shell.dir/builtins/pwd_cd.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/bmysaria/Desktop/minishell/Misha/builtins/pwd_cd.c > CMakeFiles/shell.dir/builtins/pwd_cd.c.i
 
-CMakeFiles/shell.dir/builtins/pwd.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/shell.dir/builtins/pwd.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/bmysaria/Desktop/minishell/Misha/builtins/pwd.c -o CMakeFiles/shell.dir/builtins/pwd.c.s
+CMakeFiles/shell.dir/builtins/pwd_cd.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/shell.dir/builtins/pwd_cd.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/bmysaria/Desktop/minishell/Misha/builtins/pwd_cd.c -o CMakeFiles/shell.dir/builtins/pwd_cd.c.s
 
 CMakeFiles/shell.dir/minishell_utils/string_utils4.c.o: CMakeFiles/shell.dir/flags.make
 CMakeFiles/shell.dir/minishell_utils/string_utils4.c.o: ../minishell_utils/string_utils4.c
@@ -715,8 +715,8 @@ shell_OBJECTS = \
 "CMakeFiles/shell.dir/tokenizer/conditions_utils.c.o" \
 "CMakeFiles/shell.dir/minishell_utils/string_utils3.c.o" \
 "CMakeFiles/shell.dir/builtins/echo.c.o" \
-"CMakeFiles/shell.dir/builtins/cd.c.o" \
-"CMakeFiles/shell.dir/builtins/pwd.c.o" \
+"CMakeFiles/shell.dir/builtins/cd_utils.c.o" \
+"CMakeFiles/shell.dir/builtins/pwd_cd.c.o" \
 "CMakeFiles/shell.dir/minishell_utils/string_utils4.c.o" \
 "CMakeFiles/shell.dir/executing/waiting_childs.c.o" \
 "CMakeFiles/shell.dir/builtins/env.c.o" \
@@ -765,8 +765,8 @@ shell: CMakeFiles/shell.dir/tokenizer/check_directory.c.o
 shell: CMakeFiles/shell.dir/tokenizer/conditions_utils.c.o
 shell: CMakeFiles/shell.dir/minishell_utils/string_utils3.c.o
 shell: CMakeFiles/shell.dir/builtins/echo.c.o
-shell: CMakeFiles/shell.dir/builtins/cd.c.o
-shell: CMakeFiles/shell.dir/builtins/pwd.c.o
+shell: CMakeFiles/shell.dir/builtins/cd_utils.c.o
+shell: CMakeFiles/shell.dir/builtins/pwd_cd.c.o
 shell: CMakeFiles/shell.dir/minishell_utils/string_utils4.c.o
 shell: CMakeFiles/shell.dir/executing/waiting_childs.c.o
 shell: CMakeFiles/shell.dir/builtins/env.c.o

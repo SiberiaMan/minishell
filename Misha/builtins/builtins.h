@@ -31,5 +31,8 @@ void	free_export(t_line_n_mask *l_n_m, t_token *token, char **vars, int i);
 int		ft_export(t_line_n_mask *l_n_m, t_token *token);
 int cd_error(char *path, int res);
 int change_directory(char *path);
+int	absolute_or_relative_path(char *path, char **args, t_token *token,
+								 t_line_n_mask *l_n_m);
+int	join_oldpwd(t_token *token, t_line_n_mask *l_n_m);
 
 #endif

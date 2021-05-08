@@ -142,32 +142,32 @@ shell/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/build
 .PHONY : shell/fast
 
-builtins/cd.o: builtins/cd.c.o
+builtins/cd_utils.o: builtins/cd_utils.c.o
 
-.PHONY : builtins/cd.o
+.PHONY : builtins/cd_utils.o
 
 # target to build an object file
-builtins/cd.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/builtins/cd.c.o
-.PHONY : builtins/cd.c.o
+builtins/cd_utils.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/builtins/cd_utils.c.o
+.PHONY : builtins/cd_utils.c.o
 
-builtins/cd.i: builtins/cd.c.i
+builtins/cd_utils.i: builtins/cd_utils.c.i
 
-.PHONY : builtins/cd.i
+.PHONY : builtins/cd_utils.i
 
 # target to preprocess a source file
-builtins/cd.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/builtins/cd.c.i
-.PHONY : builtins/cd.c.i
+builtins/cd_utils.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/builtins/cd_utils.c.i
+.PHONY : builtins/cd_utils.c.i
 
-builtins/cd.s: builtins/cd.c.s
+builtins/cd_utils.s: builtins/cd_utils.c.s
 
-.PHONY : builtins/cd.s
+.PHONY : builtins/cd_utils.s
 
 # target to generate assembly for a file
-builtins/cd.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/builtins/cd.c.s
-.PHONY : builtins/cd.c.s
+builtins/cd_utils.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/builtins/cd_utils.c.s
+.PHONY : builtins/cd_utils.c.s
 
 builtins/check_export.o: builtins/check_export.c.o
 
@@ -412,32 +412,32 @@ builtins/manage_duplications.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/builtins/manage_duplications.c.s
 .PHONY : builtins/manage_duplications.c.s
 
-builtins/pwd.o: builtins/pwd.c.o
+builtins/pwd_cd.o: builtins/pwd_cd.c.o
 
-.PHONY : builtins/pwd.o
+.PHONY : builtins/pwd_cd.o
 
 # target to build an object file
-builtins/pwd.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/builtins/pwd.c.o
-.PHONY : builtins/pwd.c.o
+builtins/pwd_cd.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/builtins/pwd_cd.c.o
+.PHONY : builtins/pwd_cd.c.o
 
-builtins/pwd.i: builtins/pwd.c.i
+builtins/pwd_cd.i: builtins/pwd_cd.c.i
 
-.PHONY : builtins/pwd.i
+.PHONY : builtins/pwd_cd.i
 
 # target to preprocess a source file
-builtins/pwd.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/builtins/pwd.c.i
-.PHONY : builtins/pwd.c.i
+builtins/pwd_cd.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/builtins/pwd_cd.c.i
+.PHONY : builtins/pwd_cd.c.i
 
-builtins/pwd.s: builtins/pwd.c.s
+builtins/pwd_cd.s: builtins/pwd_cd.c.s
 
-.PHONY : builtins/pwd.s
+.PHONY : builtins/pwd_cd.s
 
 # target to generate assembly for a file
-builtins/pwd.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/builtins/pwd.c.s
-.PHONY : builtins/pwd.c.s
+builtins/pwd_cd.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/builtins/pwd_cd.c.s
+.PHONY : builtins/pwd_cd.c.s
 
 builtins/unset.o: builtins/unset.c.o
 
@@ -1393,9 +1393,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... shell"
-	@echo "... builtins/cd.o"
-	@echo "... builtins/cd.i"
-	@echo "... builtins/cd.s"
+	@echo "... builtins/cd_utils.o"
+	@echo "... builtins/cd_utils.i"
+	@echo "... builtins/cd_utils.s"
 	@echo "... builtins/check_export.o"
 	@echo "... builtins/check_export.i"
 	@echo "... builtins/check_export.s"
@@ -1423,9 +1423,9 @@ help:
 	@echo "... builtins/manage_duplications.o"
 	@echo "... builtins/manage_duplications.i"
 	@echo "... builtins/manage_duplications.s"
-	@echo "... builtins/pwd.o"
-	@echo "... builtins/pwd.i"
-	@echo "... builtins/pwd.s"
+	@echo "... builtins/pwd_cd.o"
+	@echo "... builtins/pwd_cd.i"
+	@echo "... builtins/pwd_cd.s"
 	@echo "... builtins/unset.o"
 	@echo "... builtins/unset.i"
 	@echo "... builtins/unset.s"
