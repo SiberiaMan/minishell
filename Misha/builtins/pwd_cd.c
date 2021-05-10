@@ -38,7 +38,7 @@ int	cd_error(char *path)
 	char	*message;
 
 	message = strerror(errno);
-	ft_putstr_fd("?: ", 2);
+	ft_putstr_fd("minishell: ", 2);
 	ft_putstr_fd(path, 2);
 	ft_putstr_fd(message, 2);
 	ft_putchar_fd('\n', 2);
@@ -65,7 +65,6 @@ int	ft_cd(t_token *token, t_line_n_mask *l_n_m)
 	if (!path)
 		free_token_n_structure_exit(token, l_n_m);
 	res = absolute_or_relative_path(path, args, token, l_n_m);
-	printf("|res = %d|\n", res);
 	if (res == 0)
 	{
 		if (return_env("PWD", *l_n_m->env) == NULL)

@@ -25,16 +25,11 @@ int	change_to_home_dir(char **envp, char *path)
 	int		res;
 
 	free(path);
-	while (*envp)
+	path = return_env("HOME=", envp);
+	if (path == NULL)
 	{
-		if (!ft_strncmp(*envp, "HOME=", 5))
-			path = *envp + 5;
-		else if (ft_strncmp(*envp, "HOME=", 5))
-		{
-			ft_putstr_fd("minishell: cd: HOME not set\n", 2);
-			return (1);
-		}
-		envp++;
+		ft_putstr_fd("minishell: cd: HOME not set\n", 2);
+		return (1);
 	}
 	res = chdir(path);
 	return (res);
